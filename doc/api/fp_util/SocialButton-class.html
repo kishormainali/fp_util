@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the SocialButton class from the fp_util library, for the Dart programming language.">
+  <title>SocialButton class - fp_util library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">fp_util</a></li>
+    <li><a href="../fp_util/fp_util-library.html">fp_util</a></li>
+    <li class="self-crumb">SocialButton class</li>
+  </ol>
+  <div class="self-name">SocialButton</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-class">SocialButton</span> class 
+ 
+</h1></div>
+
+    
+<section class="desc markdown">
+  <p>Social Button
+Social Button includes google, facebook and apple</p>
+</section>
+
+
+    <section>
+      <dl class="dl-horizontal">
+        
+  <dt>Inheritance</dt>
+  <dd>
+    <ul class="gt-separated dark clazz-relationships">
+      <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
+        <li><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree-class.html">DiagnosticableTree</a></li>
+        <li><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></li>
+        <li><a href="https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html">StatelessWidget</a></li>
+      <li>SocialButton</li>
+    </ul>
+  </dd>
+
+        
+        
+
+
+        <dt>Available Extensions</dt>
+        <dd><ul class="comma-separated clazz-relationships">
+          <li><a href="../fp_util/WidgetX.html">WidgetX</a></li>
+        </ul></dd>
+
+        
+
+
+      </dl>
+    </section>
+
+    
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+
+    <dl class="constructor-summary-list">
+        <dt id="SocialButton.apple" class="callable">
+          <span class="name"><a href="../fp_util/SocialButton/SocialButton.apple.html">SocialButton.apple</a></span><span class="signature">(<span class="parameter" id="apple-param-label">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">label</span>, </span><span class="parameter" id="apple-param-onPressed"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onPressed</span>, </span><span class="parameter" id="apple-param-loading"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">loading</span> = <span class="default-value">false</span>, </span><span class="parameter" id="apple-param-buttonColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">buttonColor</span> = <span class="default-value">Colors.white</span>, </span><span class="parameter" id="apple-param-foregroundColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">foregroundColor</span> = <span class="default-value">Colors.black</span>, </span><span class="parameter" id="apple-param-border"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Border-class.html">Border</a>?</span> <span class="parameter-name">border</span>, </span><span class="parameter" id="apple-param-shape"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/OutlinedBorder-class.html">OutlinedBorder</a>?</span> <span class="parameter-name">shape</span> = <span class="default-value">const StadiumBorder()</span>, </span><span class="parameter" id="apple-param-iconSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">iconSize</span> = <span class="default-value">24</span>, </span><span class="parameter" id="apple-param-textStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">textStyle</span>, </span><span class="parameter" id="apple-param-loader"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">loader</span> = <span class="default-value">const CircularProgressIndicator()</span>, </span><span class="parameter" id="apple-param-minimumSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Size-class.html">Size</a></span> <span class="parameter-name">minimumSize</span> = <span class="default-value">const Size(140, 48)</span>, </span><span class="parameter" id="apple-param-maximumSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Size-class.html">Size</a></span> <span class="parameter-name">maximumSize</span> = <span class="default-value">const Size(double.infinity, 48)</span>, </span><span class="parameter" id="apple-param-padding"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/EdgeInsets-class.html">EdgeInsets</a></span> <span class="parameter-name">padding</span> = <span class="default-value">const EdgeInsets.all(4)</span>, </span><span class="parameter" id="apple-param-splashColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">splashColor</span> = <span class="default-value">Colors.black</span>, </span><span class="parameter" id="apple-param-side"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/BorderSide-class.html">BorderSide</a>?</span> <span class="parameter-name">side</span>, </span><span class="parameter" id="apple-param-icon"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">icon</span>}</span>)</span>
+        </dt>
+        <dd>
+          button for apple
+            <div class="constructor-modifier features">factory</div>
+        </dd>
+        <dt id="SocialButton.appleIcon" class="callable">
+          <span class="name"><a href="../fp_util/SocialButton/SocialButton.appleIcon.html">SocialButton.appleIcon</a></span><span class="signature">(<span class="parameter" id="appleIcon-param-onPressed">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onPressed</span>, </span><span class="parameter" id="appleIcon-param-loading"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">loading</span> = <span class="default-value">false</span>, </span><span class="parameter" id="appleIcon-param-buttonColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">buttonColor</span> = <span class="default-value">Colors.white</span>, </span><span class="parameter" id="appleIcon-param-foregroundColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">foregroundColor</span> = <span class="default-value">Colors.black</span>, </span><span class="parameter" id="appleIcon-param-iconSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">iconSize</span> = <span class="default-value">24</span>, </span><span class="parameter" id="appleIcon-param-textStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">textStyle</span>, </span><span class="parameter" id="appleIcon-param-loader"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">loader</span> = <span class="default-value">const CircularProgressIndicator()</span>, </span><span class="parameter" id="appleIcon-param-size"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Size-class.html">Size</a></span> <span class="parameter-name">size</span> = <span class="default-value">const Size(48, 48)</span>, </span><span class="parameter" id="appleIcon-param-padding"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/EdgeInsets-class.html">EdgeInsets</a></span> <span class="parameter-name">padding</span> = <span class="default-value">const EdgeInsets.all(4)</span>, </span><span class="parameter" id="appleIcon-param-shape"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/OutlinedBorder-class.html">OutlinedBorder</a></span> <span class="parameter-name">shape</span> = <span class="default-value">const CircleBorder()</span>, </span><span class="parameter" id="appleIcon-param-splashColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">splashColor</span> = <span class="default-value">Colors.black</span>, </span><span class="parameter" id="appleIcon-param-side"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/BorderSide-class.html">BorderSide</a>?</span> <span class="parameter-name">side</span>, </span><span class="parameter" id="appleIcon-param-icon"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">icon</span>}</span>)</span>
+        </dt>
+        <dd>
+          icon only button for apple
+            <div class="constructor-modifier features">factory</div>
+        </dd>
+        <dt id="SocialButton.facebook" class="callable">
+          <span class="name"><a href="../fp_util/SocialButton/SocialButton.facebook.html">SocialButton.facebook</a></span><span class="signature">(<span class="parameter" id="facebook-param-label">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">label</span>, </span><span class="parameter" id="facebook-param-onPressed"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onPressed</span>, </span><span class="parameter" id="facebook-param-loading"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">loading</span> = <span class="default-value">false</span>, </span><span class="parameter" id="facebook-param-buttonColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">buttonColor</span> = <span class="default-value">Colors.white</span>, </span><span class="parameter" id="facebook-param-foregroundColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">foregroundColor</span> = <span class="default-value">Colors.black</span>, </span><span class="parameter" id="facebook-param-shape"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/OutlinedBorder-class.html">OutlinedBorder</a>?</span> <span class="parameter-name">shape</span> = <span class="default-value">const StadiumBorder()</span>, </span><span class="parameter" id="facebook-param-iconSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">iconSize</span> = <span class="default-value">24</span>, </span><span class="parameter" id="facebook-param-textStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">textStyle</span>, </span><span class="parameter" id="facebook-param-loader"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">loader</span> = <span class="default-value">const CircularProgressIndicator()</span>, </span><span class="parameter" id="facebook-param-minimumSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Size-class.html">Size</a></span> <span class="parameter-name">minimumSize</span> = <span class="default-value">const Size(140, 48)</span>, </span><span class="parameter" id="facebook-param-maximumSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Size-class.html">Size</a></span> <span class="parameter-name">maximumSize</span> = <span class="default-value">const Size(double.infinity, 48)</span>, </span><span class="parameter" id="facebook-param-padding"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/EdgeInsets-class.html">EdgeInsets</a></span> <span class="parameter-name">padding</span> = <span class="default-value">const EdgeInsets.all(4)</span>, </span><span class="parameter" id="facebook-param-splashColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">splashColor</span> = <span class="default-value">Colors.black</span>, </span><span class="parameter" id="facebook-param-side"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/BorderSide-class.html">BorderSide</a>?</span> <span class="parameter-name">side</span>, </span><span class="parameter" id="facebook-param-icon"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">icon</span>}</span>)</span>
+        </dt>
+        <dd>
+          button for facebook
+            <div class="constructor-modifier features">factory</div>
+        </dd>
+        <dt id="SocialButton.facebookIcon" class="callable">
+          <span class="name"><a href="../fp_util/SocialButton/SocialButton.facebookIcon.html">SocialButton.facebookIcon</a></span><span class="signature">(<span class="parameter" id="facebookIcon-param-onPressed">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onPressed</span>, </span><span class="parameter" id="facebookIcon-param-loading"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">loading</span> = <span class="default-value">false</span>, </span><span class="parameter" id="facebookIcon-param-buttonColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">buttonColor</span> = <span class="default-value">Colors.white</span>, </span><span class="parameter" id="facebookIcon-param-foregroundColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">foregroundColor</span> = <span class="default-value">Colors.black</span>, </span><span class="parameter" id="facebookIcon-param-iconSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">iconSize</span> = <span class="default-value">24</span>, </span><span class="parameter" id="facebookIcon-param-textStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">textStyle</span>, </span><span class="parameter" id="facebookIcon-param-loader"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">loader</span> = <span class="default-value">const CircularProgressIndicator()</span>, </span><span class="parameter" id="facebookIcon-param-size"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Size-class.html">Size</a></span> <span class="parameter-name">size</span> = <span class="default-value">const Size(48, 48)</span>, </span><span class="parameter" id="facebookIcon-param-padding"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/EdgeInsets-class.html">EdgeInsets</a></span> <span class="parameter-name">padding</span> = <span class="default-value">const EdgeInsets.all(4)</span>, </span><span class="parameter" id="facebookIcon-param-shape"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/OutlinedBorder-class.html">OutlinedBorder</a></span> <span class="parameter-name">shape</span> = <span class="default-value">const CircleBorder()</span>, </span><span class="parameter" id="facebookIcon-param-splashColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">splashColor</span> = <span class="default-value">Colors.black</span>, </span><span class="parameter" id="facebookIcon-param-side"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/BorderSide-class.html">BorderSide</a>?</span> <span class="parameter-name">side</span>, </span><span class="parameter" id="facebookIcon-param-icon"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">icon</span>}</span>)</span>
+        </dt>
+        <dd>
+          icon only button for facebook
+            <div class="constructor-modifier features">factory</div>
+        </dd>
+        <dt id="SocialButton.google" class="callable">
+          <span class="name"><a href="../fp_util/SocialButton/SocialButton.google.html">SocialButton.google</a></span><span class="signature">(<span class="parameter" id="google-param-label">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">label</span>, </span><span class="parameter" id="google-param-onPressed"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onPressed</span>, </span><span class="parameter" id="google-param-loading"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">loading</span> = <span class="default-value">false</span>, </span><span class="parameter" id="google-param-buttonColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">buttonColor</span> = <span class="default-value">Colors.white</span>, </span><span class="parameter" id="google-param-foregroundColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">foregroundColor</span> = <span class="default-value">Colors.black</span>, </span><span class="parameter" id="google-param-shape"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/OutlinedBorder-class.html">OutlinedBorder</a>?</span> <span class="parameter-name">shape</span> = <span class="default-value">const StadiumBorder()</span>, </span><span class="parameter" id="google-param-iconSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">iconSize</span> = <span class="default-value">24</span>, </span><span class="parameter" id="google-param-textStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">textStyle</span>, </span><span class="parameter" id="google-param-loader"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">loader</span> = <span class="default-value">const CircularProgressIndicator()</span>, </span><span class="parameter" id="google-param-minimumSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Size-class.html">Size</a></span> <span class="parameter-name">minimumSize</span> = <span class="default-value">const Size(140, 48)</span>, </span><span class="parameter" id="google-param-maximumSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Size-class.html">Size</a></span> <span class="parameter-name">maximumSize</span> = <span class="default-value">const Size(double.infinity, 48)</span>, </span><span class="parameter" id="google-param-padding"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/EdgeInsets-class.html">EdgeInsets</a></span> <span class="parameter-name">padding</span> = <span class="default-value">const EdgeInsets.all(4)</span>, </span><span class="parameter" id="google-param-splashColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">splashColor</span> = <span class="default-value">Colors.black</span>, </span><span class="parameter" id="google-param-side"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/BorderSide-class.html">BorderSide</a>?</span> <span class="parameter-name">side</span>, </span><span class="parameter" id="google-param-icon"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">icon</span>}</span>)</span>
+        </dt>
+        <dd>
+          Button for google
+            <div class="constructor-modifier features">factory</div>
+        </dd>
+        <dt id="SocialButton.googleIcon" class="callable">
+          <span class="name"><a href="../fp_util/SocialButton/SocialButton.googleIcon.html">SocialButton.googleIcon</a></span><span class="signature">(<span class="parameter" id="googleIcon-param-onPressed">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onPressed</span>, </span><span class="parameter" id="googleIcon-param-loading"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">loading</span> = <span class="default-value">false</span>, </span><span class="parameter" id="googleIcon-param-buttonColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">buttonColor</span> = <span class="default-value">Colors.white</span>, </span><span class="parameter" id="googleIcon-param-foregroundColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">foregroundColor</span> = <span class="default-value">Colors.black</span>, </span><span class="parameter" id="googleIcon-param-iconSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">iconSize</span> = <span class="default-value">24</span>, </span><span class="parameter" id="googleIcon-param-textStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">textStyle</span>, </span><span class="parameter" id="googleIcon-param-loader"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">loader</span> = <span class="default-value">const CircularProgressIndicator()</span>, </span><span class="parameter" id="googleIcon-param-size"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Size-class.html">Size</a></span> <span class="parameter-name">size</span> = <span class="default-value">const Size(48, 48)</span>, </span><span class="parameter" id="googleIcon-param-padding"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/EdgeInsets-class.html">EdgeInsets</a></span> <span class="parameter-name">padding</span> = <span class="default-value">const EdgeInsets.all(4)</span>, </span><span class="parameter" id="googleIcon-param-shape"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/OutlinedBorder-class.html">OutlinedBorder</a></span> <span class="parameter-name">shape</span> = <span class="default-value">const CircleBorder()</span>, </span><span class="parameter" id="googleIcon-param-splashColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">splashColor</span> = <span class="default-value">Colors.black</span>, </span><span class="parameter" id="googleIcon-param-side"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/BorderSide-class.html">BorderSide</a>?</span> <span class="parameter-name">side</span>, </span><span class="parameter" id="googleIcon-param-icon"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">icon</span>}</span>)</span>
+        </dt>
+        <dd>
+          icon only button for google
+            <div class="constructor-modifier features">factory</div>
+        </dd>
+    </dl>
+  </section>
+
+    <section class="summary offset-anchor" id="instance-properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="buttonColor" class="property">
+  <span class="name"><a href="../fp_util/SocialButton/buttonColor.html">buttonColor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> 
+
+</dt>
+<dd>
+  background color for button
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="foregroundColor" class="property">
+  <span class="name"><a href="../fp_util/SocialButton/foregroundColor.html">foregroundColor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> 
+
+</dt>
+<dd>
+  foreground color for button
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="hashCode" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd class="inherited">
+  The hash code for this object.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="icon" class="property">
+  <span class="name"><a href="../fp_util/SocialButton/icon.html">icon</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> 
+
+</dt>
+<dd>
+  icon for button
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="iconOnly" class="property">
+  <span class="name"><a href="../fp_util/SocialButton/iconOnly.html">iconOnly</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd>
+  flag for icon only button
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="iconSize" class="property">
+  <span class="name"><a href="../fp_util/SocialButton/iconSize.html">iconSize</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> 
+
+</dt>
+<dd>
+  iconSize for button icon defaults to 24
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="key" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/key.html">key</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> 
+
+</dt>
+<dd class="inherited">
+  Controls how one widget replaces another widget in the tree.
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="label" class="property">
+  <span class="name"><a href="../fp_util/SocialButton/label.html">label</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> 
+
+</dt>
+<dd>
+  label for button
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="loader" class="property">
+  <span class="name"><a href="../fp_util/SocialButton/loader.html">loader</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> 
+
+</dt>
+<dd>
+  loader widget
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="loading" class="property">
+  <span class="name"><a href="../fp_util/SocialButton/loading.html">loading</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd>
+  flag for button is loading or not
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="maximumSize" class="property">
+  <span class="name"><a href="../fp_util/SocialButton/maximumSize.html">maximumSize</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-ui/Size-class.html">Size</a></span> 
+
+</dt>
+<dd>
+  maximum size for button
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="minimumSize" class="property">
+  <span class="name"><a href="../fp_util/SocialButton/minimumSize.html">minimumSize</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-ui/Size-class.html">Size</a></span> 
+
+</dt>
+<dd>
+  minimun size for button
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="onPressed" class="property">
+  <span class="name"><a href="../fp_util/SocialButton/onPressed.html">onPressed</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> 
+
+</dt>
+<dd>
+  onPressed callback
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="padding" class="property">
+  <span class="name"><a href="../fp_util/SocialButton/padding.html">padding</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/painting/EdgeInsets-class.html">EdgeInsets</a></span> 
+
+</dt>
+<dd>
+  padding for button
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Type-class.html">Type</a></span> 
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="shape" class="property">
+  <span class="name"><a href="../fp_util/SocialButton/shape.html">shape</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/painting/OutlinedBorder-class.html">OutlinedBorder</a>?</span> 
+
+</dt>
+<dd>
+  shape for button default is StadiumBorder
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="side" class="property">
+  <span class="name"><a href="../fp_util/SocialButton/side.html">side</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/painting/BorderSide-class.html">BorderSide</a>?</span> 
+
+</dt>
+<dd>
+  border side for button
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="splashColor" class="property">
+  <span class="name"><a href="../fp_util/SocialButton/splashColor.html">splashColor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> 
+
+</dt>
+<dd>
+  splashColor color for button
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="textStyle" class="property">
+  <span class="name"><a href="../fp_util/SocialButton/textStyle.html">textStyle</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> 
+
+</dt>
+<dd>
+  text style for button
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="type" class="property">
+  <span class="name"><a href="../fp_util/SocialButton/type.html">type</a></span>
+  <span class="signature">&#8594; <a href="../fp_util/SocialType.html">SocialType</a></span> 
+
+</dt>
+<dd>
+  social button type
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+      </dl>
+    </section>
+
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="build" class="callable">
+  <span class="name"><a href="../fp_util/SocialButton/build.html">build</a></span><span class="signature">(<wbr><span class="parameter" id="build-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Describes the part of the user interface represented by this widget.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="createElement" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/StatelessWidget/createElement.html">createElement</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/widgets/StatelessElement-class.html">StatelessElement</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Creates a <a href="https://api.flutter.dev/flutter/widgets/StatelessElement-class.html">StatelessElement</a> to manage this widget's location in the tree.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="debugDescribeChildren" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/debugDescribeChildren.html">debugDescribeChildren</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticsNode-class.html">DiagnosticsNode</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns a list of <code>DiagnosticsNode</code> objects describing this node's
+children.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="debugFillProperties" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/debugFillProperties.html">debugFillProperties</a></span><span class="signature">(<wbr><span class="parameter" id="debugFillProperties-param-properties"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticPropertiesBuilder-class.html">DiagnosticPropertiesBuilder</a></span> <span class="parameter-name">properties</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Add additional properties associated with the node.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a nonexistent method or property is accessed.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toDiagnosticsNode" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toDiagnosticsNode.html">toDiagnosticsNode</a></span><span class="signature">(<wbr><span class="parameter" id="toDiagnosticsNode-param-name">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="toDiagnosticsNode-param-style"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticsTreeStyle.html">DiagnosticsTreeStyle</a>?</span> <span class="parameter-name">style</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/foundation/DiagnosticsNode-class.html">DiagnosticsNode</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns a debug representation of the object that is used by debugging
+tools and by <a href="https://api.flutter.dev/flutter/foundation/DiagnosticsNode/toStringDeep.html">DiagnosticsNode.toStringDeep</a>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toString" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/Diagnosticable/toString.html">toString</a></span><span class="signature">(<wbr><span class="parameter" id="toString-param-minLevel">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticLevel.html">DiagnosticLevel</a></span> <span class="parameter-name">minLevel</span> = <span class="default-value">DiagnosticLevel.info</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  A string representation of this object.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toStringDeep" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringDeep.html">toStringDeep</a></span><span class="signature">(<wbr><span class="parameter" id="toStringDeep-param-prefixLineOne">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">prefixLineOne</span> = <span class="default-value">&#39;&#39;</span>, </span><span class="parameter" id="toStringDeep-param-prefixOtherLines"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">prefixOtherLines</span>, </span><span class="parameter" id="toStringDeep-param-minLevel"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticLevel.html">DiagnosticLevel</a></span> <span class="parameter-name">minLevel</span> = <span class="default-value">DiagnosticLevel.debug</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns a string representation of this node and its descendants.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toStringShallow" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringShallow.html">toStringShallow</a></span><span class="signature">(<wbr><span class="parameter" id="toStringShallow-param-joiner">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">joiner</span> = <span class="default-value">&#39;, &#39;</span>, </span><span class="parameter" id="toStringShallow-param-minLevel"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticLevel.html">DiagnosticLevel</a></span> <span class="parameter-name">minLevel</span> = <span class="default-value">DiagnosticLevel.debug</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns a one-line detailed description of the object.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toStringShort" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/toStringShort.html">toStringShort</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  A short, textual description of this widget.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="operators">
+    <h2>Operators</h2>
+    <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The equality operator.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+    
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">fp_util</a></li>
+  <li><a href="../fp_util/fp_util-library.html">fp_util</a></li>
+  <li class="self-crumb">SocialButton class</li>
+</ol>
+
+
+    <h5>fp_util library</h5>
+    <ol>
+      <li class="section-title"><a href="../fp_util/fp_util-library.html#classes">Classes</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/AnsiColor-class.html">AnsiColor</a></li>
+        <li><a href="../fp_util/AsyncError-class.html">AsyncError</a></li>
+        <li><a href="../fp_util/AsyncInitial-class.html">AsyncInitial</a></li>
+        <li><a href="../fp_util/AsyncLoading-class.html">AsyncLoading</a></li>
+        <li><a href="../fp_util/AsyncStatus-class.html">AsyncStatus</a></li>
+        <li><a href="../fp_util/AsyncSuccess-class.html">AsyncSuccess</a></li>
+        <li><a href="../fp_util/BaseDialog-class.html">BaseDialog</a></li>
+        <li><a href="../fp_util/BasicAlertDialog-class.html">BasicAlertDialog</a></li>
+        <li><a href="../fp_util/BasicDialogAction-class.html">BasicDialogAction</a></li>
+        <li><a href="../fp_util/ColumnWithSpace-class.html">ColumnWithSpace</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/ConsoleOutput-class.html">ConsoleOutput</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/DevelopmentFilter-class.html">DevelopmentFilter</a></li>
+        <li><a href="../fp_util/DialogAction-class.html">DialogAction</a></li>
+        <li><a href="../fp_util/DialogData-class.html">DialogData</a></li>
+        <li><a href="../fp_util/EmailValidator-class.html">EmailValidator</a></li>
+        <li><a href="../fp_util/Field-class.html">Field</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/FileOutput-class.html">FileOutput</a></li>
+        <li><a href="../fp_util/FileX-class.html">FileX</a></li>
+        <li><a href="../fp_util/FPSnackbar-class.html">FPSnackbar</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/HybridPrinter-class.html">HybridPrinter</a></li>
+        <li><a href="../fp_util/ImagePickerHelper-class.html">ImagePickerHelper</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogEvent-class.html">LogEvent</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogFilter-class.html">LogFilter</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogfmtPrinter-class.html">LogfmtPrinter</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/Logger-class.html">Logger</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogOutput-class.html">LogOutput</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogPrinter-class.html">LogPrinter</a></li>
+        <li><a href="../fp_util/MaxLengthValidator-class.html">MaxLengthValidator</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/MemoryOutput-class.html">MemoryOutput</a></li>
+        <li><a href="../fp_util/MinLengthValidator-class.html">MinLengthValidator</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/MultiOutput-class.html">MultiOutput</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/OutputEvent-class.html">OutputEvent</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/PrefixPrinter-class.html">PrefixPrinter</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/PrettyPrinter-class.html">PrettyPrinter</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/ProductionFilter-class.html">ProductionFilter</a></li>
+        <li><a href="../fp_util/RequiredValidator-class.html">RequiredValidator</a></li>
+        <li><a href="../fp_util/ResponsiveBuilder-class.html">ResponsiveBuilder</a></li>
+        <li><a href="../fp_util/RowWithSpace-class.html">RowWithSpace</a></li>
+        <li><a href="../fp_util/ScaffoldWrapper-class.html">ScaffoldWrapper</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/SimplePrinter-class.html">SimplePrinter</a></li>
+        <li><a href="../fp_util/Sizes-class.html">Sizes</a></li>
+        <li><a href="../fp_util/SizeUtils-class.html">SizeUtils</a></li>
+        <li><a href="../fp_util/SocialButton-class.html">SocialButton</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/StreamOutput-class.html">StreamOutput</a></li>
+        <li><a href="../fp_util/Validator-class.html">Validator</a></li>
+
+      <li class="section-title"><a href="../fp_util/fp_util-library.html#extensions">Extensions</a></li>
+        <li><a href="../fp_util/AsyncStatusX.html">AsyncStatusX</a></li>
+        <li><a href="../fp_util/BuildContextX.html">BuildContextX</a></li>
+        <li><a href="../fp_util/DateTimeX.html">DateTimeX</a></li>
+        <li><a href="../fp_util/EdgeInsetsX.html">EdgeInsetsX</a></li>
+        <li><a href="../fp_util/FileExtensionX.html">FileExtensionX</a></li>
+        <li><a href="../fp_util/IterableX.html">IterableX</a></li>
+        <li><a href="../fp_util/IterationWithIndex.html">IterationWithIndex</a></li>
+        <li><a href="../fp_util/NumX.html">NumX</a></li>
+        <li><a href="../fp_util/PlatformFileX.html">PlatformFileX</a></li>
+        <li><a href="../fp_util/StringNX.html">StringNX</a></li>
+        <li><a href="../fp_util/StringX.html">StringX</a></li>
+        <li><a href="../fp_util/WidgetX.html">WidgetX</a></li>
+        <li><a href="../fp_util/XFileX.html">XFileX</a></li>
+
+      <li class="section-title"><a href="../fp_util/fp_util-library.html#mixins">Mixins</a></li>
+        <li><a href="../fp_util/FormMixin-mixin.html">FormMixin</a></li>
+
+
+      <li class="section-title"><a href="../fp_util/fp_util-library.html#properties">Properties</a></li>
+        <li><a href="../fp_util/logger.html">logger</a></li>
+
+      <li class="section-title"><a href="../fp_util/fp_util-library.html#functions">Functions</a></li>
+        <li><a href="../fp_util/showPlatformDialog.html">showPlatformDialog</a></li>
+
+      <li class="section-title"><a href="../fp_util/fp_util-library.html#enums">Enums</a></li>
+        <li><a href="../fp_util/DeviceType.html">DeviceType</a></li>
+        <li><a href="../fp_util/FormStatus.html">FormStatus</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/Level.html">Level</a></li>
+        <li><a href="../fp_util/SocialType.html">SocialType</a></li>
+
+      <li class="section-title"><a href="../fp_util/fp_util-library.html#typedefs">Typedefs</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogCallback.html">LogCallback</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/OutputCallback.html">OutputCallback</a></li>
+
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <ol>
+
+        <li class="section-title"><a href="../fp_util/SocialButton-class.html#constructors">Constructors</a></li>
+          <li><a href="../fp_util/SocialButton/SocialButton.apple.html">apple</a></li>
+          <li><a href="../fp_util/SocialButton/SocialButton.appleIcon.html">appleIcon</a></li>
+          <li><a href="../fp_util/SocialButton/SocialButton.facebook.html">facebook</a></li>
+          <li><a href="../fp_util/SocialButton/SocialButton.facebookIcon.html">facebookIcon</a></li>
+          <li><a href="../fp_util/SocialButton/SocialButton.google.html">google</a></li>
+          <li><a href="../fp_util/SocialButton/SocialButton.googleIcon.html">googleIcon</a></li>
+
+
+        <li class="section-title">
+          <a href="../fp_util/SocialButton-class.html#instance-properties">Properties</a>
+        </li>
+          <li><a href="../fp_util/SocialButton/buttonColor.html">buttonColor</a></li>
+          <li><a href="../fp_util/SocialButton/foregroundColor.html">foregroundColor</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/hashCode.html">hashCode</a></li>
+          <li><a href="../fp_util/SocialButton/icon.html">icon</a></li>
+          <li><a href="../fp_util/SocialButton/iconOnly.html">iconOnly</a></li>
+          <li><a href="../fp_util/SocialButton/iconSize.html">iconSize</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/key.html">key</a></li>
+          <li><a href="../fp_util/SocialButton/label.html">label</a></li>
+          <li><a href="../fp_util/SocialButton/loader.html">loader</a></li>
+          <li><a href="../fp_util/SocialButton/loading.html">loading</a></li>
+          <li><a href="../fp_util/SocialButton/maximumSize.html">maximumSize</a></li>
+          <li><a href="../fp_util/SocialButton/minimumSize.html">minimumSize</a></li>
+          <li><a href="../fp_util/SocialButton/onPressed.html">onPressed</a></li>
+          <li><a href="../fp_util/SocialButton/padding.html">padding</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+          <li><a href="../fp_util/SocialButton/shape.html">shape</a></li>
+          <li><a href="../fp_util/SocialButton/side.html">side</a></li>
+          <li><a href="../fp_util/SocialButton/splashColor.html">splashColor</a></li>
+          <li><a href="../fp_util/SocialButton/textStyle.html">textStyle</a></li>
+          <li><a href="../fp_util/SocialButton/type.html">type</a></li>
+
+        <li class="section-title"><a href="../fp_util/SocialButton-class.html#instance-methods">Methods</a></li>
+          <li><a href="../fp_util/SocialButton/build.html">build</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/StatelessWidget/createElement.html">createElement</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/debugDescribeChildren.html">debugDescribeChildren</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/debugFillProperties.html">debugFillProperties</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toDiagnosticsNode.html">toDiagnosticsNode</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Diagnosticable/toString.html">toString</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringDeep.html">toStringDeep</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringShallow.html">toStringShallow</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/toStringShort.html">toStringShort</a></li>
+
+        <li class="section-title inherited"><a href="../fp_util/SocialButton-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    fp_util
+      1.0.6
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

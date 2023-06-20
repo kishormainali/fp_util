@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 6.2.2">
+  <meta name="description" content="fp_util API docs, for the Dart programming language.">
+  <title>fp_util - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="https://mkcli.kishormainali.com/">fp_util package</a></li>
+  </ol>
+  <div class="self-name">fp_util</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="fputil">FPUtil</h1>
+<p>Utilities and Extensions for num,BuildContext,EdgeInsets,File,String. constants for horizontal and vertical spacing.</p>
+<blockquote>
+<p>if your figma size is different from Size() then make sure to call    <code>SizeUtils.instance.updateDesignSize(size)</code> on main method;</p>
+</blockquote>
+<h2 id="constants">Constants</h2>
+<h5 id="vertical-spacing">Vertical Spacing</h5>
+<pre class="language-dart"><code class="language-dart">
+import 'package:flutter/material.dart';
+
+class SpacingTest extends StatelessWidget {
+ const SpacingTest({super.key});
+
+ @override
+ Widget build(BuildContext context) {
+   return Column(
+     children: const [
+
+       /// 4px vertical space
+       Sizes.gapV4(true /* set true if you want responsiveness*/),
+
+       /// 8px vertical space
+       Sizes.gapV8(true /* set true if you want responsiveness*/),
+
+       /// 12px vertical space
+       Sizes.gapV12(true /* set true if you want responsiveness*/),
+
+       /// 16px vertical space
+       Sizes.gapV16(true /* set true if you want responsiveness*/),
+
+       /// 24px vertical space
+       Sizes.gapV24(true /* set true if you want responsiveness*/),
+
+       /// 32px vertical space
+       Sizes.gapV32(true /* set true if you want responsiveness*/),
+
+       /// 48px vertical space
+       Sizes.gapV48(true /* set true if you want responsiveness*/),
+
+       /// 54px vertical space
+       Sizes.gapV54(true /* set true if you want responsiveness*/),
+
+       /// 64px vertical space
+       Sizes.gapV64(true /* set true if you want responsiveness*/),
+     ],
+   );
+ }
+}
+</code></pre>
+<h5 id="horizontal-spacing">Horizontal Spacing</h5>
+<pre class="language-dart"><code class="language-dart">
+import 'package:flutter/material.dart';
+
+class SpacingTest extends StatelessWidget {
+const SpacingTest({super.key});
+
+@override
+Widget build(BuildContext context) {
+  return Row(
+    children: const [
+
+      /// 4px horizontal space
+      Sizes.gapH4(true /* set true if you want responsiveness*/),
+
+      /// 8px horizontal space
+      Sizes.gapH8(true /* set true if you want responsiveness*/),
+
+      /// 12px horizontal space
+      Sizes.gapH12(true /* set true if you want responsiveness*/),
+
+      /// 16px horizontal space
+      Sizes.gapH16(true /* set true if you want responsiveness*/),
+
+      /// 24px horizontal space
+      Sizes.gapH24(true /* set true if you want responsiveness*/),
+
+      /// 32px horizontal space
+      Sizes.gapH32(true /* set true if you want responsiveness*/),
+
+      /// 48px horizontal space
+      Sizes.gapH48(true /* set true if you want responsiveness*/),
+
+      /// 54px horizontal space
+      Sizes.gapH54(true /* set true if you want responsiveness*/),
+
+      /// 64px horizontal space
+      Sizes.gapH64(true /* set true if you want responsiveness*/),
+    ],
+  );
+}
+}
+</code></pre>
+<h2 id="extensions">Extensions</h2>
+<h4 id="string-extensions">String Extensions</h4>
+<pre class="language-dart"><code class="language-dart">
+String text = 'hello world';
+
+/// capitalize first letter of string
+final capitalize = text.capitalize;
+
+/// checks given string is null or empty
+bool isNullOrEmpty = text.isNullOrEmpty;
+
+/// checks given text is not null and not empty
+bool isNotNullNotEmpty = text.isNotNullNotEmpty;
+
+/// checks given string is blank
+bool isBlank = text.isBlank;
+
+/// checks given string os not blank
+bool isNotBlank = text.isNotBlank;
+
+/// checks string is email
+bool isEmail = text.isEmail;
+
+/// returns default value is given string is blank
+String withDefault = text.getOrDefault('default value');
+
+/// return null if given string is nullOrEmpty
+String? withNull = text.getOrNull();
+
+/// checks string is valid phone number
+bool isPhoneNumber = text.isValidPhoneNumber;
+
+/// checks string is number
+bool isNumeric = text.isNumeric;
+
+/// removes whitespace from string
+String removeWhiteSpace = text.removeWhiteSpace;
+
+/// removes \n from string
+String removeNextLine = text.removeNextLine;
+
+/// converts to bool
+bool? isBool = text.toBool;
+
+/// converts to int
+int? isInt = text.isInt;
+
+/// converts to double
+double? isDouble = text.toDouble;
+
+/// check string is valid url
+bool isUrl = text.isUrl;
+
+/// check string is image  path
+bool isImage = text.isImage;
+
+/// checks string is video path
+bool isVideo = text.isVideo;
+
+/// checks string is audio path
+bool isAudio = text.isAudio;
+
+/// checks string is pdf path
+bool isPdf = text.isPdf;
+
+/// checks string is text path
+bool isText = text.isTxt;
+
+/// checks string is office word file
+bool isDocx = text.isDocx;
+
+/// checks string is office excel
+bool isXls = text.isXls;
+
+/// checks string is office presentation file
+bool isPpt = text.isPpt;
+
+/// checks string is svg path
+bool isSvg = text.isSvg;
+
+/// checks string is xml file path
+bool isXml = text.isXml;
+
+/// checks string is file path
+bool isFile = text.isFile;
+
+</code></pre>
+<h3 id="num-extensions">Num Extensions</h3>
+<ul>
+<li>
+<h4 id="verticalspace">verticalSpace</h4>
+</li>
+</ul>
+<p>Created SizedBox with Height</p>
+<h6 id="usage">Usage:</h6>
+<pre class="language-dart"><code class="language-dart">import 'package:flutter/material.dart';
+
+class SpacingYTest extends StatelessWidget {
+  const SpacingYTest({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const Text('Text 1'),
+        10.verticalSpace(true /* set true if you want responsiveness*/),
+        const Text('Text 2'),
+      ],
+    );
+  }
+}
+</code></pre>
+<ul>
+<li>
+<h4 id="horizontalspace">horizontalSpace</h4>
+</li>
+</ul>
+<p>Created SizedBox with Width</p>
+<h6 id="usage-2">Usage:</h6>
+<pre class="language-dart"><code class="language-dart">import 'package:flutter/material.dart';
+
+class SpacingXTest extends StatelessWidget {
+  const SpacingXTest({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const Text('Text 1'),
+        10.horizontalSpace(true /* set true if you want responsiveness*/),
+        const Text('Text 2'),
+      ],
+    );
+  }
+}
+</code></pre>
+<ul>
+<li>
+<h5 id="duration">Duration</h5>
+<ul>
+<li>microseconds</li>
+<li>milliseconds</li>
+<li>seconds</li>
+<li>minutes</li>
+<li>hours</li>
+<li>days</li>
+</ul>
+</li>
+</ul>
+<pre class="language-dart"><code class="language-dart">
+/// Creates Duration on microseconds
+final duration = 10.microseconds;
+
+/// Creates Duration on milliseconds
+final duration = 10.milliseconds;
+
+/// Creates Duration on seconds
+final duration = 10.seconds;
+
+/// Creates Duration on minutes
+final duration = 10.minutes;
+
+/// Creates Duration on hours
+final duration = 10.hours;
+
+/// Creates Duration on days
+final duration = 10.days;
+
+</code></pre>
+<ul>
+<li>
+<h5 id="delayed-duration">Delayed Duration</h5>
+<ul>
+<li>delayedMicroSeconds</li>
+<li>delayedMilliSeconds</li>
+<li>delayedSeconds</li>
+<li>delayedMinutes</li>
+<li>delayedHours</li>
+</ul>
+</li>
+</ul>
+<pre class="language-dart"><code class="language-dart">
+/// Creates Future of Duration on microseconds
+final duration = 10.delayedMicroSeconds;
+
+/// Creates Future of Duration on milliseconds
+final duration = 10.delayedMilliseconds;
+
+/// Creates Future of Duration on seconds
+final duration = 10.delayedSeconds;
+
+/// Creates Future of Duration on minutes
+final duration = 10.delayedMinutes;
+
+/// Creates Future of Duration on hours
+final duration = 10.delayedHours;
+
+
+</code></pre>
+<ul>
+<li>
+<h5 id="circularborderradius">circularBorderRadius</h5>
+</li>
+</ul>
+<p>Created Circular Border Radius</p>
+<pre class="language-dart"><code class="language-dart">import 'package:flutter/material.dart';
+
+class RadiusTest extends StatelessWidget {
+  const RadiusTest({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+
+        /// creates 10px rounded corner
+        borderRadius: 10.circularBorderRadius(true /* set true if you want responsiveness*/),
+      ),
+    );
+  }
+}
+</code></pre>
+<ul>
+<li>
+<h5 id="circularradius">circularRadius</h5>
+</li>
+</ul>
+<p>Created Circular Radius</p>
+<pre class="language-dart"><code class="language-dart">import 'package:flutter/material.dart';
+
+class RadiusTest extends StatelessWidget {
+  const RadiusTest({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+
+        /// creates 10px rounded corner for topLeft and topRight
+        borderRadius: BorderRadius.only(topLeft: 10.circularRadius(true /* set true if you want responsiveness*/), 
+        topRight: 10.circularRadius(true /* set true if you want responsiveness*/),),),
+    );
+  }
+}
+</code></pre>
+<ul>
+<li>
+<h5 id="edgeinsets">EdgeInsets</h5>
+<ul>
+<li>all</li>
+<li>padLeft</li>
+<li>padRight</li>
+<li>padTop</li>
+<li>padBottom</li>
+<li>padX</li>
+<li>padY</li>
+</ul>
+</li>
+</ul>
+<pre class="language-dart"><code class="language-dart">import 'package:flutter/material.dart';
+
+class EdgeInsetsTest extends StatelessWidget {
+  const EdgeInsetsTest({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+
+        /// creates padding with 10px all
+        Padding(padding: 10.all(true /* set true if you want responsiveness*/)),
+
+        /// creates padding with 10px top only
+        Padding(padding: 10.padTop(true /* set true if you want responsiveness*/)),
+
+        /// creates padding with 10px right only
+        Padding(padding: 10.padRight(true /* set true if you want responsiveness*/)),
+
+        /// creates padding with 10px bottom only
+        Padding(padding: 10.padBottom(true /* set true if you want responsiveness*/)),
+
+        /// creates padding with 10px left only
+        Padding(padding: 10.padLeft(true /* set true if you want responsiveness*/)),
+
+        /// creates padding with 10px horizontal
+        Padding(padding: 10.padX(true /* set true if you want responsiveness*/)),
+
+        /// creates padding with 10px vertical
+        Padding(padding: 10.padY(true /* set true if you want responsiveness*/)),
+      ],
+    );
+  }
+}
+
+</code></pre>
+<ul>
+<li>
+<h5 id="sliververticalspace">sliverVerticalSpace</h5>
+</li>
+</ul>
+<p>Creates SizedBox with height converted to sliver</p>
+<pre class="language-dart"><code class="language-dart">import 'package:flutter/material.dart';
+
+class SliverSpaceY extends StatelessWidget {
+  const SliverSpaceY({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomScrollView(
+      slivers: [
+        SliverList(/*children*/),
+        10.sliverVerticalSpace(true /* set true if you want responsiveness*/),
+        SliverList(/*children*/)
+      ],
+    );
+  }
+}
+
+</code></pre>
+<ul>
+<li>
+<h5 id="sliverhorizontalspace">sliverHorizontalSpace</h5>
+</li>
+</ul>
+<p>Creates SizedBox with width converted to sliver</p>
+<pre class="language-dart"><code class="language-dart">
+import 'package:flutter/material.dart';
+
+class SliverSpaceX extends StatelessWidget {
+  const SliverSpaceX({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomScrollView(
+      scrollDirection: Axis.horizontal,
+      slivers: [
+        SliverPadding(padding: 10.all(true /* set true if you want responsiveness*/)),
+        10.sliverHorizontalSpace,
+        SliverPadding(padding: 10.all(true /* set true if you want responsiveness*/)),
+      ],
+    );
+  }
+}
+</code></pre>
+<h3 id="widget-extensions">Widget Extensions</h3>
+<ul>
+<li>
+<h4 id="scrollable">scrollable()</h4>
+</li>
+</ul>
+<p>Make widgets scrollable</p>
+<pre class="language-dart"><code class="language-dart">import 'package:flutter/material.dart';
+
+class ScrollableTest extends StatelessWidget {
+  const ScrollableTest({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text('Text 1'),
+        Text('Text 2'),
+        Text('Text 3'),
+      ],
+    ).scrollable();
+  }
+}
+</code></pre>
+<ul>
+<li>
+<h4 id="clickable">clickable()</h4>
+</li>
+</ul>
+<p>Make widgets clickable</p>
+<pre class="language-dart"><code class="language-dart">import 'package:flutter/material.dart';
+
+class ClickableTest extends StatelessWidget {
+  const ClickableTest({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text('Text 1'),
+        Text('Text 2'),
+        Text('Text 3'),
+      ],
+    ).clickable(onTap: () {
+      /*
+      * onTap Callback
+      * */
+    },);
+  }
+}
+</code></pre>
+<ul>
+<li>
+<h4 id="center">center()</h4>
+</li>
+</ul>
+<p>Align widgets to center</p>
+<pre class="language-dart"><code class="language-dart">import 'package:flutter/material.dart';
+
+class CenterTest extends StatelessWidget {
+  const CenterTest({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text('Text 1').center(),
+        Text('Text 2').center(),
+        Text('Text 3').center(),
+      ],
+    );
+  }
+}
+</code></pre>
+<ul>
+<li>
+<h4 id="align">Align</h4>
+<ul>
+<li>alignTopLeft()</li>
+<li>alignTopCenter()</li>
+<li>alignTopRight()</li>
+<li>alignCenterLeft()</li>
+<li>alignCenterRight()</li>
+<li>alignBottomLeft()</li>
+<li>alignBottomCenter()</li>
+<li>alignBottomRight()</li>
+</ul>
+</li>
+</ul>
+<p>Create Align widgets</p>
+<pre class="language-dart"><code class="language-dart">
+import 'package:flutter/material.dart';
+
+class AlignTest extends StatelessWidget {
+  const AlignTest({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+
+        /// align top left
+        const Text('Text 1').alignTopLeft(),
+
+        /// align top center
+        const Text('Text 1').alignTopCenter(),
+
+        /// align top right
+        const Text('Text 1').alignTopRight(),
+
+        /// align center left
+        const Text('Text 1').alignCenterLeft(),
+
+        /// align center
+        const Text('Text 1').center(),
+
+        /// align center right
+        const Text('Text 1').alignCenterRight(),
+
+        /// align bottom left
+        const Text('Text 1').alignBottomLeft(),
+
+        /// align bottom center
+        const Text('Text 1').alignBottomCenter(),
+
+        /// align bottom right
+        const Text('Text 1').alignBottomRight(),
+      ],
+    );
+  }
+}
+</code></pre>
+<ul>
+<li>
+<h4 id="padding">Padding</h4>
+<ul>
+<li>pad</li>
+<li>padX</li>
+<li>padY</li>
+<li>padLeft</li>
+<li>padTop</li>
+<li>padRight</li>
+<li>padBottom</li>
+<li>padLTRB</li>
+</ul>
+</li>
+</ul>
+<p>Wraps with padding widget</p>
+<pre class="language-dart"><code class="language-dart">
+import 'package:flutter/material.dart';
+
+class PaddingTest extends StatelessWidget {
+  const PaddingTest({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+
+        /// wraps with all padding
+        const Text('Text 1').pad(10,responsive:true /* set true if you want responsiveness */),
+
+        /// wraps with left only padding
+        const Text('Text 1').padLeft(10,responsive:true /* set true if you want responsiveness */),
+
+        /// wraps with right only padding
+        const Text('Text 1').padRight(10,responsive:true /* set true if you want responsiveness */),
+
+        /// wraps with bottom only padding
+        const Text('Text 1').padBottom(10,responsive:true /* set true if you want responsiveness */),
+
+        /// wraps with top only padding
+        const Text('Text 1').padTop(10,responsive:true /* set true if you want responsiveness */),
+
+        /// wraps with horizontal padding
+        const Text('Text 1').padX(10,responsive:true /* set true if you want responsiveness */),
+
+        /// wraps width vertical padding
+        const Text('Text 1').padY(10,responsive:true /* set true if you want responsiveness */),
+
+        /// wraps widget with padding of left top right bottom
+        const Text('Text 1').padLTRB(left: 10, top: 5, right: 10, bottom: 10,responsive:true /* set true if you want responsiveness */),
+
+      ],
+    );
+  }
+}
+</code></pre>
+<h3 id="context-extensions">Context Extensions</h3>
+<ul>
+<li>
+<h4 id="theme">theme</h4>
+</li>
+<li>
+<h4 id="colorscheme">colorScheme</h4>
+</li>
+<li>
+<h4 id="texttheme">textTheme</h4>
+<ul>
+<li>displayLarge</li>
+<li>displayMedium</li>
+<li>displaySmall</li>
+<li>headlineLarge</li>
+<li>headlineMedium</li>
+<li>headlineSmall</li>
+<li>titleLarge</li>
+<li>titleMedium</li>
+<li>titleSmall</li>
+<li>labelLarge</li>
+<li>labelMedium</li>
+<li>labelSmall</li>
+<li>bodyLarge</li>
+<li>bodyMedium</li>
+<li>bodySmall</li>
+</ul>
+</li>
+<li>
+<h4 id="size">size</h4>
+<ul>
+<li>width</li>
+<li>height</li>
+<li>percentWidth</li>
+<li>percentHeight</li>
+</ul>
+</li>
+<li>
+<h4 id="focus">Focus</h4>
+<ul>
+<li>removeFocus</li>
+<li>hasFocus</li>
+</ul>
+</li>
+<li>
+<h4 id="edgeinsets-2">EdgeInsets</h4>
+<ul>
+<li>padding</li>
+<li>viewInsets</li>
+<li>viewPadding</li>
+</ul>
+</li>
+<li>
+<h4 id="mediaquery">MediaQuery</h4>
+<ul>
+<li>mq</li>
+</ul>
+</li>
+<li>
+<h4 id="responsive-value">Responsive Value</h4>
+<ul>
+<li>responsiveValue</li>
+</ul>
+</li>
+</ul>
+<pre class="language-dart"><code class="language-dart">  final theme = context.theme;
+  final colorScheme = context.colorScheme;
+
+  /// display text styles
+  final displayLarge = context.displayLarge;
+  final displayMedium = context.displayMedium;
+  final displaySmall = context.displaySmall;
+
+  /// headline style
+  final headlineLarge = context.headlineLarge;
+  final headlineMedium = context.headlineMedium;
+  final headlineSmall = context.headlineSmall;
+
+   /// title style
+  final titleLarge = context.titleLarge;
+  final titleMedium = context.titleMedium;
+  final titleSmall = context.titleSmall;
+
+   /// label style
+  final labelLarge = context.labelLarge;
+  final labelMedium = context.labelMedium;
+  final labelSmall = context.labelSmall;
+
+   /// body style
+  final bodyLarge = context.bodyLarge;
+  final bodyMedium = context.bodyMedium;
+  final bodySmall = context.bodySmall;
+
+  /// sizes
+  final width = context.width(true /* set true if you want responsiveness */);
+  final height = context.height(true /* set true if you want responsiveness */);
+
+  /// 1% of screen width
+  final widthPercentage = context.pw(.1,true /* set true if you want responsiveness */);
+
+  /// 1% of screen height
+  final heightPercentage = context.ph(.4,true /* set true if you want responsiveness */);
+
+  /// remove focus / hide keyboard
+  context.removeFocus();
+
+  /// check is keyboard is open
+  context.hasFocus;
+
+  /// padding
+  /// The parts of the display that are partially obscured by system UI, 
+  /// typically by the hardware display "notches" or the system status bar.
+  /// for more check [MediaQuery.of(context).padding]
+  context.padding;
+
+  /// view insets
+  /// The parts of the display that are completely obscured by system UI, 
+  /// typically by the device's keyboard.
+  /// for more check [MediaQuery.of(context).viewInsets]
+  context.viewInsets;
+
+  /// view padding
+  /// The parts of the display that are partially obscured by system UI, 
+  /// typically by the hardware display "notches" or the system status bar.
+  /// for more check [MediaQuery.of(context).viewPadding]
+  context.viewPadding;
+
+  /// media query
+  context.mq;
+
+  /// responsive value according to device type
+  final rValue = context.responsiveValue&lt;double&gt;(10,desktop:30,tablet:20);
+
+</code></pre>
+<h2 id="fpsnacbar">FPSnacbar</h2>
+<p>helper class for showing snackbars</p>
+<ul>
+<li>
+<h3 id="variants">Variants</h3>
+<ul>
+<li>
+<h4 id="success">Success</h4>
+Snackbar for success messages
+<pre class="language-dart"><code class="language-dart">   FPSnackbar.success(
+        context,
+        title: 'Title',
+        message: 'User created successfully',
+      );
+</code></pre>
+</li>
+<li>
+<h4 id="error">Error</h4>
+Snackbar for error messages
+<pre class="language-dart"><code class="language-dart">   FPSnackbar.error(
+        context,
+        title: 'Title',
+        message: 'Something went wrong!',
+      );
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<h4 id="info">Info</h4>
+ Snackbar for info messages
+<pre class="language-dart"><code class="language-dart">   FPSnackbar.info(
+        context,
+        title: 'Title',
+        message: 'Some informative message',
+      );
+</code></pre>
+</li>
+<li>
+<h4 id="warning">Warning</h4>
+Snackbar for warning messages
+<pre class="language-dart"><code class="language-dart">   FPSnackbar.warning(
+        context,
+        title: 'Title',
+        message: 'Warning message',
+      );
+</code></pre>
+</li>
+<li>
+<h4 id="custom">Custom</h4>
+Snackbar for custom snackbars
+<pre class="language-dart"><code class="language-dart">   FPSnackbar.custom(
+        context,
+        title: 'Create User',
+        message: 'message',
+        backgroundColor: Colors.redAccent.shade100,
+        sideBarColor: Colors.red,
+        textStyle: const TextStyle(
+          fontSize: 14,
+          color: Colors.white,
+        ),
+        titleTextStyle: const TextStyle(fontSize: 18),
+        icon: const Icon(Icons.check),
+        duration: 4,
+      );
+</code></pre>
+</li>
+</ul>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="fp_util">
+  <span class="name"><a href="fp_util/fp_util-library.html">fp_util</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="https://mkcli.kishormainali.com/">fp_util package</a></li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">fp_util</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="fp_util/fp_util-library.html">fp_util</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    fp_util
+      1.0.6
+  </span>
+
+  
+</footer>
+
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="fp_util library API docs, for the Dart programming language.">
+  <title>fp_util library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">fp_util</a></li>
+    <li class="self-crumb">fp_util library</li>
+  </ol>
+  <div class="self-name">fp_util</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+    
+      <div>
+<h1><span class="kind-library">fp_util</span> library 
+ 
+</h1></div>
+
+    
+
+
+    <section class="summary offset-anchor" id="classes">
+      <h2>Classes</h2>
+
+      <dl>
+        <dt id="AnsiColor">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/AnsiColor-class.html">AnsiColor</a></span> 
+
+</dt>
+<dd>
+  This class handles colorizing of terminal output.
+</dd>
+
+        <dt id="AsyncError">
+  <span class="name "><a href="../fp_util/AsyncError-class.html">AsyncError</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  error state for async status
+</dd>
+
+        <dt id="AsyncInitial">
+  <span class="name "><a href="../fp_util/AsyncInitial-class.html">AsyncInitial</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  initial state for async status
+</dd>
+
+        <dt id="AsyncLoading">
+  <span class="name "><a href="../fp_util/AsyncLoading-class.html">AsyncLoading</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  loading state for async status
+</dd>
+
+        <dt id="AsyncStatus">
+  <span class="name "><a href="../fp_util/AsyncStatus-class.html">AsyncStatus</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  base class for async status
+async status should be <a href="../fp_util/AsyncInitial-class.html">AsyncInitial</a>,<a href="../fp_util/AsyncLoading-class.html">AsyncLoading</a>,<a href="../fp_util/AsyncError-class.html">AsyncError</a> and <a href="../fp_util/AsyncSuccess-class.html">AsyncSuccess</a>
+{@template fp_util.AsyncStatus}
+</dd>
+
+        <dt id="AsyncSuccess">
+  <span class="name "><a href="../fp_util/AsyncSuccess-class.html">AsyncSuccess</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  success state for async status
+</dd>
+
+        <dt id="BaseDialog">
+  <span class="name "><a href="../fp_util/BaseDialog-class.html">BaseDialog</a><span class="signature">&lt;<wbr><span class="type-parameter">A extends <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>, <span class="type-parameter">I extends <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="BasicAlertDialog">
+  <span class="name "><a href="../fp_util/BasicAlertDialog-class.html">BasicAlertDialog</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="BasicDialogAction">
+  <span class="name "><a href="../fp_util/BasicDialogAction-class.html">BasicDialogAction</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="ColumnWithSpace">
+  <span class="name "><a href="../fp_util/ColumnWithSpace-class.html">ColumnWithSpace</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="ConsoleOutput">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/ConsoleOutput-class.html">ConsoleOutput</a></span> 
+
+</dt>
+<dd>
+  Default implementation of <a href="https://pub.dev/documentation/logger/1.4.0/logger/LogOutput-class.html">LogOutput</a>.
+</dd>
+
+        <dt id="DevelopmentFilter">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/DevelopmentFilter-class.html">DevelopmentFilter</a></span> 
+
+</dt>
+<dd>
+  Prints all logs with <code>level &gt;= Logger.level</code> while in development mode (eg
+when <code>assert</code>s are evaluated, Flutter calls this debug mode).
+</dd>
+
+        <dt id="DialogAction">
+  <span class="name "><a href="../fp_util/DialogAction-class.html">DialogAction</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="DialogData">
+  <span class="name "><a href="../fp_util/DialogData-class.html">DialogData</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="EmailValidator">
+  <span class="name "><a href="../fp_util/EmailValidator-class.html">EmailValidator</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="Field">
+  <span class="name "><a href="../fp_util/Field-class.html">Field</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Field class for form handling
+</dd>
+
+        <dt id="FileOutput">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/FileOutput-class.html">FileOutput</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="FileX">
+  <span class="name "><a href="../fp_util/FileX-class.html">FileX</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="FPSnackbar">
+  <span class="name "><a href="../fp_util/FPSnackbar-class.html">FPSnackbar</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="HybridPrinter">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/HybridPrinter-class.html">HybridPrinter</a></span> 
+
+</dt>
+<dd>
+  A decorator for a <a href="https://pub.dev/documentation/logger/1.4.0/logger/LogPrinter-class.html">LogPrinter</a> that allows for the composition of
+different printers to handle different log messages. Provide it's
+constructor with a base printer, but include named parameters for
+any levels that have a different printer:
+</dd>
+
+        <dt id="ImagePickerHelper">
+  <span class="name "><a href="../fp_util/ImagePickerHelper-class.html">ImagePickerHelper</a></span> 
+
+</dt>
+<dd>
+  Helper Class to pick image and file
+</dd>
+
+        <dt id="LogEvent">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogEvent-class.html">LogEvent</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="LogFilter">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogFilter-class.html">LogFilter</a></span> 
+
+</dt>
+<dd>
+  An abstract filter of log messages.
+</dd>
+
+        <dt id="LogfmtPrinter">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogfmtPrinter-class.html">LogfmtPrinter</a></span> 
+
+</dt>
+<dd>
+  Outputs a logfmt message:
+</dd>
+
+        <dt id="Logger">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/Logger-class.html">Logger</a></span> 
+
+</dt>
+<dd>
+  Use instances of logger to send log messages to the <a href="https://pub.dev/documentation/logger/1.4.0/logger/LogPrinter-class.html">LogPrinter</a>.
+</dd>
+
+        <dt id="LogOutput">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogOutput-class.html">LogOutput</a></span> 
+
+</dt>
+<dd>
+  Log output receives a <a href="https://pub.dev/documentation/logger/1.4.0/logger/OutputEvent-class.html">OutputEvent</a> from <a href="https://pub.dev/documentation/logger/1.4.0/logger/LogPrinter-class.html">LogPrinter</a> and sends it to the
+desired destination.
+</dd>
+
+        <dt id="LogPrinter">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogPrinter-class.html">LogPrinter</a></span> 
+
+</dt>
+<dd>
+  An abstract handler of log events.
+</dd>
+
+        <dt id="MaxLengthValidator">
+  <span class="name "><a href="../fp_util/MaxLengthValidator-class.html">MaxLengthValidator</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="MemoryOutput">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/MemoryOutput-class.html">MemoryOutput</a></span> 
+
+</dt>
+<dd>
+  Buffers <a href="https://pub.dev/documentation/logger/1.4.0/logger/OutputEvent-class.html">OutputEvent</a>s.
+</dd>
+
+        <dt id="MinLengthValidator">
+  <span class="name "><a href="../fp_util/MinLengthValidator-class.html">MinLengthValidator</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="MultiOutput">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/MultiOutput-class.html">MultiOutput</a></span> 
+
+</dt>
+<dd>
+  Logs simultaneously to multiple <a href="https://pub.dev/documentation/logger/1.4.0/logger/LogOutput-class.html">LogOutput</a> outputs.
+</dd>
+
+        <dt id="OutputEvent">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/OutputEvent-class.html">OutputEvent</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="PrefixPrinter">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/PrefixPrinter-class.html">PrefixPrinter</a></span> 
+
+</dt>
+<dd>
+  A decorator for a <a href="https://pub.dev/documentation/logger/1.4.0/logger/LogPrinter-class.html">LogPrinter</a> that allows for the prepending of every
+line in the log output with a string for the level of that log. For
+example:
+</dd>
+
+        <dt id="PrettyPrinter">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/PrettyPrinter-class.html">PrettyPrinter</a></span> 
+
+</dt>
+<dd>
+  Default implementation of <a href="https://pub.dev/documentation/logger/1.4.0/logger/LogPrinter-class.html">LogPrinter</a>.
+</dd>
+
+        <dt id="ProductionFilter">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/ProductionFilter-class.html">ProductionFilter</a></span> 
+
+</dt>
+<dd>
+  Prints all logs with <code>level &gt;= Logger.level</code> even in production.
+</dd>
+
+        <dt id="RequiredValidator">
+  <span class="name "><a href="../fp_util/RequiredValidator-class.html">RequiredValidator</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="ResponsiveBuilder">
+  <span class="name "><a href="../fp_util/ResponsiveBuilder-class.html">ResponsiveBuilder</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="RowWithSpace">
+  <span class="name "><a href="../fp_util/RowWithSpace-class.html">RowWithSpace</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="ScaffoldWrapper">
+  <span class="name "><a href="../fp_util/ScaffoldWrapper-class.html">ScaffoldWrapper</a></span> 
+
+</dt>
+<dd>
+  Wrapper arround scaffold
+</dd>
+
+        <dt id="SimplePrinter">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/SimplePrinter-class.html">SimplePrinter</a></span> 
+
+</dt>
+<dd>
+  Outputs simple log messages:
+</dd>
+
+        <dt id="Sizes">
+  <span class="name "><a href="../fp_util/Sizes-class.html">Sizes</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="SizeUtils">
+  <span class="name "><a href="../fp_util/SizeUtils-class.html">SizeUtils</a></span> 
+
+</dt>
+<dd>
+  @template
+Size utils for responsiveness
+@end-template
+</dd>
+
+        <dt id="SocialButton">
+  <span class="name "><a href="../fp_util/SocialButton-class.html">SocialButton</a></span> 
+
+</dt>
+<dd>
+  Social Button
+Social Button includes google, facebook and apple
+</dd>
+
+        <dt id="StreamOutput">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/StreamOutput-class.html">StreamOutput</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="Validator">
+  <span class="name "><a href="../fp_util/Validator-class.html">Validator</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="mixins">
+      <h2>Mixins</h2>
+
+      <dl>
+        <dt id="FormMixin">
+  <span class="name "><a href="../fp_util/FormMixin-mixin.html">FormMixin</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="extensions">
+      <h2>Extensions</h2>
+
+      <dl>
+        <dt id="AsyncStatusX">
+    <span class="name "><a href="../fp_util/AsyncStatusX.html">AsyncStatusX</a></span> 
+
+</dt>
+<dd>
+    extensions for async status
+</dd>
+
+
+        <dt id="BuildContextX">
+    <span class="name "><a href="../fp_util/BuildContextX.html">BuildContextX</a></span> 
+
+</dt>
+<dd>
+    
+</dd>
+
+
+        <dt id="DateTimeX">
+    <span class="name "><a href="../fp_util/DateTimeX.html">DateTimeX</a></span> 
+
+</dt>
+<dd>
+    
+</dd>
+
+
+        <dt id="EdgeInsetsX">
+    <span class="name "><a href="../fp_util/EdgeInsetsX.html">EdgeInsetsX</a></span> 
+
+</dt>
+<dd>
+    
+</dd>
+
+
+        <dt id="FileExtensionX">
+    <span class="name "><a href="../fp_util/FileExtensionX.html">FileExtensionX</a></span> 
+
+</dt>
+<dd>
+    
+</dd>
+
+
+        <dt id="IterableX">
+    <span class="name "><a href="../fp_util/IterableX.html">IterableX</a></span> 
+
+</dt>
+<dd>
+    
+</dd>
+
+
+        <dt id="IterationWithIndex">
+    <span class="name "><a href="../fp_util/IterationWithIndex.html">IterationWithIndex</a></span> 
+
+</dt>
+<dd>
+    
+</dd>
+
+
+        <dt id="NumX">
+    <span class="name "><a href="../fp_util/NumX.html">NumX</a></span> 
+
+</dt>
+<dd>
+    
+</dd>
+
+
+        <dt id="PlatformFileX">
+    <span class="name "><a href="../fp_util/PlatformFileX.html">PlatformFileX</a></span> 
+
+</dt>
+<dd>
+    extension to convert file
+</dd>
+
+
+        <dt id="StringNX">
+    <span class="name "><a href="../fp_util/StringNX.html">StringNX</a></span> 
+
+</dt>
+<dd>
+    
+</dd>
+
+
+        <dt id="StringX">
+    <span class="name "><a href="../fp_util/StringX.html">StringX</a></span> 
+
+</dt>
+<dd>
+    
+</dd>
+
+
+        <dt id="WidgetX">
+    <span class="name "><a href="../fp_util/WidgetX.html">WidgetX</a></span> 
+
+</dt>
+<dd>
+    
+</dd>
+
+
+        <dt id="XFileX">
+    <span class="name "><a href="../fp_util/XFileX.html">XFileX</a></span> 
+
+</dt>
+<dd>
+    
+</dd>
+
+
+      </dl>
+    </section>
+
+
+    <section class="summary offset-anchor" id="properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="logger" class="property">
+  <span class="name"><a href="../fp_util/logger.html">logger</a></span>
+  <span class="signature">&#8594; <a href="https://pub.dev/documentation/logger/1.4.0/logger/Logger-class.html">Logger</a></span> 
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+
+      <dl class="callables">
+        <dt id="showPlatformDialog" class="callable">
+  <span class="name"><a href="../fp_util/showPlatformDialog.html">showPlatformDialog</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="showPlatformDialog-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span><span class="parameter" id="showPlatformDialog-param-builder">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/WidgetBuilder.html">WidgetBuilder</a></span> <span class="parameter-name">builder</span>, </span><span class="parameter" id="showPlatformDialog-param-useRootNavigator"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">useRootNavigator</span> = <span class="default-value">true</span>, </span><span class="parameter" id="showPlatformDialog-param-barrierDismissible"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">barrierDismissible</span> = <span class="default-value">true</span>, </span><span class="parameter" id="showPlatformDialog-param-useSafeArea"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">useSafeArea</span> = <span class="default-value">true</span>, </span><span class="parameter" id="showPlatformDialog-param-barrierColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a>?</span> <span class="parameter-name">barrierColor</span>, </span><span class="parameter" id="showPlatformDialog-param-useMaterial"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">useMaterial</span> = <span class="default-value">false</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="enums">
+      <h2>Enums</h2>
+
+      <dl>
+        <dt id="DeviceType">
+  <span class="name "><a href="../fp_util/DeviceType.html">DeviceType</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="FormStatus">
+  <span class="name "><a href="../fp_util/FormStatus.html">FormStatus</a></span> 
+
+</dt>
+<dd>
+  status for form
+</dd>
+
+        <dt id="Level">
+  <span class="name "><a href="https://pub.dev/documentation/logger/1.4.0/logger/Level.html">Level</a></span> 
+
+</dt>
+<dd>
+  <a href="https://pub.dev/documentation/logger/1.4.0/logger/Level.html">Level</a>s to control logging output. Logging can be enabled to include all
+levels above certain <a href="https://pub.dev/documentation/logger/1.4.0/logger/Level.html">Level</a>.
+</dd>
+
+        <dt id="SocialType">
+  <span class="name "><a href="../fp_util/SocialType.html">SocialType</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+
+      <dl>
+          
+  <dt id="LogCallback" class="callable">
+    <span class="name"><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogCallback.html">LogCallback</a></span><span class="signature">
+      <span class="returntype parameter">= void Function<span class="signature">(<span class="parameter" id="param-event"><span class="type-annotation"><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogEvent-class.html">LogEvent</a></span> <span class="parameter-name">event</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    
+    
+
+  </dd>
+
+          
+  <dt id="OutputCallback" class="callable">
+    <span class="name"><a href="https://pub.dev/documentation/logger/1.4.0/logger/OutputCallback.html">OutputCallback</a></span><span class="signature">
+      <span class="returntype parameter">= void Function<span class="signature">(<span class="parameter" id="param-event"><span class="type-annotation"><a href="https://pub.dev/documentation/logger/1.4.0/logger/OutputEvent-class.html">OutputEvent</a></span> <span class="parameter-name">event</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    
+    
+
+  </dd>
+
+      </dl>
+    </section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">fp_util</a></li>
+  <li class="self-crumb">fp_util library</li>
+</ol>
+
+
+    <h5><span class="package-name">fp_util</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../fp_util/fp_util-library.html">fp_util</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>fp_util library</h5>
+    <ol>
+      <li class="section-title"><a href="../fp_util/fp_util-library.html#classes">Classes</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/AnsiColor-class.html">AnsiColor</a></li>
+        <li><a href="../fp_util/AsyncError-class.html">AsyncError</a></li>
+        <li><a href="../fp_util/AsyncInitial-class.html">AsyncInitial</a></li>
+        <li><a href="../fp_util/AsyncLoading-class.html">AsyncLoading</a></li>
+        <li><a href="../fp_util/AsyncStatus-class.html">AsyncStatus</a></li>
+        <li><a href="../fp_util/AsyncSuccess-class.html">AsyncSuccess</a></li>
+        <li><a href="../fp_util/BaseDialog-class.html">BaseDialog</a></li>
+        <li><a href="../fp_util/BasicAlertDialog-class.html">BasicAlertDialog</a></li>
+        <li><a href="../fp_util/BasicDialogAction-class.html">BasicDialogAction</a></li>
+        <li><a href="../fp_util/ColumnWithSpace-class.html">ColumnWithSpace</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/ConsoleOutput-class.html">ConsoleOutput</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/DevelopmentFilter-class.html">DevelopmentFilter</a></li>
+        <li><a href="../fp_util/DialogAction-class.html">DialogAction</a></li>
+        <li><a href="../fp_util/DialogData-class.html">DialogData</a></li>
+        <li><a href="../fp_util/EmailValidator-class.html">EmailValidator</a></li>
+        <li><a href="../fp_util/Field-class.html">Field</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/FileOutput-class.html">FileOutput</a></li>
+        <li><a href="../fp_util/FileX-class.html">FileX</a></li>
+        <li><a href="../fp_util/FPSnackbar-class.html">FPSnackbar</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/HybridPrinter-class.html">HybridPrinter</a></li>
+        <li><a href="../fp_util/ImagePickerHelper-class.html">ImagePickerHelper</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogEvent-class.html">LogEvent</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogFilter-class.html">LogFilter</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogfmtPrinter-class.html">LogfmtPrinter</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/Logger-class.html">Logger</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogOutput-class.html">LogOutput</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogPrinter-class.html">LogPrinter</a></li>
+        <li><a href="../fp_util/MaxLengthValidator-class.html">MaxLengthValidator</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/MemoryOutput-class.html">MemoryOutput</a></li>
+        <li><a href="../fp_util/MinLengthValidator-class.html">MinLengthValidator</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/MultiOutput-class.html">MultiOutput</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/OutputEvent-class.html">OutputEvent</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/PrefixPrinter-class.html">PrefixPrinter</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/PrettyPrinter-class.html">PrettyPrinter</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/ProductionFilter-class.html">ProductionFilter</a></li>
+        <li><a href="../fp_util/RequiredValidator-class.html">RequiredValidator</a></li>
+        <li><a href="../fp_util/ResponsiveBuilder-class.html">ResponsiveBuilder</a></li>
+        <li><a href="../fp_util/RowWithSpace-class.html">RowWithSpace</a></li>
+        <li><a href="../fp_util/ScaffoldWrapper-class.html">ScaffoldWrapper</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/SimplePrinter-class.html">SimplePrinter</a></li>
+        <li><a href="../fp_util/Sizes-class.html">Sizes</a></li>
+        <li><a href="../fp_util/SizeUtils-class.html">SizeUtils</a></li>
+        <li><a href="../fp_util/SocialButton-class.html">SocialButton</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/StreamOutput-class.html">StreamOutput</a></li>
+        <li><a href="../fp_util/Validator-class.html">Validator</a></li>
+
+      <li class="section-title"><a href="../fp_util/fp_util-library.html#extensions">Extensions</a></li>
+        <li><a href="../fp_util/AsyncStatusX.html">AsyncStatusX</a></li>
+        <li><a href="../fp_util/BuildContextX.html">BuildContextX</a></li>
+        <li><a href="../fp_util/DateTimeX.html">DateTimeX</a></li>
+        <li><a href="../fp_util/EdgeInsetsX.html">EdgeInsetsX</a></li>
+        <li><a href="../fp_util/FileExtensionX.html">FileExtensionX</a></li>
+        <li><a href="../fp_util/IterableX.html">IterableX</a></li>
+        <li><a href="../fp_util/IterationWithIndex.html">IterationWithIndex</a></li>
+        <li><a href="../fp_util/NumX.html">NumX</a></li>
+        <li><a href="../fp_util/PlatformFileX.html">PlatformFileX</a></li>
+        <li><a href="../fp_util/StringNX.html">StringNX</a></li>
+        <li><a href="../fp_util/StringX.html">StringX</a></li>
+        <li><a href="../fp_util/WidgetX.html">WidgetX</a></li>
+        <li><a href="../fp_util/XFileX.html">XFileX</a></li>
+
+      <li class="section-title"><a href="../fp_util/fp_util-library.html#mixins">Mixins</a></li>
+        <li><a href="../fp_util/FormMixin-mixin.html">FormMixin</a></li>
+
+
+      <li class="section-title"><a href="../fp_util/fp_util-library.html#properties">Properties</a></li>
+        <li><a href="../fp_util/logger.html">logger</a></li>
+
+      <li class="section-title"><a href="../fp_util/fp_util-library.html#functions">Functions</a></li>
+        <li><a href="../fp_util/showPlatformDialog.html">showPlatformDialog</a></li>
+
+      <li class="section-title"><a href="../fp_util/fp_util-library.html#enums">Enums</a></li>
+        <li><a href="../fp_util/DeviceType.html">DeviceType</a></li>
+        <li><a href="../fp_util/FormStatus.html">FormStatus</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/Level.html">Level</a></li>
+        <li><a href="../fp_util/SocialType.html">SocialType</a></li>
+
+      <li class="section-title"><a href="../fp_util/fp_util-library.html#typedefs">Typedefs</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogCallback.html">LogCallback</a></li>
+        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/OutputCallback.html">OutputCallback</a></li>
+
+</ol>
+
+  </div><!--/sidebar-offcanvas-right-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    fp_util
+      1.0.6
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

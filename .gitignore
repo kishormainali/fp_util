@@ -1,0 +1,5 @@
+!melos_mk_core.iml
+!.idea/modules.xml
+
+example/*
+!example/README.md
