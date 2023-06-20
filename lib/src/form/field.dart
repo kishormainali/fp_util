@@ -30,7 +30,9 @@ class Field<T> with _$Field<T> {
   String? get displayError => isPure ? null : errorMessage;
 
   /// check field is valid or not
-  bool get isValid => validators.isEmpty ? true : validators.every((validate) => validate(value));
+  bool get isValid => validators.isEmpty
+      ? true
+      : validators.every((validate) => validate(value));
 
   /// error message for field
   /// validate field with every validators

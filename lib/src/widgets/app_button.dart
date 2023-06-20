@@ -143,8 +143,7 @@ class AppButton extends StatelessWidget {
       backgroundColor: MaterialStatePropertyAll(
         disabled ? effectiveBg.withOpacity(0.12) : effectiveBg,
       ),
-      foregroundColor:
-          MaterialStatePropertyAll(disabled ? effectiveBg : effectiveFg),
+      foregroundColor: MaterialStatePropertyAll(disabled ? effectiveBg : effectiveFg),
       shape: MaterialStatePropertyAll(shape),
       surfaceTintColor: const MaterialStatePropertyAll(Colors.white),
       overlayColor: MaterialStatePropertyAll(effectiveFg.withOpacity(0.12)),

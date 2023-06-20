@@ -9,12 +9,9 @@ extension BuildContextX on BuildContext {
   ColorScheme get colorScheme => Theme.of(this).colorScheme;
 
   /// check isDarkTheme enabled
-  bool get isDarkTheme =>
-      theme.brightness == Brightness.dark ||
-      colorScheme.brightness == Brightness.dark;
+  bool get isDarkTheme => theme.brightness == Brightness.dark || colorScheme.brightness == Brightness.dark;
 
-  Color themedColor(Color light, [Color? dark]) =>
-      isDarkTheme ? (dark ?? light) : light;
+  Color themedColor(Color light, [Color? dark]) => isDarkTheme ? (dark ?? light) : light;
 
   /// get textTheme
   TextTheme get textTheme => Theme.of(this).textTheme;
@@ -110,28 +107,26 @@ extension BuildContextX on BuildContext {
   Color get onErrorContainerColor => colorScheme.onErrorContainer;
 
   /// get size
-  Size get size => MediaQuery.of(this).size;
+  Size get size => MediaQuery.sizeOf(this);
 
   /// media query
   MediaQueryData get mq => MediaQuery.of(this);
 
   /// screen width
-  double width([bool responsive = false]) =>
-      responsive ? SizeUtils.instance.width : size.width;
+  double width([bool responsive = false]) => responsive ? SizeUtils.instance.width : size.width;
 
   /// screen height
-  double height([bool responsive = false]) =>
-      responsive ? SizeUtils.instance.height : size.height;
+  double height([bool responsive = false]) => responsive ? SizeUtils.instance.height : size.height;
 
   /// window padding
   /// The parts of the display that are partially obscured by system UI, typically by the hardware display "notches" or the system status bar.
-  EdgeInsets get padding => MediaQuery.of(this).padding;
+  EdgeInsets get padding => MediaQuery.paddingOf(this);
 
   /// viewInsets padding
-  EdgeInsets get viewInsets => MediaQuery.of(this).viewInsets;
+  EdgeInsets get viewInsets => MediaQuery.viewInsetsOf(this);
 
   /// viewPadding
-  EdgeInsets get viewPadding => MediaQuery.of(this).viewPadding;
+  EdgeInsets get viewPadding => MediaQuery.viewPaddingOf(this);
 
   /// safeAreaBottomPadding
   double get safeAreaBottomPadding => padding.bottom;
@@ -155,8 +150,7 @@ extension BuildContextX on BuildContext {
   }
 
   /// check whether keyboard has focus or not
-  bool get hasFocus =>
-      FocusScope.of(this).hasFocus || FocusScope.of(this).hasPrimaryFocus;
+  bool get hasFocus => FocusScope.of(this).hasFocus || FocusScope.of(this).hasPrimaryFocus;
 
   /// extension to get responsive value according to device type [ mobile,tablet,desktop ]
   T responsiveValue<T>(
@@ -168,7 +162,7 @@ extension BuildContextX on BuildContext {
     /// value for desktop
     T? desktop,
   }) {
-    final size = MediaQuery.of(this).size;
+    final size = MediaQuery.sizeOf(this);
     final deviceType = DeviceType.fromSize(size);
     if (deviceType == DeviceType.desktop) {
       if (desktop != null) return desktop;

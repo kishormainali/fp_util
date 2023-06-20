@@ -635,6 +635,48 @@ class PaddingTest extends StatelessWidget {
 
 - #### theme
 - #### colorScheme
+  - primaryColor
+  - onPrimaryColor
+  - primaryContainerColor
+  - onPrimaryContainerColor
+
+  /// secondary colors
+  - secondaryColor
+  - onSecondaryColor
+  - secondaryContainerColor
+  - onSecondaryContainerColor
+
+  /// tertiary color
+  - tertiaryColor
+  - onTertiaryColor
+  - tertiaryContainerColor
+  - onTertiaryContainerColor
+
+  /// surface color
+  - surfaceColor
+  - onSurfaceColor
+
+  /// surface variant color
+  - surfaceVariantColor
+  - onSurfaceVariantColor
+
+  /// inverse colors
+  - inverseSurfaceColor
+  - onInverseSurfaceColor
+
+  /// background color
+  - backgroundColor
+  - onBackgroundContainerColor
+
+  /// outline color
+  - outlineColor
+  - outlineVariantColor
+
+  /// error colors
+  - errorColor
+  - onErrorColor
+  - errorContainerColor
+  - onErrorContainerColor
 - #### textTheme
   - displayLarge
   - displayMedium
@@ -651,6 +693,7 @@ class PaddingTest extends StatelessWidget {
   - bodyLarge
   - bodyMedium
   - bodySmall
+
 - #### size
   - width 
   - height
@@ -697,6 +740,52 @@ class PaddingTest extends StatelessWidget {
   final bodyMedium = context.bodyMedium;
   final bodySmall = context.bodySmall;
 
+
+/// colors
+final Color primaryColor = context.primaryColor;
+final Color onPrimaryColor = context.onPrimaryColor;
+final Color primaryContainerColor = context.primaryContainerColor;
+final Color onPrimaryContainerColor = context.onPrimaryContainerColor;
+
+/// secondary colors
+final Color secondaryColor = context.secondaryColor;
+final Color onSecondaryColor = context.onSecondaryColor;
+final Color secondaryContainerColor = context.secondaryContainerColor;
+final Color onSecondaryContainerColor => colorScheme.onSecondaryContainer;
+
+/// tertiary color
+final Color tertiaryColor = context.tertiaryColor;
+final Color onTertiaryColor = context.onTertiaryColor;
+final Color tertiaryContainerColor = context.tertiaryContainerColor;
+final Color onTertiaryContainerColor = context.onTertiaryContainerColor;
+
+/// surface color
+final Color surfaceColor = context.surfaceColor;
+final Color onSurfaceColor = context.onSurfaceColor;
+
+/// surface variant color
+final Color surfaceVariantColor = context.surfaceVariantColor;
+final Color onSurfaceVariantColor = context.onSurfaceVariantColor;
+
+/// inverse colors
+final Color inverseSurfaceColor = context.inverseSurfaceColor;
+final Color onInverseSurfaceColor = context.onInverseSurfaceColor;
+
+/// background color
+final Color backgroundColor = context.backgroundColor;
+final Color onBackgroundContainerColor = context.onBackgroundContainerColor;
+
+/// outline color
+final Color outlineColor = context.outlineColor;
+final Color outlineVariantColor = context.outlineVariantColor;
+
+/// error colors
+final Color errorColor = context.errorColor;
+final Color onErrorColor = context.onErrorColor;
+final Color errorContainerColor = context.errorContainerColor;
+final Color onErrorContainerColor = context.onErrorContainerColor;
+
+
   /// sizes
   final width = context.width(true /* set true if you want responsiveness */);
   final height = context.height(true /* set true if you want responsiveness */);
@@ -716,19 +805,19 @@ class PaddingTest extends StatelessWidget {
   /// padding
   /// The parts of the display that are partially obscured by system UI, 
   /// typically by the hardware display "notches" or the system status bar.
-  /// for more check [MediaQuery.of(context).padding]
+  /// for more check [MediaQuery.paddingOf(context)]
   context.padding;
 
   /// view insets
   /// The parts of the display that are completely obscured by system UI, 
   /// typically by the device's keyboard.
-  /// for more check [MediaQuery.of(context).viewInsets]
+  /// for more check [MediaQuery.viewInsetsOf(context)]
   context.viewInsets;
 
   /// view padding
   /// The parts of the display that are partially obscured by system UI, 
   /// typically by the hardware display "notches" or the system status bar.
-  /// for more check [MediaQuery.of(context).viewPadding]
+  /// for more check [MediaQuery.viewPaddingOf(context)]
   context.viewPadding;
 
   /// media query
@@ -740,7 +829,7 @@ class PaddingTest extends StatelessWidget {
 ```
 
 
-## FPSnacbar
+## FPSnackbar
  helper class for showing snackbars
 
 - ### Variants
@@ -787,8 +876,7 @@ class PaddingTest extends StatelessWidget {
             context,
             title: 'Create User',
             message: 'message',
-            backgroundColor: Colors.redAccent.shade100,
-            sideBarColor: Colors.red,
+            color:(light:Colors.blue,dark:Colors.green,bar:Colors.red)
             textStyle: const TextStyle(
               fontSize: 14,
               color: Colors.white,

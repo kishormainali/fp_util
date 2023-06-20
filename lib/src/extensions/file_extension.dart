@@ -36,40 +36,27 @@ extension FileExtensionX on File {
 
   /// check weather file is ms doc
   bool get isDocx {
-    return mimeType?.startsWith('application/msword') ??
-        mimeType?.startsWith(
-            'application/vnd.openxmlformats-officedocument.wordprocessingml.document') ??
-        ext.isDocx;
+    return mimeType?.startsWith('application/msword') ?? mimeType?.startsWith('application/vnd.openxmlformats-officedocument.wordprocessingml.document') ?? ext.isDocx;
   }
 
   /// check whether file is presentation document
   bool get isPpt {
-    return mimeType?.startsWith('application/vnd.ms-powerpoint') ??
-        mimeType?.startsWith(
-            'application/vnd.openxmlformats-officedocument.presentationml.presentation') ??
-        ext.isPpt;
+    return mimeType?.startsWith('application/vnd.ms-powerpoint') ?? mimeType?.startsWith('application/vnd.openxmlformats-officedocument.presentationml.presentation') ?? ext.isPpt;
   }
 
   /// check whether file is excel sheet
   bool get isXls {
-    return mimeType?.startsWith('application/vnd.ms-excel') ??
-        mimeType?.startsWith(
-            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') ??
-        ext.isXls;
+    return mimeType?.startsWith('application/vnd.ms-excel') ?? mimeType?.startsWith('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') ?? ext.isXls;
   }
 
   /// check whether file is excel sheet
   bool get isTxt {
-    return mimeType?.startsWith('application/rtf') ??
-        mimeType?.startsWith('text/plain') ??
-        ext.isTxt;
+    return mimeType?.startsWith('application/rtf') ?? mimeType?.startsWith('text/plain') ?? ext.isTxt;
   }
 
   /// check whether file is excel sheet
   bool get isXml {
-    return mimeType?.startsWith('application/xml') ??
-        mimeType?.startsWith('text/xml') ??
-        ext.isXml;
+    return mimeType?.startsWith('application/xml') ?? mimeType?.startsWith('text/xml') ?? ext.isXml;
   }
 
   /// check whether file is svg

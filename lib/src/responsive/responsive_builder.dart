@@ -18,8 +18,8 @@ class ResponsiveBuilder extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constrains) {
         return OrientationBuilder(
-          builder: (context, orintation) {
-            final size = _getSize(constrains, orintation);
+          builder: (context, orientation) {
+            final size = _getSize(constrains, orientation);
             final deviceType = DeviceType.fromSize(size);
             if (deviceType == DeviceType.desktop) {
               if (desktop != null) return desktop!(context);
@@ -35,8 +35,8 @@ class ResponsiveBuilder extends StatelessWidget {
     );
   }
 
-  Size _getSize(BoxConstraints constrains, Orientation orintation) {
-    if (orintation == Orientation.portrait) {
+  Size _getSize(BoxConstraints constrains, Orientation orientation) {
+    if (orientation == Orientation.portrait) {
       return Size(constrains.maxWidth, constrains.maxHeight);
     } else {
       return Size(constrains.maxHeight, constrains.maxWidth);

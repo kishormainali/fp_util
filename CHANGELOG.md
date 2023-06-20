@@ -1,3 +1,9 @@
+# 1.0.13+1
+- updated usage of MediaQuery.of(context).size with MediaQuery.sizeOf(context)
+- updated usage of MediaQuery.of(context).padding with MediaQuery.paddingOf(context)
+- updated usage of MediaQuery.of(context).viewPadding with MediaQuery.viewPaddingOf(context)
+- updated usage of MediaQuery.of(context).viewInsets with MediaQuery.viewInsetsOf(context)
+
 # 1.0.13
 - moved to separate repository
 - removed async_status

@@ -359,7 +359,7 @@ class _SnackbarWidget extends StatelessWidget {
                         Text(
                           title!,
                           style: titleTextStyle,
-                        ),
+                        )
                       ],
                     ),
                   Sizes.gapV8(),
@@ -370,8 +370,8 @@ class _SnackbarWidget extends StatelessWidget {
                       Expanded(
                         child: Text(
                           message,
-                          style: textStyle,
                           maxLines: 2,
+                          style: textStyle,
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
@@ -388,8 +388,7 @@ class _SnackbarWidget extends StatelessWidget {
                             onTap: onActionTap,
                             splashColor: backgroundColor.withOpacity(0.3),
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 4),
+                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                               child: Text(
                                 actionText!,
                                 style: const TextStyle(
