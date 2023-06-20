@@ -1,3 +1,8 @@
+# 1.0.13
+- moved to separate repository
+- removed async_status
+- added form_status
+
 # 1.0.12
 - added colorScheme properties extensions on BuildContext
 - added support to pick specific size file from ImagePickerHelper
