@@ -1,3 +1,5 @@
+# 1.0.14
+- removed buttons
 # 1.0.13+1
 - updated usage of MediaQuery.of(context).size with MediaQuery.sizeOf(context)
 - updated usage of MediaQuery.of(context).padding with MediaQuery.paddingOf(context)

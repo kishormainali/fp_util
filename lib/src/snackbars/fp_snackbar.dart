@@ -388,7 +388,8 @@ class _SnackbarWidget extends StatelessWidget {
                             onTap: onActionTap,
                             splashColor: backgroundColor.withOpacity(0.3),
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 4),
                               child: Text(
                                 actionText!,
                                 style: const TextStyle(
