@@ -20,25 +20,25 @@ class Field<T> with _$Field<T> {
   }) = _Field<T>;
 
   /// method to mark field as dirty
-  Field<T> dirty(T value) => copyWith(
-        value: value,
-        isPure: false,
-        errorMessage: _validate(),
-      );
+  Field<T> dirty(T updatedValue) {
+    return copyWith(
+      value: updatedValue,
+      isPure: false,
+      errorMessage: _validate(updatedValue),
+    );
+  }
 
   /// show error message only when field is dirty
   String? get displayError => isPure ? null : errorMessage;
 
   /// check field is valid or not
-  bool get isValid => validators.isEmpty
-      ? true
-      : validators.every((validate) => validate(value));
+  bool get isValid => validators.isEmpty ? true : _validate(value) == null;
 
   /// error message for field
   /// validate field with every validators
-  String? _validate() {
+  String? _validate(T updatedValue) {
     for (final validator in validators) {
-      if (!validator(value)) {
+      if (!validator(updatedValue)) {
         return validator.message;
       }
     }

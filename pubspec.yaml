@@ -1,6 +1,6 @@
 name: fp_util
 description: Utilities and Extensions for num,BuildContext,EdgeInsets,File,String. constants for horizontal and vertical spacing.
-version: 1.0.14
+version: 1.0.15
 
 homepage: https://mkcli.kishormainali.com/
 repository: https://github.com/kishormainali/fp_util
@@ -20,6 +20,7 @@ dependencies:
   # file picker
   file_picker: ^5.3.2
 
+  # svg
   flutter_svg: ^2.0.7
 
 

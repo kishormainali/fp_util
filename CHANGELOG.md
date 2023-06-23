@@ -1,3 +1,6 @@
+# 1.0.15
+- fixed validator showing previous error message
+
 # 1.0.14
 - removed buttons
 # 1.0.13+1
