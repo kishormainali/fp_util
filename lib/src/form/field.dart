@@ -28,6 +28,23 @@ class Field<T> with _$Field<T> {
     );
   }
 
+  /// method to make field dirty and validate with new validator
+  Field<T> withValidator(
+    T updatedValue,
+    Validator<T> validator,
+  ) {
+    final updatedValidators = [
+      ...validators,
+      validator,
+    ];
+    return copyWith(
+      value: updatedValue,
+      validators: updatedValidators,
+      isPure: false,
+      errorMessage: _validate(updatedValue, updatedValidators),
+    );
+  }
+
   /// show error message only when field is dirty
   String? get displayError => isPure ? null : errorMessage;
 
@@ -36,9 +53,10 @@ class Field<T> with _$Field<T> {
 
   /// error message for field
   /// validate field with every validators
-  String? _validate(T updatedValue) {
-    for (final validator in validators) {
-      if (!validator(updatedValue)) {
+  String? _validate(T updatedValue, [List<Validator<T>>? optionalValidators]) {
+    final updatedValidators = optionalValidators ?? validators;
+    for (final validator in updatedValidators) {
+      if (!validator.isValid(updatedValue)) {
         return validator.message;
       }
     }

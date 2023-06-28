@@ -97,7 +97,7 @@ abstract class ImagePickerHelper {
 
   /// pick multiple image from gallery
   ///
-  static Future<List<XFile>?> pickMultiImageFromGallery({
+  static Future<List<XFile>?> pickMultiImage({
     int count = -1,
     int sizeInMb = -1,
   }) async {
@@ -115,6 +115,43 @@ abstract class ImagePickerHelper {
       );
     } catch (e, stack) {
       logger.e('Error', e, stack);
+      return null;
+    }
+  }
+
+  /// Returns an [XFile] of the image or video that was picked.
+  ///
+  /// The image or video can only come from the gallery.
+  static Future<XFile?> pickMedia({
+    int sizeInMb = -1,
+  }) async {
+    try {
+      final file = await _picker.pickMedia();
+      if (sizeInMb > 0 && file != null) return await _checkSize(sizeInMb, file);
+      return file;
+    } catch (error) {
+      logger.e('Error', error);
+      return null;
+    }
+  }
+
+  /// Returns a [List<XFile>] with the images and/or videos that were picked.
+  ///
+  /// The images and videos come from the gallery.
+  ///
+  static Future<List<XFile>?> pickMultipleMedia({
+    int count = -1,
+    int sizeInMb = -1,
+  }) async {
+    try {
+      final files = await _picker.pickMultipleMedia();
+      if (count > 0) {
+        return await _handleMultipleFile(files.take(count).toList(), sizeInMb);
+      } else {
+        return await _handleMultipleFile(files, sizeInMb);
+      }
+    } catch (error) {
+      logger.e('Error', error);
       return null;
     }
   }

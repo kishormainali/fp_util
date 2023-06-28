@@ -1,3 +1,8 @@
+# 1.0.16
+- updated validator
+- fixed form field to support [MatchValidator]
+- added pickMedia and pickMultiMedia methods to [ImagePickerHelper]
+
 # 1.0.15
 - fixed validator showing previous error message
 

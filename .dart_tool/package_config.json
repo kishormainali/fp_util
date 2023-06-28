@@ -267,7 +267,7 @@
     },
     {
       "name": "image_picker",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/image_picker-0.8.9",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/image_picker-1.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -566,7 +566,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-06-23T06:14:58.155679Z",
+  "generated": "2023-06-28T13:07:23.331480Z",
   "generator": "pub",
   "generatorVersion": "3.0.5"
 }
