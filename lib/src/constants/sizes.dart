@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fp_util/fp_util.dart';
 
 abstract class Sizes {
+  const Sizes._();
   static const double p4 = 4.0;
   static const double p8 = 8.0;
   static const double p12 = 12.0;

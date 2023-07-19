@@ -10,7 +10,7 @@ enum DeviceType {
   /// device type desktop
   desktop(950),
 
-  /// device tuype tablet
+  /// device type tablet
   tablet(600);
 
   const DeviceType(this.size);

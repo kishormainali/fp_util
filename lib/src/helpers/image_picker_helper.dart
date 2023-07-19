@@ -17,34 +17,49 @@ abstract class ImagePickerHelper {
   static Future<SourceType?> _chooseImageSource(
     BuildContext context, {
     WidgetBuilder? builder,
+    bool useMaterial = false,
   }) async {
     return showPlatformDialog(
       context,
+      useMaterial: useMaterial,
+      cupertino: CupertinoDialogData(barrierDismissible: true),
       builder: builder ??
-          (context) => BasicAlertDialog(
-                title: const Text('Choose Image From'),
-                content: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Sizes.gapV12(),
-                    BasicDialogAction(
-                      title: const Text(
-                        'Camera',
-                      ),
-                      onPressed: () {
-                        Navigator.of(context).pop(SourceType.camera);
-                      },
-                    ),
-                    BasicDialogAction(
-                      title: const Text(
-                        'Gallery',
-                      ),
-                      onPressed: () {
-                        Navigator.of(context).pop(SourceType.gallery);
-                      },
-                    ),
-                  ],
+          (context) => BasicPlatformDialog(
+                useMaterial: useMaterial,
+                title: Text(
+                  'Choose Image Source',
+                  textAlign: TextAlign.center,
+                  style: context.bodyLarge,
                 ),
+                material: MaterialAlertDialogData(
+                  actionsAlignment: MainAxisAlignment.center,
+                ),
+                actions: [
+                  PlatformDialogAction(
+                    useMaterial: useMaterial,
+                    onPressed: () => Navigator.pop(context, SourceType.camera),
+                    material: MaterialActionData(
+                      style: const ButtonStyle(
+                        minimumSize: MaterialStatePropertyAll(
+                          Size(double.infinity, 44),
+                        ),
+                      ),
+                    ),
+                    child: const Text('Camera'),
+                  ),
+                  PlatformDialogAction(
+                    useMaterial: useMaterial,
+                    onPressed: () => Navigator.pop(context, SourceType.gallery),
+                    material: MaterialActionData(
+                      style: const ButtonStyle(
+                        minimumSize: MaterialStatePropertyAll(
+                          Size(double.infinity, 44),
+                        ),
+                      ),
+                    ),
+                    child: const Text('Gallery'),
+                  ),
+                ],
               ),
     );
   }
@@ -54,10 +69,15 @@ abstract class ImagePickerHelper {
   static Future<XFile?> selectAndPickImage(
     BuildContext context, {
     WidgetBuilder? builder,
+    bool useMaterial = false,
     int sizeInMb = -1,
   }) async {
     XFile? file;
-    final res = await _chooseImageSource(context, builder: builder);
+    final res = await _chooseImageSource(
+      context,
+      builder: builder,
+      useMaterial: useMaterial,
+    );
     if (res != null) {
       if (res == SourceType.camera) {
         file = await _picker.pickImage(source: ImageSource.camera);

@@ -195,9 +195,9 @@
     },
     {
       "name": "flutter_lints",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/flutter_lints-2.0.1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/flutter_lints-2.0.2",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "2.18"
     },
     {
       "name": "flutter_plugin_android_lifecycle",
@@ -219,13 +219,13 @@
     },
     {
       "name": "freezed",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/freezed-2.3.5",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/freezed-2.4.1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "freezed_annotation",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/freezed_annotation-2.2.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/freezed_annotation-2.4.1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -566,7 +566,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-06-28T13:07:23.331480Z",
+  "generated": "2023-07-19T03:24:11.170076Z",
   "generator": "pub",
-  "generatorVersion": "3.0.5"
+  "generatorVersion": "3.0.6"
 }

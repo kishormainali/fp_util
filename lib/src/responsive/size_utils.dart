@@ -31,7 +31,7 @@ class SizeUtils {
   /// size
   late Size _size;
 
-  /// flag for initalized or not
+  /// flag for initialized or not
   bool _initialized = false;
 
   /// height of screen
@@ -40,7 +40,7 @@ class SizeUtils {
   /// width of screen
   late double _width;
 
-  /// responsize width
+  /// responsive width
   double get width {
     if (!_initialized) throw Exception('SizeUtils not initialized.');
     return _width;

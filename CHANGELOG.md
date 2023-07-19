@@ -1,3 +1,7 @@
+# 1.0.17
+- added platformModalSheet
+- added basic dialog and bottom sheet
+- updated dialog actions data
 # 1.0.16
 - updated validator
 - fixed form field to support [MatchValidator]
