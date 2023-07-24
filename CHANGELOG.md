@@ -1,3 +1,5 @@
+# 1.0.18
+- added removeNextLineSpace extension on String
 # 1.0.17
 - added platformModalSheet
 - added basic dialog and bottom sheet

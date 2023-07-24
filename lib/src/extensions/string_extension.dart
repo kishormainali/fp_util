@@ -71,6 +71,15 @@ extension StringX on String {
     return trim().replaceAll('\n', '');
   }
 
+  /// remove all \n \r \t from string
+  String get removeNextLineSpace {
+    if (isBlank) return this;
+    return trim()
+        .replaceAll('\n', ' ')
+        .replaceAll('\r', ' ')
+        .replaceAll('\t', ' ');
+  }
+
   /// tries to parse as bool
   bool? get toBool {
     if (isBlank) return null;
