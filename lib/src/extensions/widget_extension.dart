@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:fp_util/fp_util.dart';
 
 extension WidgetX on Widget {
   /// make any widgets scrollable
@@ -173,11 +172,10 @@ extension WidgetX on Widget {
   Padding pad(
     double padding, {
     Key? key,
-    bool responsive = false,
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.all(responsive ? padding.px : padding),
+        padding: EdgeInsets.all(padding),
         child: this,
       );
 
@@ -188,15 +186,14 @@ extension WidgetX on Widget {
     double right = 0,
     double bottom = 0,
     Key? key,
-    bool responsive = false,
   }) =>
       Padding(
         key: key,
         padding: EdgeInsets.only(
-          left: responsive ? left.w : left,
-          top: responsive ? top.h : top,
-          right: responsive ? right.w : right,
-          bottom: responsive ? bottom.h : bottom,
+          left: left,
+          top: top,
+          right: right,
+          bottom: bottom,
         ),
         child: this,
       );
@@ -205,11 +202,10 @@ extension WidgetX on Widget {
   Padding padTop(
     double padding, {
     Key? key,
-    bool responsive = false,
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.only(top: responsive ? padding.h : padding),
+        padding: EdgeInsets.only(top: padding),
         child: this,
       );
 
@@ -217,11 +213,10 @@ extension WidgetX on Widget {
   Padding padRight(
     double padding, {
     Key? key,
-    bool responsive = false,
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.only(right: responsive ? padding.w : padding),
+        padding: EdgeInsets.only(right: padding),
         child: this,
       );
 
@@ -229,11 +224,10 @@ extension WidgetX on Widget {
   Padding padBottom(
     double padding, {
     Key? key,
-    bool responsive = false,
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.only(bottom: responsive ? padding.h : padding),
+        padding: EdgeInsets.only(bottom: padding),
         child: this,
       );
 
@@ -241,11 +235,10 @@ extension WidgetX on Widget {
   Padding padLeft(
     double padding, {
     Key? key,
-    bool responsive = false,
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.only(left: responsive ? padding.w : padding),
+        padding: EdgeInsets.only(left: padding),
         child: this,
       );
 
@@ -253,11 +246,10 @@ extension WidgetX on Widget {
   Padding padX(
     double padding, {
     Key? key,
-    bool responsive = false,
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.symmetric(horizontal: responsive ? padding.w : padding),
+        padding: EdgeInsets.symmetric(horizontal: padding),
         child: this,
       );
 
@@ -265,11 +257,10 @@ extension WidgetX on Widget {
   Padding padY(
     double padding, {
     Key? key,
-    bool responsive = false,
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.symmetric(vertical: responsive ? padding.h : padding),
+        padding: EdgeInsets.symmetric(vertical: padding),
         child: this,
       );
 }

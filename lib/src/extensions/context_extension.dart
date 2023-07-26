@@ -9,9 +9,12 @@ extension BuildContextX on BuildContext {
   ColorScheme get colorScheme => Theme.of(this).colorScheme;
 
   /// check isDarkTheme enabled
-  bool get isDarkTheme => theme.brightness == Brightness.dark || colorScheme.brightness == Brightness.dark;
+  bool get isDarkTheme =>
+      theme.brightness == Brightness.dark ||
+      colorScheme.brightness == Brightness.dark;
 
-  Color themedColor(Color light, [Color? dark]) => isDarkTheme ? (dark ?? light) : light;
+  Color themedColor(Color light, [Color? dark]) =>
+      isDarkTheme ? (dark ?? light) : light;
 
   /// get textTheme
   TextTheme get textTheme => Theme.of(this).textTheme;
@@ -150,7 +153,8 @@ extension BuildContextX on BuildContext {
   }
 
   /// check whether keyboard has focus or not
-  bool get hasFocus => FocusScope.of(this).hasFocus || FocusScope.of(this).hasPrimaryFocus;
+  bool get hasFocus =>
+      FocusScope.of(this).hasFocus || FocusScope.of(this).hasPrimaryFocus;
 
   /// extension to get responsive value according to device type [ mobile,tablet,desktop ]
   T responsiveValue<T>(

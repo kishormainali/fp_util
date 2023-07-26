@@ -20,7 +20,8 @@ class RowWithSpace extends Row {
             (index, child) {
               return [
                 child,
-                if (index < children.length || hasTrailingSpace) spacing.horizontalSpace,
+                if (index < children.length || hasTrailingSpace)
+                  spacing.horizontalSpace,
               ];
             },
           ),

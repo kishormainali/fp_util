@@ -5,99 +5,99 @@
 - Common Buttons - AppButton, AppOutlineButton, AppTextButton supports loading and disabled state and highly customizable.
 - ImagePickerHelper for picking images and files
 
-> if your figma size is different from Size() then make sure to call    ```SizeUtils.instance.updateDesignSize(size)``` on main method;
+> if your figma size is different from Size() then make sure to call `SizeUtils.instance.updateDesignSize(size)` on main method;
 
 ## Constants
 
 ##### Vertical Spacing
 
- ```dart
+```dart
 
 import 'package:flutter/material.dart';
 
 class SpacingTest extends StatelessWidget {
-  const SpacingTest({super.key});
+ const SpacingTest({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: const [
+ @override
+ Widget build(BuildContext context) {
+   return Column(
+     children: const [
 
-        /// 4px vertical space
-        Sizes.gapV4(true /* set true if you want responsiveness*/),
+       /// 4px vertical space
+       Sizes.gapV4,
 
-        /// 8px vertical space
-        Sizes.gapV8(true /* set true if you want responsiveness*/),
+       /// 8px vertical space
+       Sizes.gapV8,
 
-        /// 12px vertical space
-        Sizes.gapV12(true /* set true if you want responsiveness*/),
+       /// 12px vertical space
+       Sizes.gapV12,
 
-        /// 16px vertical space
-        Sizes.gapV16(true /* set true if you want responsiveness*/),
+       /// 16px vertical space
+       Sizes.gapV16,
 
-        /// 24px vertical space
-        Sizes.gapV24(true /* set true if you want responsiveness*/),
+       /// 24px vertical space
+       Sizes.gapV24,
 
-        /// 32px vertical space
-        Sizes.gapV32(true /* set true if you want responsiveness*/),
+       /// 32px vertical space
+       Sizes.gapV32,
 
-        /// 48px vertical space
-        Sizes.gapV48(true /* set true if you want responsiveness*/),
+       /// 48px vertical space
+       Sizes.gapV48,
 
-        /// 54px vertical space
-        Sizes.gapV54(true /* set true if you want responsiveness*/),
+       /// 54px vertical space
+       Sizes.gapV54,
 
-        /// 64px vertical space
-        Sizes.gapV64(true /* set true if you want responsiveness*/),
-      ],
-    );
-  }
+       /// 64px vertical space
+       Sizes.gapV64,
+     ],
+   );
+ }
 }
 ```
 
 ##### Horizontal Spacing
 
-  ```dart
+```dart
 
 import 'package:flutter/material.dart';
 
 class SpacingTest extends StatelessWidget {
-  const SpacingTest({super.key});
+const SpacingTest({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: const [
+@override
+Widget build(BuildContext context) {
+  return Row(
+    children: const [
 
-        /// 4px horizontal space
-        Sizes.gapH4(true /* set true if you want responsiveness*/),
+      /// 4px horizontal space
+      Sizes.gapH4,
 
-        /// 8px horizontal space
-        Sizes.gapH8(true /* set true if you want responsiveness*/),
+      /// 8px horizontal space
+      Sizes.gapH8,
 
-        /// 12px horizontal space
-        Sizes.gapH12(true /* set true if you want responsiveness*/),
+      /// 12px horizontal space
+      Sizes.gapH12,
 
-        /// 16px horizontal space
-        Sizes.gapH16(true /* set true if you want responsiveness*/),
+      /// 16px horizontal space
+      Sizes.gapH16,
 
-        /// 24px horizontal space
-        Sizes.gapH24(true /* set true if you want responsiveness*/),
+      /// 24px horizontal space
+      Sizes.gapH24,
 
-        /// 32px horizontal space
-        Sizes.gapH32(true /* set true if you want responsiveness*/),
+      /// 32px horizontal space
+      Sizes.gapH32,
 
-        /// 48px horizontal space
-        Sizes.gapH48(true /* set true if you want responsiveness*/),
+      /// 48px horizontal space
+      Sizes.gapH48,
 
-        /// 54px horizontal space
-        Sizes.gapH54(true /* set true if you want responsiveness*/),
+      /// 54px horizontal space
+      Sizes.gapH54,
 
-        /// 64px horizontal space
-        Sizes.gapH64(true /* set true if you want responsiveness*/),
-      ],
-    );
-  }
+      /// 64px horizontal space
+      Sizes.gapH64,
+    ],
+  );
+}
 }
 ```
 
@@ -211,7 +211,7 @@ class SpacingYTest extends StatelessWidget {
     return Column(
       children: [
         const Text('Text 1'),
-        10.verticalSpace(true /* set true if you want responsiveness*/),
+        10.verticalSpace,
         const Text('Text 2'),
       ],
     );
@@ -219,7 +219,7 @@ class SpacingYTest extends StatelessWidget {
 }
 ```
 
--  #### horizontalSpace
+- #### horizontalSpace
 
 Created SizedBox with Width
 
@@ -236,7 +236,7 @@ class SpacingXTest extends StatelessWidget {
     return Row(
       children: [
         const Text('Text 1'),
-        10.horizontalSpace(true /* set true if you want responsiveness*/),
+        10.horizontalSpace,
         const Text('Text 2'),
       ],
     );
@@ -251,6 +251,7 @@ class SpacingXTest extends StatelessWidget {
   - minutes
   - hours
   - days
+
 ```dart
 
 /// Creates Duration on microseconds
@@ -273,34 +274,42 @@ final duration = 10.days;
 
 ```
 
-
 - ##### Delayed Duration
-  - delayedMicroSeconds
-  - delayedMilliSeconds
-  - delayedSeconds
-  - delayedMinutes
-  - delayedHours
+  - delayedMicroSeconds()
+  - delayedMilliSeconds()
+  - delayedSeconds()
+  - delayedMinutes()
+  - delayedHours()
 
 ```dart
 
 /// Creates Future of Duration on microseconds
-final duration = 10.delayedMicroSeconds;
+final duration = 10.delayedMicroSeconds(()async{
+  // optional callback
+});
 
 /// Creates Future of Duration on milliseconds
-final duration = 10.delayedMilliseconds;
+final duration = 10.delayedMilliseconds(()async{
+  // optional callback
+});
 
 /// Creates Future of Duration on seconds
-final duration = 10.delayedSeconds;
+final duration = 10.delayedSeconds(()async{
+  // optional callback
+});
 
 /// Creates Future of Duration on minutes
-final duration = 10.delayedMinutes;
+final duration = 10.delayedMinutes(()async{
+  // optional callback
+});
 
 /// Creates Future of Duration on hours
-final duration = 10.delayedHours;
+final duration = 10.delayedHours(()async{
+  // optional callback
+});
 
 
 ```
-
 
 - ##### circularBorderRadius
 
@@ -316,9 +325,8 @@ class RadiusTest extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-
         /// creates 10px rounded corner
-        borderRadius: 10.circularBorderRadius(true /* set true if you want responsiveness*/),
+        borderRadius: 10.circularBorderRadius,
       ),
     );
   }
@@ -341,8 +349,8 @@ class RadiusTest extends StatelessWidget {
       decoration: BoxDecoration(
 
         /// creates 10px rounded corner for topLeft and topRight
-        borderRadius: BorderRadius.only(topLeft: 10.circularRadius(true /* set true if you want responsiveness*/), 
-        topRight: 10.circularRadius(true /* set true if you want responsiveness*/),),),
+        borderRadius: BorderRadius.only(topLeft: 10.circularRadius,
+        topRight: 10.circularRadius,),),
     );
   }
 }
@@ -350,13 +358,13 @@ class RadiusTest extends StatelessWidget {
 
 - ##### EdgeInsets
 
-    - all
-    - padLeft
-    - padRight
-    - padTop
-    - padBottom
-    - padX
-    - padY
+  - all
+  - padLeft
+  - padRight
+  - padTop
+  - padBottom
+  - padX
+  - padY
 
 ```dart
 import 'package:flutter/material.dart';
@@ -370,25 +378,25 @@ class EdgeInsetsTest extends StatelessWidget {
       children: [
 
         /// creates padding with 10px all
-        Padding(padding: 10.all(true /* set true if you want responsiveness*/)),
+        Padding(padding: 10.all),
 
         /// creates padding with 10px top only
-        Padding(padding: 10.padTop(true /* set true if you want responsiveness*/)),
+        Padding(padding: 10.padTop),
 
         /// creates padding with 10px right only
-        Padding(padding: 10.padRight(true /* set true if you want responsiveness*/)),
+        Padding(padding: 10.padRight),
 
         /// creates padding with 10px bottom only
-        Padding(padding: 10.padBottom(true /* set true if you want responsiveness*/)),
+        Padding(padding: 10.padBottom),
 
         /// creates padding with 10px left only
-        Padding(padding: 10.padLeft(true /* set true if you want responsiveness*/)),
+        Padding(padding: 10.padLeft),
 
         /// creates padding with 10px horizontal
-        Padding(padding: 10.padX(true /* set true if you want responsiveness*/)),
+        Padding(padding: 10.padX),
 
         /// creates padding with 10px vertical
-        Padding(padding: 10.padY(true /* set true if you want responsiveness*/)),
+        Padding(padding: 10.padY),
       ],
     );
   }
@@ -411,7 +419,7 @@ class SliverSpaceY extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverList(/*children*/),
-        10.sliverVerticalSpace(true /* set true if you want responsiveness*/),
+        10.sliverVerticalSpace,
         SliverList(/*children*/)
       ],
     );
@@ -436,9 +444,9 @@ class SliverSpaceX extends StatelessWidget {
     return CustomScrollView(
       scrollDirection: Axis.horizontal,
       slivers: [
-        SliverPadding(padding: 10.all(true /* set true if you want responsiveness*/)),
+        SliverPadding(padding: 10.all),
         10.sliverHorizontalSpace,
-        SliverPadding(padding: 10.all(true /* set true if you want responsiveness*/)),
+        SliverPadding(padding: 10.all),
       ],
     );
   }
@@ -577,13 +585,13 @@ class AlignTest extends StatelessWidget {
 ```
 
 - #### Padding
-  - pad 
+  - pad
   - padX
-  - padY 
-  - padLeft 
+  - padY
+  - padLeft
   - padTop
   - padRight
-  - padBottom 
+  - padBottom
   - padLTRB
 
 Wraps with padding widget
@@ -601,28 +609,28 @@ class PaddingTest extends StatelessWidget {
       children: [
 
         /// wraps with all padding
-        const Text('Text 1').pad(10,responsive:true /* set true if you want responsiveness */),
+        const Text('Text 1').pad(10),
 
         /// wraps with left only padding
-        const Text('Text 1').padLeft(10,responsive:true /* set true if you want responsiveness */),
+        const Text('Text 1').padLeft(10),
 
         /// wraps with right only padding
-        const Text('Text 1').padRight(10,responsive:true /* set true if you want responsiveness */),
+        const Text('Text 1').padRight(10),
 
         /// wraps with bottom only padding
-        const Text('Text 1').padBottom(10,responsive:true /* set true if you want responsiveness */),
+        const Text('Text 1').padBottom(10),
 
         /// wraps with top only padding
-        const Text('Text 1').padTop(10,responsive:true /* set true if you want responsiveness */),
+        const Text('Text 1').padTop(10),
 
         /// wraps with horizontal padding
-        const Text('Text 1').padX(10,responsive:true /* set true if you want responsiveness */),
+        const Text('Text 1').padX(10),
 
         /// wraps width vertical padding
-        const Text('Text 1').padY(10,responsive:true /* set true if you want responsiveness */),
+        const Text('Text 1').padY(10),
 
         /// wraps widget with padding of left top right bottom
-        const Text('Text 1').padLTRB(left: 10, top: 5, right: 10, bottom: 10,responsive:true /* set true if you want responsiveness */),
+        const Text('Text 1').padLTRB(left: 10, top: 5, right: 10, bottom: 10),
 
       ],
     );
@@ -630,54 +638,64 @@ class PaddingTest extends StatelessWidget {
 }
 ```
 
-
 ### Context Extensions
 
 - #### theme
 - #### colorScheme
+
   - primaryColor
   - onPrimaryColor
   - primaryContainerColor
   - onPrimaryContainerColor
 
   /// secondary colors
+
   - secondaryColor
   - onSecondaryColor
   - secondaryContainerColor
   - onSecondaryContainerColor
 
   /// tertiary color
+
   - tertiaryColor
   - onTertiaryColor
   - tertiaryContainerColor
   - onTertiaryContainerColor
 
   /// surface color
+
   - surfaceColor
   - onSurfaceColor
 
   /// surface variant color
+
   - surfaceVariantColor
   - onSurfaceVariantColor
 
   /// inverse colors
+
   - inverseSurfaceColor
   - onInverseSurfaceColor
 
   /// background color
+
   - backgroundColor
   - onBackgroundContainerColor
 
   /// outline color
+
   - outlineColor
   - outlineVariantColor
 
   /// error colors
+
   - errorColor
   - onErrorColor
   - errorContainerColor
   - onErrorContainerColor
+
 - #### textTheme
+
   - displayLarge
   - displayMedium
   - displaySmall
@@ -695,7 +713,7 @@ class PaddingTest extends StatelessWidget {
   - bodySmall
 
 - #### size
-  - width 
+  - width
   - height
   - percentWidth
   - percentHeight
@@ -787,14 +805,14 @@ final Color onErrorContainerColor = context.onErrorContainerColor;
 
 
   /// sizes
-  final width = context.width(true /* set true if you want responsiveness */);
-  final height = context.height(true /* set true if you want responsiveness */);
+  final width = context.width;
+  final height = context.height;
 
   /// 1% of screen width
-  final widthPercentage = context.pw(.1,true /* set true if you want responsiveness */);
+  final widthPercentage = context.pw(.1);
 
   /// 1% of screen height
-  final heightPercentage = context.ph(.4,true /* set true if you want responsiveness */);
+  final heightPercentage = context.ph(.4);
 
   /// remove focus / hide keyboard
   context.removeFocus();
@@ -803,19 +821,19 @@ final Color onErrorContainerColor = context.onErrorContainerColor;
   context.hasFocus;
 
   /// padding
-  /// The parts of the display that are partially obscured by system UI, 
+  /// The parts of the display that are partially obscured by system UI,
   /// typically by the hardware display "notches" or the system status bar.
   /// for more check [MediaQuery.paddingOf(context)]
   context.padding;
 
   /// view insets
-  /// The parts of the display that are completely obscured by system UI, 
+  /// The parts of the display that are completely obscured by system UI,
   /// typically by the device's keyboard.
   /// for more check [MediaQuery.viewInsetsOf(context)]
   context.viewInsets;
 
   /// view padding
-  /// The parts of the display that are partially obscured by system UI, 
+  /// The parts of the display that are partially obscured by system UI,
   /// typically by the hardware display "notches" or the system status bar.
   /// for more check [MediaQuery.viewPaddingOf(context)]
   context.viewPadding;
@@ -828,9 +846,9 @@ final Color onErrorContainerColor = context.onErrorContainerColor;
 
 ```
 
-
 ## FPSnackbar
- helper class for showing snackbars
+
+helper class for showing snackbars
 
 - ### Variants
   - #### Success
@@ -851,38 +869,38 @@ final Color onErrorContainerColor = context.onErrorContainerColor;
             message: 'Something went wrong!',
           );
     ```
- - #### Info
-    Snackbar for info messages
-    ```dart
-       FPSnackbar.info(
-            context,
-            title: 'Title',
-            message: 'Some informative message',
-          );
-    ```
-  - #### Warning
-    Snackbar for warning messages
-    ```dart
-       FPSnackbar.warning(
-            context,
-            title: 'Title',
-            message: 'Warning message',
-          );
-    ```
-  - #### Custom
-    Snackbar for custom snackbars
-    ```dart
-       FPSnackbar.custom(
-            context,
-            title: 'Create User',
-            message: 'message',
-            color:(light:Colors.blue,dark:Colors.green,bar:Colors.red)
-            textStyle: const TextStyle(
-              fontSize: 14,
-              color: Colors.white,
-            ),
-            titleTextStyle: const TextStyle(fontSize: 18),
-            icon: const Icon(Icons.check),
-            duration: 4,
-          );
-    ```
+- #### Info
+  Snackbar for info messages
+  ```dart
+     FPSnackbar.info(
+          context,
+          title: 'Title',
+          message: 'Some informative message',
+        );
+  ```
+- #### Warning
+  Snackbar for warning messages
+  ```dart
+     FPSnackbar.warning(
+          context,
+          title: 'Title',
+          message: 'Warning message',
+        );
+  ```
+- #### Custom
+  Snackbar for custom snackbars
+  ```dart
+     FPSnackbar.custom(
+          context,
+          title: 'Create User',
+          message: 'message',
+          color:(light:Colors.blue,dark:Colors.green,bar:Colors.red)
+          textStyle: const TextStyle(
+            fontSize: 14,
+            color: Colors.white,
+          ),
+          titleTextStyle: const TextStyle(fontSize: 18),
+          icon: const Icon(Icons.check),
+          duration: 4,
+        );
+  ```

@@ -19,7 +19,8 @@ class ColumnWithSpace extends Column {
           ...children.expandIndexed((index, widget) {
             return [
               widget,
-              if (index < children.length || hasTrailingSpace) spacing.verticalSpace,
+              if (index < children.length || hasTrailingSpace)
+                spacing.verticalSpace,
             ];
           }),
         ]);
