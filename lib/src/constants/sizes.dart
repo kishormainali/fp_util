@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fp_util/fp_util.dart';
 
 abstract class Sizes {
   const Sizes._();
@@ -15,42 +14,24 @@ abstract class Sizes {
 
   // sized boxes
   /// vertical spaces
-  static SizedBox gapV4([bool responsive = false]) =>
-      p4.verticalSpace(responsive);
-  static SizedBox gapV8([bool responsive = false]) =>
-      p8.verticalSpace(responsive);
-  static SizedBox gapV12([bool responsive = false]) =>
-      p12.verticalSpace(responsive);
-  static SizedBox gapV16([bool responsive = false]) =>
-      p16.verticalSpace(responsive);
-  static SizedBox gapV24([bool responsive = false]) =>
-      p24.verticalSpace(responsive);
-  static SizedBox gapV32([bool responsive = false]) =>
-      p32.verticalSpace(responsive);
-  static SizedBox gapV48([bool responsive = false]) =>
-      p48.verticalSpace(responsive);
-  static SizedBox gapV54([bool responsive = false]) =>
-      p54.verticalSpace(responsive);
-  static SizedBox gapV64([bool responsive = false]) =>
-      p64.verticalSpace(responsive);
+  static SizedBox get gapV4 => const SizedBox(height: p4);
+  static SizedBox get gapV8 => const SizedBox(height: p8);
+  static SizedBox get gapV12 => const SizedBox(height: p12);
+  static SizedBox get gapV16 => const SizedBox(height: p16);
+  static SizedBox get gapV24 => const SizedBox(height: p24);
+  static SizedBox get gapV32 => const SizedBox(height: p32);
+  static SizedBox get gapV48 => const SizedBox(height: p48);
+  static SizedBox get gapV54 => const SizedBox(height: p54);
+  static SizedBox get gapV64 => const SizedBox(height: p64);
 
   /// horizontal spaces
-  static SizedBox gapH4([bool responsive = false]) =>
-      p4.horizontalSpace(responsive);
-  static SizedBox gapH8([bool responsive = false]) =>
-      p8.horizontalSpace(responsive);
-  static SizedBox gapH12([bool responsive = false]) =>
-      p12.horizontalSpace(responsive);
-  static SizedBox gapH16([bool responsive = false]) =>
-      p16.horizontalSpace(responsive);
-  static SizedBox gapH24([bool responsive = false]) =>
-      p24.horizontalSpace(responsive);
-  static SizedBox gapH32([bool responsive = false]) =>
-      p32.horizontalSpace(responsive);
-  static SizedBox gapH48([bool responsive = false]) =>
-      p48.horizontalSpace(responsive);
-  static SizedBox gapH54([bool responsive = false]) =>
-      p54.horizontalSpace(responsive);
-  static SizedBox gapH64([bool responsive = false]) =>
-      p64.horizontalSpace(responsive);
+  static SizedBox get gapH4 => const SizedBox(width: p4);
+  static SizedBox get gapH8 => const SizedBox(width: p8);
+  static SizedBox get gapH12 => const SizedBox(width: p12);
+  static SizedBox get gapH16 => const SizedBox(width: p16);
+  static SizedBox get gapH24 => const SizedBox(width: p24);
+  static SizedBox get gapH32 => const SizedBox(width: p32);
+  static SizedBox get gapH48 => const SizedBox(width: p48);
+  static SizedBox get gapH54 => const SizedBox(width: p54);
+  static SizedBox get gapH64 => const SizedBox(width: p64);
 }

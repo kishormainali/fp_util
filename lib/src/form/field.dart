@@ -17,6 +17,7 @@ class Field<T> with _$Field<T> {
     @Default([]) List<Validator<T>> validators,
     @Default(true) bool isPure,
     String? errorMessage,
+    @Default({}) Map<String, dynamic> extra,
   }) = _Field<T>;
 
   /// method to mark field as dirty
@@ -25,6 +26,16 @@ class Field<T> with _$Field<T> {
       value: updatedValue,
       isPure: false,
       errorMessage: _validate(updatedValue),
+    );
+  }
+
+  /// method to update extra data
+  /// extra data is used to store any extra data related to field
+  /// for example, we can store obscureText value for password field
+  Field<T> updateExtra(Map<String, dynamic> updatedExtra) {
+    return copyWith(
+      isPure: false,
+      extra: updatedExtra,
     );
   }
 

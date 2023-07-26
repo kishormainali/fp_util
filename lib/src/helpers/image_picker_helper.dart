@@ -97,7 +97,7 @@ abstract class ImagePickerHelper {
       if (sizeInMb > 0 && file != null) return await _checkSize(sizeInMb, file);
       return file;
     } catch (e, stack) {
-      logger.e('Error', e, stack);
+      logger.e('Error', error: e, stackTrace: stack);
       return null;
     }
   }
@@ -110,7 +110,7 @@ abstract class ImagePickerHelper {
       if (sizeInMb > 0 && file != null) return await _checkSize(sizeInMb, file);
       return file;
     } catch (e, stack) {
-      logger.e('Error', e, stack);
+      logger.e('Error', error: e, stackTrace: stack);
       return null;
     }
   }
@@ -134,7 +134,7 @@ abstract class ImagePickerHelper {
         sizeInMb,
       );
     } catch (e, stack) {
-      logger.e('Error', e, stack);
+      logger.e('Error', error: e, stackTrace: stack);
       return null;
     }
   }
@@ -149,8 +149,8 @@ abstract class ImagePickerHelper {
       final file = await _picker.pickMedia();
       if (sizeInMb > 0 && file != null) return await _checkSize(sizeInMb, file);
       return file;
-    } catch (error) {
-      logger.e('Error', error);
+    } catch (error, stack) {
+      logger.e('Error', error: error, stackTrace: stack);
       return null;
     }
   }
@@ -170,8 +170,8 @@ abstract class ImagePickerHelper {
       } else {
         return await _handleMultipleFile(files, sizeInMb);
       }
-    } catch (error) {
-      logger.e('Error', error);
+    } catch (error, stack) {
+      logger.e('Error', error: error, stackTrace: stack);
       return null;
     }
   }
@@ -203,7 +203,7 @@ abstract class ImagePickerHelper {
         return await _handleMultipleFile(files, sizeInMb);
       }
     } catch (e, stack) {
-      logger.e('Error', e, stack);
+      logger.e('Error', error: e, stackTrace: stack);
       return null;
     }
   }
@@ -231,7 +231,7 @@ abstract class ImagePickerHelper {
       if (sizeInMb > 0 && file != null) return await _checkSize(sizeInMb, file);
       return file;
     } catch (e, stack) {
-      logger.e('Error', e, stack);
+      logger.e('Error', error: e, stackTrace: stack);
       return null;
     }
   }

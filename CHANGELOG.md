@@ -1,3 +1,12 @@
+# 1.0.19
+BREAKING CHANGES:
+- removed responsive parameter from all the extension functions
+- changed extension methods into getters
+- renamed `removeNextLineSpace` with `replaceNextLine`
+- added boolean const
+- updated size const
+- added `Map<String,dynamic> extra` field to FormField
+
 # 1.0.18
 - added removeNextLineSpace extension on String
 # 1.0.17

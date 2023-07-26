@@ -14,14 +14,12 @@ class ColumnWithSpace extends Column {
     super.textDirection,
     super.verticalDirection,
     List<Widget> children = const [],
-    bool responsive = false,
   }) : super(children: [
-          if (hasLeadingSpace) spacing.verticalSpace(responsive),
+          if (hasLeadingSpace) spacing.verticalSpace,
           ...children.expandIndexed((index, widget) {
             return [
               widget,
-              if (index < children.length || hasTrailingSpace)
-                spacing.verticalSpace(responsive),
+              if (index < children.length || hasTrailingSpace) spacing.verticalSpace,
             ];
           }),
         ]);

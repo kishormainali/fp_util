@@ -20,6 +20,7 @@ mixin _$Field<T> {
   List<Validator<T>> get validators => throw _privateConstructorUsedError;
   bool get isPure => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
+  Map<String, dynamic> get extra => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $FieldCopyWith<T, Field<T>> get copyWith =>
@@ -35,7 +36,8 @@ abstract class $FieldCopyWith<T, $Res> {
       {T value,
       List<Validator<T>> validators,
       bool isPure,
-      String? errorMessage});
+      String? errorMessage,
+      Map<String, dynamic> extra});
 }
 
 /// @nodoc
@@ -55,6 +57,7 @@ class _$FieldCopyWithImpl<T, $Res, $Val extends Field<T>>
     Object? validators = null,
     Object? isPure = null,
     Object? errorMessage = freezed,
+    Object? extra = null,
   }) {
     return _then(_value.copyWith(
       value: freezed == value
@@ -73,6 +76,10 @@ class _$FieldCopyWithImpl<T, $Res, $Val extends Field<T>>
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
+      extra: null == extra
+          ? _value.extra
+          : extra // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
     ) as $Val);
   }
 }
@@ -88,7 +95,8 @@ abstract class _$$_FieldCopyWith<T, $Res> implements $FieldCopyWith<T, $Res> {
       {T value,
       List<Validator<T>> validators,
       bool isPure,
-      String? errorMessage});
+      String? errorMessage,
+      Map<String, dynamic> extra});
 }
 
 /// @nodoc
@@ -105,6 +113,7 @@ class __$$_FieldCopyWithImpl<T, $Res>
     Object? validators = null,
     Object? isPure = null,
     Object? errorMessage = freezed,
+    Object? extra = null,
   }) {
     return _then(_$_Field<T>(
       value: freezed == value
@@ -123,6 +132,10 @@ class __$$_FieldCopyWithImpl<T, $Res>
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
+      extra: null == extra
+          ? _value._extra
+          : extra // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
     ));
   }
 }
@@ -134,8 +147,10 @@ class _$_Field<T> extends _Field<T> {
       {required this.value,
       final List<Validator<T>> validators = const [],
       this.isPure = true,
-      this.errorMessage})
+      this.errorMessage,
+      final Map<String, dynamic> extra = const {}})
       : _validators = validators,
+        _extra = extra,
         super._();
 
   @override
@@ -154,10 +169,18 @@ class _$_Field<T> extends _Field<T> {
   final bool isPure;
   @override
   final String? errorMessage;
+  final Map<String, dynamic> _extra;
+  @override
+  @JsonKey()
+  Map<String, dynamic> get extra {
+    if (_extra is EqualUnmodifiableMapView) return _extra;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_extra);
+  }
 
   @override
   String toString() {
-    return 'Field<$T>(value: $value, validators: $validators, isPure: $isPure, errorMessage: $errorMessage)';
+    return 'Field<$T>(value: $value, validators: $validators, isPure: $isPure, errorMessage: $errorMessage, extra: $extra)';
   }
 
   @override
@@ -170,7 +193,8 @@ class _$_Field<T> extends _Field<T> {
                 .equals(other._validators, _validators) &&
             (identical(other.isPure, isPure) || other.isPure == isPure) &&
             (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+                other.errorMessage == errorMessage) &&
+            const DeepCollectionEquality().equals(other._extra, _extra));
   }
 
   @override
@@ -179,7 +203,8 @@ class _$_Field<T> extends _Field<T> {
       const DeepCollectionEquality().hash(value),
       const DeepCollectionEquality().hash(_validators),
       isPure,
-      errorMessage);
+      errorMessage,
+      const DeepCollectionEquality().hash(_extra));
 
   @JsonKey(ignore: true)
   @override
@@ -193,7 +218,8 @@ abstract class _Field<T> extends Field<T> {
       {required final T value,
       final List<Validator<T>> validators,
       final bool isPure,
-      final String? errorMessage}) = _$_Field<T>;
+      final String? errorMessage,
+      final Map<String, dynamic> extra}) = _$_Field<T>;
   const _Field._() : super._();
 
   @override
@@ -204,6 +230,8 @@ abstract class _Field<T> extends Field<T> {
   bool get isPure;
   @override
   String? get errorMessage;
+  @override
+  Map<String, dynamic> get extra;
   @override
   @JsonKey(ignore: true)
   _$$_FieldCopyWith<T, _$_Field<T>> get copyWith =>

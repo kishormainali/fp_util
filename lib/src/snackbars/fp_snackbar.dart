@@ -279,7 +279,7 @@ class FPSnackbar {
           padding: EdgeInsets.zero,
           elevation: 0,
           width: context.responsiveValue(
-            context.width() - 48, // 48 is margin
+            context.width - 48, // 48 is margin
             tablet: context.pw(.6), // 60% width of screen
             desktop: context.pw(.6), // 60% width of screen
           ),
@@ -322,7 +322,7 @@ class _SnackbarWidget extends StatelessWidget {
         constraints: const BoxConstraints(minHeight: 60),
         decoration: BoxDecoration(
           color: backgroundColor,
-          borderRadius: 4.circularBorderRadius(),
+          borderRadius: 4.circularBorderRadius,
           boxShadow: [
             BoxShadow(
               color: backgroundColor.withOpacity(0.2),
@@ -339,11 +339,11 @@ class _SnackbarWidget extends StatelessWidget {
               decoration: BoxDecoration(
                 color: sideBarColor,
                 borderRadius: BorderRadius.horizontal(
-                  left: 4.circularRadius(),
+                  left: 4.circularRadius,
                 ),
               ),
             ),
-            Sizes.gapH12(),
+            Sizes.gapH12,
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -354,7 +354,7 @@ class _SnackbarWidget extends StatelessWidget {
                       children: [
                         if (icon != null) ...[
                           icon!,
-                          Sizes.gapH8(),
+                          Sizes.gapH8,
                         ],
                         Text(
                           title!,
@@ -362,7 +362,7 @@ class _SnackbarWidget extends StatelessWidget {
                         )
                       ],
                     ),
-                  Sizes.gapV8(),
+                  Sizes.gapV8,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -376,7 +376,7 @@ class _SnackbarWidget extends StatelessWidget {
                         ),
                       ),
                       if (actionText != null) ...[
-                        Sizes.gapH8(),
+                        Sizes.gapH8,
                         Material(
                           color: sideBarColor,
                           elevation: 0,
@@ -388,8 +388,7 @@ class _SnackbarWidget extends StatelessWidget {
                             onTap: onActionTap,
                             splashColor: backgroundColor.withOpacity(0.3),
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 4),
+                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                               child: Text(
                                 actionText!,
                                 style: const TextStyle(

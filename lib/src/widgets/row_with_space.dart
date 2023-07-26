@@ -14,15 +14,13 @@ class RowWithSpace extends Row {
     super.textDirection,
     super.verticalDirection,
     List<Widget> children = const [],
-    bool responsive = false,
   }) : super(children: [
-          if (hasLeadingSpace) spacing.horizontalSpace(responsive),
+          if (hasLeadingSpace) spacing.horizontalSpace,
           ...children.expandIndexed(
             (index, child) {
               return [
                 child,
-                if (index < children.length || hasTrailingSpace)
-                  spacing.horizontalSpace(responsive),
+                if (index < children.length || hasTrailingSpace) spacing.horizontalSpace,
               ];
             },
           ),
