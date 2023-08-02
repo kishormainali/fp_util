@@ -120,7 +120,7 @@ class FPSnackbar {
           width: 18,
           height: 18,
           colorFilter: ColorFilter.mode(
-            context.themedColor(_successColor.dark, _successColor.light),
+            context.themedValue<Color>(_successColor.dark, _successColor.light),
             BlendMode.srcIn,
           ),
         ),
@@ -157,7 +157,7 @@ class FPSnackbar {
           width: 18,
           height: 18,
           colorFilter: ColorFilter.mode(
-            context.themedColor(_errorColor.dark, _errorColor.light),
+            context.themedValue<Color>(_errorColor.dark, _errorColor.light),
             BlendMode.srcIn,
           ),
         ),
@@ -194,7 +194,7 @@ class FPSnackbar {
           width: 18,
           height: 18,
           colorFilter: ColorFilter.mode(
-            context.themedColor(_infoColor.dark, _infoColor.light),
+            context.themedValue<Color>(_infoColor.dark, _infoColor.light),
             BlendMode.srcIn,
           ),
         ),
@@ -231,7 +231,7 @@ class FPSnackbar {
           width: 18,
           height: 18,
           colorFilter: ColorFilter.mode(
-            context.themedColor(_warningColor.dark, _warningColor.light),
+            context.themedValue<Color>(_warningColor.dark, _warningColor.light),
             BlendMode.srcIn,
           ),
         ),

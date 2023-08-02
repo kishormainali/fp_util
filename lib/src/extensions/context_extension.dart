@@ -13,9 +13,6 @@ extension BuildContextX on BuildContext {
       theme.brightness == Brightness.dark ||
       colorScheme.brightness == Brightness.dark;
 
-  Color themedColor(Color light, [Color? dark]) =>
-      isDarkTheme ? (dark ?? light) : light;
-
   /// get textTheme
   TextTheme get textTheme => Theme.of(this).textTheme;
 
@@ -176,5 +173,10 @@ extension BuildContextX on BuildContext {
       if (tablet != null) return tablet;
     }
     return mobile;
+  }
+
+  /// extension to get value according to theme
+  T themedValue<T>(T light, [T? dark]) {
+    return isDarkTheme ? (dark ?? light) : light;
   }
 }

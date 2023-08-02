@@ -1,4 +1,7 @@
-# 1.0.19
+# 1.1.1
+- added HideKeyboard widget and extension
+- added `themedValue` extension on BuildContext
+# 1.1.0
 BREAKING CHANGES:
 - removed responsive parameter from all the extension functions
 - changed extension methods into getters

@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:fp_util/src/widgets/widgets.dart';
 
 extension WidgetX on Widget {
   /// make any widgets scrollable
@@ -7,12 +8,14 @@ extension WidgetX on Widget {
     Axis scrollDirection = Axis.vertical,
     EdgeInsetsGeometry? padding,
     bool primary = false,
-    ScrollPhysics physics = const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+    ScrollPhysics physics =
+        const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
     ScrollController? controller,
     DragStartBehavior dragStartBehavior = DragStartBehavior.start,
     Clip clipBehavior = Clip.hardEdge,
     String? restorationId,
-    ScrollViewKeyboardDismissBehavior keyboardDismissBehavior = ScrollViewKeyboardDismissBehavior.manual,
+    ScrollViewKeyboardDismissBehavior keyboardDismissBehavior =
+        ScrollViewKeyboardDismissBehavior.manual,
     Key? key,
   }) =>
       SingleChildScrollView(
@@ -261,6 +264,13 @@ extension WidgetX on Widget {
       Padding(
         key: key,
         padding: EdgeInsets.symmetric(vertical: padding),
+        child: this,
+      );
+
+  /// hides keyboard on tap
+  Widget hideKeyboard({Key? key, bool hideOnDrag = false}) => HideKeyboard(
+        key: key,
+        hideOnDrag: hideOnDrag,
         child: this,
       );
 }
