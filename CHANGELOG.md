@@ -1,3 +1,6 @@
+# 1.1.2
+- added `ConditionalWidget` for conditional rendering
+
 # 1.1.1
 - added HideKeyboard widget and extension
 - added `themedValue` extension on BuildContext
