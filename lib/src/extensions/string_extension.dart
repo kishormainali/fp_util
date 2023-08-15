@@ -38,19 +38,43 @@ extension StringX on String {
   bool get isNotBlank => !isBlank;
 
   /// capitalize string
-  String get capitalize {
-    if (isBlank) {
-      return this;
-    }
-    return '${this[0].toUpperCase()}${substring(1).toLowerCase()}';
-  }
+  String get capitalize => _ReCase(this).capitalize;
+
+  /// camelCase string
+  String get camelCase => _ReCase(this).camelCase;
+
+  /// constantCase string
+  String get constantCase => _ReCase(this).constantCase;
+
+  /// sentenceCase string
+  String get sentenceCase => _ReCase(this).sentenceCase;
+
+  /// snakeCase string
+  String get snakeCase => _ReCase(this).snakeCase;
+
+  /// dotCase string
+  String get dotCase => _ReCase(this).dotCase;
+
+  /// paramCase string
+  String get paramCase => _ReCase(this).paramCase;
+
+  /// pathCase string
+  String get pathCase => _ReCase(this).pathCase;
+
+  /// pascalCase string
+  String get pascalCase => _ReCase(this).pascalCase;
+
+  /// headerCase string
+  String get headerCase => _ReCase(this).headerCase;
+
+  /// titleCase string
+  String get titleCase => _ReCase(this).titleCase;
 
   /// check given string is valid phone number or not
   bool get isValidPhoneNumber {
     if (isBlank) return false;
     if (length > 16 || length < 9) return false;
-    return RegExp(r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$')
-        .hasMatch(this);
+    return RegExp(r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$').hasMatch(this);
   }
 
   /// check given string is numeric or not
@@ -74,10 +98,7 @@ extension StringX on String {
   /// remove all \n \r \t from string
   String get replaceNextLine {
     if (isBlank) return this;
-    return trim()
-        .replaceAll('\n', ' ')
-        .replaceAll('\r', ' ')
-        .replaceAll('\t', ' ');
+    return trim().replaceAll('\n', ' ').replaceAll('\r', ' ').replaceAll('\t', ' ');
   }
 
   /// tries to parse as bool
@@ -103,8 +124,7 @@ extension StringX on String {
     if (isBlank) {
       return false;
     }
-    var regex = RegExp(
-        r'[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)');
+    var regex = RegExp(r'[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)');
     return regex.hasMatch(this);
   }
 
@@ -205,16 +225,7 @@ extension StringX on String {
 final _imageTypes = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.tif'];
 
 /// audio extensions
-final _audioTypes = [
-  '.mp3',
-  '.weba',
-  '.3gp',
-  '.3g2',
-  '.aac',
-  '.mid',
-  '.midi',
-  '.wav'
-];
+final _audioTypes = ['.mp3', '.weba', '.3gp', '.3g2', '.aac', '.mid', '.midi', '.wav'];
 
 /// video extensions
 final _videoTypes = ['.mp4', '.avi', '.3gp', '.mpeg', '.ogv', '.3g2'];
@@ -230,3 +241,117 @@ final _xlsTypes = ['.xls', '.xlsx'];
 
 /// text types
 final _txtTypes = ['.txt', '.rtf'];
+
+/// use to convert string into different cases
+class _ReCase {
+  final RegExp _upperAlphaRegex = RegExp(r'[A-Z]');
+
+  final symbolSet = {' ', '.', '/', '_', '\\', '-'};
+
+  _ReCase(String text) {
+    originalText = text;
+    _words = _groupIntoWords(text);
+  }
+  late String originalText;
+
+  late List<String> _words;
+
+  /// capitalize first letter
+  String get capitalize => _upperCaseFirstLetter(originalText);
+
+  /// camelCase
+  String get camelCase => _getCamelCase();
+
+  /// CONSTANT_CASE
+  String get constantCase => _getConstantCase();
+
+  /// Sentence case
+  String get sentenceCase => _getSentenceCase();
+
+  /// snake_case
+  String get snakeCase => _getSnakeCase();
+
+  /// dot.case
+  String get dotCase => _getSnakeCase(separator: '.');
+
+  /// param-case
+  String get paramCase => _getSnakeCase(separator: '-');
+
+  /// path/case
+  String get pathCase => _getSnakeCase(separator: '/');
+
+  /// PascalCase
+  String get pascalCase => _getPascalCase();
+
+  /// Header-Case
+  String get headerCase => _getPascalCase(separator: '-');
+
+  /// Title Case
+  String get titleCase => _getPascalCase(separator: ' ');
+
+  String _getCamelCase({String separator = ''}) {
+    List<String> words = _words.map(_upperCaseFirstLetter).toList();
+    if (_words.isNotEmpty) {
+      words[0] = words[0].toLowerCase();
+    }
+
+    return words.join(separator);
+  }
+
+  String _getConstantCase({String separator = '_'}) {
+    List<String> words = _words.map((word) => word.toUpperCase()).toList();
+
+    return words.join(separator);
+  }
+
+  String _getPascalCase({String separator = ''}) {
+    List<String> words = _words.map(_upperCaseFirstLetter).toList();
+
+    return words.join(separator);
+  }
+
+  String _getSentenceCase({String separator = ' '}) {
+    List<String> words = _words.map((word) => word.toLowerCase()).toList();
+    if (_words.isNotEmpty) {
+      words[0] = _upperCaseFirstLetter(words[0]);
+    }
+
+    return words.join(separator);
+  }
+
+  String _getSnakeCase({String separator = '_'}) {
+    List<String> words = _words.map((word) => word.toLowerCase()).toList();
+
+    return words.join(separator);
+  }
+
+  String _upperCaseFirstLetter(String word) {
+    return '${word.substring(0, 1).toUpperCase()}${word.substring(1).toLowerCase()}';
+  }
+
+  List<String> _groupIntoWords(String text) {
+    StringBuffer sb = StringBuffer();
+    List<String> words = [];
+    bool isAllCaps = text.toUpperCase() == text;
+
+    for (int i = 0; i < text.length; i++) {
+      String char = text[i];
+      String? nextChar = i + 1 == text.length ? null : text[i + 1];
+
+      if (symbolSet.contains(char)) {
+        continue;
+      }
+
+      sb.write(char);
+
+      bool isEndOfWord = nextChar == null || (_upperAlphaRegex.hasMatch(nextChar) && !isAllCaps) || symbolSet.contains(nextChar);
+
+      if (isEndOfWord) {
+        words.add(sb.toString());
+        sb.clear();
+      }
+    }
+
+    return words;
+  }
+}

@@ -109,12 +109,10 @@ extension NumX on num {
   EdgeInsets get padY => EdgeInsets.symmetric(vertical: toDouble());
 
   /// convert spacing widget into sliver widget
-  SliverToBoxAdapter get sliverHorizontalSpace =>
-      SliverToBoxAdapter(child: horizontalSpace);
+  SliverToBoxAdapter get sliverHorizontalSpace => SliverToBoxAdapter(child: horizontalSpace);
 
   /// convert horizontal spacing widget into sliver widget
-  SliverToBoxAdapter get sliverVerticalSpace =>
-      SliverToBoxAdapter(child: verticalSpace);
+  SliverToBoxAdapter get sliverVerticalSpace => SliverToBoxAdapter(child: verticalSpace);
 
   /// responsive px
   double get px => SizeUtils.instance.getSize(toDouble());

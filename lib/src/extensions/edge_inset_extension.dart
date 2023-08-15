@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 
 extension EdgeInsetsX on EdgeInsets {
   /// add top padding
-  EdgeInsets addTop(double add) => copyWith(top: add);
+  EdgeInsets addTop(double add) => copyWith(top: top + add);
 
   /// add right padding
-  EdgeInsets addRight(double add) => copyWith(right: add);
+  EdgeInsets addRight(double add) => copyWith(right: right + add);
 
   /// add bottom padding
-  EdgeInsets addBottom(double add) => copyWith(bottom: add);
+  EdgeInsets addBottom(double add) => copyWith(bottom: bottom + add);
 
   /// add left padding
-  EdgeInsets addLeft(double add) => copyWith(left: add);
+  EdgeInsets addLeft(double add) => copyWith(left: left + add);
 
   /// add horizontal padding
-  EdgeInsets addX(double add) => copyWith(left: add, right: add);
+  EdgeInsets addX(double add) => copyWith(left: left + add, right: right + add);
 
   /// add vertical padding
-  EdgeInsets addY(double add) => copyWith(top: add, bottom: add);
+  EdgeInsets addY(double add) => copyWith(top: top + add, bottom: bottom + add);
 
   /// set top padding to 0
   EdgeInsets get removeTop => copyWith(top: 0);

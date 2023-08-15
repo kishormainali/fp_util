@@ -1,3 +1,7 @@
+# 1.1.3
+- added recase extensions on String
+- updated EdgeInsets extensions
+
 # 1.1.2
 - added `ConditionalWidget` for conditional rendering
 
