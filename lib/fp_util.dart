@@ -1,3 +1,5 @@
+export 'package:image_picker/image_picker.dart' show XFile;
+
 export 'src/constants/constants.dart';
 export 'src/dialogs/dialogs.dart';
 export 'src/extensions/extensions.dart';

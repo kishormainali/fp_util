@@ -50,7 +50,11 @@
 </header>
 <main>
 
-  <div id="dartdoc-main-content" class="main-content">
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="fp_util&#47;fp_util-library-sidebar.html"
+      data-below-sidebar="fp_util&#47;FormStatus-class-sidebar.html">
       <div>
 <h1><span class="kind-class">FormStatus&lt;<wbr><span class="type-parameter">T</span>&gt;</span> class 
  
@@ -72,7 +76,7 @@
   <dt>Annotations</dt>
   <dd>
     <ul class="annotation-list clazz-relationships">
-        <li>@<a href="https://pub.dev/documentation/freezed_annotation/2.2.0/freezed_annotation/freezed-constant.html">freezed</a></li>
+        <li>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.1/freezed_annotation/Freezed-class.html">Freezed</a>(map: FreezedMapOptions.none, genericArgumentFactories: true)</li>
     </ul>
   </dd>
 
@@ -89,7 +93,7 @@
           <span class="name"><a href="../fp_util/FormStatus/FormStatus.error.html">FormStatus.error</a></span><span class="signature">(<span class="parameter" id="error-param-message">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>}</span>)</span>
         </dt>
         <dd>
-          
+          error state
             <div class="constructor-modifier features">const</div>
             <div class="constructor-modifier features">factory</div>
         </dd>
@@ -97,23 +101,23 @@
           <span class="name"><a href="../fp_util/FormStatus/FormStatus.initial.html">FormStatus.initial</a></span><span class="signature">()</span>
         </dt>
         <dd>
-          
+          initial state
             <div class="constructor-modifier features">const</div>
             <div class="constructor-modifier features">factory</div>
         </dd>
-        <dt id="FormStatus.submitting" class="callable">
-          <span class="name"><a href="../fp_util/FormStatus/FormStatus.submitting.html">FormStatus.submitting</a></span><span class="signature">()</span>
+        <dt id="FormStatus.loading" class="callable">
+          <span class="name"><a href="../fp_util/FormStatus/FormStatus.loading.html">FormStatus.loading</a></span><span class="signature">()</span>
         </dt>
         <dd>
-          
+          loading state
             <div class="constructor-modifier features">const</div>
             <div class="constructor-modifier features">factory</div>
         </dd>
         <dt id="FormStatus.success" class="callable">
-          <span class="name"><a href="../fp_util/FormStatus/FormStatus.success.html">FormStatus.success</a></span><span class="signature">(<span class="parameter" id="success-param-message">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="success-param-data"><span class="type-annotation">T?</span> <span class="parameter-name">data</span>}</span>)</span>
+          <span class="name"><a href="../fp_util/FormStatus/FormStatus.success.html">FormStatus.success</a></span><span class="signature">(<span class="parameter" id="success-param-message">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">message</span>, </span><span class="parameter" id="success-param-data"><span class="type-annotation">T?</span> <span class="parameter-name">data</span>}</span>)</span>
         </dt>
         <dd>
-          
+          success state
             <div class="constructor-modifier features">const</div>
             <div class="constructor-modifier features">factory</div>
         </dd>
@@ -141,18 +145,19 @@
 
 </dt>
 <dd>
-  
+  check is error
   <div class="features"><span class="feature">read-only</span></div>
 
 </dd>
 
-        <dt id="isSubmitting" class="property">
-  <span class="name"><a href="../fp_util/FormStatus/isSubmitting.html">isSubmitting</a></span>
+        <dt id="isLoading" class="property">
+  <span class="name"><a href="../fp_util/FormStatus/isLoading.html">isLoading</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
 
 </dt>
 <dd>
-  
+  getters
+check is loading
   <div class="features"><span class="feature">read-only</span></div>
 
 </dd>
@@ -163,7 +168,7 @@
 
 </dt>
 <dd>
-  
+  check is success
   <div class="features"><span class="feature">read-only</span></div>
 
 </dd>
@@ -188,47 +193,8 @@
       id="instance-methods">
     <h2>Methods</h2>
     <dl class="callables">
-        <dt id="map" class="callable inherited">
-  <span class="name"><a href="../fp_util/FormStatus/map.html">map</a></span><span class="signature">&lt;<wbr><span class="type-parameter">TResult extends <a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a>?</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="map-param-initial">{<span>required</span> <span class="type-annotation">TResult</span> <span class="parameter-name">initial</span>(<span class="parameter" id="param-value"><span class="type-annotation">_Initial<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">value</span></span>), </span><span class="parameter" id="map-param-submitting"><span>required</span> <span class="type-annotation">TResult</span> <span class="parameter-name">submitting</span>(<span class="parameter" id="param-value"><span class="type-annotation">_Submitting<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">value</span></span>), </span><span class="parameter" id="map-param-error"><span>required</span> <span class="type-annotation">TResult</span> <span class="parameter-name">error</span>(<span class="parameter" id="param-value"><span class="type-annotation">_Error<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">value</span></span>), </span><span class="parameter" id="map-param-success"><span>required</span> <span class="type-annotation">TResult</span> <span class="parameter-name">success</span>(<span class="parameter" id="param-value"><span class="type-annotation">_Success<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">value</span></span>)}</span>)
-    <span class="returntype parameter">&#8594; TResult</span>
-  </span>
-  
-
-</dt>
-<dd class="inherited">
-  
-  <div class="features"><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="mapOrNull" class="callable inherited">
-  <span class="name"><a href="../fp_util/FormStatus/mapOrNull.html">mapOrNull</a></span><span class="signature">&lt;<wbr><span class="type-parameter">TResult extends <a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a>?</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="mapOrNull-param-initial">{<span class="type-annotation">TResult?</span> <span class="parameter-name">initial</span>(<span class="parameter" id="param-value"><span class="type-annotation">_Initial<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">value</span></span>)?, </span><span class="parameter" id="mapOrNull-param-submitting"><span class="type-annotation">TResult?</span> <span class="parameter-name">submitting</span>(<span class="parameter" id="param-value"><span class="type-annotation">_Submitting<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">value</span></span>)?, </span><span class="parameter" id="mapOrNull-param-error"><span class="type-annotation">TResult?</span> <span class="parameter-name">error</span>(<span class="parameter" id="param-value"><span class="type-annotation">_Error<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">value</span></span>)?, </span><span class="parameter" id="mapOrNull-param-success"><span class="type-annotation">TResult?</span> <span class="parameter-name">success</span>(<span class="parameter" id="param-value"><span class="type-annotation">_Success<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">value</span></span>)?}</span>)
-    <span class="returntype parameter">&#8594; TResult?</span>
-  </span>
-  
-
-</dt>
-<dd class="inherited">
-  
-  <div class="features"><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="maybeMap" class="callable inherited">
-  <span class="name"><a href="../fp_util/FormStatus/maybeMap.html">maybeMap</a></span><span class="signature">&lt;<wbr><span class="type-parameter">TResult extends <a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a>?</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="maybeMap-param-initial">{<span class="type-annotation">TResult</span> <span class="parameter-name">initial</span>(<span class="parameter" id="param-value"><span class="type-annotation">_Initial<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">value</span></span>)?, </span><span class="parameter" id="maybeMap-param-submitting"><span class="type-annotation">TResult</span> <span class="parameter-name">submitting</span>(<span class="parameter" id="param-value"><span class="type-annotation">_Submitting<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">value</span></span>)?, </span><span class="parameter" id="maybeMap-param-error"><span class="type-annotation">TResult</span> <span class="parameter-name">error</span>(<span class="parameter" id="param-value"><span class="type-annotation">_Error<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">value</span></span>)?, </span><span class="parameter" id="maybeMap-param-success"><span class="type-annotation">TResult</span> <span class="parameter-name">success</span>(<span class="parameter" id="param-value"><span class="type-annotation">_Success<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">value</span></span>)?, </span><span class="parameter" id="maybeMap-param-orElse"><span>required</span> <span class="type-annotation">TResult</span> <span class="parameter-name">orElse</span>()}</span>)
-    <span class="returntype parameter">&#8594; TResult</span>
-  </span>
-  
-
-</dt>
-<dd class="inherited">
-  
-  <div class="features"><span class="feature">inherited</span></div>
-
-</dd>
-
         <dt id="maybeWhen" class="callable inherited">
-  <span class="name"><a href="../fp_util/FormStatus/maybeWhen.html">maybeWhen</a></span><span class="signature">&lt;<wbr><span class="type-parameter">TResult extends <a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a>?</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="maybeWhen-param-initial">{<span class="type-annotation">TResult</span> <span class="parameter-name">initial</span>()?, </span><span class="parameter" id="maybeWhen-param-submitting"><span class="type-annotation">TResult</span> <span class="parameter-name">submitting</span>()?, </span><span class="parameter" id="maybeWhen-param-error"><span class="type-annotation">TResult</span> <span class="parameter-name">error</span>(<span class="parameter" id="param-message"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span></span>)?, </span><span class="parameter" id="maybeWhen-param-success"><span class="type-annotation">TResult</span> <span class="parameter-name">success</span>(<span class="parameter" id="param-message"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="param-data"><span class="type-annotation">T?</span> <span class="parameter-name">data</span></span>)?, </span><span class="parameter" id="maybeWhen-param-orElse"><span>required</span> <span class="type-annotation">TResult</span> <span class="parameter-name">orElse</span>()}</span>)
+  <span class="name"><a href="../fp_util/FormStatus/maybeWhen.html">maybeWhen</a></span><span class="signature">&lt;<wbr><span class="type-parameter">TResult extends <a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a>?</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="maybeWhen-param-initial">{<span class="type-annotation">TResult</span> <span class="parameter-name">initial</span>()?, </span><span class="parameter" id="maybeWhen-param-loading"><span class="type-annotation">TResult</span> <span class="parameter-name">loading</span>()?, </span><span class="parameter" id="maybeWhen-param-error"><span class="type-annotation">TResult</span> <span class="parameter-name">error</span>(<span class="parameter" id="param-message"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span></span>)?, </span><span class="parameter" id="maybeWhen-param-success"><span class="type-annotation">TResult</span> <span class="parameter-name">success</span>(<span class="parameter" id="param-message"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">message</span>, </span><span class="parameter" id="param-data"><span class="type-annotation">T?</span> <span class="parameter-name">data</span></span>)?, </span><span class="parameter" id="maybeWhen-param-orElse"><span>required</span> <span class="type-annotation">TResult</span> <span class="parameter-name">orElse</span>()}</span>)
     <span class="returntype parameter">&#8594; TResult</span>
   </span>
   
@@ -267,7 +233,7 @@
 </dd>
 
         <dt id="when" class="callable inherited">
-  <span class="name"><a href="../fp_util/FormStatus/when.html">when</a></span><span class="signature">&lt;<wbr><span class="type-parameter">TResult extends <a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a>?</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="when-param-initial">{<span>required</span> <span class="type-annotation">TResult</span> <span class="parameter-name">initial</span>(), </span><span class="parameter" id="when-param-submitting"><span>required</span> <span class="type-annotation">TResult</span> <span class="parameter-name">submitting</span>(), </span><span class="parameter" id="when-param-error"><span>required</span> <span class="type-annotation">TResult</span> <span class="parameter-name">error</span>(<span class="parameter" id="param-message"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span></span>), </span><span class="parameter" id="when-param-success"><span>required</span> <span class="type-annotation">TResult</span> <span class="parameter-name">success</span>(<span class="parameter" id="param-message"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="param-data"><span class="type-annotation">T?</span> <span class="parameter-name">data</span></span>)}</span>)
+  <span class="name"><a href="../fp_util/FormStatus/when.html">when</a></span><span class="signature">&lt;<wbr><span class="type-parameter">TResult extends <a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a>?</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="when-param-initial">{<span>required</span> <span class="type-annotation">TResult</span> <span class="parameter-name">initial</span>(), </span><span class="parameter" id="when-param-loading"><span>required</span> <span class="type-annotation">TResult</span> <span class="parameter-name">loading</span>(), </span><span class="parameter" id="when-param-error"><span>required</span> <span class="type-annotation">TResult</span> <span class="parameter-name">error</span>(<span class="parameter" id="param-message"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span></span>), </span><span class="parameter" id="when-param-success"><span>required</span> <span class="type-annotation">TResult</span> <span class="parameter-name">success</span>(<span class="parameter" id="param-message"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">message</span>, </span><span class="parameter" id="param-data"><span class="type-annotation">T?</span> <span class="parameter-name">data</span></span>)}</span>)
     <span class="returntype parameter">&#8594; TResult</span>
   </span>
   
@@ -280,7 +246,7 @@
 </dd>
 
         <dt id="whenOrNull" class="callable inherited">
-  <span class="name"><a href="../fp_util/FormStatus/whenOrNull.html">whenOrNull</a></span><span class="signature">&lt;<wbr><span class="type-parameter">TResult extends <a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a>?</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="whenOrNull-param-initial">{<span class="type-annotation">TResult?</span> <span class="parameter-name">initial</span>()?, </span><span class="parameter" id="whenOrNull-param-submitting"><span class="type-annotation">TResult?</span> <span class="parameter-name">submitting</span>()?, </span><span class="parameter" id="whenOrNull-param-error"><span class="type-annotation">TResult?</span> <span class="parameter-name">error</span>(<span class="parameter" id="param-message"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span></span>)?, </span><span class="parameter" id="whenOrNull-param-success"><span class="type-annotation">TResult?</span> <span class="parameter-name">success</span>(<span class="parameter" id="param-message"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="param-data"><span class="type-annotation">T?</span> <span class="parameter-name">data</span></span>)?}</span>)
+  <span class="name"><a href="../fp_util/FormStatus/whenOrNull.html">whenOrNull</a></span><span class="signature">&lt;<wbr><span class="type-parameter">TResult extends <a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a>?</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="whenOrNull-param-initial">{<span class="type-annotation">TResult?</span> <span class="parameter-name">initial</span>()?, </span><span class="parameter" id="whenOrNull-param-loading"><span class="type-annotation">TResult?</span> <span class="parameter-name">loading</span>()?, </span><span class="parameter" id="whenOrNull-param-error"><span class="type-annotation">TResult?</span> <span class="parameter-name">error</span>(<span class="parameter" id="param-message"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span></span>)?, </span><span class="parameter" id="whenOrNull-param-success"><span class="type-annotation">TResult?</span> <span class="parameter-name">success</span>(<span class="parameter" id="param-message"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">message</span>, </span><span class="parameter" id="param-data"><span class="type-annotation">T?</span> <span class="parameter-name">data</span></span>)?}</span>)
     <span class="returntype parameter">&#8594; TResult?</span>
   </span>
   
@@ -323,136 +289,25 @@
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="../index.html">fp_util</a></li>
-  <li><a href="../fp_util/fp_util-library.html">fp_util</a></li>
-  <li class="self-crumb">FormStatus<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span> class</li>
+    <li><a href="../index.html">fp_util</a></li>
+    <li><a href="../fp_util/fp_util-library.html">fp_util</a></li>
+    <li class="self-crumb">FormStatus<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span> class</li>
 </ol>
 
 
-    <h5>fp_util library</h5>
-    <ol>
-      <li class="section-title"><a href="../fp_util/fp_util-library.html#classes">Classes</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/AnsiColor-class.html">AnsiColor</a></li>
-        <li><a href="../fp_util/BaseDialog-class.html">BaseDialog</a></li>
-        <li><a href="../fp_util/BasicAlertDialog-class.html">BasicAlertDialog</a></li>
-        <li><a href="../fp_util/BasicDialogAction-class.html">BasicDialogAction</a></li>
-        <li><a href="../fp_util/ColumnWithSpace-class.html">ColumnWithSpace</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/ConsoleOutput-class.html">ConsoleOutput</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/DevelopmentFilter-class.html">DevelopmentFilter</a></li>
-        <li><a href="../fp_util/DialogAction-class.html">DialogAction</a></li>
-        <li><a href="../fp_util/DialogData-class.html">DialogData</a></li>
-        <li><a href="../fp_util/EmailValidator-class.html">EmailValidator</a></li>
-        <li><a href="../fp_util/Field-class.html">Field</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/FileOutput-class.html">FileOutput</a></li>
-        <li><a href="../fp_util/FileX-class.html">FileX</a></li>
-        <li><a href="../fp_util/FormStatus-class.html">FormStatus</a></li>
-        <li><a href="../fp_util/FPSnackbar-class.html">FPSnackbar</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/HybridPrinter-class.html">HybridPrinter</a></li>
-        <li><a href="../fp_util/ImagePickerHelper-class.html">ImagePickerHelper</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/LogEvent-class.html">LogEvent</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/LogFilter-class.html">LogFilter</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/LogfmtPrinter-class.html">LogfmtPrinter</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/Logger-class.html">Logger</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/LogOutput-class.html">LogOutput</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/LogPrinter-class.html">LogPrinter</a></li>
-        <li><a href="../fp_util/MaxLengthValidator-class.html">MaxLengthValidator</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/MemoryOutput-class.html">MemoryOutput</a></li>
-        <li><a href="../fp_util/MinLengthValidator-class.html">MinLengthValidator</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/MultiOutput-class.html">MultiOutput</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/OutputEvent-class.html">OutputEvent</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/PrefixPrinter-class.html">PrefixPrinter</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/PrettyPrinter-class.html">PrettyPrinter</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/ProductionFilter-class.html">ProductionFilter</a></li>
-        <li><a href="../fp_util/RequiredValidator-class.html">RequiredValidator</a></li>
-        <li><a href="../fp_util/ResponsiveBuilder-class.html">ResponsiveBuilder</a></li>
-        <li><a href="../fp_util/RowWithSpace-class.html">RowWithSpace</a></li>
-        <li><a href="../fp_util/ScaffoldWrapper-class.html">ScaffoldWrapper</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/SimplePrinter-class.html">SimplePrinter</a></li>
-        <li><a href="../fp_util/Sizes-class.html">Sizes</a></li>
-        <li><a href="../fp_util/SizeUtils-class.html">SizeUtils</a></li>
-        <li><a href="../fp_util/SocialButton-class.html">SocialButton</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/StreamOutput-class.html">StreamOutput</a></li>
-        <li><a href="../fp_util/Validator-class.html">Validator</a></li>
-
-      <li class="section-title"><a href="../fp_util/fp_util-library.html#extensions">Extensions</a></li>
-        <li><a href="../fp_util/BuildContextX.html">BuildContextX</a></li>
-        <li><a href="../fp_util/DateTimeX.html">DateTimeX</a></li>
-        <li><a href="../fp_util/EdgeInsetsX.html">EdgeInsetsX</a></li>
-        <li><a href="../fp_util/FileExtensionX.html">FileExtensionX</a></li>
-        <li><a href="../fp_util/IterableX.html">IterableX</a></li>
-        <li><a href="../fp_util/IterationWithIndex.html">IterationWithIndex</a></li>
-        <li><a href="../fp_util/NumX.html">NumX</a></li>
-        <li><a href="../fp_util/StringNX.html">StringNX</a></li>
-        <li><a href="../fp_util/StringX.html">StringX</a></li>
-        <li><a href="../fp_util/WidgetX.html">WidgetX</a></li>
-
-      <li class="section-title"><a href="../fp_util/fp_util-library.html#mixins">Mixins</a></li>
-        <li><a href="../fp_util/FormMixin-mixin.html">FormMixin</a></li>
-
-
-      <li class="section-title"><a href="../fp_util/fp_util-library.html#properties">Properties</a></li>
-        <li><a href="../fp_util/logger.html">logger</a></li>
-
-      <li class="section-title"><a href="../fp_util/fp_util-library.html#functions">Functions</a></li>
-        <li><a href="../fp_util/showPlatformDialog.html">showPlatformDialog</a></li>
-
-      <li class="section-title"><a href="../fp_util/fp_util-library.html#enums">Enums</a></li>
-        <li><a href="../fp_util/DeviceType.html">DeviceType</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/Level.html">Level</a></li>
-        <li><a href="../fp_util/SocialType.html">SocialType</a></li>
-
-      <li class="section-title"><a href="../fp_util/fp_util-library.html#typedefs">Typedefs</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/LogCallback.html">LogCallback</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.3.0/logger/OutputCallback.html">OutputCallback</a></li>
-
-</ol>
-
+    <!--<h5>fp_util library</h5>-->
+    <div id="dartdoc-sidebar-left-content"></div>
   </div>
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
-    <ol>
-
-        <li class="section-title"><a href="../fp_util/FormStatus-class.html#constructors">Constructors</a></li>
-          <li><a href="../fp_util/FormStatus/FormStatus.error.html">error</a></li>
-          <li><a href="../fp_util/FormStatus/FormStatus.initial.html">initial</a></li>
-          <li><a href="../fp_util/FormStatus/FormStatus.submitting.html">submitting</a></li>
-          <li><a href="../fp_util/FormStatus/FormStatus.success.html">success</a></li>
-
-
-        <li class="section-title">
-          <a href="../fp_util/FormStatus-class.html#instance-properties">Properties</a>
-        </li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
-          <li><a href="../fp_util/FormStatus/isError.html">isError</a></li>
-          <li><a href="../fp_util/FormStatus/isSubmitting.html">isSubmitting</a></li>
-          <li><a href="../fp_util/FormStatus/isSuccess.html">isSuccess</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
-
-        <li class="section-title inherited"><a href="../fp_util/FormStatus-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a href="../fp_util/FormStatus/map.html">map</a></li>
-          <li class="inherited"><a href="../fp_util/FormStatus/mapOrNull.html">mapOrNull</a></li>
-          <li class="inherited"><a href="../fp_util/FormStatus/maybeMap.html">maybeMap</a></li>
-          <li class="inherited"><a href="../fp_util/FormStatus/maybeWhen.html">maybeWhen</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
-          <li class="inherited"><a href="../fp_util/FormStatus/when.html">when</a></li>
-          <li class="inherited"><a href="../fp_util/FormStatus/whenOrNull.html">whenOrNull</a></li>
-
-        <li class="section-title inherited"><a href="../fp_util/FormStatus-class.html#operators">Operators</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
-
-
-
-
-</ol>
-
   </div><!--/.sidebar-offcanvas-->
 
 </main>
@@ -460,7 +315,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.0.4
+      1.2.0
   </span>
 
   

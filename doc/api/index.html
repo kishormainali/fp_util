@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="generator" content="made with love by dartdoc 6.2.2">
+  <meta name="generator" content="made with love by dartdoc 7.0.0-dev">
   <meta name="description" content="fp_util API docs, for the Dart programming language.">
   <title>fp_util - Dart API docs</title>
 
@@ -53,9 +53,14 @@
       
 <section class="desc markdown">
   <h1 id="fputil">FPUtil</h1>
-<p>Utilities and Extensions for num,BuildContext,EdgeInsets,File,String. constants for horizontal and vertical spacing.</p>
+<ul>
+<li>Utilities and Extensions for num, BuildContext, EdgeInsets, File, String. Constants for horizontal and vertical spacing.</li>
+<li>Social Buttons - Facebook, Google, Apple</li>
+<li>Common Buttons - AppButton, AppOutlineButton, AppTextButton supports loading and disabled state and highly customizable.</li>
+<li>ImagePickerHelper for picking images and files</li>
+</ul>
 <blockquote>
-<p>if your figma size is different from Size() then make sure to call    <code>SizeUtils.instance.updateDesignSize(size)</code> on main method;</p>
+<p>if your figma size is different from Size() then make sure to call <code>SizeUtils.instance.updateDesignSize(size)</code> on main method;</p>
 </blockquote>
 <h2 id="constants">Constants</h2>
 <h5 id="vertical-spacing">Vertical Spacing</h5>
@@ -71,31 +76,31 @@ class SpacingTest extends StatelessWidget {
      children: const [
 
        /// 4px vertical space
-       Sizes.gapV4(true /* set true if you want responsiveness*/),
+       Sizes.gapV4,
 
        /// 8px vertical space
-       Sizes.gapV8(true /* set true if you want responsiveness*/),
+       Sizes.gapV8,
 
        /// 12px vertical space
-       Sizes.gapV12(true /* set true if you want responsiveness*/),
+       Sizes.gapV12,
 
        /// 16px vertical space
-       Sizes.gapV16(true /* set true if you want responsiveness*/),
+       Sizes.gapV16,
 
        /// 24px vertical space
-       Sizes.gapV24(true /* set true if you want responsiveness*/),
+       Sizes.gapV24,
 
        /// 32px vertical space
-       Sizes.gapV32(true /* set true if you want responsiveness*/),
+       Sizes.gapV32,
 
        /// 48px vertical space
-       Sizes.gapV48(true /* set true if you want responsiveness*/),
+       Sizes.gapV48,
 
        /// 54px vertical space
-       Sizes.gapV54(true /* set true if you want responsiveness*/),
+       Sizes.gapV54,
 
        /// 64px vertical space
-       Sizes.gapV64(true /* set true if you want responsiveness*/),
+       Sizes.gapV64,
      ],
    );
  }
@@ -114,31 +119,31 @@ Widget build(BuildContext context) {
     children: const [
 
       /// 4px horizontal space
-      Sizes.gapH4(true /* set true if you want responsiveness*/),
+      Sizes.gapH4,
 
       /// 8px horizontal space
-      Sizes.gapH8(true /* set true if you want responsiveness*/),
+      Sizes.gapH8,
 
       /// 12px horizontal space
-      Sizes.gapH12(true /* set true if you want responsiveness*/),
+      Sizes.gapH12,
 
       /// 16px horizontal space
-      Sizes.gapH16(true /* set true if you want responsiveness*/),
+      Sizes.gapH16,
 
       /// 24px horizontal space
-      Sizes.gapH24(true /* set true if you want responsiveness*/),
+      Sizes.gapH24,
 
       /// 32px horizontal space
-      Sizes.gapH32(true /* set true if you want responsiveness*/),
+      Sizes.gapH32,
 
       /// 48px horizontal space
-      Sizes.gapH48(true /* set true if you want responsiveness*/),
+      Sizes.gapH48,
 
       /// 54px horizontal space
-      Sizes.gapH54(true /* set true if you want responsiveness*/),
+      Sizes.gapH54,
 
       /// 64px horizontal space
-      Sizes.gapH64(true /* set true if you want responsiveness*/),
+      Sizes.gapH64,
     ],
   );
 }
@@ -249,7 +254,7 @@ class SpacingYTest extends StatelessWidget {
     return Column(
       children: [
         const Text('Text 1'),
-        10.verticalSpace(true /* set true if you want responsiveness*/),
+        10.verticalSpace,
         const Text('Text 2'),
       ],
     );
@@ -273,7 +278,7 @@ class SpacingXTest extends StatelessWidget {
     return Row(
       children: [
         const Text('Text 1'),
-        10.horizontalSpace(true /* set true if you want responsiveness*/),
+        10.horizontalSpace,
         const Text('Text 2'),
       ],
     );
@@ -317,29 +322,39 @@ final duration = 10.days;
 <li>
 <h5 id="delayed-duration">Delayed Duration</h5>
 <ul>
-<li>delayedMicroSeconds</li>
-<li>delayedMilliSeconds</li>
-<li>delayedSeconds</li>
-<li>delayedMinutes</li>
-<li>delayedHours</li>
+<li>delayedMicroSeconds()</li>
+<li>delayedMilliSeconds()</li>
+<li>delayedSeconds()</li>
+<li>delayedMinutes()</li>
+<li>delayedHours()</li>
 </ul>
 </li>
 </ul>
 <pre class="language-dart"><code class="language-dart">
 /// Creates Future of Duration on microseconds
-final duration = 10.delayedMicroSeconds;
+final duration = 10.delayedMicroSeconds(()async{
+  // optional callback
+});
 
 /// Creates Future of Duration on milliseconds
-final duration = 10.delayedMilliseconds;
+final duration = 10.delayedMilliseconds(()async{
+  // optional callback
+});
 
 /// Creates Future of Duration on seconds
-final duration = 10.delayedSeconds;
+final duration = 10.delayedSeconds(()async{
+  // optional callback
+});
 
 /// Creates Future of Duration on minutes
-final duration = 10.delayedMinutes;
+final duration = 10.delayedMinutes(()async{
+  // optional callback
+});
 
 /// Creates Future of Duration on hours
-final duration = 10.delayedHours;
+final duration = 10.delayedHours(()async{
+  // optional callback
+});
 
 
 </code></pre>
@@ -358,9 +373,8 @@ class RadiusTest extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-
         /// creates 10px rounded corner
-        borderRadius: 10.circularBorderRadius(true /* set true if you want responsiveness*/),
+        borderRadius: 10.circularBorderRadius,
       ),
     );
   }
@@ -383,8 +397,8 @@ class RadiusTest extends StatelessWidget {
       decoration: BoxDecoration(
 
         /// creates 10px rounded corner for topLeft and topRight
-        borderRadius: BorderRadius.only(topLeft: 10.circularRadius(true /* set true if you want responsiveness*/), 
-        topRight: 10.circularRadius(true /* set true if you want responsiveness*/),),),
+        borderRadius: BorderRadius.only(topLeft: 10.circularRadius,
+        topRight: 10.circularRadius,),),
     );
   }
 }
@@ -414,25 +428,25 @@ class EdgeInsetsTest extends StatelessWidget {
       children: [
 
         /// creates padding with 10px all
-        Padding(padding: 10.all(true /* set true if you want responsiveness*/)),
+        Padding(padding: 10.all),
 
         /// creates padding with 10px top only
-        Padding(padding: 10.padTop(true /* set true if you want responsiveness*/)),
+        Padding(padding: 10.padTop),
 
         /// creates padding with 10px right only
-        Padding(padding: 10.padRight(true /* set true if you want responsiveness*/)),
+        Padding(padding: 10.padRight),
 
         /// creates padding with 10px bottom only
-        Padding(padding: 10.padBottom(true /* set true if you want responsiveness*/)),
+        Padding(padding: 10.padBottom),
 
         /// creates padding with 10px left only
-        Padding(padding: 10.padLeft(true /* set true if you want responsiveness*/)),
+        Padding(padding: 10.padLeft),
 
         /// creates padding with 10px horizontal
-        Padding(padding: 10.padX(true /* set true if you want responsiveness*/)),
+        Padding(padding: 10.padX),
 
         /// creates padding with 10px vertical
-        Padding(padding: 10.padY(true /* set true if you want responsiveness*/)),
+        Padding(padding: 10.padY),
       ],
     );
   }
@@ -455,7 +469,7 @@ class SliverSpaceY extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverList(/*children*/),
-        10.sliverVerticalSpace(true /* set true if you want responsiveness*/),
+        10.sliverVerticalSpace,
         SliverList(/*children*/)
       ],
     );
@@ -480,9 +494,9 @@ class SliverSpaceX extends StatelessWidget {
     return CustomScrollView(
       scrollDirection: Axis.horizontal,
       slivers: [
-        SliverPadding(padding: 10.all(true /* set true if you want responsiveness*/)),
+        SliverPadding(padding: 10.all),
         10.sliverHorizontalSpace,
-        SliverPadding(padding: 10.all(true /* set true if you want responsiveness*/)),
+        SliverPadding(padding: 10.all),
       ],
     );
   }
@@ -648,28 +662,28 @@ class PaddingTest extends StatelessWidget {
       children: [
 
         /// wraps with all padding
-        const Text('Text 1').pad(10,responsive:true /* set true if you want responsiveness */),
+        const Text('Text 1').pad(10),
 
         /// wraps with left only padding
-        const Text('Text 1').padLeft(10,responsive:true /* set true if you want responsiveness */),
+        const Text('Text 1').padLeft(10),
 
         /// wraps with right only padding
-        const Text('Text 1').padRight(10,responsive:true /* set true if you want responsiveness */),
+        const Text('Text 1').padRight(10),
 
         /// wraps with bottom only padding
-        const Text('Text 1').padBottom(10,responsive:true /* set true if you want responsiveness */),
+        const Text('Text 1').padBottom(10),
 
         /// wraps with top only padding
-        const Text('Text 1').padTop(10,responsive:true /* set true if you want responsiveness */),
+        const Text('Text 1').padTop(10),
 
         /// wraps with horizontal padding
-        const Text('Text 1').padX(10,responsive:true /* set true if you want responsiveness */),
+        const Text('Text 1').padX(10),
 
         /// wraps width vertical padding
-        const Text('Text 1').padY(10,responsive:true /* set true if you want responsiveness */),
+        const Text('Text 1').padY(10),
 
         /// wraps widget with padding of left top right bottom
-        const Text('Text 1').padLTRB(left: 10, top: 5, right: 10, bottom: 10,responsive:true /* set true if you want responsiveness */),
+        const Text('Text 1').padLTRB(left: 10, top: 5, right: 10, bottom: 10),
 
       ],
     );
@@ -683,6 +697,58 @@ class PaddingTest extends StatelessWidget {
 </li>
 <li>
 <h4 id="colorscheme">colorScheme</h4>
+<ul>
+<li>primaryColor</li>
+<li>onPrimaryColor</li>
+<li>primaryContainerColor</li>
+<li>onPrimaryContainerColor</li>
+</ul>
+<p>/// secondary colors</p>
+<ul>
+<li>secondaryColor</li>
+<li>onSecondaryColor</li>
+<li>secondaryContainerColor</li>
+<li>onSecondaryContainerColor</li>
+</ul>
+<p>/// tertiary color</p>
+<ul>
+<li>tertiaryColor</li>
+<li>onTertiaryColor</li>
+<li>tertiaryContainerColor</li>
+<li>onTertiaryContainerColor</li>
+</ul>
+<p>/// surface color</p>
+<ul>
+<li>surfaceColor</li>
+<li>onSurfaceColor</li>
+</ul>
+<p>/// surface variant color</p>
+<ul>
+<li>surfaceVariantColor</li>
+<li>onSurfaceVariantColor</li>
+</ul>
+<p>/// inverse colors</p>
+<ul>
+<li>inverseSurfaceColor</li>
+<li>onInverseSurfaceColor</li>
+</ul>
+<p>/// background color</p>
+<ul>
+<li>backgroundColor</li>
+<li>onBackgroundContainerColor</li>
+</ul>
+<p>/// outline color</p>
+<ul>
+<li>outlineColor</li>
+<li>outlineVariantColor</li>
+</ul>
+<p>/// error colors</p>
+<ul>
+<li>errorColor</li>
+<li>onErrorColor</li>
+<li>errorContainerColor</li>
+<li>onErrorContainerColor</li>
+</ul>
 </li>
 <li>
 <h4 id="texttheme">textTheme</h4>
@@ -769,15 +835,61 @@ class PaddingTest extends StatelessWidget {
   final bodyMedium = context.bodyMedium;
   final bodySmall = context.bodySmall;
 
+
+/// colors
+final Color primaryColor = context.primaryColor;
+final Color onPrimaryColor = context.onPrimaryColor;
+final Color primaryContainerColor = context.primaryContainerColor;
+final Color onPrimaryContainerColor = context.onPrimaryContainerColor;
+
+/// secondary colors
+final Color secondaryColor = context.secondaryColor;
+final Color onSecondaryColor = context.onSecondaryColor;
+final Color secondaryContainerColor = context.secondaryContainerColor;
+final Color onSecondaryContainerColor =&gt; colorScheme.onSecondaryContainer;
+
+/// tertiary color
+final Color tertiaryColor = context.tertiaryColor;
+final Color onTertiaryColor = context.onTertiaryColor;
+final Color tertiaryContainerColor = context.tertiaryContainerColor;
+final Color onTertiaryContainerColor = context.onTertiaryContainerColor;
+
+/// surface color
+final Color surfaceColor = context.surfaceColor;
+final Color onSurfaceColor = context.onSurfaceColor;
+
+/// surface variant color
+final Color surfaceVariantColor = context.surfaceVariantColor;
+final Color onSurfaceVariantColor = context.onSurfaceVariantColor;
+
+/// inverse colors
+final Color inverseSurfaceColor = context.inverseSurfaceColor;
+final Color onInverseSurfaceColor = context.onInverseSurfaceColor;
+
+/// background color
+final Color backgroundColor = context.backgroundColor;
+final Color onBackgroundContainerColor = context.onBackgroundContainerColor;
+
+/// outline color
+final Color outlineColor = context.outlineColor;
+final Color outlineVariantColor = context.outlineVariantColor;
+
+/// error colors
+final Color errorColor = context.errorColor;
+final Color onErrorColor = context.onErrorColor;
+final Color errorContainerColor = context.errorContainerColor;
+final Color onErrorContainerColor = context.onErrorContainerColor;
+
+
   /// sizes
-  final width = context.width(true /* set true if you want responsiveness */);
-  final height = context.height(true /* set true if you want responsiveness */);
+  final width = context.width;
+  final height = context.height;
 
   /// 1% of screen width
-  final widthPercentage = context.pw(.1,true /* set true if you want responsiveness */);
+  final widthPercentage = context.pw(.1);
 
   /// 1% of screen height
-  final heightPercentage = context.ph(.4,true /* set true if you want responsiveness */);
+  final heightPercentage = context.ph(.4);
 
   /// remove focus / hide keyboard
   context.removeFocus();
@@ -786,21 +898,21 @@ class PaddingTest extends StatelessWidget {
   context.hasFocus;
 
   /// padding
-  /// The parts of the display that are partially obscured by system UI, 
+  /// The parts of the display that are partially obscured by system UI,
   /// typically by the hardware display "notches" or the system status bar.
-  /// for more check [MediaQuery.of(context).padding]
+  /// for more check [MediaQuery.paddingOf(context)]
   context.padding;
 
   /// view insets
-  /// The parts of the display that are completely obscured by system UI, 
+  /// The parts of the display that are completely obscured by system UI,
   /// typically by the device's keyboard.
-  /// for more check [MediaQuery.of(context).viewInsets]
+  /// for more check [MediaQuery.viewInsetsOf(context)]
   context.viewInsets;
 
   /// view padding
-  /// The parts of the display that are partially obscured by system UI, 
+  /// The parts of the display that are partially obscured by system UI,
   /// typically by the hardware display "notches" or the system status bar.
-  /// for more check [MediaQuery.of(context).viewPadding]
+  /// for more check [MediaQuery.viewPaddingOf(context)]
   context.viewPadding;
 
   /// media query
@@ -810,7 +922,7 @@ class PaddingTest extends StatelessWidget {
   final rValue = context.responsiveValue&lt;double&gt;(10,desktop:30,tablet:20);
 
 </code></pre>
-<h2 id="fpsnacbar">FPSnacbar</h2>
+<h2 id="fpsnackbar">FPSnackbar</h2>
 <p>helper class for showing snackbars</p>
 <ul>
 <li>
@@ -840,7 +952,7 @@ Snackbar for error messages
 </li>
 <li>
 <h4 id="info">Info</h4>
- Snackbar for info messages
+Snackbar for info messages
 <pre class="language-dart"><code class="language-dart">   FPSnackbar.info(
         context,
         title: 'Title',
@@ -865,8 +977,7 @@ Snackbar for custom snackbars
         context,
         title: 'Create User',
         message: 'message',
-        backgroundColor: Colors.redAccent.shade100,
-        sideBarColor: Colors.red,
+        color:(light:Colors.blue,dark:Colors.green,bar:Colors.red)
         textStyle: const TextStyle(
           fontSize: 14,
           color: Colors.white,
@@ -897,14 +1008,15 @@ Snackbar for custom snackbars
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="https://mkcli.kishormainali.com/">fp_util package</a></li>
+    <li><a href="https://mkcli.kishormainali.com/">fp_util package</a></li>
 </ol>
 
 
@@ -924,7 +1036,7 @@ Snackbar for custom snackbars
 <footer>
   <span class="no-break">
     fp_util
-      1.0.6
+      1.2.0
   </span>
 
   

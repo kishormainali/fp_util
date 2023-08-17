@@ -51,7 +51,11 @@
 </header>
 <main>
 
-  <div id="dartdoc-main-content" class="main-content">
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="fp_util&#47;ImagePickerHelper-class-sidebar.html"
+      data-below-sidebar="">
       <div>
 <h1><span class="kind-method">pickImageFromCamera</span> static method 
 </h1></div>
@@ -60,7 +64,8 @@
       
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/cross_file/0.3.3+4/cross_file/XFile-class.html">XFile</a>?</span>&gt;</span></span>
-<span class="name ">pickImageFromCamera</span>(<wbr>)
+<span class="name ">pickImageFromCamera</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="pickImageFromCamera-param-sizeInMb">[<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">sizeInMb</span> = <span class="default-value">-1</span>]</span></li>
+</ol>)
 
       
 
@@ -74,12 +79,13 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">static Future&lt;XFile?&gt; pickImageFromCamera() async {
+  <pre class="language-dart"><code class="language-dart">static Future&lt;XFile?&gt; pickImageFromCamera([int sizeInMb = -1]) async {
   try {
     XFile? file = await _picker.pickImage(source: ImageSource.camera);
+    if (sizeInMb &gt; 0 &amp;&amp; file != null) return await _checkSize(sizeInMb, file);
     return file;
   } catch (e, stack) {
-    logger.e(&#39;Error&#39;, e, stack);
+    logger.e(&#39;Error&#39;, error: e, stackTrace: stack);
     return null;
   }
 }</code></pre>
@@ -89,52 +95,22 @@
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="../../index.html">fp_util</a></li>
-  <li><a href="../../fp_util/fp_util-library.html">fp_util</a></li>
-  <li><a href="../../fp_util/ImagePickerHelper-class.html">ImagePickerHelper</a></li>
-  <li class="self-crumb">pickImageFromCamera static method</li>
+    <li><a href="../../index.html">fp_util</a></li>
+    <li><a href="../../fp_util/fp_util-library.html">fp_util</a></li>
+    <li><a href="../../fp_util/ImagePickerHelper-class.html">ImagePickerHelper</a></li>
+    <li class="self-crumb">pickImageFromCamera static method</li>
 </ol>
 
 
     <h5>ImagePickerHelper class</h5>
-    <ol>
-
-        <li class="section-title"><a href="../../fp_util/ImagePickerHelper-class.html#constructors">Constructors</a></li>
-          <li><a href="../../fp_util/ImagePickerHelper/ImagePickerHelper.html">ImagePickerHelper</a></li>
-
-
-        <li class="section-title inherited">
-          <a href="../../fp_util/ImagePickerHelper-class.html#instance-properties">Properties</a>
-        </li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
-
-        <li class="section-title inherited"><a href="../../fp_util/ImagePickerHelper-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
-
-        <li class="section-title inherited"><a href="../../fp_util/ImagePickerHelper-class.html#operators">Operators</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
-
-
-
-        <li class="section-title"><a href="../../fp_util/ImagePickerHelper-class.html#static-methods">Static methods</a></li>
-          <li><a href="../../fp_util/ImagePickerHelper/pickFile.html">pickFile</a></li>
-          <li><a href="../../fp_util/ImagePickerHelper/pickFiles.html">pickFiles</a></li>
-          <li><a href="../../fp_util/ImagePickerHelper/pickImageFromCamera.html">pickImageFromCamera</a></li>
-          <li><a href="../../fp_util/ImagePickerHelper/pickImageFromGallery.html">pickImageFromGallery</a></li>
-          <li><a href="../../fp_util/ImagePickerHelper/pickMultiImageFromGallery.html">pickMultiImageFromGallery</a></li>
-          <li><a href="../../fp_util/ImagePickerHelper/selectAndPickImage.html">selectAndPickImage</a></li>
-
-</ol>
-
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
@@ -145,7 +121,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.0.6
+      1.2.0
   </span>
 
   

@@ -51,7 +51,11 @@
 </header>
 <main>
 
-  <div id="dartdoc-main-content" class="main-content">
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="fp_util&#47;FPSnackbar-class-sidebar.html"
+      data-below-sidebar="">
       <div>
 <h1><span class="kind-method">success</span> static method 
 </h1></div>
@@ -88,25 +92,27 @@
 }) =&gt;
     _showSnackbar(
       context: context,
-      backgroundColor: const Color(0xFFDEF1D7),
-      sideBarColor: const Color(0xFF1F8722),
+      color: _successColor,
       textStyle: const TextStyle(
         fontSize: 16,
-        color: Color(0xFF1F8722),
+        height: 1.25,
       ),
       titleTextStyle: const TextStyle(
-        fontSize: 18,
-        height: 24 &#47; 18,
-        fontWeight: FontWeight.w600,
-        color: Color(0xFF1F8722),
+        fontSize: 16,
+        height: 1.25,
+        fontWeight: FontWeight.w500,
       ),
       message: message,
       title: title,
       icon: SvgPicture.asset(
         &#39;assets&#47;icons&#47;success.svg&#39;,
         package: &#39;fp_util&#39;,
-        width: 24,
-        height: 24,
+        width: 18,
+        height: 18,
+        colorFilter: ColorFilter.mode(
+          context.themedValue&lt;Color&gt;(_successColor.dark, _successColor.light),
+          BlendMode.srcIn,
+        ),
       ),
       duration: 3,
       actionText: actionText,
@@ -118,51 +124,22 @@
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="../../index.html">fp_util</a></li>
-  <li><a href="../../fp_util/fp_util-library.html">fp_util</a></li>
-  <li><a href="../../fp_util/FPSnackbar-class.html">FPSnackbar</a></li>
-  <li class="self-crumb">success static method</li>
+    <li><a href="../../index.html">fp_util</a></li>
+    <li><a href="../../fp_util/fp_util-library.html">fp_util</a></li>
+    <li><a href="../../fp_util/FPSnackbar-class.html">FPSnackbar</a></li>
+    <li class="self-crumb">success static method</li>
 </ol>
 
 
     <h5>FPSnackbar class</h5>
-    <ol>
-
-        <li class="section-title"><a href="../../fp_util/FPSnackbar-class.html#constructors">Constructors</a></li>
-          <li><a href="../../fp_util/FPSnackbar/FPSnackbar.html">FPSnackbar</a></li>
-
-
-        <li class="section-title inherited">
-          <a href="../../fp_util/FPSnackbar-class.html#instance-properties">Properties</a>
-        </li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
-
-        <li class="section-title inherited"><a href="../../fp_util/FPSnackbar-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
-
-        <li class="section-title inherited"><a href="../../fp_util/FPSnackbar-class.html#operators">Operators</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
-
-
-
-        <li class="section-title"><a href="../../fp_util/FPSnackbar-class.html#static-methods">Static methods</a></li>
-          <li><a href="../../fp_util/FPSnackbar/custom.html">custom</a></li>
-          <li><a href="../../fp_util/FPSnackbar/error.html">error</a></li>
-          <li><a href="../../fp_util/FPSnackbar/info.html">info</a></li>
-          <li><a href="../../fp_util/FPSnackbar/success.html">success</a></li>
-          <li><a href="../../fp_util/FPSnackbar/warning.html">warning</a></li>
-
-</ol>
-
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
@@ -173,7 +150,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.0.6
+      1.2.0
   </span>
 
   

@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the delayedMilliSeconds property from the NumX extension, for the Dart programming language.">
-  <title>delayedMilliSeconds property - NumX extension - fp_util library - Dart API</title>
+  <meta name="description" content="API docs for the delayedMilliSeconds method from the NumX extension, for the Dart programming language.">
+  <title>delayedMilliSeconds method - NumX extension - fp_util library - Dart API</title>
 
 
   
@@ -31,7 +31,7 @@
     <li><a href="../../index.html">fp_util</a></li>
     <li><a href="../../fp_util/fp_util-library.html">fp_util</a></li>
     <li><a href="../../fp_util/NumX.html">NumX</a></li>
-    <li class="self-crumb">delayedMilliSeconds property</li>
+    <li class="self-crumb">delayedMilliSeconds method</li>
   </ol>
   <div class="self-name">delayedMilliSeconds</div>
   <form class="search navbar-right" role="search">
@@ -51,97 +51,65 @@
 </header>
 <main>
 
-  <div id="dartdoc-main-content" class="main-content">
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="fp_util&#47;NumX-extension-sidebar.html"
+      data-below-sidebar="">
       <div>
-<h1><span class="kind-property">delayedMilliSeconds</span> property 
+<h1><span class="kind-method">delayedMilliSeconds</span> method 
 </h1></div>
 
+    <section class="multi-line-signature">
+      
 
-        
-<section id="getter">
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a></span>
+<span class="name ">delayedMilliSeconds</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="delayedMilliSeconds-param-callback">[<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/FutureOr-class.html">FutureOr</a></span> <span class="parameter-name">callback</span>(<ol class="parameter-list"></ol>
+)?]</span></li>
+</ol>)
 
-<section class="multi-line-signature">
-  
-  <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a></span>
-  <span class="name ">delayedMilliSeconds</span>
-  
+      
 
-</section>
-
-
+    </section>
+    
 <section class="desc markdown">
   <p>get delayed future in millisecond</p>
 </section>
 
 
+    
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future get delayedMilliSeconds async =&gt; Future.delayed(toInt().milliseconds);</code></pre>
-</section>
-
+  <pre class="language-dart"><code class="language-dart">Future delayedMilliSeconds([
+  FutureOr&lt;dynamic&gt; Function()? callback,
+]) {
+  return Future.delayed(
+    toInt().milliseconds,
+    callback,
+  );
+}</code></pre>
 </section>
 
 
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="../../index.html">fp_util</a></li>
-  <li><a href="../../fp_util/fp_util-library.html">fp_util</a></li>
-  <li><a href="../../fp_util/NumX.html">NumX</a></li>
-  <li class="self-crumb">delayedMilliSeconds property</li>
+    <li><a href="../../index.html">fp_util</a></li>
+    <li><a href="../../fp_util/fp_util-library.html">fp_util</a></li>
+    <li><a href="../../fp_util/NumX.html">NumX</a></li>
+    <li class="self-crumb">delayedMilliSeconds method</li>
 </ol>
 
 
     <h5>NumX extension</h5>
-    <ol>
-
-
-
-
-        <li class="section-title"> <a href="../../fp_util/NumX.html#instance-properties">Properties</a></li>
-          <li><a href="../../fp_util/NumX/days.html">days</a></li>
-          <li><a href="../../fp_util/NumX/delayedHours.html">delayedHours</a></li>
-          <li><a href="../../fp_util/NumX/delayedMicroSeconds.html">delayedMicroSeconds</a></li>
-          <li><a href="../../fp_util/NumX/delayedMilliSeconds.html">delayedMilliSeconds</a></li>
-          <li><a href="../../fp_util/NumX/delayedMinutes.html">delayedMinutes</a></li>
-          <li><a href="../../fp_util/NumX/delayedSeconds.html">delayedSeconds</a></li>
-          <li><a href="../../fp_util/NumX/h.html">h</a></li>
-          <li><a href="../../fp_util/NumX/hours.html">hours</a></li>
-          <li><a href="../../fp_util/NumX/microseconds.html">microseconds</a></li>
-          <li><a href="../../fp_util/NumX/milliseconds.html">milliseconds</a></li>
-          <li><a href="../../fp_util/NumX/minutes.html">minutes</a></li>
-          <li><a href="../../fp_util/NumX/px.html">px</a></li>
-          <li><a href="../../fp_util/NumX/seconds.html">seconds</a></li>
-          <li><a href="../../fp_util/NumX/w.html">w</a></li>
-
-        <li class="section-title"><a href="../../fp_util/NumX.html#instance-methods">Methods</a></li>
-          <li><a href="../../fp_util/NumX/all.html">all</a></li>
-          <li><a href="../../fp_util/NumX/circular.html">circular</a></li>
-          <li><a href="../../fp_util/NumX/circularBorderRadius.html">circularBorderRadius</a></li>
-          <li><a href="../../fp_util/NumX/circularRadius.html">circularRadius</a></li>
-          <li><a href="../../fp_util/NumX/horizontalSpace.html">horizontalSpace</a></li>
-          <li><a href="../../fp_util/NumX/padBottom.html">padBottom</a></li>
-          <li><a href="../../fp_util/NumX/padLeft.html">padLeft</a></li>
-          <li><a href="../../fp_util/NumX/padRight.html">padRight</a></li>
-          <li><a href="../../fp_util/NumX/padTop.html">padTop</a></li>
-          <li><a href="../../fp_util/NumX/padX.html">padX</a></li>
-          <li><a href="../../fp_util/NumX/padY.html">padY</a></li>
-          <li><a href="../../fp_util/NumX/sliverHorizontalSpace.html">sliverHorizontalSpace</a></li>
-          <li><a href="../../fp_util/NumX/sliverVerticalSpace.html">sliverVerticalSpace</a></li>
-          <li><a href="../../fp_util/NumX/verticalSpace.html">verticalSpace</a></li>
-
-
-
-
-</ol>
-
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
@@ -152,7 +120,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.0.6
+      1.2.0
   </span>
 
   

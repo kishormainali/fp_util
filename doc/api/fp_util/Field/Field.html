@@ -51,7 +51,11 @@
 </header>
 <main>
 
-  <div id="dartdoc-main-content" class="main-content">
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="fp_util&#47;Field-class-sidebar.html"
+      data-below-sidebar="">
       <div>
 <h1><span class="kind-constructor">Field&lt;<wbr><span class="type-parameter">T</span>&gt;</span> constructor 
 </h1></div>
@@ -59,8 +63,10 @@
     <section class="multi-line-signature">
       const
       <span class="name ">Field&lt;<wbr><span class="type-parameter">T</span>&gt;</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-value">{<span>required</span> <span class="type-annotation">T</span> <span class="parameter-name">value</span>, </span></li>
-<li><span class="parameter" id="-param-validators"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.2.0/freezed_annotation/Default-class.html">Default</a>([])</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../fp_util/Validator-class.html">Validator</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">validators</span>, </span></li>
-<li><span class="parameter" id="-param-isPure"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.2.0/freezed_annotation/Default-class.html">Default</a>(true)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isPure</span>}</span></li>
+<li><span class="parameter" id="-param-validators"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.1/freezed_annotation/Default-class.html">Default</a>([])</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../fp_util/Validator-class.html">Validator</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">validators</span>, </span></li>
+<li><span class="parameter" id="-param-isPure"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.1/freezed_annotation/Default-class.html">Default</a>(true)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isPure</span>, </span></li>
+<li><span class="parameter" id="-param-errorMessage"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">errorMessage</span>, </span></li>
+<li><span class="parameter" id="-param-extra"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.1/freezed_annotation/Default-class.html">Default</a>({})</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">extra</span>}</span></li>
 </ol>)
     </section>
 
@@ -70,63 +76,29 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">const factory Field({
-  required T value,
-  @Default([]) List&lt;Validator&lt;T&gt;&gt; validators,
-  @Default(true) bool isPure,
-}) = _Field&lt;T&gt;;</code></pre>
+  <pre class="language-dart"><code class="language-dart">const factory Field</code></pre>
 </section>
 
 
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="../../index.html">fp_util</a></li>
-  <li><a href="../../fp_util/fp_util-library.html">fp_util</a></li>
-  <li><a href="../../fp_util/Field-class.html">Field<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></a></li>
-  <li class="self-crumb">Field const constructor</li>
+    <li><a href="../../index.html">fp_util</a></li>
+    <li><a href="../../fp_util/fp_util-library.html">fp_util</a></li>
+    <li><a href="../../fp_util/Field-class.html">Field<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></a></li>
+    <li class="self-crumb">Field const constructor</li>
 </ol>
 
 
     <h5>Field class</h5>
-    <ol>
-
-        <li class="section-title"><a href="../../fp_util/Field-class.html#constructors">Constructors</a></li>
-          <li><a href="../../fp_util/Field/Field.html">Field</a></li>
-
-
-        <li class="section-title">
-          <a href="../../fp_util/Field-class.html#instance-properties">Properties</a>
-        </li>
-          <li class="inherited"><a href="../../fp_util/Field/copyWith.html">copyWith</a></li>
-          <li><a href="../../fp_util/Field/errorMessage.html">errorMessage</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
-          <li class="inherited"><a href="../../fp_util/Field/isPure.html">isPure</a></li>
-          <li><a href="../../fp_util/Field/isValid.html">isValid</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
-          <li class="inherited"><a href="../../fp_util/Field/validators.html">validators</a></li>
-          <li class="inherited"><a href="../../fp_util/Field/value.html">value</a></li>
-
-        <li class="section-title"><a href="../../fp_util/Field-class.html#instance-methods">Methods</a></li>
-          <li><a href="../../fp_util/Field/dirty.html">dirty</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
-
-        <li class="section-title inherited"><a href="../../fp_util/Field-class.html#operators">Operators</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
-
-
-
-
-</ol>
-
   </div><!--/.sidebar-offcanvas-left-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
@@ -137,7 +109,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.0.6
+      1.2.0
   </span>
 
   

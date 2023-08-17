@@ -1,11 +1,9 @@
 import 'dart:io';
 
-import 'package:equatable/equatable.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:fp_util/fp_util.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:path/path.dart';
 
 import '../dialogs/enums.dart';
 
@@ -17,26 +15,15 @@ abstract class ImagePickerHelper {
   static Future<SourceType?> _chooseImageSource(
     BuildContext context, {
     WidgetBuilder? builder,
-    bool useMaterial = false,
   }) async {
-    return showPlatformDialog(
-      context,
-      useMaterial: useMaterial,
-      cupertino: CupertinoDialogData(barrierDismissible: true),
+    return showAdaptiveDialog<SourceType>(
+      context: context,
       builder: builder ??
-          (context) => BasicPlatformDialog(
-                useMaterial: useMaterial,
-                title: Text(
-                  'Choose Image Source',
-                  textAlign: TextAlign.center,
-                  style: context.bodyLarge,
-                ),
-                material: MaterialAlertDialogData(
-                  actionsAlignment: MainAxisAlignment.center,
-                ),
+          (context) => AlertDialog.adaptive(
+                title: const Text('Choose Image Source'),
+                content: const Text(''),
                 actions: [
                   PlatformDialogAction(
-                    useMaterial: useMaterial,
                     onPressed: () => Navigator.pop(context, SourceType.camera),
                     material: MaterialActionData(
                       style: const ButtonStyle(
@@ -48,7 +35,6 @@ abstract class ImagePickerHelper {
                     child: const Text('Camera'),
                   ),
                   PlatformDialogAction(
-                    useMaterial: useMaterial,
                     onPressed: () => Navigator.pop(context, SourceType.gallery),
                     material: MaterialActionData(
                       style: const ButtonStyle(
@@ -69,14 +55,12 @@ abstract class ImagePickerHelper {
   static Future<XFile?> selectAndPickImage(
     BuildContext context, {
     WidgetBuilder? builder,
-    bool useMaterial = false,
     int sizeInMb = -1,
   }) async {
     XFile? file;
     final res = await _chooseImageSource(
       context,
       builder: builder,
-      useMaterial: useMaterial,
     );
     if (res != null) {
       if (res == SourceType.camera) {
@@ -275,25 +259,6 @@ extension PlatformFileX on PlatformFile {
 }
 
 extension XFileX on XFile {
-  /// convert to FileX
-  FileX get toFileX {
-    return FileX(path: path);
-  }
-
   /// convert to dart:io file
   File get toFile => File(path);
-}
-
-class FileX extends Equatable {
-  final String path;
-  final String name;
-  final String ext;
-
-  FileX({
-    required this.path,
-  })  : name = basename(path),
-        ext = extension(path);
-
-  @override
-  List<Object?> get props => [path, name, ext];
 }

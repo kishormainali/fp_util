@@ -50,7 +50,11 @@
 </header>
 <main>
 
-  <div id="dartdoc-main-content" class="main-content">
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="fp_util&#47;fp_util-library-sidebar.html"
+      data-below-sidebar="fp_util&#47;Field-class-sidebar.html">
       <div>
 <h1><span class="kind-class">Field&lt;<wbr><span class="type-parameter">T</span>&gt;</span> class 
  
@@ -75,7 +79,7 @@
   <dt>Annotations</dt>
   <dd>
     <ul class="annotation-list clazz-relationships">
-        <li>@<a href="https://pub.dev/documentation/freezed_annotation/2.2.0/freezed_annotation/Freezed-class.html">Freezed</a>(genericArgumentFactories: true, map: FreezedMapOptions.none, when: FreezedWhenOptions.none)</li>
+        <li>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.1/freezed_annotation/Freezed-class.html">Freezed</a>(genericArgumentFactories: true, map: FreezedMapOptions.none, when: FreezedWhenOptions.none)</li>
     </ul>
   </dd>
 
@@ -89,7 +93,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="Field" class="callable">
-          <span class="name"><a href="../fp_util/Field/Field.html">Field</a></span><span class="signature">(<span class="parameter" id="-param-value">{<span>required</span> <span class="type-annotation">T</span> <span class="parameter-name">value</span>, </span><span class="parameter" id="-param-validators"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.2.0/freezed_annotation/Default-class.html">Default</a>([])</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../fp_util/Validator-class.html">Validator</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">validators</span>, </span><span class="parameter" id="-param-isPure"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.2.0/freezed_annotation/Default-class.html">Default</a>(true)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isPure</span>}</span>)</span>
+          <span class="name"><a href="../fp_util/Field/Field.html">Field</a></span><span class="signature">(<span class="parameter" id="-param-value">{<span>required</span> <span class="type-annotation">T</span> <span class="parameter-name">value</span>, </span><span class="parameter" id="-param-validators"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.1/freezed_annotation/Default-class.html">Default</a>([])</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../fp_util/Validator-class.html">Validator</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">validators</span>, </span><span class="parameter" id="-param-isPure"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.1/freezed_annotation/Default-class.html">Default</a>(true)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isPure</span>, </span><span class="parameter" id="-param-errorMessage"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">errorMessage</span>, </span><span class="parameter" id="-param-extra"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.1/freezed_annotation/Default-class.html">Default</a>({})</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">extra</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -114,14 +118,36 @@
 
 </dd>
 
-        <dt id="errorMessage" class="property">
-  <span class="name"><a href="../fp_util/Field/errorMessage.html">errorMessage</a></span>
+        <dt id="displayError" class="property">
+  <span class="name"><a href="../fp_util/Field/displayError.html">displayError</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> 
 
 </dt>
 <dd>
-  error message only display when field is dirty
+  show error message only when field is dirty
   <div class="features"><span class="feature">read-only</span></div>
+
+</dd>
+
+        <dt id="errorMessage" class="property inherited">
+  <span class="name"><a href="../fp_util/Field/errorMessage.html">errorMessage</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> 
+
+</dt>
+<dd class="inherited">
+  
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="extra" class="property inherited">
+  <span class="name"><a href="../fp_util/Field/extra.html">extra</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> 
+
+</dt>
+<dd class="inherited">
+  
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -201,8 +227,8 @@
     <h2>Methods</h2>
     <dl class="callables">
         <dt id="dirty" class="callable">
-  <span class="name"><a href="../fp_util/Field/dirty.html">dirty</a></span><span class="signature">(<wbr><span class="parameter" id="dirty-param-value"><span class="type-annotation">T</span> <span class="parameter-name">value</span></span>)
-    <span class="returntype parameter">&#8594; <a href="../fp_util/Field-class.html">Field</a></span>
+  <span class="name"><a href="../fp_util/Field/dirty.html">dirty</a></span><span class="signature">(<wbr><span class="parameter" id="dirty-param-updatedValue"><span class="type-annotation">T</span> <span class="parameter-name">updatedValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../fp_util/Field-class.html">Field</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
   </span>
   
 
@@ -239,6 +265,34 @@
 
 </dd>
 
+        <dt id="updateExtra" class="callable">
+  <span class="name"><a href="../fp_util/Field/updateExtra.html">updateExtra</a></span><span class="signature">(<wbr><span class="parameter" id="updateExtra-param-updatedExtra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">updatedExtra</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../fp_util/Field-class.html">Field</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  method to update extra data
+extra data is used to store any extra data related to field
+for example, we can store obscureText value for password field
+  
+
+</dd>
+
+        <dt id="withValidator" class="callable">
+  <span class="name"><a href="../fp_util/Field/withValidator.html">withValidator</a></span><span class="signature">(<wbr><span class="parameter" id="withValidator-param-updatedValue"><span class="type-annotation">T</span> <span class="parameter-name">updatedValue</span>, </span><span class="parameter" id="withValidator-param-validator"><span class="type-annotation"><a href="../fp_util/Validator-class.html">Validator</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">validator</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../fp_util/Field-class.html">Field</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  method to make field dirty and validate with new validator
+  
+
+</dd>
+
     </dl>
   </section>
     
@@ -270,139 +324,25 @@
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="../index.html">fp_util</a></li>
-  <li><a href="../fp_util/fp_util-library.html">fp_util</a></li>
-  <li class="self-crumb">Field<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span> class</li>
+    <li><a href="../index.html">fp_util</a></li>
+    <li><a href="../fp_util/fp_util-library.html">fp_util</a></li>
+    <li class="self-crumb">Field<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span> class</li>
 </ol>
 
 
-    <h5>fp_util library</h5>
-    <ol>
-      <li class="section-title"><a href="../fp_util/fp_util-library.html#classes">Classes</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/AnsiColor-class.html">AnsiColor</a></li>
-        <li><a href="../fp_util/AsyncError-class.html">AsyncError</a></li>
-        <li><a href="../fp_util/AsyncInitial-class.html">AsyncInitial</a></li>
-        <li><a href="../fp_util/AsyncLoading-class.html">AsyncLoading</a></li>
-        <li><a href="../fp_util/AsyncStatus-class.html">AsyncStatus</a></li>
-        <li><a href="../fp_util/AsyncSuccess-class.html">AsyncSuccess</a></li>
-        <li><a href="../fp_util/BaseDialog-class.html">BaseDialog</a></li>
-        <li><a href="../fp_util/BasicAlertDialog-class.html">BasicAlertDialog</a></li>
-        <li><a href="../fp_util/BasicDialogAction-class.html">BasicDialogAction</a></li>
-        <li><a href="../fp_util/ColumnWithSpace-class.html">ColumnWithSpace</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/ConsoleOutput-class.html">ConsoleOutput</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/DevelopmentFilter-class.html">DevelopmentFilter</a></li>
-        <li><a href="../fp_util/DialogAction-class.html">DialogAction</a></li>
-        <li><a href="../fp_util/DialogData-class.html">DialogData</a></li>
-        <li><a href="../fp_util/EmailValidator-class.html">EmailValidator</a></li>
-        <li><a href="../fp_util/Field-class.html">Field</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/FileOutput-class.html">FileOutput</a></li>
-        <li><a href="../fp_util/FileX-class.html">FileX</a></li>
-        <li><a href="../fp_util/FPSnackbar-class.html">FPSnackbar</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/HybridPrinter-class.html">HybridPrinter</a></li>
-        <li><a href="../fp_util/ImagePickerHelper-class.html">ImagePickerHelper</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogEvent-class.html">LogEvent</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogFilter-class.html">LogFilter</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogfmtPrinter-class.html">LogfmtPrinter</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/Logger-class.html">Logger</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogOutput-class.html">LogOutput</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogPrinter-class.html">LogPrinter</a></li>
-        <li><a href="../fp_util/MaxLengthValidator-class.html">MaxLengthValidator</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/MemoryOutput-class.html">MemoryOutput</a></li>
-        <li><a href="../fp_util/MinLengthValidator-class.html">MinLengthValidator</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/MultiOutput-class.html">MultiOutput</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/OutputEvent-class.html">OutputEvent</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/PrefixPrinter-class.html">PrefixPrinter</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/PrettyPrinter-class.html">PrettyPrinter</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/ProductionFilter-class.html">ProductionFilter</a></li>
-        <li><a href="../fp_util/RequiredValidator-class.html">RequiredValidator</a></li>
-        <li><a href="../fp_util/ResponsiveBuilder-class.html">ResponsiveBuilder</a></li>
-        <li><a href="../fp_util/RowWithSpace-class.html">RowWithSpace</a></li>
-        <li><a href="../fp_util/ScaffoldWrapper-class.html">ScaffoldWrapper</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/SimplePrinter-class.html">SimplePrinter</a></li>
-        <li><a href="../fp_util/Sizes-class.html">Sizes</a></li>
-        <li><a href="../fp_util/SizeUtils-class.html">SizeUtils</a></li>
-        <li><a href="../fp_util/SocialButton-class.html">SocialButton</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/StreamOutput-class.html">StreamOutput</a></li>
-        <li><a href="../fp_util/Validator-class.html">Validator</a></li>
-
-      <li class="section-title"><a href="../fp_util/fp_util-library.html#extensions">Extensions</a></li>
-        <li><a href="../fp_util/AsyncStatusX.html">AsyncStatusX</a></li>
-        <li><a href="../fp_util/BuildContextX.html">BuildContextX</a></li>
-        <li><a href="../fp_util/DateTimeX.html">DateTimeX</a></li>
-        <li><a href="../fp_util/EdgeInsetsX.html">EdgeInsetsX</a></li>
-        <li><a href="../fp_util/FileExtensionX.html">FileExtensionX</a></li>
-        <li><a href="../fp_util/IterableX.html">IterableX</a></li>
-        <li><a href="../fp_util/IterationWithIndex.html">IterationWithIndex</a></li>
-        <li><a href="../fp_util/NumX.html">NumX</a></li>
-        <li><a href="../fp_util/PlatformFileX.html">PlatformFileX</a></li>
-        <li><a href="../fp_util/StringNX.html">StringNX</a></li>
-        <li><a href="../fp_util/StringX.html">StringX</a></li>
-        <li><a href="../fp_util/WidgetX.html">WidgetX</a></li>
-        <li><a href="../fp_util/XFileX.html">XFileX</a></li>
-
-      <li class="section-title"><a href="../fp_util/fp_util-library.html#mixins">Mixins</a></li>
-        <li><a href="../fp_util/FormMixin-mixin.html">FormMixin</a></li>
-
-
-      <li class="section-title"><a href="../fp_util/fp_util-library.html#properties">Properties</a></li>
-        <li><a href="../fp_util/logger.html">logger</a></li>
-
-      <li class="section-title"><a href="../fp_util/fp_util-library.html#functions">Functions</a></li>
-        <li><a href="../fp_util/showPlatformDialog.html">showPlatformDialog</a></li>
-
-      <li class="section-title"><a href="../fp_util/fp_util-library.html#enums">Enums</a></li>
-        <li><a href="../fp_util/DeviceType.html">DeviceType</a></li>
-        <li><a href="../fp_util/FormStatus.html">FormStatus</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/Level.html">Level</a></li>
-        <li><a href="../fp_util/SocialType.html">SocialType</a></li>
-
-      <li class="section-title"><a href="../fp_util/fp_util-library.html#typedefs">Typedefs</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/LogCallback.html">LogCallback</a></li>
-        <li><a href="https://pub.dev/documentation/logger/1.4.0/logger/OutputCallback.html">OutputCallback</a></li>
-
-</ol>
-
+    <!--<h5>fp_util library</h5>-->
+    <div id="dartdoc-sidebar-left-content"></div>
   </div>
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
-    <ol>
-
-        <li class="section-title"><a href="../fp_util/Field-class.html#constructors">Constructors</a></li>
-          <li><a href="../fp_util/Field/Field.html">Field</a></li>
-
-
-        <li class="section-title">
-          <a href="../fp_util/Field-class.html#instance-properties">Properties</a>
-        </li>
-          <li class="inherited"><a href="../fp_util/Field/copyWith.html">copyWith</a></li>
-          <li><a href="../fp_util/Field/errorMessage.html">errorMessage</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
-          <li class="inherited"><a href="../fp_util/Field/isPure.html">isPure</a></li>
-          <li><a href="../fp_util/Field/isValid.html">isValid</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
-          <li class="inherited"><a href="../fp_util/Field/validators.html">validators</a></li>
-          <li class="inherited"><a href="../fp_util/Field/value.html">value</a></li>
-
-        <li class="section-title"><a href="../fp_util/Field-class.html#instance-methods">Methods</a></li>
-          <li><a href="../fp_util/Field/dirty.html">dirty</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
-
-        <li class="section-title inherited"><a href="../fp_util/Field-class.html#operators">Operators</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
-
-
-
-
-</ol>
-
   </div><!--/.sidebar-offcanvas-->
 
 </main>
@@ -410,7 +350,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.0.6
+      1.2.0
   </span>
 
   

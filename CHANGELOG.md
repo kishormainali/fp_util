@@ -1,3 +1,8 @@
+# 1.2.0
+- removed `showPlatformDialog` in favor of `showAdaptiveDialog` from flutter, please see flutter 3.13 docs for more on this
+- export XFile class from image picker
+- removed `BasicDialog` in favor of AlertDialog.adaptive() from flutter, please see flutter 3.13 docs for more on this
+
 # 1.1.3
 - added recase extensions on String
 - updated EdgeInsets extensions

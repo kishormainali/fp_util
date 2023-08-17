@@ -51,7 +51,11 @@
 </header>
 <main>
 
-  <div id="dartdoc-main-content" class="main-content">
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="fp_util&#47;EdgeInsetsX-extension-sidebar.html"
+      data-below-sidebar="">
       <div>
 <h1><span class="kind-method">addLeft</span> method 
 </h1></div>
@@ -75,52 +79,29 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">EdgeInsets addLeft(double add) =&gt; copyWith(left: add);</code></pre>
+  <pre class="language-dart"><code class="language-dart">EdgeInsets addLeft(double add) =&gt; copyWith(left: left + add);</code></pre>
 </section>
 
 
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="../../index.html">fp_util</a></li>
-  <li><a href="../../fp_util/fp_util-library.html">fp_util</a></li>
-  <li><a href="../../fp_util/EdgeInsetsX.html">EdgeInsetsX</a></li>
-  <li class="self-crumb">addLeft method</li>
+    <li><a href="../../index.html">fp_util</a></li>
+    <li><a href="../../fp_util/fp_util-library.html">fp_util</a></li>
+    <li><a href="../../fp_util/EdgeInsetsX.html">EdgeInsetsX</a></li>
+    <li class="self-crumb">addLeft method</li>
 </ol>
 
 
     <h5>EdgeInsetsX extension</h5>
-    <ol>
-
-
-
-
-        <li class="section-title"> <a href="../../fp_util/EdgeInsetsX.html#instance-properties">Properties</a></li>
-          <li><a href="../../fp_util/EdgeInsetsX/removeBottom.html">removeBottom</a></li>
-          <li><a href="../../fp_util/EdgeInsetsX/removeLeft.html">removeLeft</a></li>
-          <li><a href="../../fp_util/EdgeInsetsX/removeRight.html">removeRight</a></li>
-          <li><a href="../../fp_util/EdgeInsetsX/removeTop.html">removeTop</a></li>
-
-        <li class="section-title"><a href="../../fp_util/EdgeInsetsX.html#instance-methods">Methods</a></li>
-          <li><a href="../../fp_util/EdgeInsetsX/addBottom.html">addBottom</a></li>
-          <li><a href="../../fp_util/EdgeInsetsX/addLeft.html">addLeft</a></li>
-          <li><a href="../../fp_util/EdgeInsetsX/addRight.html">addRight</a></li>
-          <li><a href="../../fp_util/EdgeInsetsX/addTop.html">addTop</a></li>
-          <li><a href="../../fp_util/EdgeInsetsX/addX.html">addX</a></li>
-          <li><a href="../../fp_util/EdgeInsetsX/addY.html">addY</a></li>
-
-
-
-
-</ol>
-
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
@@ -131,7 +112,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.0.6
+      1.2.0
   </span>
 
   

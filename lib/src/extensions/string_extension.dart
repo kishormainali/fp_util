@@ -74,7 +74,8 @@ extension StringX on String {
   bool get isValidPhoneNumber {
     if (isBlank) return false;
     if (length > 16 || length < 9) return false;
-    return RegExp(r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$').hasMatch(this);
+    return RegExp(r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$')
+        .hasMatch(this);
   }
 
   /// check given string is numeric or not
@@ -98,7 +99,10 @@ extension StringX on String {
   /// remove all \n \r \t from string
   String get replaceNextLine {
     if (isBlank) return this;
-    return trim().replaceAll('\n', ' ').replaceAll('\r', ' ').replaceAll('\t', ' ');
+    return trim()
+        .replaceAll('\n', ' ')
+        .replaceAll('\r', ' ')
+        .replaceAll('\t', ' ');
   }
 
   /// tries to parse as bool
@@ -124,7 +128,8 @@ extension StringX on String {
     if (isBlank) {
       return false;
     }
-    var regex = RegExp(r'[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)');
+    var regex = RegExp(
+        r'[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)');
     return regex.hasMatch(this);
   }
 
@@ -225,7 +230,16 @@ extension StringX on String {
 final _imageTypes = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.tif'];
 
 /// audio extensions
-final _audioTypes = ['.mp3', '.weba', '.3gp', '.3g2', '.aac', '.mid', '.midi', '.wav'];
+final _audioTypes = [
+  '.mp3',
+  '.weba',
+  '.3gp',
+  '.3g2',
+  '.aac',
+  '.mid',
+  '.midi',
+  '.wav'
+];
 
 /// video extensions
 final _videoTypes = ['.mp4', '.avi', '.3gp', '.mpeg', '.ogv', '.3g2'];
@@ -344,7 +358,9 @@ class _ReCase {
 
       sb.write(char);
 
-      bool isEndOfWord = nextChar == null || (_upperAlphaRegex.hasMatch(nextChar) && !isAllCaps) || symbolSet.contains(nextChar);
+      bool isEndOfWord = nextChar == null ||
+          (_upperAlphaRegex.hasMatch(nextChar) && !isAllCaps) ||
+          symbolSet.contains(nextChar);
 
       if (isEndOfWord) {
         words.add(sb.toString());
