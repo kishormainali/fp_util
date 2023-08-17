@@ -1,5 +1,11 @@
 import 'field.dart';
 
+/// {@template form_mixin}
+///
+/// A [FormMixin] is mixin class for handling form.
+///
+/// {@endtemplate}
+
 mixin FormMixin {
   /// inputs
   List<Field> get inputs;

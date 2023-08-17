@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fp_util/src/extensions/extensions.dart';
 
+/// {@template row_with_space}
+///
+/// A [RowWithSpace] is a [Row] with space between each child.
+///
+/// {@endtemplate}
 class RowWithSpace extends Row {
   RowWithSpace({
     super.key,

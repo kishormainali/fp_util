@@ -70,6 +70,12 @@ extension StringX on String {
   /// titleCase string
   String get titleCase => _ReCase(this).titleCase;
 
+  /// lowercase
+  String get lowercase => toLowerCase();
+
+  /// uppercase
+  String get uppercase => toUpperCase();
+
   /// check given string is valid phone number or not
   bool get isValidPhoneNumber {
     if (isBlank) return false;

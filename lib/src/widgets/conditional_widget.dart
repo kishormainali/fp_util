@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+/// {@template conditional_widget}
+///
+/// A [ConditionalWidget] is a widget that shows a widget if condition is true
+///
+/// {@endtemplate}
 class ConditionalWidget extends StatelessWidget {
   const ConditionalWidget({
     super.key,

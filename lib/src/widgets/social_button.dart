@@ -9,10 +9,13 @@ const Color _appleColor = Color(0xff000000);
 //Google Background Color
 const Color _googleColor = Color(0xffDF4A32);
 
-/// Social Button
+/// {@template social_button}
+///
 /// Social Button includes google, facebook and apple
+///
+/// {@endtemplate}
 class SocialButton extends StatelessWidget {
-  /// @{macro social_button}
+  /// {@macro social_button}
   const SocialButton._({
     required this.type,
     required this.label,

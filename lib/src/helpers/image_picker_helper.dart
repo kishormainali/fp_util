@@ -7,7 +7,11 @@ import 'package:image_picker/image_picker.dart';
 
 import '../dialogs/enums.dart';
 
+/// {@template image_picker_helper}
+///
 /// Helper Class to pick image and file
+///
+/// {@endtemplate}
 abstract class ImagePickerHelper {
   static final ImagePicker _picker = ImagePicker();
 

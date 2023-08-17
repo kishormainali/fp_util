@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:fp_util/fp_util.dart';
 
-/// hide keyboard on tap
+/// {@template hide_keyboard}
+///
+/// A [HideKeyboard] is a widget that hides keyboard on tap
+///
+/// {@endtemplate}
+///
+/// {@tool}
 ///
 /// ```dart
 /// HideKeyboard(
-///  child: Container(),
-///  hideOnDrag: true,
+///   child: Container(),
+///   hideOnDrag: true,
 /// )
 /// ```
+/// {@end-tool}
+///
 class HideKeyboard extends StatelessWidget {
   const HideKeyboard({
     super.key,

@@ -2,7 +2,12 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-/// Wrapper around scaffold
+/// {@template scaffold_wrapper}
+///
+/// A [ScaffoldWrapper] is a wrapper for [Scaffold] widget
+///
+/// {@endtemplate}
+
 class ScaffoldWrapper extends StatelessWidget {
   const ScaffoldWrapper({
     super.key,

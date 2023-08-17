@@ -2,8 +2,14 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'form_status.freezed.dart';
 
+/// {@template form_status}
+///
+/// A [FormStatus] is union class for handling form status.
+///
+/// {@endtemplate}
+
 @Freezed(map: FreezedMapOptions.none, genericArgumentFactories: true)
-class FormStatus<T> with _$FormStatus<T> {
+sealed class FormStatus<T> with _$FormStatus<T> {
   const FormStatus._();
 
   /// initial state

@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fp_util/fp_util.dart';
 
+/// {@template column_with_space}
+///
+/// A [ColumnWithSpace] is a [Column] with space between each child.
+///
+/// {@endtemplate}
 class ColumnWithSpace extends Column {
   ColumnWithSpace({
     super.key,

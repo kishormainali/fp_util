@@ -1,3 +1,8 @@
+# 1.2.1
+- added `ScrollableColumn` and `ScrollableRow` widget
+- updated docs
+- updated field validators
+
 # 1.2.0
 - removed `showPlatformDialog` in favor of `showAdaptiveDialog` from flutter, please see flutter 3.13 docs for more on this
 - export XFile class from image picker

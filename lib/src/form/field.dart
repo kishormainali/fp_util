@@ -3,7 +3,11 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'field.freezed.dart';
 
-/// Field class for form handling
+/// {@template field}
+///
+/// A [Field] is  class for handling state of form field.
+///
+/// {@endtemplate}
 @Freezed(
   genericArgumentFactories: true,
   map: FreezedMapOptions.none,
