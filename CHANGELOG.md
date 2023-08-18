@@ -1,4 +1,8 @@
-#1.2.2
+
+# 1.2.3
+- added `onLimitExceed` to ImagePickerButton
+
+# 1.2.2
 - added `ImagePickerButton`
 
 # 1.2.1

@@ -23,6 +23,7 @@ abstract class ImagePickerButton extends StatelessWidget {
     this.shape,
     this.isMultiple = false,
     this.onMultipleImagesPicked,
+    this.onLimitExceed,
   });
 
   ///
@@ -38,6 +39,8 @@ abstract class ImagePickerButton extends StatelessWidget {
     Color? foregroundColor,
     TextStyle? textStyle,
     OutlinedBorder? shape,
+    int? countLimit,
+    VoidCallback? onLimitExceed,
   }) = _CameraPickerButton;
 
   ///
@@ -57,6 +60,7 @@ abstract class ImagePickerButton extends StatelessWidget {
     TextStyle? textStyle,
     OutlinedBorder? shape,
     bool? isMultiple,
+    VoidCallback? onLimitExceed,
   }) = _GalleryPickerButton;
 
   ///
@@ -77,6 +81,7 @@ abstract class ImagePickerButton extends StatelessWidget {
     TextStyle? textStyle,
     OutlinedBorder? shape,
     bool? isMultiple,
+    VoidCallback? onLimitExceed,
   }) = _ChoosePickerButton;
 
   final bool isMultiple;
@@ -102,6 +107,8 @@ abstract class ImagePickerButton extends StatelessWidget {
   final TextStyle? textStyle;
 
   final OutlinedBorder? shape;
+
+  final VoidCallback? onLimitExceed;
 }
 
 class _CameraPickerButton extends ImagePickerButton {
@@ -115,9 +122,12 @@ class _CameraPickerButton extends ImagePickerButton {
     super.foregroundColor,
     super.textStyle,
     super.shape,
+    super.onLimitExceed,
+    int? countLimit,
   }) : super._(
           sizeInMb: sizeInMb ?? -1,
           dialogBuilder: null,
+          count: countLimit ?? 1,
         );
 
   @override
@@ -130,8 +140,13 @@ class _CameraPickerButton extends ImagePickerButton {
     );
 
     void onPressed() async {
-      final image = await ImagePickerHelper.pickImageFromCamera(sizeInMb);
-      onImagePicked?.call(image);
+      if (count == 0) {
+        onLimitExceed?.call();
+        return;
+      } else {
+        final image = await ImagePickerHelper.pickImageFromCamera(sizeInMb);
+        onImagePicked?.call(image);
+      }
     }
 
     if (icon != null) {
@@ -152,19 +167,20 @@ class _CameraPickerButton extends ImagePickerButton {
 }
 
 class _GalleryPickerButton extends ImagePickerButton {
-  const _GalleryPickerButton({
-    super.key,
-    super.label = 'Gallery',
-    super.icon,
-    ValueChanged<List<XFile>?>? onImagePicked,
-    int? sizeInMb,
-    int? countLimit,
-    super.backgroundColor,
-    super.foregroundColor,
-    super.textStyle,
-    super.shape,
-    bool? isMultiple,
-  }) : super._(
+  const _GalleryPickerButton(
+      {super.key,
+      super.label = 'Gallery',
+      super.icon,
+      ValueChanged<List<XFile>?>? onImagePicked,
+      int? sizeInMb,
+      int? countLimit,
+      super.backgroundColor,
+      super.foregroundColor,
+      super.textStyle,
+      super.shape,
+      bool? isMultiple,
+      super.onLimitExceed})
+      : super._(
           onMultipleImagesPicked: onImagePicked,
           sizeInMb: sizeInMb ?? -1,
           count: countLimit ?? 1,
@@ -182,18 +198,23 @@ class _GalleryPickerButton extends ImagePickerButton {
     );
 
     void onPressed() async {
-      final List<XFile> files = [];
-      if (isMultiple) {
-        final images = await ImagePickerHelper.pickMultiImage(
-          sizeInMb: sizeInMb,
-          count: count,
-        );
-        files.addAll(images?.whereType<XFile>().toList() ?? []);
+      if (count == 0) {
+        onLimitExceed?.call();
+        return;
       } else {
-        final image = await ImagePickerHelper.pickImageFromGallery(sizeInMb);
-        if (image != null) files.add(image);
+        final List<XFile> files = [];
+        if (isMultiple) {
+          final images = await ImagePickerHelper.pickMultiImage(
+            sizeInMb: sizeInMb,
+            count: count,
+          );
+          files.addAll(images?.whereType<XFile>().toList() ?? []);
+        } else {
+          final image = await ImagePickerHelper.pickImageFromGallery(sizeInMb);
+          if (image != null) files.add(image);
+        }
+        onMultipleImagesPicked?.call(files);
       }
-      onMultipleImagesPicked?.call(files);
     }
 
     if (icon != null) {
@@ -227,6 +248,7 @@ class _ChoosePickerButton extends ImagePickerButton {
     super.textStyle,
     super.shape,
     bool? isMultiple,
+    super.onLimitExceed,
   }) : super._(
           onMultipleImagesPicked: onImagePicked,
           sizeInMb: sizeInMb ?? -1,
@@ -244,21 +266,26 @@ class _ChoosePickerButton extends ImagePickerButton {
     );
 
     void onPressed() async {
-      if (isMultiple) {
-        final files = await ImagePickerHelper.selectAndPickImageMultiple(
-          context,
-          builder: dialogBuilder,
-          sizeInMb: sizeInMb,
-          count: count,
-        );
-        onMultipleImagesPicked?.call(files);
+      if (count == 0) {
+        onLimitExceed?.call();
+        return;
       } else {
-        final file = await ImagePickerHelper.selectAndPickImage(
-          context,
-          builder: dialogBuilder,
-          sizeInMb: sizeInMb,
-        );
-        if (file != null) onMultipleImagesPicked?.call([file]);
+        if (isMultiple) {
+          final files = await ImagePickerHelper.selectAndPickImageMultiple(
+            context,
+            builder: dialogBuilder,
+            sizeInMb: sizeInMb,
+            count: count,
+          );
+          onMultipleImagesPicked?.call(files);
+        } else {
+          final file = await ImagePickerHelper.selectAndPickImage(
+            context,
+            builder: dialogBuilder,
+            sizeInMb: sizeInMb,
+          );
+          if (file != null) onMultipleImagesPicked?.call([file]);
+        }
       }
     }
 
