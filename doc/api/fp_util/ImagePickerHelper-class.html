@@ -63,7 +63,7 @@
 
     
 <section class="desc markdown">
-  <p>Helper Class to pick image and file</p>
+  <p>base class to pick image from camera , gallery or both</p>
 </section>
 
 
@@ -171,6 +171,19 @@
   <section class="summary offset-anchor" id="static-methods">
     <h2>Static Methods</h2>
     <dl class="callables">
+        <dt id="chooseImageSource" class="callable">
+  <span class="name"><a href="../fp_util/ImagePickerHelper/chooseImageSource.html">chooseImageSource</a></span><span class="signature">(<wbr><span class="parameter" id="chooseImageSource-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span><span class="parameter" id="chooseImageSource-param-builder">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/WidgetBuilder.html">WidgetBuilder</a>?</span> <span class="parameter-name">builder</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">SourceType?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  choose image source
+  
+
+</dd>
+
         <dt id="pickFile" class="callable">
   <span class="name"><a href="../fp_util/ImagePickerHelper/pickFile.html">pickFile</a></span><span class="signature">(<wbr><span class="parameter" id="pickFile-param-image">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">image</span> = <span class="default-value">false</span>, </span><span class="parameter" id="pickFile-param-audio"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">audio</span> = <span class="default-value">false</span>, </span><span class="parameter" id="pickFile-param-video"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">video</span> = <span class="default-value">false</span>, </span><span class="parameter" id="pickFile-param-sizeInMb"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">sizeInMb</span> = <span class="default-value">-1</span>}</span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/cross_file/0.3.3+4/cross_file/XFile-class.html">XFile</a>?</span>&gt;</span></span>
@@ -275,6 +288,19 @@
 
 </dd>
 
+        <dt id="selectAndPickImageMultiple" class="callable">
+  <span class="name"><a href="../fp_util/ImagePickerHelper/selectAndPickImageMultiple.html">selectAndPickImageMultiple</a></span><span class="signature">(<wbr><span class="parameter" id="selectAndPickImageMultiple-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span><span class="parameter" id="selectAndPickImageMultiple-param-builder">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/WidgetBuilder.html">WidgetBuilder</a>?</span> <span class="parameter-name">builder</span>, </span><span class="parameter" id="selectAndPickImageMultiple-param-sizeInMb"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">sizeInMb</span> = <span class="default-value">-1</span>, </span><span class="parameter" id="selectAndPickImageMultiple-param-count"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">count</span> = <span class="default-value">1</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/cross_file/0.3.3+4/cross_file/XFile-class.html">XFile</a></span>&gt;</span>?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  choose multiple Image either from camera or gallery
+  
+
+</dd>
+
     </dl>
   </section>
     
@@ -309,7 +335,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.0
+      1.2.2
   </span>
 
   

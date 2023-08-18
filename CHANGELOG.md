@@ -1,3 +1,6 @@
+#1.2.2
+- added `ImagePickerButton`
+
 # 1.2.1
 - added `ScrollableColumn` and `ScrollableRow` widget
 - updated docs

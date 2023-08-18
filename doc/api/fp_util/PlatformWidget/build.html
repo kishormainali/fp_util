@@ -123,7 +123,9 @@ Widget build(BuildContext context) {
   }
   final platform = Theme.of(context).platform;
   return switch (platform) {
-    TargetPlatform.macOS || TargetPlatform.iOS =&gt; buildCupertinoWidget(context),
+    TargetPlatform.macOS ||
+    TargetPlatform.iOS =&gt;
+      buildCupertinoWidget(context),
     _ =&gt; buildMaterialWidget(context),
   };
 }</code></pre>
@@ -159,7 +161,7 @@ Widget build(BuildContext context) {
 <footer>
   <span class="no-break">
     fp_util
-      1.2.0
+      1.2.2
   </span>
 
   

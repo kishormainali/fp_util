@@ -39,11 +39,11 @@ const SnackbarColor _defaultColor = (
 
 /// default background and text color
 ///
-/// [light] is used for background color for light theme and text color for dark theme
+/// `light` is used for background color for light theme and text color for dark theme
 ///
-/// [dark] is used for background color for dark theme and text color for light theme
+/// `dark` is used for background color for dark theme and text color for light theme
 ///
-/// [bar] is used for sidebar color
+/// `bar` is used for sidebar color
 typedef SnackbarColor = ({
   /// background color for light theme
   /// text color for dark theme

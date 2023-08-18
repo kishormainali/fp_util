@@ -88,7 +88,8 @@
 Widget buildMaterialWidget(BuildContext context) {
   return SafeArea(
     child: Padding(
-      padding: material?.contentPadding ?? const EdgeInsets.only(left: 16, right: 16, top: 16),
+      padding: material?.contentPadding ??
+          const EdgeInsets.only(left: 16, right: 16, top: 16),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -137,7 +138,7 @@ Widget buildMaterialWidget(BuildContext context) {
 <footer>
   <span class="no-break">
     fp_util
-      1.2.0
+      1.2.2
   </span>
 
   

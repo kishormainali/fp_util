@@ -16,7 +16,7 @@ abstract class ImagePickerHelper {
   static final ImagePicker _picker = ImagePicker();
 
   /// choose image source
-  static Future<SourceType?> _chooseImageSource(
+  static Future<SourceType?> chooseImageSource(
     BuildContext context, {
     WidgetBuilder? builder,
   }) async {
@@ -62,7 +62,7 @@ abstract class ImagePickerHelper {
     int sizeInMb = -1,
   }) async {
     XFile? file;
-    final res = await _chooseImageSource(
+    final res = await chooseImageSource(
       context,
       builder: builder,
     );
@@ -75,6 +75,41 @@ abstract class ImagePickerHelper {
     }
     if (sizeInMb > 0 && file != null) return await _checkSize(sizeInMb, file);
     return file;
+  }
+
+  /// choose multiple Image either from camera or gallery
+  ///
+  static Future<List<XFile>?> selectAndPickImageMultiple(
+    BuildContext context, {
+    WidgetBuilder? builder,
+    int sizeInMb = -1,
+    int count = 1,
+  }) async {
+    List<XFile>? files = [];
+    final res = await chooseImageSource(
+      context,
+      builder: builder,
+    );
+    if (res != null) {
+      if (res == SourceType.camera) {
+        final image = await _picker.pickImage(source: ImageSource.camera);
+        if (image != null) {
+          if (sizeInMb > 0) {
+            final file = await _checkSize(sizeInMb, image);
+            if (file != null) files.add(file);
+          } else {
+            files.add(image);
+          }
+        }
+      } else {
+        final images = await pickMultiImage(
+          sizeInMb: sizeInMb,
+          count: count,
+        );
+        files.addAll(images ?? []);
+      }
+    }
+    return files;
   }
 
   /// pick image from camera

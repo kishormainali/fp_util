@@ -153,7 +153,7 @@ extension BuildContextX on BuildContext {
   bool get hasFocus =>
       FocusScope.of(this).hasFocus || FocusScope.of(this).hasPrimaryFocus;
 
-  /// extension to get responsive value according to device type [ mobile,tablet,desktop ]
+  /// extension to get responsive value according to device type `mobile`,`tablet`,`desktop`
   T responsiveValue<T>(
     /// default is mobile
     T mobile, {
