@@ -73,7 +73,10 @@
 <li><span class="parameter" id="choose-param-foregroundColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a>?</span> <span class="parameter-name">foregroundColor</span>, </span></li>
 <li><span class="parameter" id="choose-param-textStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">textStyle</span>, </span></li>
 <li><span class="parameter" id="choose-param-shape"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/OutlinedBorder-class.html">OutlinedBorder</a>?</span> <span class="parameter-name">shape</span>, </span></li>
-<li><span class="parameter" id="choose-param-isMultiple"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">isMultiple</span>}</span></li>
+<li><span class="parameter" id="choose-param-isMultiple"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">isMultiple</span>, </span></li>
+<li><span class="parameter" id="choose-param-onLimitExceed"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onLimitExceed</span>, </span></li>
+<li><span class="parameter" id="choose-param-gradient"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Gradient-class.html">Gradient</a>?</span> <span class="parameter-name">gradient</span>, </span></li>
+<li><span class="parameter" id="choose-param-minimumSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Size-class.html">Size</a>?</span> <span class="parameter-name">minimumSize</span>}</span></li>
 </ol>)
     </section>
 
@@ -100,6 +103,9 @@
   TextStyle? textStyle,
   OutlinedBorder? shape,
   bool? isMultiple,
+  VoidCallback? onLimitExceed,
+  Gradient? gradient,
+  Size? minimumSize,
 }) = _ChoosePickerButton;</code></pre>
 </section>
 
@@ -133,7 +139,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.2
+      1.2.4
   </span>
 
   

@@ -1,3 +1,7 @@
+# 1.2.4
+- added `GradientButton`
+- updated `ImagePickerButton` to support gradient
+- refactored `ImagePickerButton`
 
 # 1.2.3
 - added `onLimitExceed` to ImagePickerButton

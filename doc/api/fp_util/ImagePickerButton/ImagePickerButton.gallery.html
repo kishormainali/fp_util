@@ -31,7 +31,7 @@
     <li><a href="../../index.html">fp_util</a></li>
     <li><a href="../../fp_util/fp_util-library.html">fp_util</a></li>
     <li><a href="../../fp_util/ImagePickerButton-class.html">ImagePickerButton</a></li>
-    <li class="self-crumb">ImagePickerButton.gallery const constructor</li>
+    <li class="self-crumb">ImagePickerButton.gallery factory constructor</li>
   </ol>
   <div class="self-name">ImagePickerButton.gallery</div>
   <form class="search navbar-right" role="search">
@@ -61,18 +61,21 @@
 </h1></div>
 
     <section class="multi-line-signature">
-      const
+      
       <span class="name ">ImagePickerButton.gallery</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="gallery-param-key">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span></li>
 <li><span class="parameter" id="gallery-param-label"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">label</span>, </span></li>
 <li><span class="parameter" id="gallery-param-icon"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">icon</span>, </span></li>
 <li><span class="parameter" id="gallery-param-onImagePicked"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/ValueChanged.html">ValueChanged</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/cross_file/0.3.3+4/cross_file/XFile-class.html">XFile</a></span>&gt;</span>?</span>&gt;</span>?</span> <span class="parameter-name">onImagePicked</span>, </span></li>
-<li><span class="parameter" id="gallery-param-sizeInMb"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">sizeInMb</span>, </span></li>
-<li><span class="parameter" id="gallery-param-countLimit"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">countLimit</span>, </span></li>
+<li><span class="parameter" id="gallery-param-sizeInMb"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">sizeInMb</span> = <span class="default-value">-1</span>, </span></li>
+<li><span class="parameter" id="gallery-param-countLimit"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">countLimit</span> = <span class="default-value">1</span>, </span></li>
 <li><span class="parameter" id="gallery-param-backgroundColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a>?</span> <span class="parameter-name">backgroundColor</span>, </span></li>
 <li><span class="parameter" id="gallery-param-foregroundColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a>?</span> <span class="parameter-name">foregroundColor</span>, </span></li>
 <li><span class="parameter" id="gallery-param-textStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">textStyle</span>, </span></li>
 <li><span class="parameter" id="gallery-param-shape"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/OutlinedBorder-class.html">OutlinedBorder</a>?</span> <span class="parameter-name">shape</span>, </span></li>
-<li><span class="parameter" id="gallery-param-isMultiple"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">isMultiple</span>}</span></li>
+<li><span class="parameter" id="gallery-param-isMultiple"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isMultiple</span> = <span class="default-value">false</span>, </span></li>
+<li><span class="parameter" id="gallery-param-onLimitExceed"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onLimitExceed</span>, </span></li>
+<li><span class="parameter" id="gallery-param-gradient"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Gradient-class.html">Gradient</a>?</span> <span class="parameter-name">gradient</span>, </span></li>
+<li><span class="parameter" id="gallery-param-minimumSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Size-class.html">Size</a>?</span> <span class="parameter-name">minimumSize</span>}</span></li>
 </ol>)
     </section>
 
@@ -86,19 +89,40 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">const factory ImagePickerButton.gallery({
+  <pre class="language-dart"><code class="language-dart">factory ImagePickerButton.gallery({
   Key? key,
   required String label,
   Widget? icon,
   ValueChanged&lt;List&lt;XFile&gt;?&gt;? onImagePicked,
-  int? sizeInMb,
-  int? countLimit,
+  int sizeInMb = -1,
+  int countLimit = 1,
   Color? backgroundColor,
   Color? foregroundColor,
   TextStyle? textStyle,
   OutlinedBorder? shape,
-  bool? isMultiple,
-}) = _GalleryPickerButton;</code></pre>
+  bool isMultiple = false,
+  VoidCallback? onLimitExceed,
+  Gradient? gradient,
+  Size? minimumSize,
+}) =&gt;
+    ImagePickerButton._(
+      key: key,
+      label: label,
+      icon: icon,
+      backgroundColor: backgroundColor,
+      foregroundColor: foregroundColor,
+      textStyle: textStyle,
+      shape: shape,
+      gradient: gradient,
+      minimumSize: minimumSize ?? _minimumSize,
+      onPressed: () =&gt; _onGalleryPressed(
+        sizeInMb,
+        countLimit,
+        isMultiple,
+        onLimitExceed,
+        onImagePicked,
+      ),
+    );</code></pre>
 </section>
 
 
@@ -116,7 +140,7 @@
     <li><a href="../../index.html">fp_util</a></li>
     <li><a href="../../fp_util/fp_util-library.html">fp_util</a></li>
     <li><a href="../../fp_util/ImagePickerButton-class.html">ImagePickerButton</a></li>
-    <li class="self-crumb">ImagePickerButton.gallery const constructor</li>
+    <li class="self-crumb">ImagePickerButton.gallery factory constructor</li>
 </ol>
 
 
@@ -131,7 +155,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.2
+      1.2.4
   </span>
 
   
