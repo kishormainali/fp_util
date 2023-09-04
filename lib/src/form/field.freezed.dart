@@ -19,6 +19,9 @@ mixin _$Field<T> {
   T get value => throw _privateConstructorUsedError;
   List<Validator<T>> get validators => throw _privateConstructorUsedError;
   bool get isPure => throw _privateConstructorUsedError;
+
+  /// use displayError instead of errorMessage to show error
+  /// use this only to update error message from server-side validation
   String? get errorMessage => throw _privateConstructorUsedError;
   Map<String, dynamic> get extra => throw _privateConstructorUsedError;
 
@@ -167,6 +170,9 @@ class _$_Field<T> extends _Field<T> {
   @override
   @JsonKey()
   final bool isPure;
+
+  /// use displayError instead of errorMessage to show error
+  /// use this only to update error message from server-side validation
   @override
   final String? errorMessage;
   final Map<String, dynamic> _extra;
@@ -229,6 +235,9 @@ abstract class _Field<T> extends Field<T> {
   @override
   bool get isPure;
   @override
+
+  /// use displayError instead of errorMessage to show error
+  /// use this only to update error message from server-side validation
   String? get errorMessage;
   @override
   Map<String, dynamic> get extra;

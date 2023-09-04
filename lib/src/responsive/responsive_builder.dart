@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:fp_util/src/responsive/device_type.dart';
 
+/// {@template responsive_builder}
+///
+/// A [ResponsiveBuilder] is a widget that builds different widgets depending on
+/// the device type.
+///
+/// {@endtemplate}
+
 class ResponsiveBuilder extends StatelessWidget {
+  /// {@macro responsive_builder}
   const ResponsiveBuilder({
     super.key,
     required this.mobile,
@@ -9,8 +17,13 @@ class ResponsiveBuilder extends StatelessWidget {
     this.desktop,
   });
 
+  /// The widget to display when the device is mobile.
   final Widget Function(BuildContext context) mobile;
+
+  /// The widget to display when the device is tablet.
   final Widget Function(BuildContext context)? tablet;
+
+  /// The widget to display when the device is desktop.
   final Widget Function(BuildContext context)? desktop;
 
   @override

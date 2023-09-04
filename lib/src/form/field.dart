@@ -7,6 +7,19 @@ part 'field.freezed.dart';
 ///
 /// A [Field] is  class for handling state of form field.
 ///
+/// [T] is type of value of field
+///
+/// [List<Validator<T>>] is list of validator for field
+///
+/// [isPure] indicates the value is changed or not
+///
+/// [errorMessage] is error message for field,
+/// use [displayError] instead of [errorMessage] to show error,
+/// use [errorMessage] only to update error message from server-side validation
+///
+/// [extra] is extra data related to field
+/// for example, we can store obscureText value for password field
+///
 /// {@endtemplate}
 @Freezed(
   genericArgumentFactories: true,
@@ -16,19 +29,23 @@ part 'field.freezed.dart';
 class Field<T> with _$Field<T> {
   const Field._();
 
+  /// {@macro field}
   const factory Field({
     required T value,
     @Default([]) List<Validator<T>> validators,
     @Default(true) bool isPure,
+
+    /// use displayError instead of errorMessage to show error
+    /// use this only to update error message from server-side validation
     String? errorMessage,
     @Default({}) Map<String, dynamic> extra,
   }) = _Field<T>;
 
   /// method to mark field as dirty
-  Field<T> dirty(T updatedValue) {
+  Field<T> dirty(T updatedValue, [bool autoValidate = true]) {
     return copyWith(
       value: updatedValue,
-      isPure: false,
+      isPure: !autoValidate,
       errorMessage: _validate(updatedValue),
     );
   }
@@ -38,7 +55,6 @@ class Field<T> with _$Field<T> {
   /// for example, we can store obscureText value for password field
   Field<T> updateExtra(Map<String, dynamic> updatedExtra) {
     return copyWith(
-      isPure: false,
       extra: updatedExtra,
     );
   }
@@ -46,8 +62,9 @@ class Field<T> with _$Field<T> {
   /// method to make field dirty and validate with new validator
   Field<T> withValidator(
     T updatedValue,
-    Validator<T> validator,
-  ) {
+    Validator<T> validator, [
+    bool autoValidate = true,
+  ]) {
     final updatedValidators = [
       ...validators,
       validator,
@@ -55,12 +72,13 @@ class Field<T> with _$Field<T> {
     return copyWith(
       value: updatedValue,
       validators: updatedValidators,
-      isPure: false,
+      isPure: !autoValidate,
       errorMessage: _validate(updatedValue, updatedValidators),
     );
   }
 
   /// show error message only when field is dirty
+  ///  use displayError instead of errorMessage
   String? get displayError => isPure ? null : errorMessage;
 
   /// check field is valid or not
@@ -76,5 +94,12 @@ class Field<T> with _$Field<T> {
       }
     }
     return null;
+  }
+
+  /// mark field as dirty
+  Field<T> markDirty() {
+    return copyWith(
+      isPure: false,
+    );
   }
 }

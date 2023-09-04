@@ -2,7 +2,7 @@
 
 - Utilities and Extensions for num, BuildContext, EdgeInsets, File, String. Constants for horizontal and vertical spacing.
 - Social Buttons - Facebook, Google, Apple
-- Common Buttons - AppButton, AppOutlineButton, AppTextButton supports loading and disabled state and highly customizable.
+- Gradient Button
 - ImagePickerHelper for picking images and files
 
 > if your figma size is different from Size() then make sure to call `SizeUtils.instance.updateDesignSize(size)` on main method;
@@ -126,6 +126,54 @@ bool isNotBlank = text.isNotBlank;
 
 /// checks string is email
 bool isEmail = text.isEmail;
+
+
+/// recase extensions
+
+/// snakeCase
+String snakeCase = text.snakeCase;
+
+/// capitalize
+String capitalize  = text.capitalize;
+
+/// camelCase
+String camelCase = text.camelCase;
+
+
+/// constantCase
+String constantCase = text.constantCase;
+
+/// sentenceCase
+String sentenceCase = text.sentenceCase;
+
+/// snakeCase
+String snakeCase = text.snakeCase;
+
+/// dotCase
+String dotCase = text.dotCase;
+
+/// paramCase
+String paramCase = text.paramCase;
+
+/// pathCase
+String pathCase = text.pathCase;
+
+/// pascalCase
+String pascalCase = text.pascalCase;
+
+/// headerCase
+String headerCase = text.headerCase;
+
+/// titleCase
+String titleCase = text.titleCase;
+
+/// lowercase
+String lowercase = text.lowercase;
+
+/// uppercase
+String uppercase = text.uppercase;
+
+
 
 /// returns default value is given string is blank
 String withDefault = text.getOrDefault('default value');
@@ -726,8 +774,15 @@ class PaddingTest extends StatelessWidget {
   - viewPadding
 - #### MediaQuery
   - mq
+
 - #### Responsive Value
   - responsiveValue
+
+- #### Platform Brightness
+  - platformBrightness
+
+- #### Keyboard Height
+  - keyboardHeight
 
 ```dart
   final theme = context.theme;
@@ -840,6 +895,16 @@ final Color onErrorContainerColor = context.onErrorContainerColor;
 
   /// media query
   context.mq;
+
+  /// platform brightness
+  /// returns platform brightness using [MediaQuery.platformBrightnessOf(context)]
+  context.platformBrightness
+
+
+  /// keyboard height
+  /// returns the space occupied by keyboard i.e. [MediaQuery.viewInsetsOf(context).bottom]
+  context.keyboardHeight
+
 
   /// responsive value according to device type
   final rValue = context.responsiveValue<double>(10,desktop:30,tablet:20);

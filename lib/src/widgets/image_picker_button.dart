@@ -356,6 +356,7 @@ class _SolidButton extends StatelessWidget {
       shape: shape,
       minimumSize: minimumSize,
       maximumSize: Size(double.infinity, minimumSize.height),
+      textStyle: textStyle,
     );
     if (icon != null) {
       return FilledButton.icon(

@@ -134,6 +134,14 @@ extension BuildContextX on BuildContext {
   /// safeAreaTopPadding
   double get safeAreaTopPadding => padding.top;
 
+  /// software keyboard height
+  double get keyboardHeight => viewInsets.bottom;
+
+  /// get platform brightness
+  ///
+  /// this will return platform brightness from nearest MediaQuery widget if not available then it will return Brightness.light
+  Brightness get platformBrightness => MediaQuery.platformBrightnessOf(this);
+
   ///percent with
   double pw(double percent, [bool responsive = false]) {
     return width * percent;

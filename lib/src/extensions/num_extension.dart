@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:fp_util/src/responsive/size_utils.dart';
 
 extension NumX on num {
   /// horizontal spacing widget
@@ -115,13 +114,4 @@ extension NumX on num {
   /// convert horizontal spacing widget into sliver widget
   SliverToBoxAdapter get sliverVerticalSpace =>
       SliverToBoxAdapter(child: verticalSpace);
-
-  /// responsive px
-  double get px => SizeUtils.instance.getSize(toDouble());
-
-  /// responsive width
-  double get w => SizeUtils.instance.setWidth(toDouble());
-
-  /// responsive height
-  double get h => SizeUtils.instance.setHeight(toDouble());
 }

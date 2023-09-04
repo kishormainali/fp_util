@@ -335,7 +335,6 @@ class _ReCase {
     if (_words.isNotEmpty) {
       words[0] = _upperCaseFirstLetter(words[0]);
     }
-
     return words.join(separator);
   }
 

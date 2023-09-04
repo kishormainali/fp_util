@@ -22,6 +22,7 @@ abstract class ImagePickerHelper {
   }) async {
     return showAdaptiveDialog<SourceType>(
       context: context,
+      barrierDismissible: true,
       builder: builder ??
           (context) => AlertDialog.adaptive(
                 title: const Text('Choose Image Source'),

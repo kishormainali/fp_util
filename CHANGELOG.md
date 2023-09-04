@@ -1,3 +1,10 @@
+# 1.2.6
+- added platformBrightness extension to `BuildContext`
+- minor fixes
+
+
+# 1.2.5
+- added missing textstyle property to ImagePickerButton
 # 1.2.4
 - added `GradientButton`
 - updated `ImagePickerButton` to support gradient

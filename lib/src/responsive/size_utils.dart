@@ -2,11 +2,12 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-/// @template
+/// {@template size_utils}
+///
 /// Size utils for responsiveness
-/// @end-template
+///
+/// {@end-template}
 class SizeUtils {
-  /// @macro size_utils
   SizeUtils._() {
     final view = PlatformDispatcher.instance.views.first;
     _size = view.physicalSize / view.devicePixelRatio;
@@ -17,6 +18,7 @@ class SizeUtils {
     _initialized = true;
   }
 
+  /// singleton instance of [SizeUtils]
   static SizeUtils get instance => SizeUtils._();
 
   /// default figma size
