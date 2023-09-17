@@ -7,7 +7,7 @@ import '../extensions/extensions.dart';
 /// {@endtemplate}
 abstract class Validator<T> {
   /// {@macro validator}
-  Validator(this.message);
+  const Validator(this.message);
   final String? message;
 
   bool isValid(T value);
@@ -23,7 +23,7 @@ abstract class Validator<T> {
 ///
 /// {@endtemplate}
 class EmailValidator extends Validator<String> {
-  EmailValidator(super.message);
+  const EmailValidator(super.message);
 
   @override
   String? call(String value) {
@@ -40,7 +40,7 @@ class EmailValidator extends Validator<String> {
 ///
 /// {@endtemplate}
 class RequiredValidator<T> extends Validator<T> {
-  RequiredValidator(super.message);
+  const RequiredValidator(super.message);
 
   @override
   bool isValid(T value) {
@@ -62,9 +62,8 @@ class RequiredValidator<T> extends Validator<T> {
 ///
 /// {@endtemplate}
 class MaxLengthValidator extends Validator<String> {
+  const MaxLengthValidator(super.message, this.limit);
   final int limit;
-
-  MaxLengthValidator(super.message, this.limit);
 
   @override
   bool isValid(String value) => value.length <= limit;
@@ -76,9 +75,9 @@ class MaxLengthValidator extends Validator<String> {
 ///
 /// {@endtemplate}
 class MinLengthValidator extends Validator<String> {
-  final int limit;
+  const MinLengthValidator(super.message, this.limit);
 
-  MinLengthValidator(super.message, this.limit);
+  final int limit;
 
   @override
   bool isValid(String value) {
@@ -95,7 +94,7 @@ class MinLengthValidator extends Validator<String> {
 /// {@endtemplate}
 
 class MatchValidator<T> extends Validator<T> {
-  MatchValidator(
+  const MatchValidator(
     super.message,
     this.match, {
     this.compareFn,
@@ -103,7 +102,7 @@ class MatchValidator<T> extends Validator<T> {
 
   final T match;
 
-  bool Function(T value, T matchValue)? compareFn;
+  final bool Function(T value, T matchValue)? compareFn;
 
   @override
   bool isValid(T value) {

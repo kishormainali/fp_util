@@ -24,6 +24,7 @@ mixin _$Field<T> {
   /// use this only to update error message from server-side validation
   String? get errorMessage => throw _privateConstructorUsedError;
   Map<String, dynamic> get extra => throw _privateConstructorUsedError;
+  bool get autoValidate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $FieldCopyWith<T, Field<T>> get copyWith =>
@@ -40,7 +41,8 @@ abstract class $FieldCopyWith<T, $Res> {
       List<Validator<T>> validators,
       bool isPure,
       String? errorMessage,
-      Map<String, dynamic> extra});
+      Map<String, dynamic> extra,
+      bool autoValidate});
 }
 
 /// @nodoc
@@ -61,6 +63,7 @@ class _$FieldCopyWithImpl<T, $Res, $Val extends Field<T>>
     Object? isPure = null,
     Object? errorMessage = freezed,
     Object? extra = null,
+    Object? autoValidate = null,
   }) {
     return _then(_value.copyWith(
       value: freezed == value
@@ -83,6 +86,10 @@ class _$FieldCopyWithImpl<T, $Res, $Val extends Field<T>>
           ? _value.extra
           : extra // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
+      autoValidate: null == autoValidate
+          ? _value.autoValidate
+          : autoValidate // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -99,7 +106,8 @@ abstract class _$$_FieldCopyWith<T, $Res> implements $FieldCopyWith<T, $Res> {
       List<Validator<T>> validators,
       bool isPure,
       String? errorMessage,
-      Map<String, dynamic> extra});
+      Map<String, dynamic> extra,
+      bool autoValidate});
 }
 
 /// @nodoc
@@ -117,6 +125,7 @@ class __$$_FieldCopyWithImpl<T, $Res>
     Object? isPure = null,
     Object? errorMessage = freezed,
     Object? extra = null,
+    Object? autoValidate = null,
   }) {
     return _then(_$_Field<T>(
       value: freezed == value
@@ -139,6 +148,10 @@ class __$$_FieldCopyWithImpl<T, $Res>
           ? _value._extra
           : extra // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
+      autoValidate: null == autoValidate
+          ? _value.autoValidate
+          : autoValidate // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -151,7 +164,8 @@ class _$_Field<T> extends _Field<T> {
       final List<Validator<T>> validators = const [],
       this.isPure = true,
       this.errorMessage,
-      final Map<String, dynamic> extra = const {}})
+      final Map<String, dynamic> extra = const {},
+      this.autoValidate = true})
       : _validators = validators,
         _extra = extra,
         super._();
@@ -185,8 +199,12 @@ class _$_Field<T> extends _Field<T> {
   }
 
   @override
+  @JsonKey()
+  final bool autoValidate;
+
+  @override
   String toString() {
-    return 'Field<$T>(value: $value, validators: $validators, isPure: $isPure, errorMessage: $errorMessage, extra: $extra)';
+    return 'Field<$T>(value: $value, validators: $validators, isPure: $isPure, errorMessage: $errorMessage, extra: $extra, autoValidate: $autoValidate)';
   }
 
   @override
@@ -200,7 +218,9 @@ class _$_Field<T> extends _Field<T> {
             (identical(other.isPure, isPure) || other.isPure == isPure) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage) &&
-            const DeepCollectionEquality().equals(other._extra, _extra));
+            const DeepCollectionEquality().equals(other._extra, _extra) &&
+            (identical(other.autoValidate, autoValidate) ||
+                other.autoValidate == autoValidate));
   }
 
   @override
@@ -210,7 +230,8 @@ class _$_Field<T> extends _Field<T> {
       const DeepCollectionEquality().hash(_validators),
       isPure,
       errorMessage,
-      const DeepCollectionEquality().hash(_extra));
+      const DeepCollectionEquality().hash(_extra),
+      autoValidate);
 
   @JsonKey(ignore: true)
   @override
@@ -225,7 +246,8 @@ abstract class _Field<T> extends Field<T> {
       final List<Validator<T>> validators,
       final bool isPure,
       final String? errorMessage,
-      final Map<String, dynamic> extra}) = _$_Field<T>;
+      final Map<String, dynamic> extra,
+      final bool autoValidate}) = _$_Field<T>;
   const _Field._() : super._();
 
   @override
@@ -241,6 +263,8 @@ abstract class _Field<T> extends Field<T> {
   String? get errorMessage;
   @override
   Map<String, dynamic> get extra;
+  @override
+  bool get autoValidate;
   @override
   @JsonKey(ignore: true)
   _$$_FieldCopyWith<T, _$_Field<T>> get copyWith =>

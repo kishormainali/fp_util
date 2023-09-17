@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:path/path.dart';
 
 extension StringNX on String? {
@@ -127,6 +129,19 @@ extension StringX on String {
   double? get toDouble {
     if (isBlank && !isNumeric) return null;
     return double.tryParse(this);
+  }
+
+  /// tires to parse as DateTime
+  /// [inputPattern] is the pattern of the input string
+  /// [outputPattern] is the pattern of the output string
+  String parseAndFormat([
+    String inputPattern = DateFormat.YEAR_NUM_MONTH_DAY,
+    String outputPattern = DateFormat.YEAR_NUM_MONTH_DAY,
+    Locale? locale,
+  ]) {
+    return DateFormat(outputPattern, locale?.languageCode).format(
+      DateFormat(inputPattern, locale?.languageCode).parseLoose(this),
+    );
   }
 
   /// checks whether string is url

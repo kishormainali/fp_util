@@ -1,3 +1,10 @@
+# 1.2.7
+- added `match` method in `FormField`
+- fixed `withValidator` adding duplicate validators
+- added `timeAgo()` extension on DateTime
+- added `parseAndFormat` string extension to parse date string and format it
+
+
 # 1.2.6
 - added platformBrightness extension to `BuildContext`
 - minor fixes

@@ -143,12 +143,12 @@ extension BuildContextX on BuildContext {
   Brightness get platformBrightness => MediaQuery.platformBrightnessOf(this);
 
   ///percent with
-  double pw(double percent, [bool responsive = false]) {
+  double pw(double percent) {
     return width * percent;
   }
 
   ///percent height
-  double ph(double percent, [bool responsive = false]) {
+  double ph(double percent) {
     return height * percent;
   }
 

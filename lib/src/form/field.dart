@@ -20,6 +20,8 @@ part 'field.freezed.dart';
 /// [extra] is extra data related to field
 /// for example, we can store obscureText value for password field
 ///
+/// [autoValidate] is used to validate mark field as pure on every change
+///
 /// {@endtemplate}
 @Freezed(
   genericArgumentFactories: true,
@@ -31,18 +33,28 @@ class Field<T> with _$Field<T> {
 
   /// {@macro field}
   const factory Field({
+    /// value is required T value,
     required T value,
+
+    /// validators is list of validator for field
     @Default([]) List<Validator<T>> validators,
+
+    /// isPure indicates the value is changed or not
     @Default(true) bool isPure,
 
     /// use displayError instead of errorMessage to show error
     /// use this only to update error message from server-side validation
     String? errorMessage,
+
+    /// extra is extra data related to field
     @Default({}) Map<String, dynamic> extra,
+
+    /// autoValidate is used to validate mark field as pure on every change
+    @Default(true) bool autoValidate,
   }) = _Field<T>;
 
   /// method to mark field as dirty
-  Field<T> dirty(T updatedValue, [bool autoValidate = true]) {
+  Field<T> dirty(T updatedValue) {
     return copyWith(
       value: updatedValue,
       isPure: !autoValidate,
@@ -59,16 +71,50 @@ class Field<T> with _$Field<T> {
     );
   }
 
+  /// method to make field dirty and validate with match validator
+  Field<T> match(
+    T updatedValue,
+    T matchValue,
+    String matchErrorMessage, {
+    bool Function(T value, T matchValue)? compareFn,
+  }) {
+    final updatedValidators = validators.toList();
+
+    /// remove existing match validator to avoid duplicate
+    updatedValidators.removeWhere((validator) => validator is MatchValidator);
+
+    /// add new match validator
+    updatedValidators.add(
+      MatchValidator<T>(
+        matchErrorMessage,
+        matchValue,
+        compareFn: compareFn,
+      ),
+    );
+
+    return copyWith(
+      value: updatedValue,
+      validators: updatedValidators,
+      isPure: !autoValidate,
+      errorMessage: _validate(updatedValue, updatedValidators),
+    );
+  }
+
   /// method to make field dirty and validate with new validator
   Field<T> withValidator(
     T updatedValue,
-    Validator<T> validator, [
-    bool autoValidate = true,
-  ]) {
-    final updatedValidators = [
-      ...validators,
-      validator,
-    ];
+    Validator<T> validator,
+  ) {
+    /// remove existing validator to avoid duplicate
+    final updatedValidators = validators.toList()
+      ..removeWhere(
+        (existingValidator) =>
+            existingValidator.runtimeType == validator.runtimeType,
+      );
+
+    /// add new validator
+    updatedValidators.add(validator);
+
     return copyWith(
       value: updatedValue,
       validators: updatedValidators,

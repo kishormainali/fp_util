@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:fp_util/src/extensions/extensions.dart';
+import 'package:fp_util/fp_util.dart';
 import 'package:mime/mime.dart';
 import 'package:path/path.dart' as p;
 
