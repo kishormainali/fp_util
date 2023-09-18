@@ -1,3 +1,7 @@
+# 1.2.8
+- fixed timeAgo displaying negative date
+- added formatParse extension method on DateTime
+
 # 1.2.7
 - added `match` method in `FormField`
 - fixed `withValidator` adding duplicate validators

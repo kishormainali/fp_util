@@ -49,11 +49,17 @@ extension DateTimeX on DateTime {
   /// subtract seconds from current date
   DateTime subtractSeconds(int seconds) => subtract(Duration(seconds: seconds));
 
+  /// parse string to DateTime
+  DateTime formatParse(String inputString,
+      [String pattern = DateFormat.YEAR_NUM_MONTH_DAY]) {
+    return DateFormat(pattern).parseLoose(inputString);
+  }
+
   /// return time ago string
   String timeAgo([Locale? locale]) {
     final now = DateTime.now();
 
-    final elapsed = now.millisecondsSinceEpoch - millisecondsSinceEpoch;
+    var elapsed = (now.millisecondsSinceEpoch - millisecondsSinceEpoch).abs();
 
     final num seconds = elapsed / 1000;
     final num minutes = seconds / 60;
