@@ -1,3 +1,8 @@
+# 1.2.10
+- updated design for image picker selection dialog
+
+# 1.2.9
+- removed unwanted space from image picker dialog
 # 1.2.8
 - fixed timeAgo displaying negative date
 - added formatParse extension method on DateTime

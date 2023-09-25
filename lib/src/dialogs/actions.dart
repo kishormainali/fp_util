@@ -133,7 +133,7 @@ class PlatformDialogAction
       );
     }
 
-    return FilledButton(
+    return FilledButton.tonal(
       key: material?.widgetKey,
       onPressed: onPressed,
       onLongPress: material?.onLongPress,

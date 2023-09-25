@@ -345,7 +345,7 @@
     },
     {
       "name": "logger",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/logger-2.0.2",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/logger-2.0.2+1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -572,7 +572,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-09-18T07:21:54.231397Z",
+  "generated": "2023-09-25T10:28:32.491526Z",
   "generator": "pub",
   "generatorVersion": "3.1.2"
 }

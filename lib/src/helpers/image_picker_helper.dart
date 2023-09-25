@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:fp_util/fp_util.dart';
+import 'package:fp_util/src/dialogs/default_picker_dialog.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../dialogs/enums.dart';
@@ -13,45 +14,21 @@ import '../dialogs/enums.dart';
 ///
 /// {@endtemplate}
 abstract class ImagePickerHelper {
+  /// default private constructor
+  const ImagePickerHelper._();
+
   static final ImagePicker _picker = ImagePicker();
 
   /// choose image source
   static Future<SourceType?> chooseImageSource(
     BuildContext context, {
     WidgetBuilder? builder,
+    DefaultPickerData data = const DefaultPickerData(),
   }) async {
     return showAdaptiveDialog<SourceType>(
       context: context,
       barrierDismissible: true,
-      builder: builder ??
-          (context) => AlertDialog.adaptive(
-                title: const Text('Choose Image Source'),
-                content: const Text(''),
-                actions: [
-                  PlatformDialogAction(
-                    onPressed: () => Navigator.pop(context, SourceType.camera),
-                    material: MaterialActionData(
-                      style: const ButtonStyle(
-                        minimumSize: MaterialStatePropertyAll(
-                          Size(double.infinity, 44),
-                        ),
-                      ),
-                    ),
-                    child: const Text('Camera'),
-                  ),
-                  PlatformDialogAction(
-                    onPressed: () => Navigator.pop(context, SourceType.gallery),
-                    material: MaterialActionData(
-                      style: const ButtonStyle(
-                        minimumSize: MaterialStatePropertyAll(
-                          Size(double.infinity, 44),
-                        ),
-                      ),
-                    ),
-                    child: const Text('Gallery'),
-                  ),
-                ],
-              ),
+      builder: builder ?? (context) => DefaultPickerDialog(data: data),
     );
   }
 

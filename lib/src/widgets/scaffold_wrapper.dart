@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fp_util/fp_util.dart';
 
 /// {@template scaffold_wrapper}
 ///
@@ -115,7 +116,7 @@ class ScaffoldWrapper extends StatelessWidget {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: statusBarStyle,
       child: GestureDetector(
-        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+        onTap: () => context.removeFocus(),
         child: Scaffold(
           key: scaffoldKey,
           appBar: appBar,

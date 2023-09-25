@@ -154,7 +154,9 @@ extension BuildContextX on BuildContext {
 
   /// remove keyboard focus
   void removeFocus() {
-    return FocusManager.instance.primaryFocus?.unfocus();
+    if (hasFocus) {
+      FocusManager.instance.primaryFocus?.unfocus();
+    }
   }
 
   /// check whether keyboard has focus or not
