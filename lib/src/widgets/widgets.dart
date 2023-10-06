@@ -1,11 +1,14 @@
 export '../snackbars/snackbars.dart';
-export 'column_with_space.dart';
 export 'conditional_widget.dart';
+export 'containers.dart';
 export 'gradient_button.dart';
 export 'hide_keyboard.dart';
 export 'image_picker_button.dart';
-export 'row_with_space.dart';
+export 'padded_column.dart';
+export 'padded_row.dart';
 export 'scaffold_wrapper.dart';
 export 'scrollable_column.dart';
 export 'scrollable_row.dart';
 export 'social_button.dart';
+export 'spaced_column.dart';
+export 'spaced_row.dart';

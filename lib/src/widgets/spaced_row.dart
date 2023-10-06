@@ -6,8 +6,8 @@ import 'package:fp_util/src/extensions/extensions.dart';
 /// A [RowWithSpace] is a [Row] with space between each child.
 ///
 /// {@endtemplate}
-class RowWithSpace extends Row {
-  RowWithSpace({
+class SpacedRow extends Row {
+  SpacedRow({
     super.key,
     double spacing = 0,
     bool hasLeadingSpace = false,

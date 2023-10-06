@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:fp_util/fp_util.dart';
-import 'package:fp_util/src/dialogs/default_picker_dialog.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../dialogs/enums.dart';

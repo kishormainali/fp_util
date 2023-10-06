@@ -6,8 +6,8 @@ import 'package:fp_util/fp_util.dart';
 /// A [ColumnWithSpace] is a [Column] with space between each child.
 ///
 /// {@endtemplate}
-class ColumnWithSpace extends Column {
-  ColumnWithSpace({
+class SpacedColumn extends Column {
+  SpacedColumn({
     super.key,
     double spacing = 0,
     bool hasLeadingSpace = false,

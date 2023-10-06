@@ -1,3 +1,16 @@
+# 1.2.11
+**this release has Breaking Changes**
+- added `PaddedColumn` and `PaddedRow` widget
+- added `RoundedContainer`  and `CircleContainer` widget
+- renamed `ColumnWithSpace` widget to `SpacedColumn`
+- renamed `RowWithSpace` widget to `SpacedRow`
+- added static Color extensions `ColorHex`
+    - ColorHex.fromHex('hex color code') to convert hex string into color
+    - hex getter to convert hex from color
+    - hexWithOpacity to convert hex from color with opacity
+    - percent() to apply opacity from percentage
+
+
 # 1.2.10
 - updated design for image picker selection dialog
 

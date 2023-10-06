@@ -24,11 +24,8 @@ class ConditionalWidget extends StatelessWidget {
   final Widget falseChild;
 
   @override
-  Widget build(BuildContext context) {
-    if (condition) {
-      return trueChild;
-    } else {
-      return falseChild;
-    }
-  }
+  Widget build(BuildContext context) => switch (condition) {
+        true => trueChild,
+        false => falseChild,
+      };
 }
