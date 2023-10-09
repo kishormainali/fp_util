@@ -1,3 +1,6 @@
+# 1.2.12
+- cleanups
+
 # 1.2.11
 **this release has Breaking Changes**
 - added `PaddedColumn` and `PaddedRow` widget

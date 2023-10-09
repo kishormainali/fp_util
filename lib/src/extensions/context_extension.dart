@@ -175,14 +175,11 @@ extension BuildContextX on BuildContext {
   }) {
     final size = MediaQuery.sizeOf(this);
     final deviceType = DeviceType.fromSize(size);
-    if (deviceType == DeviceType.desktop) {
-      if (desktop != null) return desktop;
-      if (tablet != null) return tablet;
-    }
-    if (deviceType == DeviceType.tablet) {
-      if (tablet != null) return tablet;
-    }
-    return mobile;
+    return switch (deviceType) {
+      DeviceType.mobile => mobile,
+      DeviceType.tablet => tablet ?? mobile,
+      DeviceType.desktop => desktop ?? tablet ?? mobile,
+    };
   }
 
   /// extension to get value according to theme

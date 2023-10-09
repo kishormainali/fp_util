@@ -235,7 +235,7 @@ extension StringX on String {
     return ext == '.svg';
   }
 
-  /// checks whether string is cml
+  /// checks whether string is xml
   bool get isXml {
     final ext = extension(this);
     if (ext.isBlank) {

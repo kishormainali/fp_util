@@ -23,12 +23,10 @@ enum DeviceType {
     if (kIsWeb || Platform.isMacOS || Platform.isWindows || Platform.isLinux) {
       deviceWidth = deviceSize.width;
     }
-    if (deviceWidth > DeviceType.desktop.size) {
-      return DeviceType.desktop;
-    } else if (deviceWidth > DeviceType.tablet.size) {
-      return DeviceType.tablet;
-    } else {
-      return DeviceType.mobile;
-    }
+    return switch (deviceWidth) {
+      >= 950 => DeviceType.desktop,
+      >= 600 => DeviceType.tablet,
+      _ => DeviceType.mobile,
+    };
   }
 }

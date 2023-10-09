@@ -13,6 +13,7 @@ import 'package:fp_util/fp_util.dart';
 /// HideKeyboard(
 ///   child: Container(),
 ///   hideOnDrag: true,
+///  useSafeArea: true, // if you want to use safe area
 /// )
 /// ```
 /// {@end-tool}
@@ -22,6 +23,7 @@ class HideKeyboard extends StatelessWidget {
     super.key,
     required this.child,
     this.hideOnDrag = false,
+    this.useSafeArea = false,
   });
 
   /// child widget
@@ -29,6 +31,9 @@ class HideKeyboard extends StatelessWidget {
 
   /// hide keyboard on drag
   final bool hideOnDrag;
+
+  /// use safe area for child
+  final bool useSafeArea;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +49,13 @@ class HideKeyboard extends StatelessWidget {
           context.removeFocus();
         }
       },
-      child: child,
+      child: SafeArea(
+        left: useSafeArea,
+        top: useSafeArea,
+        right: useSafeArea,
+        bottom: useSafeArea,
+        child: child,
+      ),
     );
   }
 }

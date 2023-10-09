@@ -1,6 +1,8 @@
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:fp_util/fp_util.dart';
 
 /// {@template size_utils}
 ///
@@ -18,8 +20,10 @@ class SizeUtils {
     _initialized = true;
   }
 
+  static SizeUtils? _instance;
+
   /// singleton instance of [SizeUtils]
-  static SizeUtils get instance => SizeUtils._();
+  static SizeUtils get instance => _instance ??= SizeUtils._();
 
   /// default figma size
   Size _designSize = const Size(375, 812);
@@ -42,13 +46,13 @@ class SizeUtils {
   /// width of screen
   late double _width;
 
-  /// responsive width
+  /// screen width
   double get width {
     if (!_initialized) throw Exception('SizeUtils not initialized.');
     return _width;
   }
 
-  /// responsive height
+  /// screen height except status bar and bottom bar
   double get height {
     if (!_initialized) throw Exception('SizeUtils not initialized.');
     return _height;
@@ -71,10 +75,21 @@ class SizeUtils {
     if (!_initialized) throw Exception('SizeUtils not initialized.');
     final height = setHeight(px);
     final width = setWidth(px);
-    if (height < width) {
-      return height;
-    } else {
-      return width;
-    }
+    return min(width, height);
+  }
+
+  /// get responsive px according to device type
+  double responsivePx(
+    double mobile, {
+    double? tablet,
+    double? desktop,
+  }) {
+    if (!_initialized) throw Exception('SizeUtils not initialized.');
+    final deviceType = DeviceType.fromSize(_size);
+    return switch (deviceType) {
+      DeviceType.mobile => getSize(mobile),
+      DeviceType.tablet => getSize(tablet ?? mobile),
+      DeviceType.desktop => getSize(desktop ?? tablet ?? mobile),
+    };
   }
 }
