@@ -1,3 +1,8 @@
+# 1.2.14
+- added gradient borders
+- added gradient text widget
+- add support for outline variant on gradient button
+
 # 1.2.13
 - added new widgets
     - ConstrainedScrollableColumn

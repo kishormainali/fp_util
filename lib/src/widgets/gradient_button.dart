@@ -3,6 +3,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import 'gradient_borders.dart';
+import 'gradient_text.dart';
+
 /// {@template gradient_button}
 ///
 /// gradient button
@@ -25,6 +28,25 @@ class GradientButton extends StatelessWidget {
     this.fullWidth = true,
     this.minimumSize = const Size(120, 48),
   });
+
+  /// [GradientButton] with outline border
+  const factory GradientButton.outline({
+    Key? key,
+    required String label,
+    required Gradient gradient,
+    Widget? icon,
+    VoidCallback? onPressed,
+    Color? foregroundColor,
+    TextStyle? textStyle,
+    bool? loading,
+    Widget? loader,
+    bool? disabled,
+    bool? fullWidth,
+    Size? minimumSize,
+    double? borderWidth,
+    double? borderRadius,
+    bool? applyGradientOnIcon,
+  }) = _OutlineGradientButton;
 
   /// label of the button
   final String label;
@@ -111,6 +133,89 @@ class GradientButton extends StatelessWidget {
       );
     } else {
       return loading ? loader : Text(label);
+    }
+  }
+}
+
+class _OutlineGradientButton extends GradientButton {
+  const _OutlineGradientButton({
+    super.key,
+    required super.label,
+    required super.gradient,
+    super.icon,
+    super.onPressed,
+    super.foregroundColor,
+    super.textStyle,
+    bool? loading,
+    Widget? loader,
+    bool? disabled,
+    bool? fullWidth,
+    Size? minimumSize,
+    this.borderWidth,
+    this.borderRadius,
+    this.applyGradientOnIcon,
+  }) : super(
+          loading: loading ?? false,
+          disabled: disabled ?? false,
+          fullWidth: fullWidth ?? true,
+          minimumSize: minimumSize ?? const Size(120, 48),
+          loader: loader ?? const CircularProgressIndicator(),
+        );
+
+  /// border width of the button
+  final double? borderWidth;
+
+  /// border radius of the button
+  final double? borderRadius;
+
+  /// if true then gradient will be applied on icon
+  final bool? applyGradientOnIcon;
+
+  @override
+  Widget build(BuildContext context) {
+    final outlineStyle = OutlinedButton.styleFrom(
+      shape: GradientOutlineBorder(
+        width: borderWidth ?? 1,
+        gradient: gradient,
+        borderRadius: BorderRadius.circular(borderRadius ?? 10),
+      ),
+      backgroundColor: Colors.transparent,
+      foregroundColor: foregroundColor,
+      padding: EdgeInsets.zero,
+      minimumSize: _minimumSize,
+      maximumSize: Size(double.infinity, _minimumSize.height),
+      textStyle: textStyle,
+    );
+    return OutlinedButton(
+      onPressed: onPressed,
+      style: outlineStyle,
+      child: _buildOutlineChild(),
+    );
+  }
+
+  _buildOutlineChild() {
+    if (icon != null) {
+      final iconChild = (applyGradientOnIcon ?? false)
+          ? ShaderMask(
+              blendMode: BlendMode.srcIn,
+              shaderCallback: (bounds) => gradient.createShader(bounds),
+              child: icon!,
+            )
+          : icon!;
+      return _FilledButtonWithIconChild(
+        label: GradientText(
+          label,
+          gradient: gradient,
+        ),
+        icon: loading ? loader : iconChild,
+      );
+    } else {
+      return loading
+          ? loader
+          : GradientText(
+              label,
+              gradient: gradient,
+            );
     }
   }
 }
