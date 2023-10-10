@@ -92,14 +92,11 @@
 }) {
   final size = MediaQuery.sizeOf(this);
   final deviceType = DeviceType.fromSize(size);
-  if (deviceType == DeviceType.desktop) {
-    if (desktop != null) return desktop;
-    if (tablet != null) return tablet;
-  }
-  if (deviceType == DeviceType.tablet) {
-    if (tablet != null) return tablet;
-  }
-  return mobile;
+  return switch (deviceType) {
+    DeviceType.mobile =&gt; mobile,
+    DeviceType.tablet =&gt; tablet ?? mobile,
+    DeviceType.desktop =&gt; desktop ?? tablet ?? mobile,
+  };
 }</code></pre>
 </section>
 
@@ -133,7 +130,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.4
+      1.2.13
   </span>
 
   

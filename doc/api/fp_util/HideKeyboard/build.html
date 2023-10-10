@@ -130,7 +130,13 @@ Widget build(BuildContext context) {
         context.removeFocus();
       }
     },
-    child: child,
+    child: SafeArea(
+      left: useSafeArea,
+      top: useSafeArea,
+      right: useSafeArea,
+      bottom: useSafeArea,
+      child: child,
+    ),
   );
 }</code></pre>
 </section>
@@ -165,7 +171,7 @@ Widget build(BuildContext context) {
 <footer>
   <span class="no-break">
     fp_util
-      1.2.4
+      1.2.13
   </span>
 
   

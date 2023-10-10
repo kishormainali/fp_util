@@ -67,6 +67,7 @@
 <pre class="language-dart"><code class="language-dart">HideKeyboard(
   child: Container(),
   hideOnDrag: true,
+ useSafeArea: true, // if you want to use safe area
 )
 </code></pre>
 <p>{@end-tool}</p>
@@ -108,7 +109,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="HideKeyboard" class="callable">
-          <span class="name"><a href="../fp_util/HideKeyboard/HideKeyboard.html">HideKeyboard</a></span><span class="signature">(<span class="parameter" id="-param-key">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="-param-child"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">child</span>, </span><span class="parameter" id="-param-hideOnDrag"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">hideOnDrag</span> = <span class="default-value">false</span>}</span>)</span>
+          <span class="name"><a href="../fp_util/HideKeyboard/HideKeyboard.html">HideKeyboard</a></span><span class="signature">(<span class="parameter" id="-param-key">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="-param-child"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">child</span>, </span><span class="parameter" id="-param-hideOnDrag"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">hideOnDrag</span> = <span class="default-value">false</span>, </span><span class="parameter" id="-param-useSafeArea"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">useSafeArea</span> = <span class="default-value">false</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -173,6 +174,17 @@
 <dd class="inherited">
   A representation of the runtime type of the object.
   <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="useSafeArea" class="property">
+  <span class="name"><a href="../fp_util/HideKeyboard/useSafeArea.html">useSafeArea</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd>
+  use safe area for child
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
@@ -374,7 +386,7 @@ tools and by <a href="https://api.flutter.dev/flutter/foundation/DiagnosticsNode
 <footer>
   <span class="no-break">
     fp_util
-      1.2.4
+      1.2.13
   </span>
 
   

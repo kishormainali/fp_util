@@ -62,7 +62,7 @@
 
         <section class="multi-line-signature">
           
-          <a href="https://pub.dev/documentation/logger/2.0.1/logger/Logger-class.html">Logger</a>
+          <a href="https://pub.dev/documentation/logger/2.0.2+1/logger/Logger-class.html">Logger</a>
           <span class="name ">logger</span>
           <div class="features"><span class="feature">final</span></div>
 
@@ -74,18 +74,29 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">final logger = Logger(
   printer: PrettyPrinter(
-      methodCount: 2,
-      &#47;&#47; number of method calls to be displayed
-      errorMethodCount: 8,
-      &#47;&#47; number of method calls if stacktrace is provided
-      lineLength: 120,
-      &#47;&#47; width of the output
-      colors: true,
-      &#47;&#47; Colorful log messages
-      printEmojis: true,
-      &#47;&#47; Print an emoji for each log message
-      printTime: true &#47;&#47; Should each log print contain a timestamp
-      ),
+    methodCount: 3,
+    &#47;&#47; number of method calls to be displayed
+    errorMethodCount: 8,
+    &#47;&#47; number of method calls if stacktrace is provided
+    lineLength: 140,
+    &#47;&#47; width of the output
+    colors: true,
+    &#47;&#47; Colorful log messages
+    printEmojis: true,
+
+    &#47;&#47; Print an timestamp before the message
+    printTime: true, &#47;&#47; Should each log print contain a timestamp
+
+    &#47;&#47; Print an emoji for each log message
+    levelEmojis: {
+      Level.trace: &#39;🔍&#39;,
+      Level.debug: &#39;🐛&#39;,
+      Level.info: &#39;📣&#39;,
+      Level.warning: &#39;⚠️&#39;,
+      Level.error: &#39;🚨&#39;,
+      Level.fatal: &#39;🤷‍♂️&#39;,
+    },
+  ),
 );</code></pre>
 </section>
 
@@ -119,7 +130,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.4
+      1.2.13
   </span>
 
   

@@ -3,13 +3,13 @@ import 'package:fp_util/src/extensions/extensions.dart';
 
 /// {@template row_with_space}
 ///
-/// A [RowWithSpace] is a [Row] with space between each child.
+/// A [SpacedRow] is a [Row] with space between each child.
 ///
 /// {@endtemplate}
 class SpacedRow extends Row {
   SpacedRow({
     super.key,
-    double spacing = 0,
+    double spacing = 8.0,
     bool hasLeadingSpace = false,
     bool hasTrailingSpace = false,
     super.mainAxisAlignment,

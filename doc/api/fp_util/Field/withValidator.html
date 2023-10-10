@@ -84,14 +84,20 @@
   T updatedValue,
   Validator&lt;T&gt; validator,
 ) {
-  final updatedValidators = [
-    ...validators,
-    validator,
-  ];
+  &#47;&#47;&#47; remove existing validator to avoid duplicate
+  final updatedValidators = validators.toList()
+    ..removeWhere(
+      (existingValidator) =&gt;
+          existingValidator.runtimeType == validator.runtimeType,
+    );
+
+  &#47;&#47;&#47; add new validator
+  updatedValidators.add(validator);
+
   return copyWith(
     value: updatedValue,
     validators: updatedValidators,
-    isPure: false,
+    isPure: !autoValidate,
     errorMessage: _validate(updatedValue, updatedValidators),
   );
 }</code></pre>
@@ -127,7 +133,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.4
+      1.2.13
   </span>
 
   

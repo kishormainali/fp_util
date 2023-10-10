@@ -65,7 +65,8 @@
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">SourceType?</span>&gt;</span></span>
 <span class="name ">chooseImageSource</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="chooseImageSource-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span></li>
-<li><span class="parameter" id="chooseImageSource-param-builder">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/WidgetBuilder.html">WidgetBuilder</a>?</span> <span class="parameter-name">builder</span>}</span></li>
+<li><span class="parameter" id="chooseImageSource-param-builder">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/WidgetBuilder.html">WidgetBuilder</a>?</span> <span class="parameter-name">builder</span>, </span></li>
+<li><span class="parameter" id="chooseImageSource-param-data"><span class="type-annotation"><a href="../../fp_util/DefaultPickerData-class.html">DefaultPickerData</a></span> <span class="parameter-name">data</span> = <span class="default-value">const DefaultPickerData()</span>}</span></li>
 </ol>)
 
       
@@ -83,38 +84,12 @@
   <pre class="language-dart"><code class="language-dart">static Future&lt;SourceType?&gt; chooseImageSource(
   BuildContext context, {
   WidgetBuilder? builder,
+  DefaultPickerData data = const DefaultPickerData(),
 }) async {
   return showAdaptiveDialog&lt;SourceType&gt;(
     context: context,
-    builder: builder ??
-        (context) =&gt; AlertDialog.adaptive(
-              title: const Text(&#39;Choose Image Source&#39;),
-              content: const Text(&#39;&#39;),
-              actions: [
-                PlatformDialogAction(
-                  onPressed: () =&gt; Navigator.pop(context, SourceType.camera),
-                  material: MaterialActionData(
-                    style: const ButtonStyle(
-                      minimumSize: MaterialStatePropertyAll(
-                        Size(double.infinity, 44),
-                      ),
-                    ),
-                  ),
-                  child: const Text(&#39;Camera&#39;),
-                ),
-                PlatformDialogAction(
-                  onPressed: () =&gt; Navigator.pop(context, SourceType.gallery),
-                  material: MaterialActionData(
-                    style: const ButtonStyle(
-                      minimumSize: MaterialStatePropertyAll(
-                        Size(double.infinity, 44),
-                      ),
-                    ),
-                  ),
-                  child: const Text(&#39;Gallery&#39;),
-                ),
-              ],
-            ),
+    barrierDismissible: true,
+    builder: builder ?? (context) =&gt; DefaultPickerDialog(data: data),
   );
 }</code></pre>
 </section>
@@ -149,7 +124,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.4
+      1.2.13
   </span>
 
   

@@ -8,7 +8,7 @@ import 'package:fp_util/fp_util.dart';
 ///
 /// Size utils for responsiveness
 ///
-/// {@end-template}
+/// {@endtemplate}
 class SizeUtils {
   SizeUtils._() {
     final view = PlatformDispatcher.instance.views.first;

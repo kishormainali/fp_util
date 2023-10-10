@@ -10,8 +10,6 @@ class ScrollableRow extends StatelessWidget {
   /// @{macro scrollable_column}
   const ScrollableRow({
     super.key,
-
-    /// row properties
     required this.children,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.mainAxisSize = MainAxisSize.max,
@@ -19,8 +17,6 @@ class ScrollableRow extends StatelessWidget {
     this.textDirection,
     this.verticalDirection = VerticalDirection.down,
     this.textBaseline,
-
-    /// scrollable properties
     this.reverse = false,
     this.padding,
     this.primary,

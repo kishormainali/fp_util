@@ -62,9 +62,7 @@
 
     
 <section class="desc markdown">
-  <p>@template
-Size utils for responsiveness
-@end-template</p>
+  <p>Size utils for responsiveness</p>
 </section>
 
 
@@ -92,7 +90,7 @@ Size utils for responsiveness
 
 </dt>
 <dd>
-  responsive height
+  screen height except status bar and bottom bar
   <div class="features"><span class="feature">read-only</span></div>
 
 </dd>
@@ -114,7 +112,7 @@ Size utils for responsiveness
 
 </dt>
 <dd>
-  responsive width
+  screen width
   <div class="features"><span class="feature">read-only</span></div>
 
 </dd>
@@ -151,6 +149,19 @@ Size utils for responsiveness
 <dd class="inherited">
   Invoked when a nonexistent method or property is accessed.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="responsivePx" class="callable">
+  <span class="name"><a href="../fp_util/SizeUtils/responsivePx.html">responsivePx</a></span><span class="signature">(<wbr><span class="parameter" id="responsivePx-param-mobile"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">mobile</span>, </span><span class="parameter" id="responsivePx-param-tablet">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">tablet</span>, </span><span class="parameter" id="responsivePx-param-desktop"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">desktop</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  get responsive px according to device type
+  
 
 </dd>
 
@@ -241,7 +252,7 @@ call this function on root of app
 
 </dt>
 <dd>
-  
+  singleton instance of <a href="../fp_util/SizeUtils-class.html">SizeUtils</a>
   <div class="features"><span class="feature">read-only</span></div>
 
 </dd>
@@ -281,7 +292,7 @@ call this function on root of app
 <footer>
   <span class="no-break">
     fp_util
-      1.2.4
+      1.2.13
   </span>
 
   

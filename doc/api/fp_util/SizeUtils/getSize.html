@@ -83,11 +83,7 @@
   if (!_initialized) throw Exception(&#39;SizeUtils not initialized.&#39;);
   final height = setHeight(px);
   final width = setWidth(px);
-  if (height &lt; width) {
-    return height;
-  } else {
-    return width;
-  }
+  return min(width, height);
 }</code></pre>
 </section>
 
@@ -121,7 +117,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.4
+      1.2.13
   </span>
 
   

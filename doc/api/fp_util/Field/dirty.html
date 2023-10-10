@@ -82,7 +82,7 @@
   <pre class="language-dart"><code class="language-dart">Field&lt;T&gt; dirty(T updatedValue) {
   return copyWith(
     value: updatedValue,
-    isPure: false,
+    isPure: !autoValidate,
     errorMessage: _validate(updatedValue),
   );
 }</code></pre>
@@ -118,7 +118,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.4
+      1.2.13
   </span>
 
   

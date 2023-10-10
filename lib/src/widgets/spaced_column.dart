@@ -3,7 +3,7 @@ import 'package:fp_util/fp_util.dart';
 
 /// {@template column_with_space}
 ///
-/// A [ColumnWithSpace] is a [Column] with space between each child.
+/// A [SpacedColumn] is a [Column] with space between each child.
 ///
 /// {@endtemplate}
 class SpacedColumn extends Column {

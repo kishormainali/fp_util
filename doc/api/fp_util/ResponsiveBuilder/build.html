@@ -124,14 +124,11 @@ Widget build(BuildContext context) {
         builder: (context, orientation) {
           final size = _getSize(constrains, orientation);
           final deviceType = DeviceType.fromSize(size);
-          if (deviceType == DeviceType.desktop) {
-            if (desktop != null) return desktop!(context);
-            if (tablet != null) return tablet!(context);
-          }
-          if (deviceType == DeviceType.tablet) {
-            if (tablet != null) return tablet!(context);
-          }
-          return mobile(context);
+          return switch (deviceType) {
+            DeviceType.mobile =&gt; mobile(context),
+            DeviceType.tablet =&gt; _tablet(context),
+            DeviceType.desktop =&gt; _desktop(context),
+          };
         },
       );
     },
@@ -169,7 +166,7 @@ Widget build(BuildContext context) {
 <footer>
   <span class="no-break">
     fp_util
-      1.2.4
+      1.2.13
   </span>
 
   

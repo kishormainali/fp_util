@@ -11,8 +11,6 @@ class ScrollableColumn extends StatelessWidget {
   /// @{macro scrollable_column}
   const ScrollableColumn({
     super.key,
-
-    /// column properties
     required this.children,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.mainAxisSize = MainAxisSize.max,
@@ -20,8 +18,6 @@ class ScrollableColumn extends StatelessWidget {
     this.textDirection,
     this.verticalDirection = VerticalDirection.down,
     this.textBaseline,
-
-    /// scrollable properties
     this.reverse = false,
     this.padding,
     this.primary,
@@ -31,6 +27,7 @@ class ScrollableColumn extends StatelessWidget {
     this.clipBehavior = Clip.hardEdge,
     this.restorationId,
     this.keyboardDismissBehavior = ScrollViewKeyboardDismissBehavior.manual,
+    this.useSafeArea = false,
   });
 
   /// children of the column
@@ -83,28 +80,36 @@ class ScrollableColumn extends StatelessWidget {
   /// keyboardDismissBehavior: Configures how the Scrollable widgets that wrap the content of Scaffold and
   final ScrollViewKeyboardDismissBehavior keyboardDismissBehavior;
 
+  /// whether to use safe area
+  final bool useSafeArea;
+
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      key: key,
-      reverse: reverse,
-      padding: padding,
-      primary: primary,
-      physics: physics,
-      controller: controller,
-      dragStartBehavior: dragStartBehavior,
-      clipBehavior: clipBehavior,
-      restorationId: restorationId,
-      keyboardDismissBehavior: keyboardDismissBehavior,
-      scrollDirection: Axis.vertical,
-      child: Column(
-        mainAxisAlignment: mainAxisAlignment,
-        mainAxisSize: mainAxisSize,
-        crossAxisAlignment: crossAxisAlignment,
-        textDirection: textDirection,
-        verticalDirection: verticalDirection,
-        textBaseline: textBaseline,
-        children: children,
+    return SafeArea(
+      left: useSafeArea,
+      top: useSafeArea,
+      right: useSafeArea,
+      bottom: useSafeArea,
+      child: SingleChildScrollView(
+        reverse: reverse,
+        padding: padding,
+        primary: primary,
+        physics: physics,
+        controller: controller,
+        dragStartBehavior: dragStartBehavior,
+        clipBehavior: clipBehavior,
+        restorationId: restorationId,
+        keyboardDismissBehavior: keyboardDismissBehavior,
+        scrollDirection: Axis.vertical,
+        child: Column(
+          mainAxisAlignment: mainAxisAlignment,
+          mainAxisSize: mainAxisSize,
+          crossAxisAlignment: crossAxisAlignment,
+          textDirection: textDirection,
+          verticalDirection: verticalDirection,
+          textBaseline: textBaseline,
+          children: children,
+        ),
       ),
     );
   }

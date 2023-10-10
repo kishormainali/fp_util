@@ -73,11 +73,14 @@
 </section>
 
 
+<section class="desc markdown">
+  <p>singleton instance of <a href="../../fp_util/SizeUtils-class.html">SizeUtils</a></p>
+</section>
 
 
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">static SizeUtils get instance =&gt; SizeUtils._();</code></pre>
+  <pre class="language-dart"><code class="language-dart">static SizeUtils get instance =&gt; _instance ??= SizeUtils._();</code></pre>
 </section>
 
 </section>
@@ -112,7 +115,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.4
+      1.2.13
   </span>
 
   

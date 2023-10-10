@@ -63,6 +63,15 @@
     
 <section class="desc markdown">
   <p>A <a href="../fp_util/Field-class.html">Field</a> is  class for handling state of form field.</p>
+<p><code>T</code> is type of value of field</p>
+<p><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List&lt;Validator&lt;T&gt;&gt;</a> is list of validator for field</p>
+<p><a href="../fp_util/Field/isPure.html">isPure</a> indicates the value is changed or not</p>
+<p><a href="../fp_util/Field/errorMessage.html">errorMessage</a> is error message for field,
+use <a href="../fp_util/Field/displayError.html">displayError</a> instead of <a href="../fp_util/Field/errorMessage.html">errorMessage</a> to show error,
+use <a href="../fp_util/Field/errorMessage.html">errorMessage</a> only to update error message from server-side validation</p>
+<p><a href="../fp_util/Field/extra.html">extra</a> is extra data related to field
+for example, we can store obscureText value for password field</p>
+<p><a href="../fp_util/Field/autoValidate.html">autoValidate</a> is used to validate mark field as pure on every change</p>
 </section>
 
 
@@ -93,10 +102,10 @@
 
     <dl class="constructor-summary-list">
         <dt id="Field" class="callable">
-          <span class="name"><a href="../fp_util/Field/Field.html">Field</a></span><span class="signature">(<span class="parameter" id="-param-value">{<span>required</span> <span class="type-annotation">T</span> <span class="parameter-name">value</span>, </span><span class="parameter" id="-param-validators"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.1/freezed_annotation/Default-class.html">Default</a>([])</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../fp_util/Validator-class.html">Validator</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">validators</span>, </span><span class="parameter" id="-param-isPure"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.1/freezed_annotation/Default-class.html">Default</a>(true)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isPure</span>, </span><span class="parameter" id="-param-errorMessage"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">errorMessage</span>, </span><span class="parameter" id="-param-extra"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.1/freezed_annotation/Default-class.html">Default</a>({})</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">extra</span>}</span>)</span>
+          <span class="name"><a href="../fp_util/Field/Field.html">Field</a></span><span class="signature">(<span class="parameter" id="-param-value">{<span>required</span> <span class="type-annotation">T</span> <span class="parameter-name">value</span>, </span><span class="parameter" id="-param-validators"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.1/freezed_annotation/Default-class.html">Default</a>([])</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../fp_util/Validator-class.html">Validator</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">validators</span>, </span><span class="parameter" id="-param-isPure"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.1/freezed_annotation/Default-class.html">Default</a>(true)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isPure</span>, </span><span class="parameter" id="-param-errorMessage"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">errorMessage</span>, </span><span class="parameter" id="-param-extra"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.1/freezed_annotation/Default-class.html">Default</a>({})</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">extra</span>, </span><span class="parameter" id="-param-autoValidate"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.1/freezed_annotation/Default-class.html">Default</a>(true)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">autoValidate</span>}</span>)</span>
         </dt>
         <dd>
-          
+          A <a href="../fp_util/Field-class.html">Field</a> is  class for handling state of form field.
             <div class="constructor-modifier features">const</div>
             <div class="constructor-modifier features">factory</div>
         </dd>
@@ -107,6 +116,17 @@
       <h2>Properties</h2>
 
       <dl class="properties">
+        <dt id="autoValidate" class="property inherited">
+  <span class="name"><a href="../fp_util/Field/autoValidate.html">autoValidate</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd class="inherited">
+  
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
         <dt id="copyWith" class="property inherited">
   <span class="name"><a href="../fp_util/Field/copyWith.html">copyWith</a></span>
   <span class="signature">&#8594; $FieldCopyWith<span class="signature">&lt;<wbr><span class="type-parameter">T</span>, <span class="type-parameter"><a href="../fp_util/Field-class.html">Field</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> 
@@ -125,6 +145,7 @@
 </dt>
 <dd>
   show error message only when field is dirty
+use displayError instead of errorMessage
   <div class="features"><span class="feature">read-only</span></div>
 
 </dd>
@@ -135,7 +156,8 @@
 
 </dt>
 <dd class="inherited">
-  
+  use displayError instead of errorMessage to show error
+use this only to update error message from server-side validation
   <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
 
 </dd>
@@ -235,6 +257,32 @@
 </dt>
 <dd>
   method to mark field as dirty
+  
+
+</dd>
+
+        <dt id="markDirty" class="callable">
+  <span class="name"><a href="../fp_util/Field/markDirty.html">markDirty</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../fp_util/Field-class.html">Field</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  mark field as dirty
+  
+
+</dd>
+
+        <dt id="match" class="callable">
+  <span class="name"><a href="../fp_util/Field/match.html">match</a></span><span class="signature">(<wbr><span class="parameter" id="match-param-updatedValue"><span class="type-annotation">T</span> <span class="parameter-name">updatedValue</span>, </span><span class="parameter" id="match-param-matchValue"><span class="type-annotation">T</span> <span class="parameter-name">matchValue</span>, </span><span class="parameter" id="match-param-matchErrorMessage"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">matchErrorMessage</span>, </span><span class="parameter" id="match-param-compareFn">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">compareFn</span>(<span class="parameter" id="param-value"><span class="type-annotation">T</span> <span class="parameter-name">value</span>, </span><span class="parameter" id="param-matchValue"><span class="type-annotation">T</span> <span class="parameter-name">matchValue</span></span>)?}</span>)
+    <span class="returntype parameter">&#8594; <a href="../fp_util/Field-class.html">Field</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  method to make field dirty and validate with match validator
   
 
 </dd>
@@ -350,7 +398,7 @@ for example, we can store obscureText value for password field
 <footer>
   <span class="no-break">
     fp_util
-      1.2.4
+      1.2.13
   </span>
 
   

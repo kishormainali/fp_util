@@ -117,13 +117,10 @@ and</li>
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Widget build(BuildContext context) {
-  if (condition) {
-    return trueChild;
-  } else {
-    return falseChild;
-  }
-}</code></pre>
+Widget build(BuildContext context) =&gt; switch (condition) {
+      true =&gt; trueChild,
+      false =&gt; falseChild,
+    };</code></pre>
 </section>
 
 
@@ -156,7 +153,7 @@ Widget build(BuildContext context) {
 <footer>
   <span class="no-break">
     fp_util
-      1.2.4
+      1.2.13
   </span>
 
   

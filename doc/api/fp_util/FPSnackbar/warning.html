@@ -92,28 +92,20 @@
 }) =&gt;
     _showSnackbar(
       context: context,
-      color: _warningColor,
+      backgroundColor: const Color(0xFFF58C20),
       textStyle: const TextStyle(
         fontSize: 16,
         height: 1.25,
+        color: Colors.white,
       ),
       titleTextStyle: const TextStyle(
         fontSize: 16,
         height: 1.25,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
       ),
       message: message,
       title: title,
-      icon: SvgPicture.asset(
-        &#39;assets&#47;icons&#47;warning.svg&#39;,
-        package: &#39;fp_util&#39;,
-        width: 18,
-        height: 18,
-        colorFilter: ColorFilter.mode(
-          context.themedValue&lt;Color&gt;(_warningColor.dark, _warningColor.light),
-          BlendMode.srcIn,
-        ),
-      ),
       duration: 3,
       actionText: actionText,
       onActionTap: onActionTap,
@@ -150,7 +142,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.4
+      1.2.13
   </span>
 
   

@@ -1,3 +1,11 @@
+# 1.2.13
+- added new widgets
+    - ConstrainedScrollableColumn
+    - PaddedSpacedRow
+    - PaddedSpacedColumn
+    - SizedScrollableColumn
+- added useSafeArea property to ScrollableColumn
+
 # 1.2.12
 - cleanups
 
