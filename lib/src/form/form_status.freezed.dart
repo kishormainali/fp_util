@@ -62,25 +62,25 @@ class _$FormStatusCopyWithImpl<T, $Res, $Val extends FormStatus<T>>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<T, $Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial<T> value, $Res Function(_$_Initial<T>) then) =
-      __$$_InitialCopyWithImpl<T, $Res>;
+abstract class _$$InitialImplCopyWith<T, $Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl<T> value, $Res Function(_$InitialImpl<T>) then) =
+      __$$InitialImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<T, $Res>
-    extends _$FormStatusCopyWithImpl<T, $Res, _$_Initial<T>>
-    implements _$$_InitialCopyWith<T, $Res> {
-  __$$_InitialCopyWithImpl(
-      _$_Initial<T> _value, $Res Function(_$_Initial<T>) _then)
+class __$$InitialImplCopyWithImpl<T, $Res>
+    extends _$FormStatusCopyWithImpl<T, $Res, _$InitialImpl<T>>
+    implements _$$InitialImplCopyWith<T, $Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl<T> _value, $Res Function(_$InitialImpl<T>) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial<T> extends _Initial<T> {
-  const _$_Initial() : super._();
+class _$InitialImpl<T> extends _Initial<T> {
+  const _$InitialImpl() : super._();
 
   @override
   String toString() {
@@ -90,7 +90,7 @@ class _$_Initial<T> extends _Initial<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial<T>);
+        (other.runtimeType == runtimeType && other is _$InitialImpl<T>);
   }
 
   @override
@@ -135,30 +135,30 @@ class _$_Initial<T> extends _Initial<T> {
 }
 
 abstract class _Initial<T> extends FormStatus<T> {
-  const factory _Initial() = _$_Initial<T>;
+  const factory _Initial() = _$InitialImpl<T>;
   const _Initial._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_LoadingCopyWith<T, $Res> {
-  factory _$$_LoadingCopyWith(
-          _$_Loading<T> value, $Res Function(_$_Loading<T>) then) =
-      __$$_LoadingCopyWithImpl<T, $Res>;
+abstract class _$$LoadingImplCopyWith<T, $Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl<T> value, $Res Function(_$LoadingImpl<T>) then) =
+      __$$LoadingImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<T, $Res>
-    extends _$FormStatusCopyWithImpl<T, $Res, _$_Loading<T>>
-    implements _$$_LoadingCopyWith<T, $Res> {
-  __$$_LoadingCopyWithImpl(
-      _$_Loading<T> _value, $Res Function(_$_Loading<T>) _then)
+class __$$LoadingImplCopyWithImpl<T, $Res>
+    extends _$FormStatusCopyWithImpl<T, $Res, _$LoadingImpl<T>>
+    implements _$$LoadingImplCopyWith<T, $Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl<T> _value, $Res Function(_$LoadingImpl<T>) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Loading<T> extends _Loading<T> {
-  const _$_Loading() : super._();
+class _$LoadingImpl<T> extends _Loading<T> {
+  const _$LoadingImpl() : super._();
 
   @override
   String toString() {
@@ -168,7 +168,7 @@ class _$_Loading<T> extends _Loading<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Loading<T>);
+        (other.runtimeType == runtimeType && other is _$LoadingImpl<T>);
   }
 
   @override
@@ -213,24 +213,25 @@ class _$_Loading<T> extends _Loading<T> {
 }
 
 abstract class _Loading<T> extends FormStatus<T> {
-  const factory _Loading() = _$_Loading<T>;
+  const factory _Loading() = _$LoadingImpl<T>;
   const _Loading._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_ErrorCopyWith<T, $Res> {
-  factory _$$_ErrorCopyWith(
-          _$_Error<T> value, $Res Function(_$_Error<T>) then) =
-      __$$_ErrorCopyWithImpl<T, $Res>;
+abstract class _$$ErrorImplCopyWith<T, $Res> {
+  factory _$$ErrorImplCopyWith(
+          _$ErrorImpl<T> value, $Res Function(_$ErrorImpl<T>) then) =
+      __$$ErrorImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$_ErrorCopyWithImpl<T, $Res>
-    extends _$FormStatusCopyWithImpl<T, $Res, _$_Error<T>>
-    implements _$$_ErrorCopyWith<T, $Res> {
-  __$$_ErrorCopyWithImpl(_$_Error<T> _value, $Res Function(_$_Error<T>) _then)
+class __$$ErrorImplCopyWithImpl<T, $Res>
+    extends _$FormStatusCopyWithImpl<T, $Res, _$ErrorImpl<T>>
+    implements _$$ErrorImplCopyWith<T, $Res> {
+  __$$ErrorImplCopyWithImpl(
+      _$ErrorImpl<T> _value, $Res Function(_$ErrorImpl<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -238,7 +239,7 @@ class __$$_ErrorCopyWithImpl<T, $Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$_Error<T>(
+    return _then(_$ErrorImpl<T>(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -249,8 +250,8 @@ class __$$_ErrorCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$_Error<T> extends _Error<T> {
-  const _$_Error({required this.message}) : super._();
+class _$ErrorImpl<T> extends _Error<T> {
+  const _$ErrorImpl({required this.message}) : super._();
 
   @override
   final String message;
@@ -264,7 +265,7 @@ class _$_Error<T> extends _Error<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Error<T> &&
+            other is _$ErrorImpl<T> &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -274,8 +275,8 @@ class _$_Error<T> extends _Error<T> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ErrorCopyWith<T, _$_Error<T>> get copyWith =>
-      __$$_ErrorCopyWithImpl<T, _$_Error<T>>(this, _$identity);
+  _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>
+      __$$ErrorImplCopyWithImpl<T, _$ErrorImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -316,30 +317,30 @@ class _$_Error<T> extends _Error<T> {
 }
 
 abstract class _Error<T> extends FormStatus<T> {
-  const factory _Error({required final String message}) = _$_Error<T>;
+  const factory _Error({required final String message}) = _$ErrorImpl<T>;
   const _Error._() : super._();
 
   String get message;
   @JsonKey(ignore: true)
-  _$$_ErrorCopyWith<T, _$_Error<T>> get copyWith =>
+  _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SuccessCopyWith<T, $Res> {
-  factory _$$_SuccessCopyWith(
-          _$_Success<T> value, $Res Function(_$_Success<T>) then) =
-      __$$_SuccessCopyWithImpl<T, $Res>;
+abstract class _$$SuccessImplCopyWith<T, $Res> {
+  factory _$$SuccessImplCopyWith(
+          _$SuccessImpl<T> value, $Res Function(_$SuccessImpl<T>) then) =
+      __$$SuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({String? message, T? data});
 }
 
 /// @nodoc
-class __$$_SuccessCopyWithImpl<T, $Res>
-    extends _$FormStatusCopyWithImpl<T, $Res, _$_Success<T>>
-    implements _$$_SuccessCopyWith<T, $Res> {
-  __$$_SuccessCopyWithImpl(
-      _$_Success<T> _value, $Res Function(_$_Success<T>) _then)
+class __$$SuccessImplCopyWithImpl<T, $Res>
+    extends _$FormStatusCopyWithImpl<T, $Res, _$SuccessImpl<T>>
+    implements _$$SuccessImplCopyWith<T, $Res> {
+  __$$SuccessImplCopyWithImpl(
+      _$SuccessImpl<T> _value, $Res Function(_$SuccessImpl<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -348,7 +349,7 @@ class __$$_SuccessCopyWithImpl<T, $Res>
     Object? message = freezed,
     Object? data = freezed,
   }) {
-    return _then(_$_Success<T>(
+    return _then(_$SuccessImpl<T>(
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -363,8 +364,8 @@ class __$$_SuccessCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$_Success<T> extends _Success<T> {
-  const _$_Success({this.message, this.data}) : super._();
+class _$SuccessImpl<T> extends _Success<T> {
+  const _$SuccessImpl({this.message, this.data}) : super._();
 
   @override
   final String? message;
@@ -380,7 +381,7 @@ class _$_Success<T> extends _Success<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Success<T> &&
+            other is _$SuccessImpl<T> &&
             (identical(other.message, message) || other.message == message) &&
             const DeepCollectionEquality().equals(other.data, data));
   }
@@ -392,8 +393,8 @@ class _$_Success<T> extends _Success<T> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SuccessCopyWith<T, _$_Success<T>> get copyWith =>
-      __$$_SuccessCopyWithImpl<T, _$_Success<T>>(this, _$identity);
+  _$$SuccessImplCopyWith<T, _$SuccessImpl<T>> get copyWith =>
+      __$$SuccessImplCopyWithImpl<T, _$SuccessImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -435,12 +436,12 @@ class _$_Success<T> extends _Success<T> {
 
 abstract class _Success<T> extends FormStatus<T> {
   const factory _Success({final String? message, final T? data}) =
-      _$_Success<T>;
+      _$SuccessImpl<T>;
   const _Success._() : super._();
 
   String? get message;
   T? get data;
   @JsonKey(ignore: true)
-  _$$_SuccessCopyWith<T, _$_Success<T>> get copyWith =>
+  _$$SuccessImplCopyWith<T, _$SuccessImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -16,14 +16,23 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Field<T> {
+  /// value is required T value,
   T get value => throw _privateConstructorUsedError;
+
+  /// validators is list of validator for field
   List<Validator<T>> get validators => throw _privateConstructorUsedError;
+
+  /// isPure indicates the value is changed or not
   bool get isPure => throw _privateConstructorUsedError;
 
   /// use displayError instead of errorMessage to show error
   /// use this only to update error message from server-side validation
   String? get errorMessage => throw _privateConstructorUsedError;
+
+  /// extra is extra data related to field
   Map<String, dynamic> get extra => throw _privateConstructorUsedError;
+
+  /// autoValidate is used to validate mark field as pure on every change
   bool get autoValidate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -95,10 +104,11 @@ class _$FieldCopyWithImpl<T, $Res, $Val extends Field<T>>
 }
 
 /// @nodoc
-abstract class _$$_FieldCopyWith<T, $Res> implements $FieldCopyWith<T, $Res> {
-  factory _$$_FieldCopyWith(
-          _$_Field<T> value, $Res Function(_$_Field<T>) then) =
-      __$$_FieldCopyWithImpl<T, $Res>;
+abstract class _$$FieldImplCopyWith<T, $Res>
+    implements $FieldCopyWith<T, $Res> {
+  factory _$$FieldImplCopyWith(
+          _$FieldImpl<T> value, $Res Function(_$FieldImpl<T>) then) =
+      __$$FieldImplCopyWithImpl<T, $Res>;
   @override
   @useResult
   $Res call(
@@ -111,10 +121,11 @@ abstract class _$$_FieldCopyWith<T, $Res> implements $FieldCopyWith<T, $Res> {
 }
 
 /// @nodoc
-class __$$_FieldCopyWithImpl<T, $Res>
-    extends _$FieldCopyWithImpl<T, $Res, _$_Field<T>>
-    implements _$$_FieldCopyWith<T, $Res> {
-  __$$_FieldCopyWithImpl(_$_Field<T> _value, $Res Function(_$_Field<T>) _then)
+class __$$FieldImplCopyWithImpl<T, $Res>
+    extends _$FieldCopyWithImpl<T, $Res, _$FieldImpl<T>>
+    implements _$$FieldImplCopyWith<T, $Res> {
+  __$$FieldImplCopyWithImpl(
+      _$FieldImpl<T> _value, $Res Function(_$FieldImpl<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -127,7 +138,7 @@ class __$$_FieldCopyWithImpl<T, $Res>
     Object? extra = null,
     Object? autoValidate = null,
   }) {
-    return _then(_$_Field<T>(
+    return _then(_$FieldImpl<T>(
       value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -158,8 +169,8 @@ class __$$_FieldCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$_Field<T> extends _Field<T> {
-  const _$_Field(
+class _$FieldImpl<T> extends _Field<T> {
+  const _$FieldImpl(
       {required this.value,
       final List<Validator<T>> validators = const [],
       this.isPure = true,
@@ -170,9 +181,14 @@ class _$_Field<T> extends _Field<T> {
         _extra = extra,
         super._();
 
+  /// value is required T value,
   @override
   final T value;
+
+  /// validators is list of validator for field
   final List<Validator<T>> _validators;
+
+  /// validators is list of validator for field
   @override
   @JsonKey()
   List<Validator<T>> get validators {
@@ -181,6 +197,7 @@ class _$_Field<T> extends _Field<T> {
     return EqualUnmodifiableListView(_validators);
   }
 
+  /// isPure indicates the value is changed or not
   @override
   @JsonKey()
   final bool isPure;
@@ -189,7 +206,11 @@ class _$_Field<T> extends _Field<T> {
   /// use this only to update error message from server-side validation
   @override
   final String? errorMessage;
+
+  /// extra is extra data related to field
   final Map<String, dynamic> _extra;
+
+  /// extra is extra data related to field
   @override
   @JsonKey()
   Map<String, dynamic> get extra {
@@ -198,6 +219,7 @@ class _$_Field<T> extends _Field<T> {
     return EqualUnmodifiableMapView(_extra);
   }
 
+  /// autoValidate is used to validate mark field as pure on every change
   @override
   @JsonKey()
   final bool autoValidate;
@@ -211,7 +233,7 @@ class _$_Field<T> extends _Field<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Field<T> &&
+            other is _$FieldImpl<T> &&
             const DeepCollectionEquality().equals(other.value, value) &&
             const DeepCollectionEquality()
                 .equals(other._validators, _validators) &&
@@ -236,8 +258,8 @@ class _$_Field<T> extends _Field<T> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FieldCopyWith<T, _$_Field<T>> get copyWith =>
-      __$$_FieldCopyWithImpl<T, _$_Field<T>>(this, _$identity);
+  _$$FieldImplCopyWith<T, _$FieldImpl<T>> get copyWith =>
+      __$$FieldImplCopyWithImpl<T, _$FieldImpl<T>>(this, _$identity);
 }
 
 abstract class _Field<T> extends Field<T> {
@@ -247,14 +269,20 @@ abstract class _Field<T> extends Field<T> {
       final bool isPure,
       final String? errorMessage,
       final Map<String, dynamic> extra,
-      final bool autoValidate}) = _$_Field<T>;
+      final bool autoValidate}) = _$FieldImpl<T>;
   const _Field._() : super._();
 
   @override
+
+  /// value is required T value,
   T get value;
   @override
+
+  /// validators is list of validator for field
   List<Validator<T>> get validators;
   @override
+
+  /// isPure indicates the value is changed or not
   bool get isPure;
   @override
 
@@ -262,11 +290,15 @@ abstract class _Field<T> extends Field<T> {
   /// use this only to update error message from server-side validation
   String? get errorMessage;
   @override
+
+  /// extra is extra data related to field
   Map<String, dynamic> get extra;
   @override
+
+  /// autoValidate is used to validate mark field as pure on every change
   bool get autoValidate;
   @override
   @JsonKey(ignore: true)
-  _$$_FieldCopyWith<T, _$_Field<T>> get copyWith =>
+  _$$FieldImplCopyWith<T, _$FieldImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -77,11 +77,19 @@ class Field<T> with _$Field<T> {
     T matchValue,
     String matchErrorMessage, {
     bool Function(T value, T matchValue)? compareFn,
+    String key = 'default-match-validator',
   }) {
     final updatedValidators = validators.toList();
 
     /// remove existing match validator to avoid duplicate
-    updatedValidators.removeWhere((validator) => validator is MatchValidator);
+    updatedValidators.removeWhere(
+      (validator) {
+        if (validator is MatchValidator<T>) {
+          return validator.key == key;
+        }
+        return false;
+      },
+    );
 
     /// add new match validator
     updatedValidators.add(
@@ -89,6 +97,7 @@ class Field<T> with _$Field<T> {
         matchErrorMessage,
         matchValue,
         compareFn: compareFn,
+        key: key,
       ),
     );
 
@@ -100,20 +109,35 @@ class Field<T> with _$Field<T> {
     );
   }
 
-  /// method to make field dirty and validate with new validator
-  Field<T> withValidator(
-    T updatedValue,
-    Validator<T> validator,
-  ) {
-    /// remove existing validator to avoid duplicate
-    final updatedValidators = validators.toList()
-      ..removeWhere(
-        (existingValidator) =>
-            existingValidator.runtimeType == validator.runtimeType,
-      );
+  /// method to make field dirty and validate with multiple match validator
+  Field<T> matchMultiple(
+    T updatedValue, {
+    List<MatchHolder<T>> matchHolders = const [],
+  }) {
+    final updatedValidators = validators.toList();
 
-    /// add new validator
-    updatedValidators.add(validator);
+    /// remove existing match validator to avoid duplicate
+    updatedValidators.removeWhere(
+      (validator) {
+        if (validator is MatchValidator<T>) {
+          return matchHolders
+              .any((matchHolder) => matchHolder.key == validator.key);
+        }
+        return false;
+      },
+    );
+
+    /// add new match validator
+    updatedValidators.addAll(
+      matchHolders.map(
+        (matchHolder) => MatchValidator<T>(
+          matchHolder.message,
+          matchHolder.match,
+          compareFn: matchHolder.compareFn,
+          key: matchHolder.key,
+        ),
+      ),
+    );
 
     return copyWith(
       value: updatedValue,

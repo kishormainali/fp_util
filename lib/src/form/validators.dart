@@ -1,3 +1,5 @@
+import 'package:equatable/equatable.dart';
+
 import '../extensions/extensions.dart';
 
 /// {@template validator}
@@ -98,15 +100,46 @@ class MatchValidator<T> extends Validator<T> {
     super.message,
     this.match, {
     this.compareFn,
+    this.key = 'default-match-validator',
   });
 
   final T match;
 
   final bool Function(T value, T matchValue)? compareFn;
 
+  final String key;
+
   @override
   bool isValid(T value) {
     return compareFn?.call(value, match) ??
         value.toString().trim() == match.toString().trim();
   }
+}
+
+/// {@template match_holder}
+///
+/// A [MatchHolder] is a class that holds the match value and its message.
+/// It is used in [Field.matchMultiple] method to compare with multiple fields.
+///
+/// {@endtemplate}
+class MatchHolder<T> extends Equatable {
+  final String key;
+  final T match;
+  final bool Function(T value, T matchValue)? compareFn;
+  final String message;
+
+  const MatchHolder({
+    required this.key,
+    required this.match,
+    required this.message,
+    this.compareFn,
+  });
+
+  @override
+  List<Object?> get props => [
+        key,
+        match,
+        message,
+        compareFn,
+      ];
 }

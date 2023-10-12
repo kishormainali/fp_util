@@ -78,6 +78,18 @@ extension StringX on String {
   /// uppercase
   String get uppercase => toUpperCase();
 
+  /// equalsIgnoreCase
+  /// equals two strings ignoring case
+  bool equalsIgnoreCase(String match) {
+    return toLowerCase() == match.toLowerCase();
+  }
+
+  /// compareIgnoreCase
+  /// compares two strings ignoring case
+  int compareIgnoreCase(String other) {
+    return toLowerCase().compareTo(other.toLowerCase());
+  }
+
   /// check given string is valid phone number or not
   bool get isValidPhoneNumber {
     if (isBlank) return false;
@@ -110,7 +122,8 @@ extension StringX on String {
     return trim()
         .replaceAll('\n', ' ')
         .replaceAll('\r', ' ')
-        .replaceAll('\t', ' ');
+        .replaceAll('\t', ' ')
+        .trim();
   }
 
   /// tries to parse as bool
