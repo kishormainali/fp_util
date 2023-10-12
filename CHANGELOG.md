@@ -1,3 +1,6 @@
+# 1.2.15
+- added equalIgnoreCase and compareIgnoreCase extension on String
+- updated field to support multiple match validator
 # 1.2.14
 - added gradient borders
 - added gradient text widget
