@@ -153,9 +153,9 @@
     },
     {
       "name": "file_picker",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/file_picker-5.5.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/file_picker-6.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "2.19"
     },
     {
       "name": "file_selector_linux",
@@ -572,7 +572,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-10-12T10:29:39.107737Z",
+  "generated": "2023-10-16T10:49:55.061202Z",
   "generator": "pub",
   "generatorVersion": "3.1.3"
 }

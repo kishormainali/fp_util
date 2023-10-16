@@ -78,6 +78,13 @@ extension StringX on String {
   /// uppercase
   String get uppercase => toUpperCase();
 
+  /// initials
+  /// returns the initials of the string
+  /// if the string is empty, returns an empty string
+  /// if the string has one word, returns the first two characters
+  /// if the string has two or more words, returns the first character of the first two words
+  String get initials => _ReCase(this).getInitial();
+
   /// equalsIgnoreCase
   /// equals two strings ignoring case
   bool equalsIgnoreCase(String match) {
@@ -110,20 +117,19 @@ extension StringX on String {
     return trim().replaceAll(' ', '');
   }
 
-  /// remove all \n from string
-  String get removeNextLine {
+  /// remove extra space from string
+  String get removeExtraSpace {
     if (isBlank) return this;
-    return trim().replaceAll('\n', '');
+    return replaceAll(RegExp(r"\s+"), " ");
   }
 
   /// remove all \n \r \t from string
-  String get replaceNextLine {
+  String replaceEscaped([String replacement = ' ']) {
     if (isBlank) return this;
     return trim()
-        .replaceAll('\n', ' ')
-        .replaceAll('\r', ' ')
-        .replaceAll('\t', ' ')
-        .trim();
+        .replaceAll(RegExp(r'[\t\n\r\v\f]'), replacement)
+        .trim()
+        .removeExtraSpace;
   }
 
   /// tries to parse as bool
@@ -336,6 +342,27 @@ class _ReCase {
 
   /// Title Case
   String get titleCase => _getPascalCase(separator: ' ');
+
+  /// Initials
+  /// returns the initials of the string
+  /// if the string is empty, returns an empty string
+  /// if the string has one word, returns the first two characters
+  /// if the string has two or more words, returns the first character of the first two words
+  String getInitial() {
+    if (_words.isEmpty) return '';
+    if (_words.length == 1) {
+      return '${_words.first[0].toUpperCase()}${_words.first[1].toUpperCase()}'
+          .trim();
+    }
+    if (_words.length > 2) {
+      return _words
+          .getRange(0, 2)
+          .map((word) => word[0].toUpperCase())
+          .join()
+          .trim();
+    }
+    return _words.map((word) => word[0].toUpperCase()).join().trim();
+  }
 
   String _getCamelCase({String separator = ''}) {
     List<String> words = _words.map(_upperCaseFirstLetter).toList();

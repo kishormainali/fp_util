@@ -1,5 +1,11 @@
+# 1.2.16
+- BREAKING CHANGES
+    - renamed `removeNextLine` to `replaceEscaped`
+- added `removeExtraSpace` string extension
+- added `initials` string extension to get initial letter of string
+
 # 1.2.15
-- added equalIgnoreCase and compareIgnoreCase extension on String
+- added `equalIgnoreCase` and `compareIgnoreCase` extension on String
 - updated field to support multiple match validator
 # 1.2.14
 - added gradient borders
@@ -11,7 +17,7 @@
     - ConstrainedScrollableColumn
     - PaddedSpacedRow
     - PaddedSpacedColumn
-    - SizedScrollableColumn
+    - SizedScrollableRow
 - added useSafeArea property to ScrollableColumn
 
 # 1.2.12
