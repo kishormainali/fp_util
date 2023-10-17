@@ -1,3 +1,6 @@
+# 1.2.17
+- added text_input_formatters
+
 # 1.2.16
 - BREAKING CHANGES
     - renamed `removeNextLine` to `replaceEscaped`

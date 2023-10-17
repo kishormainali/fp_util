@@ -356,6 +356,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "mask_text_input_formatter",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/mask_text_input_formatter-2.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "matcher",
       "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/matcher-0.12.16",
       "packageUri": "lib/",
@@ -572,7 +578,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-10-16T10:49:55.061202Z",
+  "generated": "2023-10-17T14:31:32.514003Z",
   "generator": "pub",
   "generatorVersion": "3.1.3"
 }
