@@ -122,7 +122,7 @@ for example, we can store obscureText value for password field</p>
 
 </dt>
 <dd class="inherited">
-  
+  autoValidate is used to validate mark field as pure on every change
   <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
 
 </dd>
@@ -168,7 +168,7 @@ use this only to update error message from server-side validation
 
 </dt>
 <dd class="inherited">
-  
+  extra is extra data related to field
   <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
 
 </dd>
@@ -190,7 +190,7 @@ use this only to update error message from server-side validation
 
 </dt>
 <dd class="inherited">
-  
+  isPure indicates the value is changed or not
   <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
 
 </dd>
@@ -223,7 +223,7 @@ use this only to update error message from server-side validation
 
 </dt>
 <dd class="inherited">
-  
+  validators is list of validator for field
   <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
 
 </dd>
@@ -234,7 +234,7 @@ use this only to update error message from server-side validation
 
 </dt>
 <dd class="inherited">
-  
+  value is required T value,
   <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
 
 </dd>
@@ -275,7 +275,7 @@ use this only to update error message from server-side validation
 </dd>
 
         <dt id="match" class="callable">
-  <span class="name"><a href="../fp_util/Field/match.html">match</a></span><span class="signature">(<wbr><span class="parameter" id="match-param-updatedValue"><span class="type-annotation">T</span> <span class="parameter-name">updatedValue</span>, </span><span class="parameter" id="match-param-matchValue"><span class="type-annotation">T</span> <span class="parameter-name">matchValue</span>, </span><span class="parameter" id="match-param-matchErrorMessage"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">matchErrorMessage</span>, </span><span class="parameter" id="match-param-compareFn">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">compareFn</span>(<span class="parameter" id="param-value"><span class="type-annotation">T</span> <span class="parameter-name">value</span>, </span><span class="parameter" id="param-matchValue"><span class="type-annotation">T</span> <span class="parameter-name">matchValue</span></span>)?}</span>)
+  <span class="name"><a href="../fp_util/Field/match.html">match</a></span><span class="signature">(<wbr><span class="parameter" id="match-param-updatedValue"><span class="type-annotation">T</span> <span class="parameter-name">updatedValue</span>, </span><span class="parameter" id="match-param-matchValue"><span class="type-annotation">T</span> <span class="parameter-name">matchValue</span>, </span><span class="parameter" id="match-param-matchErrorMessage"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">matchErrorMessage</span>, </span><span class="parameter" id="match-param-compareFn">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">compareFn</span>(<span class="parameter" id="param-value"><span class="type-annotation">T</span> <span class="parameter-name">value</span>, </span><span class="parameter" id="param-matchValue"><span class="type-annotation">T</span> <span class="parameter-name">matchValue</span></span>)?, </span><span class="parameter" id="match-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span> = <span class="default-value">&#39;default-match-validator&#39;</span>}</span>)
     <span class="returntype parameter">&#8594; <a href="../fp_util/Field-class.html">Field</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
   </span>
   
@@ -283,6 +283,19 @@ use this only to update error message from server-side validation
 </dt>
 <dd>
   method to make field dirty and validate with match validator
+  
+
+</dd>
+
+        <dt id="matchMultiple" class="callable">
+  <span class="name"><a href="../fp_util/Field/matchMultiple.html">matchMultiple</a></span><span class="signature">(<wbr><span class="parameter" id="matchMultiple-param-updatedValue"><span class="type-annotation">T</span> <span class="parameter-name">updatedValue</span>, </span><span class="parameter" id="matchMultiple-param-matchHolders">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../fp_util/MatchHolder-class.html">MatchHolder</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">matchHolders</span> = <span class="default-value">const []</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="../fp_util/Field-class.html">Field</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  method to make field dirty and validate with multiple match validator
   
 
 </dd>
@@ -324,19 +337,6 @@ use this only to update error message from server-side validation
   method to update extra data
 extra data is used to store any extra data related to field
 for example, we can store obscureText value for password field
-  
-
-</dd>
-
-        <dt id="withValidator" class="callable">
-  <span class="name"><a href="../fp_util/Field/withValidator.html">withValidator</a></span><span class="signature">(<wbr><span class="parameter" id="withValidator-param-updatedValue"><span class="type-annotation">T</span> <span class="parameter-name">updatedValue</span>, </span><span class="parameter" id="withValidator-param-validator"><span class="type-annotation"><a href="../fp_util/Validator-class.html">Validator</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">validator</span></span>)
-    <span class="returntype parameter">&#8594; <a href="../fp_util/Field-class.html">Field</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
-  </span>
-  
-
-</dt>
-<dd>
-  method to make field dirty and validate with new validator
   
 
 </dd>
@@ -398,7 +398,7 @@ for example, we can store obscureText value for password field
 <footer>
   <span class="no-break">
     fp_util
-      1.2.13
+      1.2.18
   </span>
 
   

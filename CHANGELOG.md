@@ -1,3 +1,7 @@
+# 1.2.18
+- added ClipboardHelper for copy/paste from/to clipboard
+- updated logics of case_text_formatters
+
 # 1.2.17
 - added text_input_formatters
 

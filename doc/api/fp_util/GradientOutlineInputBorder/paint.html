@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the paint method from the GradientOutlineInputBorder class, for the Dart programming language.">
+  <title>paint method - GradientOutlineInputBorder class - fp_util library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">fp_util</a></li>
+    <li><a href="../../fp_util/fp_util-library.html">fp_util</a></li>
+    <li><a href="../../fp_util/GradientOutlineInputBorder-class.html">GradientOutlineInputBorder</a></li>
+    <li class="self-crumb">paint method</li>
+  </ol>
+  <div class="self-name">paint</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="fp_util&#47;GradientOutlineInputBorder-class-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-method">paint</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
+    </ol>
+  </div>
+
+<span class="returntype">void</span>
+<span class="name ">paint</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="paint-param-canvas"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Canvas-class.html">Canvas</a></span> <span class="parameter-name">canvas</span>, </span></li>
+<li><span class="parameter" id="paint-param-rect"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Rect-class.html">Rect</a></span> <span class="parameter-name">rect</span>, </span></li>
+<li><span class="parameter" id="paint-param-gapStart">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">gapStart</span>, </span></li>
+<li><span class="parameter" id="paint-param-gapExtent"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">gapExtent</span> = <span class="default-value">0.0</span>, </span></li>
+<li><span class="parameter" id="paint-param-gapPercentage"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">gapPercentage</span> = <span class="default-value">0.0</span>, </span></li>
+<li><span class="parameter" id="paint-param-textDirection"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/TextDirection.html">TextDirection</a>?</span> <span class="parameter-name">textDirection</span>}</span></li>
+</ol>)
+
+      <div class="features"><span class="feature">override</span></div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Paint this input border on <code>canvas</code>.</p>
+<p>The <code>rect</code> parameter bounds the <a href="https://api.flutter.dev/flutter/material/InputDecorator-class.html">InputDecorator</a>'s container.</p>
+<p>The additional <code>gap</code> parameters reflect the state of the <a href="https://api.flutter.dev/flutter/material/InputDecorator-class.html">InputDecorator</a>'s
+floating label. When an input decorator gains the focus, its label
+animates upwards, to make room for the input child. The <code>gapStart</code> and
+<code>gapExtent</code> parameters define a floating label width interval, and
+<code>gapPercentage</code> defines the animation's progress (0.0 to 1.0).</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+void paint(
+  Canvas canvas,
+  Rect rect, {
+  double? gapStart,
+  double gapExtent = 0.0,
+  double gapPercentage = 0.0,
+  TextDirection? textDirection,
+}) {
+  final paint = _getPaint(rect);
+  final outer = borderRadius.toRRect(rect);
+  final center = outer.deflate(borderSide.width &#47; 2.0);
+  if (gapStart == null || gapExtent &lt;= 0.0 || gapPercentage == 0.0) {
+    canvas.drawRRect(center, paint);
+  } else {
+    final extent =
+        lerpDouble(0.0, gapExtent + gapPadding * 2.0, gapPercentage)!;
+    switch (textDirection!) {
+      case TextDirection.rtl:
+        final path = _gapBorderPath(
+          canvas,
+          center,
+          math.max(0, gapStart + gapPadding - extent),
+          extent,
+        );
+        canvas.drawPath(path, paint);
+        break;
+
+      case TextDirection.ltr:
+        final path = _gapBorderPath(
+          canvas,
+          center,
+          math.max(0, gapStart - gapPadding),
+          extent,
+        );
+        canvas.drawPath(path, paint);
+        break;
+    }
+  }
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../../index.html">fp_util</a></li>
+    <li><a href="../../fp_util/fp_util-library.html">fp_util</a></li>
+    <li><a href="../../fp_util/GradientOutlineInputBorder-class.html">GradientOutlineInputBorder</a></li>
+    <li class="self-crumb">paint method</li>
+</ol>
+
+
+    <h5>GradientOutlineInputBorder class</h5>
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    fp_util
+      1.2.18
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

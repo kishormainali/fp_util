@@ -45,9 +45,18 @@ class SentenceCaseTextFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
       TextEditingValue oldValue, TextEditingValue newValue) {
+    String text = newValue.text;
+    final offset = text.length;
+    text = text.sentenceCase;
+    if (text.length < offset) {
+      text = '$text ';
+    }
     return TextEditingValue(
-      text: newValue.text.sentenceCase,
-      selection: newValue.selection,
+      text: text,
+      selection: newValue.selection.copyWith(
+        baseOffset: offset,
+        extentOffset: offset,
+      ),
     );
   }
 }
@@ -62,26 +71,18 @@ class TitleCaseTextFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
       TextEditingValue oldValue, TextEditingValue newValue) {
+    String text = newValue.text;
+    final offset = text.length;
+    text = text.titleCase;
+    if (text.length < offset) {
+      text = '$text ';
+    }
     return TextEditingValue(
-      text: newValue.text.titleCase,
-      selection: newValue.selection,
-    );
-  }
-}
-
-/// {@template capitalize_case_text_formatter}
-/// A [TextInputFormatter] that formats text to capitalize case.
-/// {@endtemplate}
-class CapitalizeCaseTextFormatter extends TextInputFormatter {
-  /// {@macro capitalize_case_text_formatter}
-  const CapitalizeCaseTextFormatter();
-
-  @override
-  TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue, TextEditingValue newValue) {
-    return TextEditingValue(
-      text: newValue.text.capitalize,
-      selection: newValue.selection,
+      text: text,
+      selection: newValue.selection.copyWith(
+        baseOffset: offset,
+        extentOffset: offset,
+      ),
     );
   }
 }
