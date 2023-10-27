@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:fp_util/src/extensions/num_extension.dart';
 import 'package:fp_util/src/widgets/widgets.dart';
 
 extension WidgetX on Widget {
@@ -175,10 +176,11 @@ extension WidgetX on Widget {
   Padding pad(
     double padding, {
     Key? key,
+    bool responsive = false,
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.all(padding),
+        padding: EdgeInsets.all(padding.responsiveR(responsive)),
         child: this,
       );
 
@@ -189,14 +191,15 @@ extension WidgetX on Widget {
     double right = 0,
     double bottom = 0,
     Key? key,
+    bool responsive = false,
   }) =>
       Padding(
         key: key,
         padding: EdgeInsets.only(
-          left: left,
-          top: top,
-          right: right,
-          bottom: bottom,
+          left: left.responsiveW(responsive),
+          top: top.responsiveH(responsive),
+          right: right.responsiveW(responsive),
+          bottom: bottom.responsiveH(responsive),
         ),
         child: this,
       );
@@ -205,10 +208,11 @@ extension WidgetX on Widget {
   Padding padTop(
     double padding, {
     Key? key,
+    bool responsive = false,
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.only(top: padding),
+        padding: EdgeInsets.only(top: padding.responsiveH(responsive)),
         child: this,
       );
 
@@ -216,10 +220,11 @@ extension WidgetX on Widget {
   Padding padRight(
     double padding, {
     Key? key,
+    bool responsive = false,
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.only(right: padding),
+        padding: EdgeInsets.only(right: padding.responsiveW(responsive)),
         child: this,
       );
 
@@ -227,10 +232,11 @@ extension WidgetX on Widget {
   Padding padBottom(
     double padding, {
     Key? key,
+    bool responsive = false,
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.only(bottom: padding),
+        padding: EdgeInsets.only(bottom: padding.responsiveH(responsive)),
         child: this,
       );
 
@@ -238,10 +244,11 @@ extension WidgetX on Widget {
   Padding padLeft(
     double padding, {
     Key? key,
+    bool responsive = false,
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.only(left: padding),
+        padding: EdgeInsets.only(left: padding.responsiveW(responsive)),
         child: this,
       );
 
@@ -249,10 +256,12 @@ extension WidgetX on Widget {
   Padding padX(
     double padding, {
     Key? key,
+    bool responsive = false,
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.symmetric(horizontal: padding),
+        padding:
+            EdgeInsets.symmetric(horizontal: padding.responsiveW(responsive)),
         child: this,
       );
 
@@ -260,10 +269,12 @@ extension WidgetX on Widget {
   Padding padY(
     double padding, {
     Key? key,
+    bool responsive = false,
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.symmetric(vertical: padding),
+        padding:
+            EdgeInsets.symmetric(vertical: padding.responsiveH(responsive)),
         child: this,
       );
 
@@ -272,5 +283,35 @@ extension WidgetX on Widget {
         key: key,
         hideOnDrag: hideOnDrag,
         child: this,
+      );
+}
+
+extension ResponsiveBoxConstrains on BoxConstraints {
+  BoxConstraints get r => copyWith(
+        minWidth: minWidth.r,
+        maxWidth: maxWidth.r,
+        minHeight: minHeight.r,
+        maxHeight: maxHeight.r,
+      );
+
+  BoxConstraints get hw => copyWith(
+        minWidth: minWidth.w,
+        maxWidth: maxWidth.w,
+        minHeight: minHeight.h,
+        maxHeight: maxHeight.h,
+      );
+
+  BoxConstraints get w => copyWith(
+        minWidth: minWidth.w,
+        maxWidth: maxWidth.w,
+        minHeight: minHeight.w,
+        maxHeight: maxHeight.w,
+      );
+
+  BoxConstraints get h => copyWith(
+        minWidth: minWidth.h,
+        maxWidth: maxWidth.h,
+        minHeight: minHeight.h,
+        maxHeight: maxHeight.h,
       );
 }

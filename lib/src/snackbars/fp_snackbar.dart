@@ -23,6 +23,7 @@ class FPSnackbar {
     ),
     String? actionText,
     VoidCallback? onActionTap,
+    bool floating = true,
   }) =>
       _showSnackbar(
         context: context,
@@ -34,15 +35,17 @@ class FPSnackbar {
         duration: 3,
         actionText: actionText,
         onActionTap: onActionTap,
+        floating: floating,
       );
 
   /// show success snackbar
   static success(
     BuildContext context, {
     required String message,
-    String? title = 'Success',
+    String? title,
     String? actionText,
     VoidCallback? onActionTap,
+    bool floating = true,
   }) =>
       _showSnackbar(
         context: context,
@@ -63,15 +66,17 @@ class FPSnackbar {
         duration: 3,
         actionText: actionText,
         onActionTap: onActionTap,
+        floating: floating,
       );
 
   /// show error snackbar
   static error(
     BuildContext context, {
     required String message,
-    String? title = 'Error',
+    String? title,
     String? actionText,
     VoidCallback? onActionTap,
+    bool floating = true,
   }) =>
       _showSnackbar(
         context: context,
@@ -92,15 +97,17 @@ class FPSnackbar {
         duration: 3,
         actionText: actionText,
         onActionTap: onActionTap,
+        floating: floating,
       );
 
   /// show info snackbar
   static info(
     BuildContext context, {
     required String message,
-    String? title = 'Info',
+    String? title,
     String? actionText,
     VoidCallback? onActionTap,
+    bool floating = true,
   }) =>
       _showSnackbar(
         context: context,
@@ -121,15 +128,17 @@ class FPSnackbar {
         duration: 3,
         actionText: actionText,
         onActionTap: onActionTap,
+        floating: floating,
       );
 
   /// show warning snackbar
   static warning(
     BuildContext context, {
     required String message,
-    String? title = 'Warning!',
+    String? title,
     String? actionText,
     VoidCallback? onActionTap,
+    bool floating = true,
   }) =>
       _showSnackbar(
         context: context,
@@ -150,6 +159,7 @@ class FPSnackbar {
         duration: 3,
         actionText: actionText,
         onActionTap: onActionTap,
+        floating: floating,
       );
 
   /// common method to show remove and show snackbar
@@ -163,7 +173,12 @@ class FPSnackbar {
     required int duration,
     required String? actionText,
     required VoidCallback? onActionTap,
+    required bool floating,
   }) {
+    final effectiveFloating = floating ||
+        context.theme.snackBarTheme.behavior == SnackBarBehavior.floating;
+    final effectiveTextStyle =
+        textStyle.merge(context.theme.snackBarTheme.contentTextStyle);
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()
       ..showSnackBar(
@@ -172,21 +187,26 @@ class FPSnackbar {
             message: message,
             title: title,
             backgroundColor: backgroundColor,
-            textStyle: textStyle,
+            textStyle: effectiveTextStyle,
             titleTextStyle: titleTextStyle,
             actionText: actionText,
             onActionTap: onActionTap,
+            floating: effectiveFloating,
           ),
-          behavior: SnackBarBehavior.floating,
-          backgroundColor: Colors.transparent,
+          behavior: effectiveFloating
+              ? SnackBarBehavior.floating
+              : SnackBarBehavior.fixed,
+          backgroundColor: floating ? Colors.transparent : backgroundColor,
           dismissDirection: DismissDirection.startToEnd,
           padding: EdgeInsets.zero,
           elevation: 0,
-          width: context.responsiveValue(
-            context.width - 48, // 48 is margin
-            tablet: context.pw(.6), // 60% width of screen
-            desktop: context.pw(.6), // 60% width of screen
-          ),
+          width: effectiveFloating
+              ? context.responsiveValue(
+                  context.width - 48, // 48 is margin
+                  tablet: context.pw(.6), // 60% width of screen
+                  desktop: context.pw(.6), // 60% width of screen
+                )
+              : null,
           clipBehavior: Clip.antiAlias,
           duration: Duration(seconds: duration),
         ),
@@ -203,6 +223,7 @@ class _SnackbarWidget extends StatelessWidget {
     this.titleTextStyle,
     this.actionText,
     this.onActionTap,
+    required this.floating,
   });
 
   final Color backgroundColor;
@@ -215,14 +236,19 @@ class _SnackbarWidget extends StatelessWidget {
   final String? actionText;
   final VoidCallback? onActionTap;
 
+  final bool floating;
+
   @override
   Widget build(BuildContext context) {
+    final effectiveActionBackground =
+        context.theme.snackBarTheme.actionBackgroundColor ??
+            backgroundColor.withOpacity(0.3);
     return Container(
       constraints: const BoxConstraints(minHeight: 60),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: 10.circularBorderRadius,
+        color: floating ? backgroundColor : null,
+        borderRadius: floating ? 10.circularBorderRadius() : BorderRadius.zero,
         boxShadow: [
           BoxShadow(
             color: backgroundColor.withOpacity(0.2),
@@ -234,7 +260,7 @@ class _SnackbarWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (title != null) ...[
+          if (title.isNotNullNotEmpty) ...[
             Text(
               title!,
               style: titleTextStyle,
@@ -263,15 +289,16 @@ class _SnackbarWidget extends StatelessWidget {
                   type: MaterialType.button,
                   child: InkWell(
                     onTap: onActionTap,
-                    splashColor: backgroundColor.withOpacity(0.3),
+                    splashColor: effectiveActionBackground,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 4),
                       child: Text(
                         actionText!,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 12,
-                          color: Colors.white,
+                          color: context.theme.snackBarTheme.actionTextColor ??
+                              Colors.white,
                         ),
                       ),
                     ),

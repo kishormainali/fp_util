@@ -242,7 +242,7 @@ bool isFile = text.isFile;
 
 ### Num Extensions
 
-- #### verticalSpace
+- #### verticalSpace()
 
 Created SizedBox with Height
 
@@ -259,7 +259,7 @@ class SpacingYTest extends StatelessWidget {
     return Column(
       children: [
         const Text('Text 1'),
-        10.verticalSpace,
+        10.verticalSpace(/*true if you want to use responsiveness*/),
         const Text('Text 2'),
       ],
     );
@@ -267,7 +267,7 @@ class SpacingYTest extends StatelessWidget {
 }
 ```
 
-- #### horizontalSpace
+- #### horizontalSpace()
 
 Created SizedBox with Width
 
@@ -284,7 +284,7 @@ class SpacingXTest extends StatelessWidget {
     return Row(
       children: [
         const Text('Text 1'),
-        10.horizontalSpace,
+        10.horizontalSpace(/*true if you want to use responsiveness*/),
         const Text('Text 2'),
       ],
     );
@@ -359,7 +359,7 @@ final duration = 10.delayedHours(()async{
 
 ```
 
-- ##### circularBorderRadius
+- ##### circularBorderRadius()
 
 Created Circular Border Radius
 
@@ -374,14 +374,14 @@ class RadiusTest extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         /// creates 10px rounded corner
-        borderRadius: 10.circularBorderRadius,
+        borderRadius: 10.circularBorderRadius(/*true if you want to use responsiveness*/),
       ),
     );
   }
 }
 ```
 
-- ##### circularRadius
+- ##### circularRadius()
 
 Created Circular Radius
 
@@ -397,8 +397,8 @@ class RadiusTest extends StatelessWidget {
       decoration: BoxDecoration(
 
         /// creates 10px rounded corner for topLeft and topRight
-        borderRadius: BorderRadius.only(topLeft: 10.circularRadius,
-        topRight: 10.circularRadius,),),
+        borderRadius: BorderRadius.only(topLeft: 10.circularRadius(/*true if you want to use responsiveness*/),
+        topRight: 10.circularRadius(/*true if you want to use responsiveness*/),),),
     );
   }
 }
@@ -406,13 +406,13 @@ class RadiusTest extends StatelessWidget {
 
 - ##### EdgeInsets
 
-  - all
-  - padLeft
-  - padRight
-  - padTop
-  - padBottom
-  - padX
-  - padY
+  - all()
+  - padLeft()
+  - padRight()
+  - padTop()
+  - padBottom()
+  - padX()
+  - padY()
 
 ```dart
 import 'package:flutter/material.dart';
@@ -426,25 +426,25 @@ class EdgeInsetsTest extends StatelessWidget {
       children: [
 
         /// creates padding with 10px all
-        Padding(padding: 10.all),
+        Padding(padding: 10.all(/*true if you want to use responsiveness*/)),
 
         /// creates padding with 10px top only
-        Padding(padding: 10.padTop),
+        Padding(padding: 10.padTop(/*true if you want to use responsiveness*/)),
 
         /// creates padding with 10px right only
-        Padding(padding: 10.padRight),
+        Padding(padding: 10.padRight(/*true if you want to use responsiveness*/)),
 
         /// creates padding with 10px bottom only
-        Padding(padding: 10.padBottom),
+        Padding(padding: 10.padBottom(/*true if you want to use responsiveness*/)),
 
         /// creates padding with 10px left only
-        Padding(padding: 10.padLeft),
+        Padding(padding: 10.padLeft(/*true if you want to use responsiveness*/)),
 
         /// creates padding with 10px horizontal
-        Padding(padding: 10.padX),
+        Padding(padding: 10.padX(/*true if you want to use responsiveness*/)),
 
         /// creates padding with 10px vertical
-        Padding(padding: 10.padY),
+        Padding(padding: 10.padY(/*true if you want to use responsiveness*/)),
       ],
     );
   }
@@ -467,7 +467,7 @@ class SliverSpaceY extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverList(/*children*/),
-        10.sliverVerticalSpace,
+        10.sliverVerticalSpace(/*true if you want to use responsiveness*/),
         SliverList(/*children*/)
       ],
     );
@@ -493,7 +493,7 @@ class SliverSpaceX extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       slivers: [
         SliverPadding(padding: 10.all),
-        10.sliverHorizontalSpace,
+        10.sliverHorizontalSpace(/*true if you want to use responsiveness*/),
         SliverPadding(padding: 10.all),
       ],
     );
@@ -633,14 +633,14 @@ class AlignTest extends StatelessWidget {
 ```
 
 - #### Padding
-  - pad
-  - padX
-  - padY
-  - padLeft
-  - padTop
-  - padRight
-  - padBottom
-  - padLTRB
+  - pad()
+  - padX()
+  - padY()
+  - padLeft()
+  - padTop()
+  - padRight()
+  - padBottom()
+  - padLTRB()
 
 Wraps with padding widget
 
@@ -657,28 +657,31 @@ class PaddingTest extends StatelessWidget {
       children: [
 
         /// wraps with all padding
-        const Text('Text 1').pad(10),
+        const Text('Text 1').pad(10,responsive:true /* if you want to use responsiveness */),
 
         /// wraps with left only padding
-        const Text('Text 1').padLeft(10),
+        const Text('Text 1').padLeft(10,responsive:true /* if you want to use responsiveness */),
 
         /// wraps with right only padding
-        const Text('Text 1').padRight(10),
+        const Text('Text 1').padRight(10,responsive:true /* if you want to use responsiveness */),
 
         /// wraps with bottom only padding
-        const Text('Text 1').padBottom(10),
+        const Text('Text 1').padBottom(10,responsive:true /* if you want to use responsiveness */),
 
         /// wraps with top only padding
-        const Text('Text 1').padTop(10),
+        const Text('Text 1').padTop(10,responsive:true /* if you want to use responsiveness */),
 
         /// wraps with horizontal padding
-        const Text('Text 1').padX(10),
+        const Text('Text 1').padX(10,responsive:true /* if you want to use responsiveness */),
 
         /// wraps width vertical padding
-        const Text('Text 1').padY(10),
+        const Text('Text 1').padY(10,responsive:true /* if you want to use responsiveness */),
 
         /// wraps widget with padding of left top right bottom
-        const Text('Text 1').padLTRB(left: 10, top: 5, right: 10, bottom: 10),
+        const Text('Text 1').padLTRB(left: 10,
+         top: 5, right: 10, bottom: 10,
+         responsive:true /* if you want to use responsiveness */
+         ),
 
       ],
     );

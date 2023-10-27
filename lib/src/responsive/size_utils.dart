@@ -1,8 +1,10 @@
 import 'dart:math';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:fp_util/fp_util.dart';
+
+/// default figma size
+const Size _defaultDesignSize = Size(375, 812);
 
 /// {@template size_utils}
 ///
@@ -10,13 +12,30 @@ import 'package:fp_util/fp_util.dart';
 ///
 /// {@endtemplate}
 class SizeUtils {
-  SizeUtils._() {
-    final view = PlatformDispatcher.instance.views.first;
+  SizeUtils._();
+
+  /// initialize [SizeUtils]
+  /// [minTextAdapt] if true, text will adapt to min scale of width and height
+  /// [splitScreenAdapt] if true, height will adapt to max of 700
+  /// [designSize] default design size
+  /// [context] BuildContext to retrieve view
+
+  void init(
+    BuildContext context, {
+    bool minTextAdapt = false,
+    bool splitScreenAdapt = false,
+    Size designSize = _defaultDesignSize,
+  }) {
+    final view = View.of(context);
     _size = view.physicalSize / view.devicePixelRatio;
-    final statusBar = MediaQueryData.fromView(view).viewPadding.top;
-    final bottomBar = MediaQueryData.fromView(view).viewPadding.bottom;
+    final mqData = MediaQueryData.fromView(view);
+    final statusBar = mqData.viewPadding.top;
+    final bottomBar = mqData.viewPadding.bottom;
     _width = _size.width;
     _height = _size.height - statusBar - bottomBar;
+    _minTextAdapt = minTextAdapt;
+    _splitScreenMode = splitScreenAdapt;
+    _designSize = designSize;
     _initialized = true;
   }
 
@@ -25,26 +44,25 @@ class SizeUtils {
   /// singleton instance of [SizeUtils]
   static SizeUtils get instance => _instance ??= SizeUtils._();
 
-  /// default figma size
-  Size _designSize = const Size(375, 812);
-
-  /// must call this if your figma design is different
-  /// call this function on root of app
-  void updateDesignSize(Size figmaSize) {
-    _designSize = figmaSize;
-  }
-
   /// size
   late Size _size;
 
-  /// flag for initialized or not
-  bool _initialized = false;
+  late Size _designSize;
 
   /// height of screen
   late double _height;
 
   /// width of screen
   late double _width;
+
+  /// if true, text will adapt to min scale of width and height
+  late bool _minTextAdapt;
+
+  /// if true, height will adapt to max of 700
+  late bool _splitScreenMode;
+
+  /// if true, [SizeUtils] is initialized
+  bool _initialized = false;
 
   /// screen width
   double get width {
@@ -58,19 +76,37 @@ class SizeUtils {
     return _height;
   }
 
+  /// scale width
+  double get _scaleWidth => _width / _designSize.width;
+
+  /// scale height
+  double get _scaleHeight =>
+      (_splitScreenMode ? max(_height, 700) : _height) / _designSize.height;
+
+  double get _scaleText {
+    if (!_initialized) throw Exception('SizeUtils not initialized.');
+    return _minTextAdapt ? min(_scaleWidth, _scaleHeight) : _scaleWidth;
+  }
+
   /// set responsive with
   double setWidth(double px) {
     if (!_initialized) throw Exception('SizeUtils not initialized.');
-    return (px * _width) / _designSize.width;
+    return _scaleWidth * px;
   }
 
   /// set responsive height
   double setHeight(double px) {
     if (!_initialized) throw Exception('SizeUtils not initialized.');
-    return (px * _height) / (_designSize.height - 44);
+    return _scaleHeight * px;
+  }
+
+  double setFontSize(double px) {
+    if (!_initialized) throw Exception('SizeUtils not initialized.');
+    return _scaleText * px;
   }
 
   /// get responsive size
+  /// return min of width and height
   double getSize(double px) {
     if (!_initialized) throw Exception('SizeUtils not initialized.');
     final height = setHeight(px);
@@ -91,5 +127,42 @@ class SizeUtils {
       DeviceType.tablet => getSize(tablet ?? mobile),
       DeviceType.desktop => getSize(desktop ?? tablet ?? mobile),
     };
+  }
+}
+
+/// {@template sizer_app}
+/// Wrapper widget for [SizeUtils] to initialize
+/// {@endtemplate}
+class SizerApp extends StatelessWidget {
+  /// {@macro sizer_app}
+  const SizerApp({
+    super.key,
+    this.designSize = _defaultDesignSize,
+    this.minTextAdapt = false,
+    this.splitScreenMode = false,
+    required this.builder,
+  });
+
+  /// design size for responsiveness
+  final Size designSize;
+
+  /// if true, text will adapt to min scale of width and height
+  final bool minTextAdapt;
+
+  /// if true, height will adapt to max of 700
+  final bool splitScreenMode;
+
+  /// widget builder
+  final WidgetBuilder builder;
+
+  @override
+  Widget build(BuildContext context) {
+    SizeUtils.instance.init(
+      context,
+      designSize: designSize,
+      minTextAdapt: minTextAdapt,
+      splitScreenAdapt: splitScreenMode,
+    );
+    return builder(context);
   }
 }

@@ -1,3 +1,9 @@
+# 2.0.0
+> This release contains BREAKING CHANGES
+- updated SizeUtils
+- added responsive sized box and padding widget
+- updated extensions to support responsiveness 
+
 # 1.2.18
 - added ClipboardHelper for copy/paste from/to clipboard
 - updated logics of case_text_formatters

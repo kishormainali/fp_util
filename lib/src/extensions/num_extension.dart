@@ -1,13 +1,16 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:fp_util/fp_util.dart';
 
 extension NumX on num {
   /// horizontal spacing widget
-  SizedBox get horizontalSpace => SizedBox(width: toDouble());
+  SizedBox horizontalSpace([bool responsive = false]) =>
+      SizedBox(width: responsiveW(responsive));
 
   /// vertical spacing widget
-  SizedBox get verticalSpace => SizedBox(height: toDouble());
+  SizedBox verticalSpace([bool responsive = false]) =>
+      SizedBox(height: responsiveH(responsive));
 
   /// duration in microseconds
   Duration get microseconds => Duration(microseconds: toInt());
@@ -78,40 +81,74 @@ extension NumX on num {
   }
 
   /// get circular radius
-  Radius get circularRadius => Radius.circular(toDouble());
+  Radius circularRadius([bool responsive = false]) =>
+      Radius.circular(responsiveR(responsive));
 
   /// get circular border radius geometry
-  BorderRadiusGeometry get circular => BorderRadius.circular(toDouble());
+  BorderRadiusGeometry circular([bool responsive = false]) =>
+      BorderRadius.circular(responsiveR(responsive));
 
   /// circular border radius
-  BorderRadius get circularBorderRadius => BorderRadius.circular(toDouble());
+  BorderRadius circularBorderRadius([bool responsive = false]) =>
+      BorderRadius.circular(responsiveR(responsive));
 
   /// get all EdgeInsets
-  EdgeInsets get all => EdgeInsets.all(toDouble());
+  EdgeInsets all([bool responsive = false]) =>
+      EdgeInsets.all(responsiveR(responsive));
 
   /// get left EdgeInsets
-  EdgeInsets get padLeft => EdgeInsets.only(left: toDouble());
+  EdgeInsets padLeft([bool responsive = false]) =>
+      EdgeInsets.only(left: responsiveW(responsive));
 
   /// get top EdgeInsets
-  EdgeInsets get padTop => EdgeInsets.only(top: toDouble());
+  EdgeInsets padTop([bool responsive = false]) =>
+      EdgeInsets.only(top: responsiveH(responsive));
 
   /// get right EdgeInsets
-  EdgeInsets get padRight => EdgeInsets.only(right: toDouble());
+  EdgeInsets padRight([bool responsive = false]) =>
+      EdgeInsets.only(right: responsiveW(responsive));
 
   /// get bottom EdgeInsets
-  EdgeInsets get padBottom => EdgeInsets.only(bottom: toDouble());
+  EdgeInsets padBottom([bool responsive = false]) =>
+      EdgeInsets.only(bottom: responsiveH(responsive));
 
   /// horizontal spacing for edge-inset
-  EdgeInsets get padX => EdgeInsets.symmetric(horizontal: toDouble());
+  EdgeInsets padX([bool responsive = false]) =>
+      EdgeInsets.symmetric(horizontal: responsiveW(responsive));
 
   /// vertical spacing for edge-inset
-  EdgeInsets get padY => EdgeInsets.symmetric(vertical: toDouble());
+  EdgeInsets padY([bool responsive = false]) =>
+      EdgeInsets.symmetric(vertical: responsiveH(responsive));
 
   /// convert spacing widget into sliver widget
-  SliverToBoxAdapter get sliverHorizontalSpace =>
-      SliverToBoxAdapter(child: horizontalSpace);
+  SliverToBoxAdapter sliverHorizontalSpace([bool responsive = false]) =>
+      SliverToBoxAdapter(child: horizontalSpace(responsive));
 
   /// convert horizontal spacing widget into sliver widget
-  SliverToBoxAdapter get sliverVerticalSpace =>
-      SliverToBoxAdapter(child: verticalSpace);
+  SliverToBoxAdapter sliverVerticalSpace([bool responsive = false]) =>
+      SliverToBoxAdapter(child: verticalSpace(responsive));
+
+  /// set responsive width
+  double get w => SizeUtils.instance.setWidth(toDouble());
+
+  /// set responsive height
+  double get h => SizeUtils.instance.setHeight(toDouble());
+
+  /// set responsive text size
+  double get sp => SizeUtils.instance.setFontSize(toDouble());
+
+  /// set responsive  radius
+  double get r => SizeUtils.instance.getSize(toDouble());
+
+  double responsiveW(bool responsive) {
+    return responsive ? SizeUtils.instance.setWidth(toDouble()) : toDouble();
+  }
+
+  double responsiveH(bool responsive) {
+    return responsive ? SizeUtils.instance.setHeight(toDouble()) : toDouble();
+  }
+
+  double responsiveR(bool responsive) {
+    return responsive ? SizeUtils.instance.getSize(toDouble()) : toDouble();
+  }
 }

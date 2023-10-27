@@ -71,7 +71,7 @@ class BasicBottomSheet extends PlatformWidget<Widget, CupertinoActionSheet> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             if (title != null) title!,
-            material?.titleSpacing.verticalSpace ?? Sizes.gapV12,
+            material?.titleSpacing.verticalSpace() ?? Sizes.gapV12,
             content,
             if (material?.actions != null) ...[
               Sizes.gapV12,

@@ -6,13 +6,11 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 class MaskedTextFormatter extends MaskTextInputFormatter {
   MaskedTextFormatter._(
     String mask, {
-    Map<String, RegExp>? filter,
-    String? initialText,
+    super.filter,
+    super.initialText,
     MaskAutoCompletionType maskType = MaskAutoCompletionType.lazy,
   }) : super(
           mask: mask,
-          filter: filter,
-          initialText: initialText,
           type: maskType,
         );
 
