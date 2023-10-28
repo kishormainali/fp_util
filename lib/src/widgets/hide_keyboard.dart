@@ -39,6 +39,7 @@ class HideKeyboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => context.removeFocus(),
+      behavior: HitTestBehavior.opaque,
       onHorizontalDragEnd: (details) {
         if (hideOnDrag) {
           context.removeFocus();

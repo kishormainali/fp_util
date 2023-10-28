@@ -129,10 +129,10 @@ extension BuildContextX on BuildContext {
   EdgeInsets get viewPadding => MediaQuery.viewPaddingOf(this);
 
   /// safeAreaBottomPadding
-  double get safeAreaBottomPadding => padding.bottom;
+  double get bottomBarHeight => padding.bottom;
 
   /// safeAreaTopPadding
-  double get safeAreaTopPadding => padding.top;
+  double get statusBarHeight => padding.top;
 
   /// software keyboard height
   double get keyboardHeight => viewInsets.bottom;

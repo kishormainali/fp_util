@@ -38,12 +38,14 @@ extension WidgetX on Widget {
     VoidCallback? onTap,
     VoidCallback? onDoubleTap,
     Key? key,
+    bool opaque = true,
   }) =>
       GestureDetector(
         key: key,
         onTap: onTap,
         onDoubleTap: onDoubleTap,
-        behavior: HitTestBehavior.opaque,
+        behavior:
+            opaque ? HitTestBehavior.opaque : HitTestBehavior.deferToChild,
         child: this,
       );
 
@@ -313,5 +315,41 @@ extension ResponsiveBoxConstrains on BoxConstraints {
         maxWidth: maxWidth.h,
         minHeight: minHeight.h,
         maxHeight: maxHeight.h,
+      );
+}
+
+extension ResponsiveRadius on Radius {
+  Radius get r => Radius.elliptical(x.r, y.r);
+  Radius get w => Radius.elliptical(x.w, y.w);
+  Radius get h => Radius.elliptical(x.h, y.h);
+}
+
+extension ResponsiveBorderRadius on BorderRadius {
+  BorderRadius get r => copyWith(
+        topLeft: topLeft.r,
+        topRight: topRight.r,
+        bottomLeft: bottomLeft.r,
+        bottomRight: bottomRight.r,
+      );
+
+  BorderRadius get hw => copyWith(
+        topLeft: topLeft.w,
+        topRight: topRight.w,
+        bottomLeft: bottomLeft.h,
+        bottomRight: bottomRight.h,
+      );
+
+  BorderRadius get w => copyWith(
+        topLeft: topLeft.w,
+        topRight: topRight.w,
+        bottomLeft: bottomLeft.w,
+        bottomRight: bottomRight.w,
+      );
+
+  BorderRadius get h => copyWith(
+        topLeft: topLeft.h,
+        topRight: topRight.h,
+        bottomLeft: bottomLeft.h,
+        bottomRight: bottomRight.h,
       );
 }

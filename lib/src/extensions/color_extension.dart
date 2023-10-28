@@ -1,5 +1,20 @@
 import 'package:flutter/material.dart';
 
+class HexColor extends Color {
+  static int _getColorFromHex(String hexColor, [int opacity = 100]) {
+    assert(opacity >= 0 && opacity <= 100);
+    final buffer = StringBuffer();
+    if (hexColor.length == 6 || hexColor.length == 7) {
+      buffer.write(_fromOpacity(opacity));
+    }
+    buffer.write(hexColor.replaceFirst('#', ''));
+    return int.parse(buffer.toString(), radix: 16);
+  }
+
+  HexColor(final String hexColor, [int opacity = 100])
+      : super(_getColorFromHex(hexColor, opacity));
+}
+
 extension ColorHex on Color {
   /// Returns the [Color] from a hex string.
   /// The [hex] value can be 6 or 7 characters long.
@@ -11,13 +26,8 @@ extension ColorHex on Color {
   /// Color color = ColorHex.fromHex('#FF0000');
   /// Color color = ColorHex.fromHex('#FF0000', 50);
   /// ```
-  static Color fromHex(String hex, [int opacity = 100]) {
-    assert(opacity >= 0 && opacity <= 100);
-    final buffer = StringBuffer();
-    if (hex.length == 6 || hex.length == 7) buffer.write(_fromOpacity(opacity));
-    buffer.write(hex.replaceFirst('#', ''));
-    return Color(int.parse(buffer.toString(), radix: 16));
-  }
+  static Color fromHex(String hex, [int opacity = 100]) =>
+      HexColor(hex, opacity);
 
   /// Returns the [Color] with the opacity set to [percent].
   /// The [percent] value must be between 0 and 100.

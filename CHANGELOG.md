@@ -1,3 +1,10 @@
+# 2.0.1
+- updated FPSnackBar to configure global properties
+- added HexColor class to convert hex string to color
+- refactor SizeUtils
+- added .clickable factory constructor to `RoundedContainer` and `CircleContainer`
+- added Radius and BorderRadius extensions for responsiveness
+
 # 2.0.0
 > This release contains BREAKING CHANGES
 - updated SizeUtils

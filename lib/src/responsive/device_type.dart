@@ -17,6 +17,16 @@ enum DeviceType {
 
   final double size;
 
+  /// get device type according to device width
+  static DeviceType fromWidth(double width) {
+    return switch (width) {
+      >= 950 => DeviceType.desktop,
+      >= 600 => DeviceType.tablet,
+      _ => DeviceType.mobile,
+    };
+  }
+
+  /// get device type according to device size
   static DeviceType fromSize(Size deviceSize) {
     var deviceWidth = deviceSize.shortestSide;
 

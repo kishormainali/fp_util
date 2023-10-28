@@ -916,7 +916,20 @@ final Color onErrorContainerColor = context.onErrorContainerColor;
 
 ## FPSnackbar
 
-helper class for showing snackbars
+Singleton class for showing Snackbar
+
+- ### Global Properties
+  -  defaultStyle 
+  -  successStyle
+  -  errorStyle
+  -  warningStyle
+  -  infoStyle 
+  -  duration (defaults 3 seconds)
+  -  floating (defaults true)
+  -  centerText (defaults false)
+  -  contextMaxLines (defaults 2)
+
+you can change global properties using `FPSnackbar.instance.propertyName = value`
 
 - ### Variants
   - #### Success
@@ -955,20 +968,12 @@ helper class for showing snackbars
           message: 'Warning message',
         );
   ```
-- #### Custom
-  Snackbar for custom snackbars
+- #### Default
+  Default Snackbar
   ```dart
-     FPSnackbar.custom(
+     FPSnackbar.show(
           context,
           title: 'Create User',
           message: 'message',
-          color:(light:Colors.blue,dark:Colors.green,bar:Colors.red)
-          textStyle: const TextStyle(
-            fontSize: 14,
-            color: Colors.white,
-          ),
-          titleTextStyle: const TextStyle(fontSize: 18),
-          icon: const Icon(Icons.check),
-          duration: 4,
         );
   ```

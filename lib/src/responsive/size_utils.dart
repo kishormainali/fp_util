@@ -1,7 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:fp_util/fp_util.dart';
+
+import 'device_type.dart';
 
 /// default figma size
 const Size _defaultDesignSize = Size(375, 812);
@@ -19,20 +20,23 @@ class SizeUtils {
   /// [splitScreenAdapt] if true, height will adapt to max of 700
   /// [designSize] default design size
   /// [context] BuildContext to retrieve view
-
   void init(
     BuildContext context, {
-    bool minTextAdapt = false,
+    bool minTextAdapt = true,
     bool splitScreenAdapt = false,
     Size designSize = _defaultDesignSize,
   }) {
     final view = View.of(context);
-    _size = view.physicalSize / view.devicePixelRatio;
     final mqData = MediaQueryData.fromView(view);
+    Size size = mqData.size;
     final statusBar = mqData.viewPadding.top;
     final bottomBar = mqData.viewPadding.bottom;
-    _width = _size.width;
-    _height = _size.height - statusBar - bottomBar;
+    final orientation = mqData.orientation;
+    if (orientation == Orientation.landscape) {
+      size = Size(size.height, size.width);
+    }
+    _width = size.width;
+    _height = size.height - statusBar - bottomBar;
     _minTextAdapt = minTextAdapt;
     _splitScreenMode = splitScreenAdapt;
     _designSize = designSize;
@@ -44,9 +48,7 @@ class SizeUtils {
   /// singleton instance of [SizeUtils]
   static SizeUtils get instance => _instance ??= SizeUtils._();
 
-  /// size
-  late Size _size;
-
+  /// size of design
   late Size _designSize;
 
   /// height of screen
@@ -121,7 +123,7 @@ class SizeUtils {
     double? desktop,
   }) {
     if (!_initialized) throw Exception('SizeUtils not initialized.');
-    final deviceType = DeviceType.fromSize(_size);
+    final deviceType = DeviceType.fromSize(Size(_width, _height));
     return switch (deviceType) {
       DeviceType.mobile => getSize(mobile),
       DeviceType.tablet => getSize(tablet ?? mobile),
@@ -138,7 +140,7 @@ class SizerApp extends StatelessWidget {
   const SizerApp({
     super.key,
     this.designSize = _defaultDesignSize,
-    this.minTextAdapt = false,
+    this.minTextAdapt = true,
     this.splitScreenMode = false,
     required this.builder,
   });
