@@ -1,3 +1,8 @@
+# 2.0.2
+- added `let` extension on Object
+- code cleanup
+
+
 # 2.0.1
 - updated FPSnackBar to configure global properties
 - added HexColor class to convert hex string to color
