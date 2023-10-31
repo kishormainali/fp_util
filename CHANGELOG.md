@@ -1,3 +1,6 @@
+# 2.0.3
+- add new `EmojiTextFormatter` for allowing/denying emoji in text field
+
 # 2.0.2
 - added `let` extension on Object
 - code cleanup
