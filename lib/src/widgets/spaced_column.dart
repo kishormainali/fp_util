@@ -21,12 +21,11 @@ class SpacedColumn extends Column {
     List<Widget> children = const [],
     bool responsive = false,
   }) : super(children: [
-          if (hasLeadingSpace) spacing.verticalSpace(responsive),
+          if (hasLeadingSpace) spacing.gap(responsive),
           ...children.expandIndexed((index, widget) {
             return [
               widget,
-              if (index < children.length || hasTrailingSpace)
-                spacing.verticalSpace(responsive),
+              if (index < children.length || hasTrailingSpace) spacing.gap(responsive),
             ];
           }),
         ]);

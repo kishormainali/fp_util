@@ -236,6 +236,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "gap",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/gap-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "glob",
       "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/glob-2.1.2",
       "packageUri": "lib/",
@@ -578,7 +584,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-10-31T10:42:03.017184Z",
+  "generated": "2023-11-01T06:51:33.727411Z",
   "generator": "pub",
   "generatorVersion": "3.1.5"
 }

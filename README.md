@@ -9,7 +9,7 @@
 
 ## Constants
 
-##### Vertical Spacing
+#####  Vertical Spacing
 
 ```dart
 
@@ -24,31 +24,31 @@ class SpacingTest extends StatelessWidget {
      children: const [
 
        /// 4px vertical space
-       Sizes.gapV4,
+       Sizes.gap4,
 
        /// 8px vertical space
-       Sizes.gapV8,
+       Sizes.gap8,
 
        /// 12px vertical space
-       Sizes.gapV12,
+       Sizes.gap12,
 
        /// 16px vertical space
-       Sizes.gapV16,
+       Sizes.gap16,
 
        /// 24px vertical space
-       Sizes.gapV24,
+       Sizes.gap24,
 
        /// 32px vertical space
-       Sizes.gapV32,
+       Sizes.gap32,
 
        /// 48px vertical space
-       Sizes.gapV48,
+       Sizes.gap48,
 
        /// 54px vertical space
-       Sizes.gapV54,
+       Sizes.gap54,
 
        /// 64px vertical space
-       Sizes.gapV64,
+       Sizes.gap64,
      ],
    );
  }
@@ -70,31 +70,31 @@ Widget build(BuildContext context) {
     children: const [
 
       /// 4px horizontal space
-      Sizes.gapH4,
+      Sizes.gap4,
 
       /// 8px horizontal space
-      Sizes.gapH8,
+      Sizes.gap8,
 
       /// 12px horizontal space
-      Sizes.gapH12,
+      Sizes.gap12,
 
       /// 16px horizontal space
-      Sizes.gapH16,
+      Sizes.gap16,
 
       /// 24px horizontal space
-      Sizes.gapH24,
+      Sizes.gap24,
 
       /// 32px horizontal space
-      Sizes.gapH32,
+      Sizes.gap32,
 
       /// 48px horizontal space
-      Sizes.gapH48,
+      Sizes.gap48,
 
       /// 54px horizontal space
-      Sizes.gapH54,
+      Sizes.gap54,
 
       /// 64px horizontal space
-      Sizes.gapH64,
+      Sizes.gap64,
     ],
   );
 }
@@ -242,9 +242,11 @@ bool isFile = text.isFile;
 
 ### Num Extensions
 
-- #### verticalSpace()
+- #### gap()
+ 
+Creates Gap with height or width according to its parent
 
-Created SizedBox with Height
+```dart
 
 ###### Usage:
 
@@ -259,22 +261,12 @@ class SpacingYTest extends StatelessWidget {
     return Column(
       children: [
         const Text('Text 1'),
-        10.verticalSpace(/*true if you want to use responsiveness*/),
+        10.gap(/*true if you want to use responsiveness*/),
         const Text('Text 2'),
       ],
     );
   }
 }
-```
-
-- #### horizontalSpace()
-
-Created SizedBox with Width
-
-###### Usage:
-
-```dart
-import 'package:flutter/material.dart';
 
 class SpacingXTest extends StatelessWidget {
   const SpacingXTest({super.key});
@@ -284,7 +276,7 @@ class SpacingXTest extends StatelessWidget {
     return Row(
       children: [
         const Text('Text 1'),
-        10.horizontalSpace(/*true if you want to use responsiveness*/),
+        10.gap(/*true if you want to use responsiveness*/),
         const Text('Text 2'),
       ],
     );

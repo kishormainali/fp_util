@@ -21,13 +21,12 @@ class SpacedRow extends Row {
     List<Widget> children = const [],
     bool responsive = false,
   }) : super(children: [
-          if (hasLeadingSpace) spacing.horizontalSpace(responsive),
+          if (hasLeadingSpace) spacing.gap(responsive),
           ...children.expandIndexed(
             (index, child) {
               return [
                 child,
-                if (index < children.length || hasTrailingSpace)
-                  spacing.horizontalSpace(responsive),
+                if (index < children.length || hasTrailingSpace) spacing.gap(responsive),
               ];
             },
           ),

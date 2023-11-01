@@ -96,15 +96,13 @@ class FPSnackbar {
   late FPSnackBarStyle _defaultStyle;
 
   /// set default text style
-  set defaultStyle(FPSnackBarStyle defaultStyle) =>
-      _defaultStyle = defaultStyle;
+  set defaultStyle(FPSnackBarStyle defaultStyle) => _defaultStyle = defaultStyle;
 
   /// success style
   late FPSnackBarStyle _successStyle;
 
   /// set default title text style
-  set successStyle(FPSnackBarStyle successStyle) =>
-      _successStyle = successStyle;
+  set successStyle(FPSnackBarStyle successStyle) => _successStyle = successStyle;
 
   /// error style
   late FPSnackBarStyle _errorStyle;
@@ -122,8 +120,7 @@ class FPSnackbar {
   late FPSnackBarStyle _warningStyle;
 
   /// set default warning style
-  set warningStyle(FPSnackBarStyle warningStyle) =>
-      _warningStyle = warningStyle;
+  set warningStyle(FPSnackBarStyle warningStyle) => _warningStyle = warningStyle;
 
   /// duration for snackbar dismiss
   late int _duration;
@@ -146,8 +143,7 @@ class FPSnackbar {
   late int? _contentMaxLines;
 
   /// set default content max lines
-  set contentMaxLines(int? contentMaxLines) =>
-      _contentMaxLines = contentMaxLines;
+  set contentMaxLines(int? contentMaxLines) => _contentMaxLines = contentMaxLines;
 
   /// show default snackbar
   static void show(
@@ -284,10 +280,8 @@ class FPSnackbar {
     required bool centerText,
     required int? contentMaxLines,
   }) {
-    final effectiveFloating = floating ||
-        context.theme.snackBarTheme.behavior == SnackBarBehavior.floating;
-    final effectiveTextStyle =
-        textStyle.merge(context.theme.snackBarTheme.contentTextStyle);
+    final effectiveFloating = floating || context.theme.snackBarTheme.behavior == SnackBarBehavior.floating;
+    final effectiveTextStyle = textStyle.merge(context.theme.snackBarTheme.contentTextStyle);
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()
       ..showSnackBar(
@@ -304,9 +298,7 @@ class FPSnackbar {
             centerText: centerText,
             contentMaxLines: contentMaxLines,
           ),
-          behavior: effectiveFloating
-              ? SnackBarBehavior.floating
-              : SnackBarBehavior.fixed,
+          behavior: effectiveFloating ? SnackBarBehavior.floating : SnackBarBehavior.fixed,
           backgroundColor: floating ? Colors.transparent : backgroundColor,
           dismissDirection: DismissDirection.startToEnd,
           padding: EdgeInsets.zero,
@@ -357,9 +349,7 @@ class _SnackbarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final effectiveActionBackground =
-        context.theme.snackBarTheme.actionBackgroundColor ??
-            backgroundColor.withOpacity(0.3);
+    final effectiveActionBackground = context.theme.snackBarTheme.actionBackgroundColor ?? backgroundColor.withOpacity(0.3);
     return Container(
       constraints: const BoxConstraints(minHeight: 60),
       padding: const EdgeInsets.all(12),
@@ -384,7 +374,7 @@ class _SnackbarWidget extends StatelessWidget {
               style: titleTextStyle,
               textAlign: textAlign,
             ),
-            Sizes.gapV8,
+            Sizes.gap8,
           ],
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -395,14 +385,12 @@ class _SnackbarWidget extends StatelessWidget {
                   message,
                   style: textStyle,
                   maxLines: contentMaxLines,
-                  overflow: contentMaxLines != null
-                      ? TextOverflow.ellipsis
-                      : TextOverflow.visible,
+                  overflow: contentMaxLines != null ? TextOverflow.ellipsis : TextOverflow.visible,
                   textAlign: textAlign,
                 ),
               ),
               if (actionText != null) ...[
-                Sizes.gapH8,
+                Sizes.gap8,
                 Material(
                   elevation: 0,
                   shape: const StadiumBorder(),
@@ -413,14 +401,12 @@ class _SnackbarWidget extends StatelessWidget {
                     onTap: onActionTap,
                     splashColor: effectiveActionBackground,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 4),
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                       child: Text(
                         actionText!,
                         style: TextStyle(
                           fontSize: 12,
-                          color: context.theme.snackBarTheme.actionTextColor ??
-                              Colors.white,
+                          color: context.theme.snackBarTheme.actionTextColor ?? Colors.white,
                         ),
                       ),
                     ),

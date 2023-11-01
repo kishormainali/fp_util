@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 abstract class Sizes {
   const Sizes._();
@@ -14,24 +14,24 @@ abstract class Sizes {
 
   // sized boxes
   /// vertical spaces
-  static SizedBox get gapV4 => const SizedBox(height: p4);
-  static SizedBox get gapV8 => const SizedBox(height: p8);
-  static SizedBox get gapV12 => const SizedBox(height: p12);
-  static SizedBox get gapV16 => const SizedBox(height: p16);
-  static SizedBox get gapV24 => const SizedBox(height: p24);
-  static SizedBox get gapV32 => const SizedBox(height: p32);
-  static SizedBox get gapV48 => const SizedBox(height: p48);
-  static SizedBox get gapV54 => const SizedBox(height: p54);
-  static SizedBox get gapV64 => const SizedBox(height: p64);
+  static Gap get gap4 => const Gap(p4);
+  static Gap get gap8 => const Gap(p8);
+  static Gap get gap12 => const Gap(p12);
+  static Gap get gap16 => const Gap(p16);
+  static Gap get gap24 => const Gap(p24);
+  static Gap get gap32 => const Gap(p32);
+  static Gap get gap48 => const Gap(p48);
+  static Gap get gap54 => const Gap(p54);
+  static Gap get gap64 => const Gap(p64);
 
   /// horizontal spaces
-  static SizedBox get gapH4 => const SizedBox(width: p4);
-  static SizedBox get gapH8 => const SizedBox(width: p8);
-  static SizedBox get gapH12 => const SizedBox(width: p12);
-  static SizedBox get gapH16 => const SizedBox(width: p16);
-  static SizedBox get gapH24 => const SizedBox(width: p24);
-  static SizedBox get gapH32 => const SizedBox(width: p32);
-  static SizedBox get gapH48 => const SizedBox(width: p48);
-  static SizedBox get gapH54 => const SizedBox(width: p54);
-  static SizedBox get gapH64 => const SizedBox(width: p64);
+  static SliverGap get sliverGap4 => const SliverGap(p4);
+  static SliverGap get sliverGap8 => const SliverGap(p8);
+  static SliverGap get sliverGap12 => const SliverGap(p12);
+  static SliverGap get sliverGap16 => const SliverGap(p16);
+  static SliverGap get sliverGap24 => const SliverGap(p24);
+  static SliverGap get sliverGap32 => const SliverGap(p32);
+  static SliverGap get sliverGap48 => const SliverGap(p48);
+  static SliverGap get sliverGap54 => const SliverGap(p54);
+  static SliverGap get sliverGap64 => const SliverGap(p64);
 }

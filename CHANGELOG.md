@@ -1,3 +1,12 @@
+# 2.1.0
+> This release contains BREAKING CHANGES
+- removed `horizontalSpace` and `verticalSpace` extension use `gap()` instead
+- added `gap()` and `gapExpanded()` extension on in replace of `horizontalSpace` and `verticalSpace`
+- added `gapMax()` and `gapMaxExpanded()` extension
+- added `sliverGap()` extension on in replace of `sliverHorizontalSpace` and `sliverVerticalSpace`
+
+
+
 # 2.0.3
 - add new `EmojiTextFormatter` for allowing/denying emoji in text field
 
