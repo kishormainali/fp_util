@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:fp_util/fp_util.dart';
-import 'package:gap/gap.dart';
 
 extension NumX on num {
   /// spacing widget
@@ -10,7 +9,8 @@ extension NumX on num {
 
   /// expanded spacing widget
   /// expands cross axis
-  Gap gapExpanded([bool responsive = false]) => Gap.expand(responsiveR(responsive));
+  Gap gapExpanded([bool responsive = false]) =>
+      Gap.expand(responsiveR(responsive));
 
   /// spacing widget
   /// max spacing widget
@@ -20,10 +20,12 @@ extension NumX on num {
   /// expanded spacing widget
   /// max spacing widget
   /// expands cross axis
-  MaxGap gapMaxExpanded([bool responsive = false]) => MaxGap.expand(responsiveR(responsive));
+  MaxGap gapMaxExpanded([bool responsive = false]) =>
+      MaxGap.expand(responsiveR(responsive));
 
   /// sliver spacing widget
-  SliverGap sliverGap([bool responsive = false]) => SliverGap(responsiveR(responsive));
+  SliverGap sliverGap([bool responsive = false]) =>
+      SliverGap(responsiveR(responsive));
 
   /// duration in microseconds
   Duration get microseconds => Duration(microseconds: toInt());
@@ -94,34 +96,44 @@ extension NumX on num {
   }
 
   /// get circular radius
-  Radius circularRadius([bool responsive = false]) => Radius.circular(responsiveR(responsive));
+  Radius circularRadius([bool responsive = false]) =>
+      Radius.circular(responsiveR(responsive));
 
   /// get circular border radius geometry
-  BorderRadiusGeometry circular([bool responsive = false]) => BorderRadius.circular(responsiveR(responsive));
+  BorderRadiusGeometry circular([bool responsive = false]) =>
+      BorderRadius.circular(responsiveR(responsive));
 
   /// circular border radius
-  BorderRadius circularBorderRadius([bool responsive = false]) => BorderRadius.circular(responsiveR(responsive));
+  BorderRadius circularBorderRadius([bool responsive = false]) =>
+      BorderRadius.circular(responsiveR(responsive));
 
   /// get all EdgeInsets
-  EdgeInsets all([bool responsive = false]) => EdgeInsets.all(responsiveR(responsive));
+  EdgeInsets all([bool responsive = false]) =>
+      EdgeInsets.all(responsiveR(responsive));
 
   /// get left EdgeInsets
-  EdgeInsets padLeft([bool responsive = false]) => EdgeInsets.only(left: responsiveW(responsive));
+  EdgeInsets padLeft([bool responsive = false]) =>
+      EdgeInsets.only(left: responsiveW(responsive));
 
   /// get top EdgeInsets
-  EdgeInsets padTop([bool responsive = false]) => EdgeInsets.only(top: responsiveH(responsive));
+  EdgeInsets padTop([bool responsive = false]) =>
+      EdgeInsets.only(top: responsiveH(responsive));
 
   /// get right EdgeInsets
-  EdgeInsets padRight([bool responsive = false]) => EdgeInsets.only(right: responsiveW(responsive));
+  EdgeInsets padRight([bool responsive = false]) =>
+      EdgeInsets.only(right: responsiveW(responsive));
 
   /// get bottom EdgeInsets
-  EdgeInsets padBottom([bool responsive = false]) => EdgeInsets.only(bottom: responsiveH(responsive));
+  EdgeInsets padBottom([bool responsive = false]) =>
+      EdgeInsets.only(bottom: responsiveH(responsive));
 
   /// horizontal spacing for edge-inset
-  EdgeInsets padX([bool responsive = false]) => EdgeInsets.symmetric(horizontal: responsiveW(responsive));
+  EdgeInsets padX([bool responsive = false]) =>
+      EdgeInsets.symmetric(horizontal: responsiveW(responsive));
 
   /// vertical spacing for edge-inset
-  EdgeInsets padY([bool responsive = false]) => EdgeInsets.symmetric(vertical: responsiveH(responsive));
+  EdgeInsets padY([bool responsive = false]) =>
+      EdgeInsets.symmetric(vertical: responsiveH(responsive));
 
   /// set responsive width
   double get w => SizeUtils.instance.setWidth(toDouble());

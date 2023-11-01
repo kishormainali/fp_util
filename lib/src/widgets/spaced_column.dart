@@ -25,7 +25,8 @@ class SpacedColumn extends Column {
           ...children.expandIndexed((index, widget) {
             return [
               widget,
-              if (index < children.length || hasTrailingSpace) spacing.gap(responsive),
+              if (index < children.length || hasTrailingSpace)
+                spacing.gap(responsive),
             ];
           }),
         ]);

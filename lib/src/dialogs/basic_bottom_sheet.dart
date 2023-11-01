@@ -64,7 +64,8 @@ class BasicBottomSheet extends PlatformWidget<Widget, CupertinoActionSheet> {
   Widget buildMaterialWidget(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: material?.contentPadding ?? const EdgeInsets.only(left: 16, right: 16, top: 16),
+        padding: material?.contentPadding ??
+            const EdgeInsets.only(left: 16, right: 16, top: 16),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,

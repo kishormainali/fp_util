@@ -9,12 +9,14 @@ extension WidgetX on Widget {
     Axis scrollDirection = Axis.vertical,
     EdgeInsetsGeometry? padding,
     bool primary = false,
-    ScrollPhysics physics = const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+    ScrollPhysics physics =
+        const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
     ScrollController? controller,
     DragStartBehavior dragStartBehavior = DragStartBehavior.start,
     Clip clipBehavior = Clip.hardEdge,
     String? restorationId,
-    ScrollViewKeyboardDismissBehavior keyboardDismissBehavior = ScrollViewKeyboardDismissBehavior.manual,
+    ScrollViewKeyboardDismissBehavior keyboardDismissBehavior =
+        ScrollViewKeyboardDismissBehavior.manual,
     Key? key,
   }) =>
       SingleChildScrollView(
@@ -42,7 +44,8 @@ extension WidgetX on Widget {
         key: key,
         onTap: onTap,
         onDoubleTap: onDoubleTap,
-        behavior: opaque ? HitTestBehavior.opaque : HitTestBehavior.deferToChild,
+        behavior:
+            opaque ? HitTestBehavior.opaque : HitTestBehavior.deferToChild,
         child: this,
       );
 
@@ -259,7 +262,8 @@ extension WidgetX on Widget {
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.symmetric(horizontal: padding.responsiveW(responsive)),
+        padding:
+            EdgeInsets.symmetric(horizontal: padding.responsiveW(responsive)),
         child: this,
       );
 
@@ -271,7 +275,8 @@ extension WidgetX on Widget {
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.symmetric(vertical: padding.responsiveH(responsive)),
+        padding:
+            EdgeInsets.symmetric(vertical: padding.responsiveH(responsive)),
         child: this,
       );
 

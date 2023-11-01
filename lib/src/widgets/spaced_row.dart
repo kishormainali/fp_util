@@ -26,7 +26,8 @@ class SpacedRow extends Row {
             (index, child) {
               return [
                 child,
-                if (index < children.length || hasTrailingSpace) spacing.gap(responsive),
+                if (index < children.length || hasTrailingSpace)
+                  spacing.gap(responsive),
               ];
             },
           ),
