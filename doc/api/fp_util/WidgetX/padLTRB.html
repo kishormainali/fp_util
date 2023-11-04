@@ -68,7 +68,8 @@
 <li><span class="parameter" id="padLTRB-param-top"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">top</span> = <span class="default-value">0</span>, </span></li>
 <li><span class="parameter" id="padLTRB-param-right"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">right</span> = <span class="default-value">0</span>, </span></li>
 <li><span class="parameter" id="padLTRB-param-bottom"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">bottom</span> = <span class="default-value">0</span>, </span></li>
-<li><span class="parameter" id="padLTRB-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>}</span></li>
+<li><span class="parameter" id="padLTRB-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span></li>
+<li><span class="parameter" id="padLTRB-param-responsive"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">responsive</span> = <span class="default-value">false</span>}</span></li>
 </ol>)
 
       
@@ -89,14 +90,15 @@
   double right = 0,
   double bottom = 0,
   Key? key,
+  bool responsive = false,
 }) =&gt;
     Padding(
       key: key,
       padding: EdgeInsets.only(
-        left: left,
-        top: top,
-        right: right,
-        bottom: bottom,
+        left: left.responsiveW(responsive),
+        top: top.responsiveH(responsive),
+        right: right.responsiveW(responsive),
+        bottom: bottom.responsiveH(responsive),
       ),
       child: this,
     );</code></pre>
@@ -132,7 +134,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.18
+      2.1.0
   </span>
 
   

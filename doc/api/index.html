@@ -76,31 +76,31 @@ class SpacingTest extends StatelessWidget {
      children: const [
 
        /// 4px vertical space
-       Sizes.gapV4,
+       Sizes.gap4,
 
        /// 8px vertical space
-       Sizes.gapV8,
+       Sizes.gap8,
 
        /// 12px vertical space
-       Sizes.gapV12,
+       Sizes.gap12,
 
        /// 16px vertical space
-       Sizes.gapV16,
+       Sizes.gap16,
 
        /// 24px vertical space
-       Sizes.gapV24,
+       Sizes.gap24,
 
        /// 32px vertical space
-       Sizes.gapV32,
+       Sizes.gap32,
 
        /// 48px vertical space
-       Sizes.gapV48,
+       Sizes.gap48,
 
        /// 54px vertical space
-       Sizes.gapV54,
+       Sizes.gap54,
 
        /// 64px vertical space
-       Sizes.gapV64,
+       Sizes.gap64,
      ],
    );
  }
@@ -119,31 +119,31 @@ Widget build(BuildContext context) {
     children: const [
 
       /// 4px horizontal space
-      Sizes.gapH4,
+      Sizes.gap4,
 
       /// 8px horizontal space
-      Sizes.gapH8,
+      Sizes.gap8,
 
       /// 12px horizontal space
-      Sizes.gapH12,
+      Sizes.gap12,
 
       /// 16px horizontal space
-      Sizes.gapH16,
+      Sizes.gap16,
 
       /// 24px horizontal space
-      Sizes.gapH24,
+      Sizes.gap24,
 
       /// 32px horizontal space
-      Sizes.gapH32,
+      Sizes.gap32,
 
       /// 48px horizontal space
-      Sizes.gapH48,
+      Sizes.gap48,
 
       /// 54px horizontal space
-      Sizes.gapH54,
+      Sizes.gap54,
 
       /// 64px horizontal space
-      Sizes.gapH64,
+      Sizes.gap64,
     ],
   );
 }
@@ -287,12 +287,15 @@ bool isFile = text.isFile;
 <h3 id="num-extensions">Num Extensions</h3>
 <ul>
 <li>
-<h4 id="verticalspace">verticalSpace</h4>
+<h4 id="gap">gap()</h4>
 </li>
 </ul>
-<p>Created SizedBox with Height</p>
-<h6 id="usage">Usage:</h6>
-<pre class="language-dart"><code class="language-dart">import 'package:flutter/material.dart';
+<p>Creates Gap with height or width according to its parent</p>
+<pre class="language-dart"><code class="language-dart">
+###### Usage:
+
+```dart
+import 'package:flutter/material.dart';
 
 class SpacingYTest extends StatelessWidget {
   const SpacingYTest({super.key});
@@ -302,21 +305,12 @@ class SpacingYTest extends StatelessWidget {
     return Column(
       children: [
         const Text('Text 1'),
-        10.verticalSpace,
+        10.gap(/*true if you want to use responsiveness*/),
         const Text('Text 2'),
       ],
     );
   }
 }
-</code></pre>
-<ul>
-<li>
-<h4 id="horizontalspace">horizontalSpace</h4>
-</li>
-</ul>
-<p>Created SizedBox with Width</p>
-<h6 id="usage-2">Usage:</h6>
-<pre class="language-dart"><code class="language-dart">import 'package:flutter/material.dart';
 
 class SpacingXTest extends StatelessWidget {
   const SpacingXTest({super.key});
@@ -326,7 +320,7 @@ class SpacingXTest extends StatelessWidget {
     return Row(
       children: [
         const Text('Text 1'),
-        10.horizontalSpace,
+        10.gap(/*true if you want to use responsiveness*/),
         const Text('Text 2'),
       ],
     );
@@ -408,7 +402,7 @@ final duration = 10.delayedHours(()async{
 </code></pre>
 <ul>
 <li>
-<h5 id="circularborderradius">circularBorderRadius</h5>
+<h5 id="circularborderradius">circularBorderRadius()</h5>
 </li>
 </ul>
 <p>Created Circular Border Radius</p>
@@ -422,7 +416,7 @@ class RadiusTest extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         /// creates 10px rounded corner
-        borderRadius: 10.circularBorderRadius,
+        borderRadius: 10.circularBorderRadius(/*true if you want to use responsiveness*/),
       ),
     );
   }
@@ -430,7 +424,7 @@ class RadiusTest extends StatelessWidget {
 </code></pre>
 <ul>
 <li>
-<h5 id="circularradius">circularRadius</h5>
+<h5 id="circularradius">circularRadius()</h5>
 </li>
 </ul>
 <p>Created Circular Radius</p>
@@ -445,8 +439,8 @@ class RadiusTest extends StatelessWidget {
       decoration: BoxDecoration(
 
         /// creates 10px rounded corner for topLeft and topRight
-        borderRadius: BorderRadius.only(topLeft: 10.circularRadius,
-        topRight: 10.circularRadius,),),
+        borderRadius: BorderRadius.only(topLeft: 10.circularRadius(/*true if you want to use responsiveness*/),
+        topRight: 10.circularRadius(/*true if you want to use responsiveness*/),),),
     );
   }
 }
@@ -455,13 +449,13 @@ class RadiusTest extends StatelessWidget {
 <li>
 <h5 id="edgeinsets">EdgeInsets</h5>
 <ul>
-<li>all</li>
-<li>padLeft</li>
-<li>padRight</li>
-<li>padTop</li>
-<li>padBottom</li>
-<li>padX</li>
-<li>padY</li>
+<li>all()</li>
+<li>padLeft()</li>
+<li>padRight()</li>
+<li>padTop()</li>
+<li>padBottom()</li>
+<li>padX()</li>
+<li>padY()</li>
 </ul>
 </li>
 </ul>
@@ -476,25 +470,25 @@ class EdgeInsetsTest extends StatelessWidget {
       children: [
 
         /// creates padding with 10px all
-        Padding(padding: 10.all),
+        Padding(padding: 10.all(/*true if you want to use responsiveness*/)),
 
         /// creates padding with 10px top only
-        Padding(padding: 10.padTop),
+        Padding(padding: 10.padTop(/*true if you want to use responsiveness*/)),
 
         /// creates padding with 10px right only
-        Padding(padding: 10.padRight),
+        Padding(padding: 10.padRight(/*true if you want to use responsiveness*/)),
 
         /// creates padding with 10px bottom only
-        Padding(padding: 10.padBottom),
+        Padding(padding: 10.padBottom(/*true if you want to use responsiveness*/)),
 
         /// creates padding with 10px left only
-        Padding(padding: 10.padLeft),
+        Padding(padding: 10.padLeft(/*true if you want to use responsiveness*/)),
 
         /// creates padding with 10px horizontal
-        Padding(padding: 10.padX),
+        Padding(padding: 10.padX(/*true if you want to use responsiveness*/)),
 
         /// creates padding with 10px vertical
-        Padding(padding: 10.padY),
+        Padding(padding: 10.padY(/*true if you want to use responsiveness*/)),
       ],
     );
   }
@@ -517,7 +511,7 @@ class SliverSpaceY extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverList(/*children*/),
-        10.sliverVerticalSpace,
+        10.sliverVerticalSpace(/*true if you want to use responsiveness*/),
         SliverList(/*children*/)
       ],
     );
@@ -543,7 +537,7 @@ class SliverSpaceX extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       slivers: [
         SliverPadding(padding: 10.all),
-        10.sliverHorizontalSpace,
+        10.sliverHorizontalSpace(/*true if you want to use responsiveness*/),
         SliverPadding(padding: 10.all),
       ],
     );
@@ -686,14 +680,14 @@ class AlignTest extends StatelessWidget {
 <li>
 <h4 id="padding">Padding</h4>
 <ul>
-<li>pad</li>
-<li>padX</li>
-<li>padY</li>
-<li>padLeft</li>
-<li>padTop</li>
-<li>padRight</li>
-<li>padBottom</li>
-<li>padLTRB</li>
+<li>pad()</li>
+<li>padX()</li>
+<li>padY()</li>
+<li>padLeft()</li>
+<li>padTop()</li>
+<li>padRight()</li>
+<li>padBottom()</li>
+<li>padLTRB()</li>
 </ul>
 </li>
 </ul>
@@ -710,28 +704,31 @@ class PaddingTest extends StatelessWidget {
       children: [
 
         /// wraps with all padding
-        const Text('Text 1').pad(10),
+        const Text('Text 1').pad(10,responsive:true /* if you want to use responsiveness */),
 
         /// wraps with left only padding
-        const Text('Text 1').padLeft(10),
+        const Text('Text 1').padLeft(10,responsive:true /* if you want to use responsiveness */),
 
         /// wraps with right only padding
-        const Text('Text 1').padRight(10),
+        const Text('Text 1').padRight(10,responsive:true /* if you want to use responsiveness */),
 
         /// wraps with bottom only padding
-        const Text('Text 1').padBottom(10),
+        const Text('Text 1').padBottom(10,responsive:true /* if you want to use responsiveness */),
 
         /// wraps with top only padding
-        const Text('Text 1').padTop(10),
+        const Text('Text 1').padTop(10,responsive:true /* if you want to use responsiveness */),
 
         /// wraps with horizontal padding
-        const Text('Text 1').padX(10),
+        const Text('Text 1').padX(10,responsive:true /* if you want to use responsiveness */),
 
         /// wraps width vertical padding
-        const Text('Text 1').padY(10),
+        const Text('Text 1').padY(10,responsive:true /* if you want to use responsiveness */),
 
         /// wraps widget with padding of left top right bottom
-        const Text('Text 1').padLTRB(left: 10, top: 5, right: 10, bottom: 10),
+        const Text('Text 1').padLTRB(left: 10,
+         top: 5, right: 10, bottom: 10,
+         responsive:true /* if you want to use responsiveness */
+         ),
 
       ],
     );
@@ -993,7 +990,24 @@ final Color onErrorContainerColor = context.onErrorContainerColor;
 
 </code></pre>
 <h2 id="fpsnackbar">FPSnackbar</h2>
-<p>helper class for showing snackbars</p>
+<p>Singleton class for showing Snackbar</p>
+<ul>
+<li>
+<h3 id="global-properties">Global Properties</h3>
+<ul>
+<li>defaultStyle</li>
+<li>successStyle</li>
+<li>errorStyle</li>
+<li>warningStyle</li>
+<li>infoStyle</li>
+<li>duration (defaults 3 seconds)</li>
+<li>floating (defaults true)</li>
+<li>centerText (defaults false)</li>
+<li>contextMaxLines (defaults 2)</li>
+</ul>
+</li>
+</ul>
+<p>you can change global properties using <code>FPSnackbar.instance.propertyName = value</code></p>
 <ul>
 <li>
 <h3 id="variants">Variants</h3>
@@ -1041,20 +1055,12 @@ Snackbar for warning messages
 </code></pre>
 </li>
 <li>
-<h4 id="custom">Custom</h4>
-Snackbar for custom snackbars
-<pre class="language-dart"><code class="language-dart">   FPSnackbar.custom(
+<h4 id="default">Default</h4>
+Default Snackbar
+<pre class="language-dart"><code class="language-dart">   FPSnackbar.show(
         context,
         title: 'Create User',
         message: 'message',
-        color:(light:Colors.blue,dark:Colors.green,bar:Colors.red)
-        textStyle: const TextStyle(
-          fontSize: 14,
-          color: Colors.white,
-        ),
-        titleTextStyle: const TextStyle(fontSize: 18),
-        icon: const Icon(Icons.check),
-        duration: 4,
       );
 </code></pre>
 </li>
@@ -1106,7 +1112,7 @@ Snackbar for custom snackbars
 <footer>
   <span class="no-break">
     fp_util
-      1.2.18
+      2.1.0
   </span>
 
   

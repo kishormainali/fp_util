@@ -81,7 +81,7 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">double setHeight(double px) {
   if (!_initialized) throw Exception(&#39;SizeUtils not initialized.&#39;);
-  return (px * _height) &#47; (_designSize.height - 44);
+  return _scaleHeight * px;
 }</code></pre>
 </section>
 
@@ -115,7 +115,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.18
+      2.1.0
   </span>
 
   

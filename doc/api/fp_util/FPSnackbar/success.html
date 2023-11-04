@@ -63,10 +63,10 @@
     <section class="multi-line-signature">
       
 
-<span class="returntype">dynamic</span>
+<span class="returntype">void</span>
 <span class="name ">success</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="success-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span></li>
 <li><span class="parameter" id="success-param-message">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>, </span></li>
-<li><span class="parameter" id="success-param-title"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">title</span> = <span class="default-value">&#39;Success&#39;</span>, </span></li>
+<li><span class="parameter" id="success-param-title"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">title</span>, </span></li>
 <li><span class="parameter" id="success-param-actionText"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">actionText</span>, </span></li>
 <li><span class="parameter" id="success-param-onActionTap"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onActionTap</span>}</span></li>
 </ol>)
@@ -83,33 +83,28 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">static success(
+  <pre class="language-dart"><code class="language-dart">static void success(
   BuildContext context, {
   required String message,
-  String? title = &#39;Success&#39;,
+  String? title,
   String? actionText,
   VoidCallback? onActionTap,
-}) =&gt;
-    _showSnackbar(
-      context: context,
-      backgroundColor: const Color(0xFF2D7738),
-      textStyle: const TextStyle(
-        fontSize: 16,
-        height: 1.25,
-        color: Colors.white,
-      ),
-      titleTextStyle: const TextStyle(
-        fontSize: 16,
-        height: 1.25,
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
-      ),
-      message: message,
-      title: title,
-      duration: 3,
-      actionText: actionText,
-      onActionTap: onActionTap,
-    );</code></pre>
+}) {
+  _instance._showSnackbar(
+    context: context,
+    backgroundColor: _instance._successStyle.backgroundColor,
+    textStyle: _instance._successStyle.textStyle,
+    titleTextStyle: _instance._successStyle.titleTextStyle,
+    message: message,
+    title: title,
+    duration: _instance._duration,
+    actionText: actionText,
+    onActionTap: onActionTap,
+    floating: _instance._floating,
+    centerText: _instance._centerText,
+    contentMaxLines: _instance._contentMaxLines,
+  );
+}</code></pre>
 </section>
 
 
@@ -142,7 +137,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.18
+      2.1.0
   </span>
 
   

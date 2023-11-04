@@ -78,7 +78,9 @@ widgets, but don't want to use <a href="https://api.flutter.dev/flutter/widgets/
       <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
         <li><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree-class.html">DiagnosticableTree</a></li>
         <li><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></li>
-        <li><a href="https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html">StatelessWidget</a></li>
+        <li><a href="https://api.flutter.dev/flutter/widgets/RenderObjectWidget-class.html">RenderObjectWidget</a></li>
+        <li><a href="https://api.flutter.dev/flutter/widgets/SingleChildRenderObjectWidget-class.html">SingleChildRenderObjectWidget</a></li>
+        <li><a href="https://api.flutter.dev/flutter/widgets/Padding-class.html">Padding</a></li>
       <li>PaddedColumn</li>
     </ul>
   </dd>
@@ -108,34 +110,22 @@ widgets, but don't want to use <a href="https://api.flutter.dev/flutter/widgets/
         </dt>
         <dd>
           A widget that displays its children in a vertical array with padding.
-            <div class="constructor-modifier features">const</div>
         </dd>
     </dl>
   </section>
 
-    <section class="summary offset-anchor" id="instance-properties">
+    <section class="summary offset-anchor inherited" id="instance-properties">
       <h2>Properties</h2>
 
       <dl class="properties">
-        <dt id="children" class="property">
-  <span class="name"><a href="../fp_util/PaddedColumn/children.html">children</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>&gt;</span></span> 
+        <dt id="child" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/SingleChildRenderObjectWidget/child.html">child</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> 
 
 </dt>
-<dd>
-  children to display in the column
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
-        <dt id="crossAxisAlignment" class="property">
-  <span class="name"><a href="../fp_util/PaddedColumn/crossAxisAlignment.html">crossAxisAlignment</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/rendering/CrossAxisAlignment.html">CrossAxisAlignment</a></span> 
-
-</dt>
-<dd>
-  how the children should be placed along the cross axis
-  <div class="features"><span class="feature">final</span></div>
+<dd class="inherited">
+  The widget below this widget in the tree.
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -161,36 +151,14 @@ widgets, but don't want to use <a href="https://api.flutter.dev/flutter/widgets/
 
 </dd>
 
-        <dt id="mainAxisAlignment" class="property">
-  <span class="name"><a href="../fp_util/PaddedColumn/mainAxisAlignment.html">mainAxisAlignment</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/rendering/MainAxisAlignment.html">MainAxisAlignment</a></span> 
-
-</dt>
-<dd>
-  how the children should be placed along the main axis
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
-        <dt id="mainAxisSize" class="property">
-  <span class="name"><a href="../fp_util/PaddedColumn/mainAxisSize.html">mainAxisSize</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/rendering/MainAxisSize.html">MainAxisSize</a></span> 
-
-</dt>
-<dd>
-  how much space should be occupied in the main axis
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
-        <dt id="padding" class="property">
-  <span class="name"><a href="../fp_util/PaddedColumn/padding.html">padding</a></span>
+        <dt id="padding" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Padding/padding.html">padding</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/painting/EdgeInsetsGeometry-class.html">EdgeInsetsGeometry</a></span> 
 
 </dt>
-<dd>
-  padding around the column
-  <div class="features"><span class="feature">final</span></div>
+<dd class="inherited">
+  The amount of space by which to inset the child.
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -205,70 +173,39 @@ widgets, but don't want to use <a href="https://api.flutter.dev/flutter/widgets/
 
 </dd>
 
-        <dt id="textBaseline" class="property">
-  <span class="name"><a href="../fp_util/PaddedColumn/textBaseline.html">textBaseline</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-ui/TextBaseline.html">TextBaseline</a>?</span> 
-
-</dt>
-<dd>
-  If aligning items according to their baseline, which baseline to use.
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
-        <dt id="textDirection" class="property">
-  <span class="name"><a href="../fp_util/PaddedColumn/textDirection.html">textDirection</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-ui/TextDirection.html">TextDirection</a>?</span> 
-
-</dt>
-<dd>
-  the direction in which the text flows
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
-        <dt id="verticalDirection" class="property">
-  <span class="name"><a href="../fp_util/PaddedColumn/verticalDirection.html">verticalDirection</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/painting/VerticalDirection.html">VerticalDirection</a></span> 
-
-</dt>
-<dd>
-  the direction in which the children are placed vertically
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
       </dl>
     </section>
 
     
   <section
-      class="summary offset-anchor"
+      class="summary offset-anchor inherited"
       id="instance-methods">
     <h2>Methods</h2>
     <dl class="callables">
-        <dt id="build" class="callable">
-  <span class="name"><a href="../fp_util/PaddedColumn/build.html">build</a></span><span class="signature">(<wbr><span class="parameter" id="build-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
-  </span>
-  
-
-</dt>
-<dd>
-  Describes the part of the user interface represented by this widget.
-  <div class="features"><span class="feature">override</span></div>
-
-</dd>
-
         <dt id="createElement" class="callable inherited">
-  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/StatelessWidget/createElement.html">createElement</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/widgets/StatelessElement-class.html">StatelessElement</a></span>
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/SingleChildRenderObjectWidget/createElement.html">createElement</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/widgets/SingleChildRenderObjectElement-class.html">SingleChildRenderObjectElement</a></span>
   </span>
   
 
 </dt>
 <dd class="inherited">
-  Creates a <a href="https://api.flutter.dev/flutter/widgets/StatelessElement-class.html">StatelessElement</a> to manage this widget's location in the tree.
+  RenderObjectWidgets always inflate to a <a href="https://api.flutter.dev/flutter/widgets/RenderObjectElement-class.html">RenderObjectElement</a> subclass.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="createRenderObject" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Padding/createRenderObject.html">createRenderObject</a></span><span class="signature">(<wbr><span class="parameter" id="createRenderObject-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/rendering/RenderPadding-class.html">RenderPadding</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Creates an instance of the <a href="https://api.flutter.dev/flutter/rendering/RenderObject-class.html">RenderObject</a> class that this
+<a href="https://api.flutter.dev/flutter/widgets/RenderObjectWidget-class.html">RenderObjectWidget</a> represents, using the configuration described by this
+<a href="https://api.flutter.dev/flutter/widgets/RenderObjectWidget-class.html">RenderObjectWidget</a>.
   <div class="features"><span class="feature">inherited</span></div>
 
 </dd>
@@ -288,7 +225,7 @@ children.
 </dd>
 
         <dt id="debugFillProperties" class="callable inherited">
-  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/debugFillProperties.html">debugFillProperties</a></span><span class="signature">(<wbr><span class="parameter" id="debugFillProperties-param-properties"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticPropertiesBuilder-class.html">DiagnosticPropertiesBuilder</a></span> <span class="parameter-name">properties</span></span>)
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Padding/debugFillProperties.html">debugFillProperties</a></span><span class="signature">(<wbr><span class="parameter" id="debugFillProperties-param-properties"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticPropertiesBuilder-class.html">DiagnosticPropertiesBuilder</a></span> <span class="parameter-name">properties</span></span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -296,6 +233,21 @@ children.
 </dt>
 <dd class="inherited">
   Add additional properties associated with the node.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="didUnmountRenderObject" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/RenderObjectWidget/didUnmountRenderObject.html">didUnmountRenderObject</a></span><span class="signature">(<wbr><span class="parameter" id="didUnmountRenderObject-param-renderObject"><span>covariant</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/rendering/RenderObject-class.html">RenderObject</a></span> <span class="parameter-name">renderObject</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  A render object previously associated with this widget has been removed
+from the tree. The given <a href="https://api.flutter.dev/flutter/rendering/RenderObject-class.html">RenderObject</a> will be of the same type as
+returned by this object's <a href="https://api.flutter.dev/flutter/widgets/Padding/createRenderObject.html">createRenderObject</a>.
   <div class="features"><span class="feature">inherited</span></div>
 
 </dd>
@@ -379,6 +331,21 @@ tools and by <a href="https://api.flutter.dev/flutter/foundation/DiagnosticsNode
 
 </dd>
 
+        <dt id="updateRenderObject" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Padding/updateRenderObject.html">updateRenderObject</a></span><span class="signature">(<wbr><span class="parameter" id="updateRenderObject-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span><span class="parameter" id="updateRenderObject-param-renderObject"><span>covariant</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/rendering/RenderPadding-class.html">RenderPadding</a></span> <span class="parameter-name">renderObject</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Copies the configuration described by this <a href="https://api.flutter.dev/flutter/widgets/RenderObjectWidget-class.html">RenderObjectWidget</a> to the
+given <a href="https://api.flutter.dev/flutter/rendering/RenderObject-class.html">RenderObject</a>, which will be of the same type as returned by this
+object's <a href="https://api.flutter.dev/flutter/widgets/Padding/createRenderObject.html">createRenderObject</a>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
     </dl>
   </section>
     
@@ -436,7 +403,7 @@ tools and by <a href="https://api.flutter.dev/flutter/foundation/DiagnosticsNode
 <footer>
   <span class="no-break">
     fp_util
-      1.2.18
+      2.1.0
   </span>
 
   

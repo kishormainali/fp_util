@@ -66,7 +66,8 @@
 <span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
 <span class="name ">clickable</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="clickable-param-onTap">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onTap</span>, </span></li>
 <li><span class="parameter" id="clickable-param-onDoubleTap"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onDoubleTap</span>, </span></li>
-<li><span class="parameter" id="clickable-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>}</span></li>
+<li><span class="parameter" id="clickable-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span></li>
+<li><span class="parameter" id="clickable-param-opaque"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">opaque</span> = <span class="default-value">true</span>}</span></li>
 </ol>)
 
       
@@ -85,12 +86,14 @@
   VoidCallback? onTap,
   VoidCallback? onDoubleTap,
   Key? key,
+  bool opaque = true,
 }) =&gt;
     GestureDetector(
       key: key,
       onTap: onTap,
       onDoubleTap: onDoubleTap,
-      behavior: HitTestBehavior.opaque,
+      behavior:
+          opaque ? HitTestBehavior.opaque : HitTestBehavior.deferToChild,
       child: this,
     );</code></pre>
 </section>
@@ -125,7 +128,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.18
+      2.1.0
   </span>
 
   

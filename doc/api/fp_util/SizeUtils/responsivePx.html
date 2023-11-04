@@ -87,7 +87,7 @@
   double? desktop,
 }) {
   if (!_initialized) throw Exception(&#39;SizeUtils not initialized.&#39;);
-  final deviceType = DeviceType.fromSize(_size);
+  final deviceType = DeviceType.fromSize(Size(_width, _height));
   return switch (deviceType) {
     DeviceType.mobile =&gt; getSize(mobile),
     DeviceType.tablet =&gt; getSize(tablet ?? mobile),
@@ -126,7 +126,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.18
+      2.1.0
   </span>
 
   

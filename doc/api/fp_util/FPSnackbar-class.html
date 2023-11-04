@@ -62,7 +62,7 @@
 
     
 <section class="desc markdown">
-  <p>snackbar helper class</p>
+  <p>A singleton class to show snackbar</p>
 </section>
 
 
@@ -77,14 +77,81 @@
         </dt>
         <dd>
           
+            <div class="constructor-modifier features">factory</div>
         </dd>
     </dl>
   </section>
 
-    <section class="summary offset-anchor inherited" id="instance-properties">
+    <section class="summary offset-anchor" id="instance-properties">
       <h2>Properties</h2>
 
       <dl class="properties">
+        <dt id="centerText" class="property">
+  <span class="name"><a href="../fp_util/FPSnackbar/centerText.html">centerText</a></span>
+  <span class="signature">&#8592; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd>
+  set default center message text
+  <div class="features"><span class="feature">write-only</span></div>
+
+</dd>
+
+        <dt id="contentMaxLines" class="property">
+  <span class="name"><a href="../fp_util/FPSnackbar/contentMaxLines.html">contentMaxLines</a></span>
+  <span class="signature">&#8592; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> 
+
+</dt>
+<dd>
+  set default content max lines
+  <div class="features"><span class="feature">write-only</span></div>
+
+</dd>
+
+        <dt id="defaultStyle" class="property">
+  <span class="name"><a href="../fp_util/FPSnackbar/defaultStyle.html">defaultStyle</a></span>
+  <span class="signature">&#8592; <a href="../fp_util/FPSnackBarStyle-class.html">FPSnackBarStyle</a></span> 
+
+</dt>
+<dd>
+  set default text style
+  <div class="features"><span class="feature">write-only</span></div>
+
+</dd>
+
+        <dt id="duration" class="property">
+  <span class="name"><a href="../fp_util/FPSnackbar/duration.html">duration</a></span>
+  <span class="signature">&#8592; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd>
+  set default duration
+  <div class="features"><span class="feature">write-only</span></div>
+
+</dd>
+
+        <dt id="errorStyle" class="property">
+  <span class="name"><a href="../fp_util/FPSnackbar/errorStyle.html">errorStyle</a></span>
+  <span class="signature">&#8592; <a href="../fp_util/FPSnackBarStyle-class.html">FPSnackBarStyle</a></span> 
+
+</dt>
+<dd>
+  set default error style
+  <div class="features"><span class="feature">write-only</span></div>
+
+</dd>
+
+        <dt id="floating" class="property">
+  <span class="name"><a href="../fp_util/FPSnackbar/floating.html">floating</a></span>
+  <span class="signature">&#8592; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd>
+  set default floating
+  <div class="features"><span class="feature">write-only</span></div>
+
+</dd>
+
         <dt id="hashCode" class="property inherited">
   <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
@@ -93,6 +160,17 @@
 <dd class="inherited">
   The hash code for this object.
   <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="infoStyle" class="property">
+  <span class="name"><a href="../fp_util/FPSnackbar/infoStyle.html">infoStyle</a></span>
+  <span class="signature">&#8592; <a href="../fp_util/FPSnackBarStyle-class.html">FPSnackBarStyle</a></span> 
+
+</dt>
+<dd>
+  set default info style
+  <div class="features"><span class="feature">write-only</span></div>
 
 </dd>
 
@@ -107,12 +185,34 @@
 
 </dd>
 
+        <dt id="successStyle" class="property">
+  <span class="name"><a href="../fp_util/FPSnackbar/successStyle.html">successStyle</a></span>
+  <span class="signature">&#8592; <a href="../fp_util/FPSnackBarStyle-class.html">FPSnackBarStyle</a></span> 
+
+</dt>
+<dd>
+  set default title text style
+  <div class="features"><span class="feature">write-only</span></div>
+
+</dd>
+
+        <dt id="warningStyle" class="property">
+  <span class="name"><a href="../fp_util/FPSnackbar/warningStyle.html">warningStyle</a></span>
+  <span class="signature">&#8592; <a href="../fp_util/FPSnackBarStyle-class.html">FPSnackBarStyle</a></span> 
+
+</dt>
+<dd>
+  set default warning style
+  <div class="features"><span class="feature">write-only</span></div>
+
+</dd>
+
       </dl>
     </section>
 
     
   <section
-      class="summary offset-anchor inherited"
+      class="summary offset-anchor"
       id="instance-methods">
     <h2>Methods</h2>
     <dl class="callables">
@@ -166,26 +266,30 @@
     </dl>
   </section>
     
+  <section class="summary offset-anchor" id="static-properties">
+    <h2>Static Properties</h2>
+
+    <dl class="properties">
+        <dt id="instance" class="property">
+  <span class="name"><a href="../fp_util/FPSnackbar/instance.html">instance</a></span>
+  <span class="signature">&#8594; <a href="../fp_util/FPSnackbar-class.html">FPSnackbar</a></span> 
+
+</dt>
+<dd>
+  singleton instance
+  <div class="features"><span class="feature">read-only</span></div>
+
+</dd>
+
+    </dl>
+  </section>
     
   <section class="summary offset-anchor" id="static-methods">
     <h2>Static Methods</h2>
     <dl class="callables">
-        <dt id="custom" class="callable">
-  <span class="name"><a href="../fp_util/FPSnackbar/custom.html">custom</a></span><span class="signature">(<wbr><span class="parameter" id="custom-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span><span class="parameter" id="custom-param-message">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="custom-param-title"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">title</span>, </span><span class="parameter" id="custom-param-duration"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">duration</span> = <span class="default-value">3</span>, </span><span class="parameter" id="custom-param-backgroundColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">backgroundColor</span> = <span class="default-value">Colors.black12</span>, </span><span class="parameter" id="custom-param-textStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a></span> <span class="parameter-name">textStyle</span> = <span class="default-value">const TextStyle(fontSize: 16, height: 1.25, color: Colors.white)</span>, </span><span class="parameter" id="custom-param-titleTextStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a></span> <span class="parameter-name">titleTextStyle</span> = <span class="default-value">const TextStyle(fontSize: 16, height: 1.25, color: Colors.white, fontWeight: FontWeight.w500)</span>, </span><span class="parameter" id="custom-param-actionText"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">actionText</span>, </span><span class="parameter" id="custom-param-onActionTap"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onActionTap</span>}</span>)
-    <span class="returntype parameter">&#8594; dynamic</span>
-  </span>
-  
-
-</dt>
-<dd>
-  show custom Snackbar
-  
-
-</dd>
-
         <dt id="error" class="callable">
-  <span class="name"><a href="../fp_util/FPSnackbar/error.html">error</a></span><span class="signature">(<wbr><span class="parameter" id="error-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span><span class="parameter" id="error-param-message">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="error-param-title"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">title</span> = <span class="default-value">&#39;Error&#39;</span>, </span><span class="parameter" id="error-param-actionText"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">actionText</span>, </span><span class="parameter" id="error-param-onActionTap"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onActionTap</span>}</span>)
-    <span class="returntype parameter">&#8594; dynamic</span>
+  <span class="name"><a href="../fp_util/FPSnackbar/error.html">error</a></span><span class="signature">(<wbr><span class="parameter" id="error-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span><span class="parameter" id="error-param-message">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="error-param-title"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">title</span>, </span><span class="parameter" id="error-param-actionText"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">actionText</span>, </span><span class="parameter" id="error-param-onActionTap"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onActionTap</span>}</span>)
+    <span class="returntype parameter">&#8594; void</span>
   </span>
   
 
@@ -197,8 +301,8 @@
 </dd>
 
         <dt id="info" class="callable">
-  <span class="name"><a href="../fp_util/FPSnackbar/info.html">info</a></span><span class="signature">(<wbr><span class="parameter" id="info-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span><span class="parameter" id="info-param-message">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="info-param-title"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">title</span> = <span class="default-value">&#39;Info&#39;</span>, </span><span class="parameter" id="info-param-actionText"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">actionText</span>, </span><span class="parameter" id="info-param-onActionTap"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onActionTap</span>}</span>)
-    <span class="returntype parameter">&#8594; dynamic</span>
+  <span class="name"><a href="../fp_util/FPSnackbar/info.html">info</a></span><span class="signature">(<wbr><span class="parameter" id="info-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span><span class="parameter" id="info-param-message">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="info-param-title"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">title</span>, </span><span class="parameter" id="info-param-actionText"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">actionText</span>, </span><span class="parameter" id="info-param-onActionTap"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onActionTap</span>}</span>)
+    <span class="returntype parameter">&#8594; void</span>
   </span>
   
 
@@ -209,9 +313,22 @@
 
 </dd>
 
+        <dt id="show" class="callable">
+  <span class="name"><a href="../fp_util/FPSnackbar/show.html">show</a></span><span class="signature">(<wbr><span class="parameter" id="show-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span><span class="parameter" id="show-param-message">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="show-param-title"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">title</span>, </span><span class="parameter" id="show-param-actionText"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">actionText</span>, </span><span class="parameter" id="show-param-onActionTap"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onActionTap</span>}</span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  show default snackbar
+  
+
+</dd>
+
         <dt id="success" class="callable">
-  <span class="name"><a href="../fp_util/FPSnackbar/success.html">success</a></span><span class="signature">(<wbr><span class="parameter" id="success-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span><span class="parameter" id="success-param-message">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="success-param-title"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">title</span> = <span class="default-value">&#39;Success&#39;</span>, </span><span class="parameter" id="success-param-actionText"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">actionText</span>, </span><span class="parameter" id="success-param-onActionTap"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onActionTap</span>}</span>)
-    <span class="returntype parameter">&#8594; dynamic</span>
+  <span class="name"><a href="../fp_util/FPSnackbar/success.html">success</a></span><span class="signature">(<wbr><span class="parameter" id="success-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span><span class="parameter" id="success-param-message">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="success-param-title"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">title</span>, </span><span class="parameter" id="success-param-actionText"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">actionText</span>, </span><span class="parameter" id="success-param-onActionTap"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onActionTap</span>}</span>)
+    <span class="returntype parameter">&#8594; void</span>
   </span>
   
 
@@ -223,8 +340,8 @@
 </dd>
 
         <dt id="warning" class="callable">
-  <span class="name"><a href="../fp_util/FPSnackbar/warning.html">warning</a></span><span class="signature">(<wbr><span class="parameter" id="warning-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span><span class="parameter" id="warning-param-message">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="warning-param-title"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">title</span> = <span class="default-value">&#39;Warning!&#39;</span>, </span><span class="parameter" id="warning-param-actionText"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">actionText</span>, </span><span class="parameter" id="warning-param-onActionTap"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onActionTap</span>}</span>)
-    <span class="returntype parameter">&#8594; dynamic</span>
+  <span class="name"><a href="../fp_util/FPSnackbar/warning.html">warning</a></span><span class="signature">(<wbr><span class="parameter" id="warning-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span><span class="parameter" id="warning-param-message">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="warning-param-title"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">title</span>, </span><span class="parameter" id="warning-param-actionText"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">actionText</span>, </span><span class="parameter" id="warning-param-onActionTap"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> <span class="parameter-name">onActionTap</span>}</span>)
+    <span class="returntype parameter">&#8594; void</span>
   </span>
   
 
@@ -269,7 +386,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.18
+      2.1.0
   </span>
 
   

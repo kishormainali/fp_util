@@ -135,6 +135,24 @@
 </dt>
 <dd>
   get responsive size
+return min of width and height
+  
+
+</dd>
+
+        <dt id="init" class="callable">
+  <span class="name"><a href="../fp_util/SizeUtils/init.html">init</a></span><span class="signature">(<wbr><span class="parameter" id="init-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span><span class="parameter" id="init-param-minTextAdapt">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">minTextAdapt</span> = <span class="default-value">true</span>, </span><span class="parameter" id="init-param-splitScreenAdapt"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">splitScreenAdapt</span> = <span class="default-value">false</span>, </span><span class="parameter" id="init-param-designSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Size-class.html">Size</a></span> <span class="parameter-name">designSize</span> = <span class="default-value">_defaultDesignSize</span>}</span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  initialize <a href="../fp_util/SizeUtils-class.html">SizeUtils</a>
+<code>minTextAdapt</code> if true, text will adapt to min scale of width and height
+<code>splitScreenAdapt</code> if true, height will adapt to max of 700
+<code>designSize</code> default design size
+<code>context</code> BuildContext to retrieve view
   
 
 </dd>
@@ -161,6 +179,19 @@
 </dt>
 <dd>
   get responsive px according to device type
+  
+
+</dd>
+
+        <dt id="setFontSize" class="callable">
+  <span class="name"><a href="../fp_util/SizeUtils/setFontSize.html">setFontSize</a></span><span class="signature">(<wbr><span class="parameter" id="setFontSize-param-px"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">px</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
   
 
 </dd>
@@ -201,20 +232,6 @@
 <dd class="inherited">
   A string representation of this object.
   <div class="features"><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="updateDesignSize" class="callable">
-  <span class="name"><a href="../fp_util/SizeUtils/updateDesignSize.html">updateDesignSize</a></span><span class="signature">(<wbr><span class="parameter" id="updateDesignSize-param-figmaSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Size-class.html">Size</a></span> <span class="parameter-name">figmaSize</span></span>)
-    <span class="returntype parameter">&#8594; void</span>
-  </span>
-  
-
-</dt>
-<dd>
-  must call this if your figma design is different
-call this function on root of app
-  
 
 </dd>
 
@@ -292,7 +309,7 @@ call this function on root of app
 <footer>
   <span class="no-break">
     fp_util
-      1.2.18
+      2.1.0
   </span>
 
   

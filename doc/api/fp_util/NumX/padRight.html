@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the padRight property from the NumX extension, for the Dart programming language.">
-  <title>padRight property - NumX extension - fp_util library - Dart API</title>
+  <meta name="description" content="API docs for the padRight method from the NumX extension, for the Dart programming language.">
+  <title>padRight method - NumX extension - fp_util library - Dart API</title>
 
 
   
@@ -31,7 +31,7 @@
     <li><a href="../../index.html">fp_util</a></li>
     <li><a href="../../fp_util/fp_util-library.html">fp_util</a></li>
     <li><a href="../../fp_util/NumX.html">NumX</a></li>
-    <li class="self-crumb">padRight property</li>
+    <li class="self-crumb">padRight method</li>
   </ol>
   <div class="self-name">padRight</div>
   <form class="search navbar-right" role="search">
@@ -57,32 +57,30 @@
       data-above-sidebar="fp_util&#47;NumX-extension-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-property">padRight</span> property 
+<h1><span class="kind-method">padRight</span> method 
 </h1></div>
 
+    <section class="multi-line-signature">
+      
 
-        
-<section id="getter">
+<span class="returntype"><a href="https://api.flutter.dev/flutter/painting/EdgeInsets-class.html">EdgeInsets</a></span>
+<span class="name ">padRight</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="padRight-param-responsive">[<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">responsive</span> = <span class="default-value">false</span>]</span></li>
+</ol>)
 
-<section class="multi-line-signature">
-  
-  <span class="returntype"><a href="https://api.flutter.dev/flutter/painting/EdgeInsets-class.html">EdgeInsets</a></span>
-  <span class="name ">padRight</span>
-  
+      
 
-</section>
-
-
+    </section>
+    
 <section class="desc markdown">
   <p>get right EdgeInsets</p>
 </section>
 
 
+    
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">EdgeInsets get padRight =&gt; EdgeInsets.only(right: toDouble());</code></pre>
-</section>
-
+  <pre class="language-dart"><code class="language-dart">EdgeInsets padRight([bool responsive = false]) =&gt;
+    EdgeInsets.only(right: responsiveW(responsive));</code></pre>
 </section>
 
 
@@ -100,7 +98,7 @@
     <li><a href="../../index.html">fp_util</a></li>
     <li><a href="../../fp_util/fp_util-library.html">fp_util</a></li>
     <li><a href="../../fp_util/NumX.html">NumX</a></li>
-    <li class="self-crumb">padRight property</li>
+    <li class="self-crumb">padRight method</li>
 </ol>
 
 
@@ -115,7 +113,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.18
+      2.1.0
   </span>
 
   

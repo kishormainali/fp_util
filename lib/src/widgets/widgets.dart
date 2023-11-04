@@ -20,3 +20,4 @@ export 'sized_scrollable_row.dart';
 export 'social_button.dart';
 export 'spaced_column.dart';
 export 'spaced_row.dart';
+export 'tags_input_field.dart';

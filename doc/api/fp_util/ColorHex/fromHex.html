@@ -88,13 +88,8 @@ Color color = ColorHex.fromHex('#FF0000', 50);
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">static Color fromHex(String hex, [int opacity = 100]) {
-  assert(opacity &gt;= 0 &amp;&amp; opacity &lt;= 100);
-  final buffer = StringBuffer();
-  if (hex.length == 6 || hex.length == 7) buffer.write(_fromOpacity(opacity));
-  buffer.write(hex.replaceFirst(&#39;#&#39;, &#39;&#39;));
-  return Color(int.parse(buffer.toString(), radix: 16));
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">static Color fromHex(String hex, [int opacity = 100]) =&gt;
+    HexColor(hex, opacity);</code></pre>
 </section>
 
 
@@ -127,7 +122,7 @@ Color color = ColorHex.fromHex('#FF0000', 50);
 <footer>
   <span class="no-break">
     fp_util
-      1.2.18
+      2.1.0
   </span>
 
   

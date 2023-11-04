@@ -65,7 +65,8 @@
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Padding-class.html">Padding</a></span>
 <span class="name ">padY</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="padY-param-padding"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">padding</span>, </span></li>
-<li><span class="parameter" id="padY-param-key">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>}</span></li>
+<li><span class="parameter" id="padY-param-key">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span></li>
+<li><span class="parameter" id="padY-param-responsive"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">responsive</span> = <span class="default-value">false</span>}</span></li>
 </ol>)
 
       
@@ -83,10 +84,12 @@
   <pre class="language-dart"><code class="language-dart">Padding padY(
   double padding, {
   Key? key,
+  bool responsive = false,
 }) =&gt;
     Padding(
       key: key,
-      padding: EdgeInsets.symmetric(vertical: padding),
+      padding:
+          EdgeInsets.symmetric(vertical: padding.responsiveH(responsive)),
       child: this,
     );</code></pre>
 </section>
@@ -121,7 +124,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.18
+      2.1.0
   </span>
 
   

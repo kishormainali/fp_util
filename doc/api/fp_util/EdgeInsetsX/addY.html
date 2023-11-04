@@ -64,7 +64,8 @@
       
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/painting/EdgeInsets-class.html">EdgeInsets</a></span>
-<span class="name ">addY</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="addY-param-add"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">add</span></span></li>
+<span class="name ">addY</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="addY-param-add"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">add</span>, </span></li>
+<li><span class="parameter" id="addY-param-responsive">[<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">responsive</span> = <span class="default-value">false</span>]</span></li>
 </ol>)
 
       
@@ -79,7 +80,10 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">EdgeInsets addY(double add) =&gt; copyWith(top: top + add, bottom: bottom + add);</code></pre>
+  <pre class="language-dart"><code class="language-dart">EdgeInsets addY(double add, [bool responsive = false]) =&gt; copyWith(
+      top: (top + add).responsiveH(responsive),
+      bottom: (bottom + add).responsiveH(responsive),
+    );</code></pre>
 </section>
 
 
@@ -112,7 +116,7 @@
 <footer>
   <span class="no-break">
     fp_util
-      1.2.18
+      2.1.0
   </span>
 
   

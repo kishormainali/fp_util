@@ -1,3 +1,7 @@
+# 2.1.1
+- added `TagsInputField` widget
+- added `uuid` helper class
+
 # 2.1.0
 > This release contains BREAKING CHANGES
 - removed `horizontalSpace` and `verticalSpace` extension use `gap()` instead

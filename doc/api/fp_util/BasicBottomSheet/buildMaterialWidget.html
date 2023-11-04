@@ -95,10 +95,10 @@ Widget buildMaterialWidget(BuildContext context) {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           if (title != null) title!,
-          material?.titleSpacing.verticalSpace ?? Sizes.gapV12,
+          material?.titleSpacing.gap() ?? Sizes.gap12,
           content,
           if (material?.actions != null) ...[
-            Sizes.gapV12,
+            Sizes.gap12,
             ...material!.actions!,
           ],
         ],
@@ -138,7 +138,7 @@ Widget buildMaterialWidget(BuildContext context) {
 <footer>
   <span class="no-break">
     fp_util
-      1.2.18
+      2.1.0
   </span>
 
   
