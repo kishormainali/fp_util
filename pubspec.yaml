@@ -1,9 +1,9 @@
 name: fp_util
 description: Utilities and Extensions for num,BuildContext,EdgeInsets,File,String. constants for horizontal and vertical spacing.
-version: 2.1.1
+version: 2.1.2
 homepage: https://mkcli.kishormainali.com/
 repository: https://github.com/kishormainali/fp_util
-topics: ['flutter', 'dart', 'utility', 'extensions', 'spacing', 'constants', 'num', 'buildcontext', 'edgeinsets', 'file', 'string','tags_input_field']
+topics: ['flutter','utility', 'extensions', 'spacing','tagsinputfield']
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -18,10 +18,10 @@ dependencies:
   image_picker: ">=1.0.0 <2.0.0"
 
   # file picker
-  file_picker: ^6.0.0
+  file_picker: ^6.1.1
 
   # svg
-  flutter_svg: ^2.0.8
+  flutter_svg: ^2.0.9
 
   freezed_annotation: ^2.4.1
 
@@ -35,11 +35,11 @@ dependencies:
 
   gap: ^3.0.1
 
-  uuid: ^4.1.0
+  uuid: ^4.2.1
 
 
 dev_dependencies:
-  flutter_lints: ^3.0.0
+  flutter_lints: ^3.0.1
   freezed: ^2.4.5
   build_runner: ">=2.4.0 <=3.0.0"
 

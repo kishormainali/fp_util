@@ -153,7 +153,7 @@
     },
     {
       "name": "file_picker",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/file_picker-6.0.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/file_picker-6.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
@@ -195,7 +195,7 @@
     },
     {
       "name": "flutter_lints",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/flutter_lints-3.0.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/flutter_lints-3.0.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -207,7 +207,7 @@
     },
     {
       "name": "flutter_svg",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/flutter_svg-2.0.8",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/flutter_svg-2.0.9",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
@@ -525,7 +525,7 @@
     },
     {
       "name": "uuid",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/uuid-4.1.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/uuid-4.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
@@ -596,7 +596,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-11-04T10:19:34.629658Z",
+  "generated": "2023-11-09T02:29:01.311250Z",
   "generator": "pub",
   "generatorVersion": "3.1.5"
 }

@@ -1,3 +1,7 @@
+# 2.1.2
+- added `LoggerMixin` 
+- added `isCsv` extension on String and file
+
 # 2.1.1
 - added `TagsInputField` widget
 - added `uuid` helper class

@@ -254,6 +254,15 @@ extension StringX on String {
     return ext == '.svg';
   }
 
+  /// checks whether string is csv
+  bool get isCsv {
+    final ext = extension(this);
+    if (ext.isBlank) {
+      return false;
+    }
+    return ext == '.csv';
+  }
+
   /// checks whether string is xml
   bool get isXml {
     final ext = extension(this);
@@ -297,6 +306,7 @@ final _xlsTypes = ['.xls', '.xlsx'];
 final _txtTypes = ['.txt', '.rtf'];
 
 /// use to convert string into different cases
+///
 class _ReCase {
   final RegExp _upperAlphaRegex = RegExp(r'[A-Z]');
 

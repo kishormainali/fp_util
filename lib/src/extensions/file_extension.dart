@@ -77,8 +77,15 @@ extension FileExtensionX on File {
     return mimeType?.startsWith('image/svg+xml') ?? extension.isSvg;
   }
 
+  /// check whether file is csv
+  bool get isCsv {
+    return mimeType?.startsWith('text/csv') ??
+        mimeType?.startsWith('text/comma-separated-values') ??
+        extension.isCsv;
+  }
+
   /// checks whether given file is docx,pdf,xls,ppt or txt
-  bool get isFile => isDocx || isPdf || isXls || isPpt || isTxt;
+  bool get isFile => isDocx || isPdf || isXls || isPpt || isTxt || isCsv;
 
   /// get file size in mb
   double get sizeInMb {
