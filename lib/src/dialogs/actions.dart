@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'platform_widget.dart';
+import '../widgets/platform_widget.dart';
 
 class MaterialActionData {
   MaterialActionData({
@@ -47,7 +47,6 @@ class PlatformDialogAction
     extends PlatformWidget<Widget, CupertinoDialogAction> {
   const PlatformDialogAction({
     super.key,
-    super.useMaterial = false,
     required this.child,
     this.onPressed,
     this.material,

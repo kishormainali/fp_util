@@ -228,7 +228,8 @@ class _FilledButtonWithIconChild extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double scale = MediaQuery.textScaleFactorOf(context);
+    // ignore: deprecated_member_use
+    final double scale = MediaQuery.textScalerOf(context).textScaleFactor;
     // Adjust the gap based on the text scale factor. Start at 8, and lerp
     // to 4 based on how large the text is.
     final double gap =

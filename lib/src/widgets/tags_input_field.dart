@@ -84,29 +84,41 @@ class TagsInputFieldState extends State<TagsInputField>
 
   @override
   void initState() {
+    /// Assigning the controller of the widget to _controller. If the widget's controller is null, a new TextEditingController is created.
     _controller = widget.controller ?? TextEditingController();
+
+    /// Assigning the focusNode of the widget to _focusNode. If the widget's focusNode is null, a new FocusNode is created.
     _focusNode = widget.focusNode ?? FocusNode();
+
+    /// If the widget has initial tags, assign them to _tags.
     if (widget.initialTags != null) {
       _tags.value = widget.initialTags!;
     }
+
+    /// Adding a listener to the controller. This listener will be triggered every time the text in the controller changes.
     _controller.addListener(_onTextChanged);
     super.initState();
   }
 
+  /// This method is triggered every time the text in the controller changes.
   void _onTextChanged() {
+    // Check if the text in the controller is not empty.
+    if (_controller.text.isNotEmpty) {
+      // Get the text from the controller.
+      final text = _controller.text;
+      // Get the last character of the text.
+      final lastChar = text.characters.last;
+      // Check if the last character is in the list of separator keys.
+      if (widget.separatorKeys.contains(lastChar)) {
+        // If it is, create a new Tag with the text (excluding the last character) and the last character as the key label, and update the tags.
+        _updateTags(Tag(
+          value: text.substring(0, text.length - 1),
+          keyLabel: lastChar,
+        ));
+      }
+    }
+    // Reset the error value to null.
     _error.value = null;
-    if (_controller.text.isEmpty) {
-      return;
-    }
-    final text = _controller.text;
-    final lastChar = text.characters.last;
-    if (widget.separatorKeys.contains(lastChar)) {
-      final tag = Tag(
-        value: text.substring(0, text.length - 1),
-        keyLabel: lastChar,
-      );
-      _updateTags(tag);
-    }
   }
 
   /// Adds a tag to the [TagsInputField].
@@ -136,23 +148,15 @@ class TagsInputFieldState extends State<TagsInputField>
 
   /// removes selected tag  from the tags and adds it to the text field
   void editOnClick(Tag tag) {
-    if (widget.editOnClick) {
-      if (_controller.text.isNotBlank) {
-        _error.value = 'Previous tag is not completed';
-        _focusField();
-        return;
-      }
-      final text = tag.value;
-      final baseOffset = text.length;
-      final extentOffset = text.length;
+    if (widget.editOnClick && _controller.text.isBlank) {
       _controller.value = TextEditingValue(
-        text: text,
-        selection: TextSelection(
-          baseOffset: baseOffset,
-          extentOffset: extentOffset,
-        ),
+        text: tag.value,
+        selection: TextSelection.collapsed(offset: tag.value.length),
       );
       removeTag(tag);
+      _focusField();
+    } else {
+      _error.value = 'Previous tag is not completed';
       _focusField();
     }
   }

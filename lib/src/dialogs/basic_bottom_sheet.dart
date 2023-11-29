@@ -34,7 +34,6 @@ class CupertinoActionSheetData {
 class BasicBottomSheet extends PlatformWidget<Widget, CupertinoActionSheet> {
   const BasicBottomSheet({
     super.key,
-    super.useMaterial = false,
     this.title,
     required this.content,
     this.material,

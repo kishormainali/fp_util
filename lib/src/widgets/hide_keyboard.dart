@@ -7,7 +7,6 @@ import 'package:fp_util/fp_util.dart';
 ///
 /// {@endtemplate}
 ///
-/// {@tool}
 ///
 /// ```dart
 /// HideKeyboard(
@@ -16,7 +15,6 @@ import 'package:fp_util/fp_util.dart';
 ///  useSafeArea: true, // if you want to use safe area
 /// )
 /// ```
-/// {@end-tool}
 ///
 class HideKeyboard extends StatelessWidget {
   const HideKeyboard({

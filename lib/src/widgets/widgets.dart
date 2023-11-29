@@ -11,6 +11,7 @@ export 'padded_column.dart';
 export 'padded_row.dart';
 export 'padded_spaced_column.dart';
 export 'padded_spaced_row.dart';
+export 'platform_widget.dart';
 export 'responsive_padding.dart';
 export 'responsive_sized_box.dart';
 export 'scaffold_wrapper.dart';

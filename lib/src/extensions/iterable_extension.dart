@@ -134,9 +134,6 @@ extension IterableX<T> on Iterable<T>? {
   bool get isNullOrEmpty {
     return this == null || this!.isEmpty;
   }
-
-  /// get value if null or null
-  Iterable<T>? getOrNull() => this == null ? null : this!;
 }
 
 extension MapX<K, V> on Map<K, V> {

@@ -4,306 +4,106 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3ec4c1b-f12a-43d4-bce8-ef1d9e4af04f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/src/form/field.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/form/form_mixin.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/form/validators.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/.dart_tool/package_config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/.dart_tool/package_config_subset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/.dart_tool/version" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/.flutter-plugins" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/.flutter-plugins-dependencies" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/.idea/fp_util.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/.idea/libraries/Dart_SDK.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/analysis_options.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/__404error.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/categories.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/BuildContextX.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/BuildContextX/colorScheme.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/BuildContextX/hasFocus.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/BuildContextX/hasNotch.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/BuildContextX/height.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/BuildContextX/padding.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/BuildContextX/ph.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/BuildContextX/pw.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/BuildContextX/removeFocus.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/BuildContextX/safeAreaBottomPadding.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/BuildContextX/safeAreaTopPadding.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/BuildContextX/size.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/BuildContextX/textTheme.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/BuildContextX/theme.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/BuildContextX/viewInsets.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/BuildContextX/viewPadding.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/BuildContextX/width.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/DateTimeX.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/DeviceType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/DeviceType/DeviceType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/DeviceType/size.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/DeviceType/values-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/EdgeInsetsX.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/EdgeInsetsX/addBottom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/EdgeInsetsX/addLeft.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/EdgeInsetsX/addRight.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/EdgeInsetsX/addTop.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/EdgeInsetsX/removeBottom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/EdgeInsetsX/removeLeft.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/EdgeInsetsX/removeRight.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/EdgeInsetsX/removeTop.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/FileExtensionX.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/FileExtensionX/ext.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/FileExtensionX/fileName.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/FileExtensionX/isAudio.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/FileExtensionX/isDocx.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/FileExtensionX/isImage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/FileExtensionX/isPdf.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/FileExtensionX/isPpt.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/FileExtensionX/isSvg.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/FileExtensionX/isVideo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/FileExtensionX/isXls.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/FileExtensionX/mimeType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/FileExtensionX/sizeInMb.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterableX.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterableX/getOrNull.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterableX/isNotNullNotEmpty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterableX/isNullOrEmpty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterationWithIndex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterationWithIndex/elementAtOrNull.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterationWithIndex/expandIndexed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterationWithIndex/firstOrNull.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterationWithIndex/firstWhereIndexedOrNull.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterationWithIndex/forEachIndexed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterationWithIndex/getOrDefault.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterationWithIndex/lastOrNull.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterationWithIndex/lastWhereIndexedOrNull.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterationWithIndex/lastWhereOrNull.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterationWithIndex/mapIndexed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterationWithIndex/singleOrNull.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterationWithIndex/singleWhereIndexedOrNull.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterationWithIndex/singleWhereOrNull.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterationWithIndex/whereIndexed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/IterationWithIndex/whereNotIndexed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/all.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/bottomOnly.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/circular.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/days.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/delayedHours.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/delayedMicroSeconds.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/delayedMilliSeconds.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/delayedMinutes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/delayedSeconds.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/horizontal.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/horizontalSpacing.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/hours.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/leftOnly.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/microseconds.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/milliseconds.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/minutes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/rightOnly.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/rounded.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/seconds.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/sliverHorizontalSpacing.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/sliverVerticalSpacing.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/topOnly.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/vertical.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/NumX/verticalSpacing.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/ResponsiveBuilder-class.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/ResponsiveBuilder/ResponsiveBuilder.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/ResponsiveBuilder/build.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/ResponsiveBuilder/desktop.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/ResponsiveBuilder/getSize.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/ResponsiveBuilder/mobile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/ResponsiveBuilder/tablet.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes-class.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/Sizes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/gapH16-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/gapH24-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/gapH32-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/gapH4-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/gapH48-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/gapH54-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/gapH64-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/gapH8-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/gapV16-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/gapV24-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/gapV32-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/gapV4-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/gapV48-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/gapV54-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/gapV64-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/gapV8-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/p16-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/p24-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/p32-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/p4-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/p48-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/p54-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/p64-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/Sizes/p8-constant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/StringNX.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/StringNX/isNotNullNotEmpty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/StringNX/isNullOrEmpty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/StringX.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/StringX/fileNameFromUri.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/StringX/getOrDefault.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/StringX/getOrNull.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/StringX/isEmail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/StringX/toInt.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/WidgetX.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/audioTypes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/docxTypes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/fp_util-library.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/imageTypes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/pptTypes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/videoTypes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/fp_util/xlsTypes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/index.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/static-assets/docs.dart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/static-assets/docs.dart.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/static-assets/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/static-assets/github.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/static-assets/highlight.pack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/static-assets/play_button.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/static-assets/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/static-assets/search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/doc/api/static-assets/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/example/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/fp_util.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/constants/sizes.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/dialogs/choose_image_picker.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/dialogs/enums.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/dialogs/image_picker_helper.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/dialogs/platform_dialog.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/extensions/context_extension.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/extensions/datetime_extension.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/extensions/edge_inset_extension.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/extensions/extensions.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/extensions/file_extension.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/extensions/iterable_extension.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/extensions/num_extension.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/extensions/string_extension.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/extensions/widget_extension.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/responsive/device_type.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/responsive/responsive.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/responsive/responsive_builder.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/widgets/column_with_space.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/widgets/radio_group.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/widgets/row_with_space.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/lib/src/widgets/widgets.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/melos_fp_util.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/pubspec.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fp_util/pubspec.yaml" beforeDir="false" />
+    <list default="true" id="94231aea-202c-4929-a4b4-c1f57126c7b4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/tags_input_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/tags_input_field.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/melos_fp_util.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Dart File" />
-      </list>
-    </option>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;assignee&quot;: &quot;kishor-parpera&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+    &quot;assignee&quot;: &quot;kishor-parpera&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="0b6e3104-0bc0-4d6c-b2be-abacd6abf2b3" />
+        <option name="url" value="git@github.com:kishormainali/fp_util.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2MrwtNQwGpI7QnuJt2vAaEZOk3s" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2Xw3T4NRaoKRca3XuX3UZ3Vk3Mt" />
   <component name="ProjectReloadState">
     <option name="STATE" value="1" />
   </component>
   <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ebpearls/development/packages/clean_cli/packages/mk_core&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Dart&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets/icons" />
-    </key>
-  </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="mk_core" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="mk_core" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/example/lib/main.dart" />
+      <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c3ec4c1b-f12a-43d4-bce8-ef1d9e4af04f" name="Changes" comment="" />
-      <created>1678539223129</created>
+      <changelist id="94231aea-202c-4929-a4b4-c1f57126c7b4" name="Changes" comment="" />
+      <created>1699526318936</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1678539223129</updated>
-      <workItem from="1678539226122" duration="8068000" />
-      <workItem from="1678612104182" duration="5531000" />
-      <workItem from="1678715783613" duration="1379000" />
-      <workItem from="1678797550066" duration="858000" />
-      <workItem from="1679282064269" duration="11000" />
-      <workItem from="1680004218727" duration="3040000" />
-      <workItem from="1680059427028" duration="4000" />
-      <workItem from="1680435113398" duration="15000" />
-      <workItem from="1680435152192" duration="4870000" />
-      <workItem from="1681216847068" duration="131000" />
+      <updated>1699526318936</updated>
+      <workItem from="1699526323577" duration="1342000" />
+      <workItem from="1699581259848" duration="471000" />
+      <workItem from="1699592823034" duration="4000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
   </component>
 </project>

@@ -33,6 +33,14 @@ extension StringX on String {
     }
   }
 
+  /// converts country code to flag
+  /// example: 'US'.flag returns 🇺🇸
+  String get flag {
+    if (isBlank) return '';
+    match(match) => String.fromCharCode(match.group(0)!.codeUnitAt(0) + 127397);
+    return toUpperCase().replaceAllMapped(RegExp(r'[A-Z]'), match);
+  }
+
   /// check isBlank
   bool get isBlank => trim().isEmpty;
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-extension DateTimeX on DateTime {
+extension DateTimeUtils on DateTime {
   /// year month day
   String get ymd => DateFormat.yMd().format(this);
 
@@ -90,5 +90,75 @@ extension DateTimeX on DateTime {
       result = DateFormat.yMd(locale?.languageCode).format(this);
     }
     return result;
+  }
+
+  /// return fiscal year from date
+  String fiscalYear(
+    int startMonth, {
+    int startDay = 1,
+    FiscalYearFormat format = FiscalYearFormat.slashShort,
+    bool usePrefix = false,
+  }) {
+    if (month > startMonth || (month == startMonth && day >= startDay)) {
+      return format.format(year.toString(), (year + 1).toString(), usePrefix);
+    } else {
+      return format.format((year - 1).toString(), year.toString(), usePrefix);
+    }
+  }
+
+  /// return current fiscal year
+  static String currentFiscalYear(
+    int startMonth, {
+    int startDay = 1,
+    FiscalYearFormat format = FiscalYearFormat.slashShort,
+    bool usePrefix = false,
+  }) {
+    final date = DateTime.now();
+    if (date.month > startMonth ||
+        (date.month == startMonth && date.day >= startDay)) {
+      return format.format(
+          date.year.toString(), (date.year + 1).toString(), usePrefix);
+    } else {
+      return format.format(
+          (date.year - 1).toString(), date.year.toString(), usePrefix);
+    }
+  }
+}
+
+enum FiscalYearFormat {
+  /// 2020-2021
+  hyphen,
+
+  /// 2020/2021
+  slash,
+
+  /// 2020-21
+  hyphenShort,
+
+  /// 2020/21
+  slashShort,
+
+  /// 20
+  singleShort,
+
+  /// 2020
+  single;
+
+  /// format fiscal year
+  String format(String startYear, String endYear, [bool usePrefix = false]) {
+    String text = switch (this) {
+      FiscalYearFormat.hyphen => '$startYear-$endYear',
+      FiscalYearFormat.slash => '$startYear/$endYear',
+      FiscalYearFormat.hyphenShort =>
+        '${startYear.substring(2, startYear.length)}-${endYear.substring(2, endYear.length)}',
+      FiscalYearFormat.slashShort =>
+        '${startYear.substring(2, startYear.length)}/${endYear.substring(2, endYear.length)}',
+      FiscalYearFormat.singleShort => startYear.substring(2, startYear.length),
+      FiscalYearFormat.single => startYear,
+    };
+    if (usePrefix) {
+      text = 'FY $text';
+    }
+    return text;
   }
 }

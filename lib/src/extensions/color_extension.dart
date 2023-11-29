@@ -12,7 +12,9 @@ class HexColor extends Color {
   }
 
   HexColor(final String hexColor, [int opacity = 100])
-      : super(_getColorFromHex(hexColor, opacity));
+      : super(
+          _getColorFromHex(hexColor, opacity),
+        );
 }
 
 extension ColorHex on Color {

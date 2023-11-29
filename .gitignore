@@ -1,5 +1,7 @@
-!melos_mk_core.iml
+!fp_util.iml
 !.idea/modules.xml
 
 example/*
 !example/README.md
+
+build/

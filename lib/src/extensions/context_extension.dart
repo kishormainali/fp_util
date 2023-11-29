@@ -119,10 +119,15 @@ extension BuildContextX on BuildContext {
   double get height => size.height;
 
   /// window padding
-  /// The parts of the display that are partially obscured by system UI, typically by the hardware display "notches" or the system status bar.
+  /// The parts of the display that are partially obscured by system UI,
+  /// typically by the hardware display "notches" or the system status bar.
   EdgeInsets get padding => MediaQuery.paddingOf(this);
 
-  /// viewInsets padding
+  /// Returns viewInsets for the nearest MediaQuery ancestor or
+  /// throws an exception, if no such ancestor exists.
+  ///
+  /// Use of this method will cause the given [context] to rebuild any time that
+  /// the [MediaQueryData.viewInsets] property of the ancestor [MediaQuery] changes.
   EdgeInsets get viewInsets => MediaQuery.viewInsetsOf(this);
 
   /// viewPadding

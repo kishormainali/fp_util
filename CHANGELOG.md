@@ -1,3 +1,8 @@
+# 2.2.0
+- added `DecimalTextFormatter` for formatting decimal number
+- added `fiscalYear` and `currentFiscalYear` extension on DateTime
+
+
 # 2.1.2
 - added `LoggerMixin` 
 - added `isCsv` extension on String and file

@@ -3,17 +3,11 @@ import 'package:flutter/material.dart';
 
 abstract class PlatformWidget<A extends Widget, I extends Widget>
     extends StatelessWidget {
-  const PlatformWidget({
-    super.key,
-    this.useMaterial = false,
-  });
-
-  /// override this to use material widget on ios and macOS
-  final bool useMaterial;
+  const PlatformWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    if (kIsWeb || useMaterial) {
+    if (kIsWeb) {
       return buildMaterialWidget(context);
     }
     final platform = Theme.of(context).platform;
