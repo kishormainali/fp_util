@@ -50,6 +50,11 @@ extension DateTimeUtils on DateTime {
     return DateFormat(pattern).parseLoose(inputString);
   }
 
+  /// return time stamp string
+  String get timeStamp {
+    return DateFormat('hh:mm:ss.SSS').format(this);
+  }
+
   /// return time ago string
   String timeAgo([Locale? locale]) {
     final now = DateTime.now();

@@ -97,7 +97,7 @@ abstract class ImagePickerHelper {
       if (sizeInMb > 0 && file != null) return await _checkSize(sizeInMb, file);
       return file;
     } catch (e, stack) {
-      logger.e('Error', error: e, stackTrace: stack);
+      Logger.e('Error', error: e, stackTrace: stack);
       return null;
     }
   }
@@ -110,7 +110,7 @@ abstract class ImagePickerHelper {
       if (sizeInMb > 0 && file != null) return await _checkSize(sizeInMb, file);
       return file;
     } catch (e, stack) {
-      logger.e('Error', error: e, stackTrace: stack);
+      Logger.e('Error', error: e, stackTrace: stack);
       return null;
     }
   }
@@ -134,7 +134,7 @@ abstract class ImagePickerHelper {
         sizeInMb,
       );
     } catch (e, stack) {
-      logger.e('Error', error: e, stackTrace: stack);
+      Logger.e('Error', error: e, stackTrace: stack);
       return null;
     }
   }
@@ -150,7 +150,7 @@ abstract class ImagePickerHelper {
       if (sizeInMb > 0 && file != null) return await _checkSize(sizeInMb, file);
       return file;
     } catch (error, stack) {
-      logger.e('Error', error: error, stackTrace: stack);
+      Logger.e('Error', error: error, stackTrace: stack);
       return null;
     }
   }
@@ -171,7 +171,7 @@ abstract class ImagePickerHelper {
         return await _handleMultipleFile(files, sizeInMb);
       }
     } catch (error, stack) {
-      logger.e('Error', error: error, stackTrace: stack);
+      Logger.e('Error', error: error, stackTrace: stack);
       return null;
     }
   }
@@ -203,7 +203,7 @@ abstract class ImagePickerHelper {
         return await _handleMultipleFile(files, sizeInMb);
       }
     } catch (e, stack) {
-      logger.e('Error', error: e, stackTrace: stack);
+      Logger.e('Error', error: e, stackTrace: stack);
       return null;
     }
   }
@@ -231,7 +231,7 @@ abstract class ImagePickerHelper {
       if (sizeInMb > 0 && file != null) return await _checkSize(sizeInMb, file);
       return file;
     } catch (e, stack) {
-      logger.e('Error', error: e, stackTrace: stack);
+      Logger.e('Error', error: e, stackTrace: stack);
       return null;
     }
   }

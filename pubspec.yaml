@@ -10,10 +10,10 @@ topics:
   - utilities
   - spacing
   - widgets
-  
+
 
 environment:
-  sdk: ">=3.1.5 <4.0.0"
+  sdk: ">=3.2.6 <4.0.0"
 
 dependencies:
   flutter:
@@ -34,7 +34,7 @@ dependencies:
   json_annotation: ^4.8.1
 
   path: any
-  intl: ^0.18.1
+  intl: any
 
   logger: ^2.0.2+1
   equatable: ^2.0.5
@@ -45,16 +45,18 @@ dependencies:
 
   uuid: any
 
-  flutter_animate: ^4.4.1
+  flutter_animate: ^4.5.0
 
   collection: any
+
+  io: ^1.0.4
 
 
 dev_dependencies:
   flutter_lints: ^3.0.1
-  freezed: ^2.4.6
+  freezed: ^2.4.7
   json_serializable: ^6.7.1
-  build_runner: ">=2.4.7 <3.0.0"
+  build_runner: ^2.4.8
 
 flutter:
   uses-material-design: true

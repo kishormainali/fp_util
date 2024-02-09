@@ -44,10 +44,12 @@ class FpSnackbar {
     this.animationCurve,
   });
 
-  /// Remove individual toasbars on dismiss
+  /// Remove individual snackbar on dismiss
   void _remove() {
-    info.entry.remove();
-    _snackBars.removeWhere((element) => element == this);
+    Future.delayed(snackbarDuration).then((value) {
+      info.entry.remove();
+      _snackBars.removeWhere((element) => element == this);
+    });
   }
 
   /// show the snackbar in current context

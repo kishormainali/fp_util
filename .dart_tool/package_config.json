@@ -195,7 +195,7 @@
     },
     {
       "name": "flutter_animate",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/flutter_animate-4.4.1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/flutter_animate-4.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -208,6 +208,12 @@
     {
       "name": "flutter_plugin_android_lifecycle",
       "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.17",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "flutter_shaders",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/flutter_shaders-0.1.2",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
@@ -225,7 +231,7 @@
     },
     {
       "name": "freezed",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/freezed-2.4.6",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/freezed-2.4.7",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -611,10 +617,10 @@
       "name": "fp_util",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-01-29T12:12:57.752339Z",
+  "generated": "2024-02-09T07:46:17.822978Z",
   "generator": "pub",
   "generatorVersion": "3.2.6"
 }
