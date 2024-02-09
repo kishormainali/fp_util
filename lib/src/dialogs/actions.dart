@@ -43,9 +43,8 @@ class CupertinoActionData {
   });
 }
 
-class PlatformDialogAction
-    extends PlatformWidget<Widget, CupertinoDialogAction> {
-  const PlatformDialogAction({
+class DialogAction extends PlatformWidget<Widget, CupertinoDialogAction> {
+  const DialogAction({
     super.key,
     required this.child,
     this.onPressed,

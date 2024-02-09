@@ -9,7 +9,7 @@
 
 ## Constants
 
-#####  Vertical Spacing
+##### Vertical Spacing
 
 ```dart
 
@@ -243,10 +243,10 @@ bool isFile = text.isFile;
 ### Num Extensions
 
 - #### gap()
- 
+
 Creates Gap with height or width according to its parent
 
-```dart
+````dart
 
 ###### Usage:
 
@@ -261,7 +261,7 @@ class SpacingYTest extends StatelessWidget {
     return Column(
       children: [
         const Text('Text 1'),
-        10.gap(/*true if you want to use responsiveness*/),
+        10.gap,
         const Text('Text 2'),
       ],
     );
@@ -276,13 +276,13 @@ class SpacingXTest extends StatelessWidget {
     return Row(
       children: [
         const Text('Text 1'),
-        10.gap(/*true if you want to use responsiveness*/),
+        10.gap,
         const Text('Text 2'),
       ],
     );
   }
 }
-```
+````
 
 - ##### Duration
   - microseconds
@@ -351,7 +351,7 @@ final duration = 10.delayedHours(()async{
 
 ```
 
-- ##### circularBorderRadius()
+- ##### circularBorderRadius
 
 Created Circular Border Radius
 
@@ -366,14 +366,14 @@ class RadiusTest extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         /// creates 10px rounded corner
-        borderRadius: 10.circularBorderRadius(/*true if you want to use responsiveness*/),
+        borderRadius: 10.circularBorderRadius,
       ),
     );
   }
 }
 ```
 
-- ##### circularRadius()
+- ##### circularRadius
 
 Created Circular Radius
 
@@ -389,8 +389,8 @@ class RadiusTest extends StatelessWidget {
       decoration: BoxDecoration(
 
         /// creates 10px rounded corner for topLeft and topRight
-        borderRadius: BorderRadius.only(topLeft: 10.circularRadius(/*true if you want to use responsiveness*/),
-        topRight: 10.circularRadius(/*true if you want to use responsiveness*/),),),
+        borderRadius: BorderRadius.only(topLeft: 10.circularRadius,
+        topRight: 10.circularRadius,),),
     );
   }
 }
@@ -398,13 +398,13 @@ class RadiusTest extends StatelessWidget {
 
 - ##### EdgeInsets
 
-  - all()
-  - padLeft()
-  - padRight()
-  - padTop()
-  - padBottom()
-  - padX()
-  - padY()
+  - all
+  - padLeft
+  - padRight
+  - padTop
+  - padBottom
+  - padX
+  - padY
 
 ```dart
 import 'package:flutter/material.dart';
@@ -418,25 +418,25 @@ class EdgeInsetsTest extends StatelessWidget {
       children: [
 
         /// creates padding with 10px all
-        Padding(padding: 10.all(/*true if you want to use responsiveness*/)),
+        Padding(padding: 10.all),
 
         /// creates padding with 10px top only
-        Padding(padding: 10.padTop(/*true if you want to use responsiveness*/)),
+        Padding(padding: 10.padTop),
 
         /// creates padding with 10px right only
-        Padding(padding: 10.padRight(/*true if you want to use responsiveness*/)),
+        Padding(padding: 10.padRight),
 
         /// creates padding with 10px bottom only
-        Padding(padding: 10.padBottom(/*true if you want to use responsiveness*/)),
+        Padding(padding: 10.padBottom),
 
         /// creates padding with 10px left only
-        Padding(padding: 10.padLeft(/*true if you want to use responsiveness*/)),
+        Padding(padding: 10.padLeft),
 
         /// creates padding with 10px horizontal
-        Padding(padding: 10.padX(/*true if you want to use responsiveness*/)),
+        Padding(padding: 10.padX),
 
         /// creates padding with 10px vertical
-        Padding(padding: 10.padY(/*true if you want to use responsiveness*/)),
+        Padding(padding: 10.padY),
       ],
     );
   }
@@ -444,9 +444,9 @@ class EdgeInsetsTest extends StatelessWidget {
 
 ```
 
-- ##### sliverVerticalSpace
+- ##### sliverGap
 
-Creates SizedBox with height converted to sliver
+Creates SliverGap For CustomScrollView with Vertical Scroll
 
 ```dart
 import 'package:flutter/material.dart';
@@ -459,7 +459,7 @@ class SliverSpaceY extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverList(/*children*/),
-        10.sliverVerticalSpace(/*true if you want to use responsiveness*/),
+        10.sliverGap,
         SliverList(/*children*/)
       ],
     );
@@ -468,9 +468,7 @@ class SliverSpaceY extends StatelessWidget {
 
 ```
 
-- ##### sliverHorizontalSpace
-
-Creates SizedBox with width converted to sliver
+Creates SliverGap For CustomScrollView with Horizontal Scroll
 
 ```dart
 
@@ -485,7 +483,7 @@ class SliverSpaceX extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       slivers: [
         SliverPadding(padding: 10.all),
-        10.sliverHorizontalSpace(/*true if you want to use responsiveness*/),
+        10.sliverGap,
         SliverPadding(padding: 10.all),
       ],
     );
@@ -649,30 +647,29 @@ class PaddingTest extends StatelessWidget {
       children: [
 
         /// wraps with all padding
-        const Text('Text 1').pad(10,responsive:true /* if you want to use responsiveness */),
+        const Text('Text 1').pad(10),
 
         /// wraps with left only padding
-        const Text('Text 1').padLeft(10,responsive:true /* if you want to use responsiveness */),
+        const Text('Text 1').padLeft(10),
 
         /// wraps with right only padding
-        const Text('Text 1').padRight(10,responsive:true /* if you want to use responsiveness */),
+        const Text('Text 1').padRight(10),
 
         /// wraps with bottom only padding
-        const Text('Text 1').padBottom(10,responsive:true /* if you want to use responsiveness */),
+        const Text('Text 1').padBottom(10),
 
         /// wraps with top only padding
-        const Text('Text 1').padTop(10,responsive:true /* if you want to use responsiveness */),
+        const Text('Text 1').padTop(10),
 
         /// wraps with horizontal padding
-        const Text('Text 1').padX(10,responsive:true /* if you want to use responsiveness */),
+        const Text('Text 1').padX(10),
 
         /// wraps width vertical padding
-        const Text('Text 1').padY(10,responsive:true /* if you want to use responsiveness */),
+        const Text('Text 1').padY(10),
 
         /// wraps widget with padding of left top right bottom
         const Text('Text 1').padLTRB(left: 10,
          top: 5, right: 10, bottom: 10,
-         responsive:true /* if you want to use responsiveness */
          ),
 
       ],
@@ -768,12 +765,15 @@ class PaddingTest extends StatelessWidget {
   - viewInsets
   - viewPadding
 - #### MediaQuery
+
   - mq
 
 - #### Responsive Value
+
   - responsiveValue
 
 - #### Platform Brightness
+
   - platformBrightness
 
 - #### Keyboard Height
@@ -904,68 +904,4 @@ final Color onErrorContainerColor = context.onErrorContainerColor;
   /// responsive value according to device type
   final rValue = context.responsiveValue<double>(10,desktop:30,tablet:20);
 
-```
 
-## FPSnackbar
-
-Singleton class for showing Snackbar
-
-- ### Global Properties
-  -  defaultStyle 
-  -  successStyle
-  -  errorStyle
-  -  warningStyle
-  -  infoStyle 
-  -  duration (defaults 3 seconds)
-  -  floating (defaults true)
-  -  centerText (defaults false)
-  -  contextMaxLines (defaults 2)
-
-you can change global properties using `FPSnackbar.instance.propertyName = value`
-
-- ### Variants
-  - #### Success
-    Snackbar for success messages
-    ```dart
-       FPSnackbar.success(
-            context,
-            title: 'Title',
-            message: 'User created successfully',
-          );
-    ```
-  - #### Error
-    Snackbar for error messages
-    ```dart
-       FPSnackbar.error(
-            context,
-            title: 'Title',
-            message: 'Something went wrong!',
-          );
-    ```
-- #### Info
-  Snackbar for info messages
-  ```dart
-     FPSnackbar.info(
-          context,
-          title: 'Title',
-          message: 'Some informative message',
-        );
-  ```
-- #### Warning
-  Snackbar for warning messages
-  ```dart
-     FPSnackbar.warning(
-          context,
-          title: 'Title',
-          message: 'Warning message',
-        );
-  ```
-- #### Default
-  Default Snackbar
-  ```dart
-     FPSnackbar.show(
-          context,
-          title: 'Create User',
-          message: 'message',
-        );
-  ```

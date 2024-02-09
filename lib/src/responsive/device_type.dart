@@ -5,17 +5,13 @@ import 'package:flutter/foundation.dart';
 
 enum DeviceType {
   /// device type mobile
-  mobile(480),
+  mobile,
 
   /// device type desktop
-  desktop(950),
+  desktop,
 
   /// device type tablet
-  tablet(600);
-
-  const DeviceType(this.size);
-
-  final double size;
+  tablet;
 
   /// get device type according to device width
   static DeviceType fromWidth(double width) {
@@ -34,8 +30,8 @@ enum DeviceType {
       deviceWidth = deviceSize.width;
     }
     return switch (deviceWidth) {
-      >= 950 => DeviceType.desktop,
-      >= 600 => DeviceType.tablet,
+      >= 840 => DeviceType.desktop,
+      >= 600 || < 840 => DeviceType.tablet,
       _ => DeviceType.mobile,
     };
   }

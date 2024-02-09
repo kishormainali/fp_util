@@ -87,6 +87,36 @@ class MinLengthValidator extends Validator<String> {
   }
 }
 
+/// {@template dateValidator}
+/// A [Validator] that validates if a value is a valid date.
+/// {@endtemplate}
+class DateValidator extends Validator<String> {
+  const DateValidator(
+    super.message, {
+    this.format,
+  });
+
+  final String? format;
+
+  @override
+  bool isValid(String value) {
+    return value.parseDateTime(format: format) != null;
+  }
+}
+
+/// {@template url_validator}
+/// A [Validator] that validates if a value is a valid url.
+/// {@endtemplate}
+class URLValidator extends Validator<String> {
+  const URLValidator(super.message);
+
+  @override
+  bool isValid(String value) {
+    final isValidURL = Uri.tryParse(value);
+    return isValidURL != null;
+  }
+}
+
 /// {@template matchValidator}
 ///
 /// A [Validator] that compares two values.
@@ -103,16 +133,18 @@ class MatchValidator<T> extends Validator<T> {
     this.key = 'default-match-validator',
   });
 
+  /// The value to be compared with.
   final T match;
 
+  /// A function that compares two values.
   final bool Function(T value, T matchValue)? compareFn;
 
+  /// The key of the field to be used in compare with validators.
   final String key;
 
   @override
   bool isValid(T value) {
-    return compareFn?.call(value, match) ??
-        value.toString().trim() == match.toString().trim();
+    return compareFn?.call(value, match) ?? value == match;
   }
 }
 

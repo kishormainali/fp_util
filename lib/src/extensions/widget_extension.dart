@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:fp_util/src/extensions/num_extension.dart';
-import 'package:fp_util/src/widgets/widgets.dart';
+import 'package:fp_util/fp_util.dart';
 
 extension WidgetX on Widget {
   /// make any widgets scrollable
@@ -9,14 +8,12 @@ extension WidgetX on Widget {
     Axis scrollDirection = Axis.vertical,
     EdgeInsetsGeometry? padding,
     bool primary = false,
-    ScrollPhysics physics =
-        const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+    ScrollPhysics physics = const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
     ScrollController? controller,
     DragStartBehavior dragStartBehavior = DragStartBehavior.start,
     Clip clipBehavior = Clip.hardEdge,
     String? restorationId,
-    ScrollViewKeyboardDismissBehavior keyboardDismissBehavior =
-        ScrollViewKeyboardDismissBehavior.manual,
+    ScrollViewKeyboardDismissBehavior keyboardDismissBehavior = ScrollViewKeyboardDismissBehavior.manual,
     Key? key,
   }) =>
       SingleChildScrollView(
@@ -44,8 +41,7 @@ extension WidgetX on Widget {
         key: key,
         onTap: onTap,
         onDoubleTap: onDoubleTap,
-        behavior:
-            opaque ? HitTestBehavior.opaque : HitTestBehavior.deferToChild,
+        behavior: opaque ? HitTestBehavior.opaque : HitTestBehavior.deferToChild,
         child: this,
       );
 
@@ -182,7 +178,7 @@ extension WidgetX on Widget {
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.all(padding.responsiveR(responsive)),
+        padding: EdgeInsets.all(padding),
         child: this,
       );
 
@@ -198,10 +194,10 @@ extension WidgetX on Widget {
       Padding(
         key: key,
         padding: EdgeInsets.only(
-          left: left.responsiveW(responsive),
-          top: top.responsiveH(responsive),
-          right: right.responsiveW(responsive),
-          bottom: bottom.responsiveH(responsive),
+          left: left,
+          top: top,
+          right: right,
+          bottom: bottom,
         ),
         child: this,
       );
@@ -214,7 +210,7 @@ extension WidgetX on Widget {
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.only(top: padding.responsiveH(responsive)),
+        padding: EdgeInsets.only(top: padding),
         child: this,
       );
 
@@ -226,7 +222,7 @@ extension WidgetX on Widget {
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.only(right: padding.responsiveW(responsive)),
+        padding: EdgeInsets.only(right: padding),
         child: this,
       );
 
@@ -238,7 +234,7 @@ extension WidgetX on Widget {
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.only(bottom: padding.responsiveH(responsive)),
+        padding: EdgeInsets.only(bottom: padding),
         child: this,
       );
 
@@ -250,7 +246,7 @@ extension WidgetX on Widget {
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.only(left: padding.responsiveW(responsive)),
+        padding: EdgeInsets.only(left: padding),
         child: this,
       );
 
@@ -262,8 +258,7 @@ extension WidgetX on Widget {
   }) =>
       Padding(
         key: key,
-        padding:
-            EdgeInsets.symmetric(horizontal: padding.responsiveW(responsive)),
+        padding: EdgeInsets.symmetric(horizontal: padding),
         child: this,
       );
 
@@ -275,8 +270,7 @@ extension WidgetX on Widget {
   }) =>
       Padding(
         key: key,
-        padding:
-            EdgeInsets.symmetric(vertical: padding.responsiveH(responsive)),
+        padding: EdgeInsets.symmetric(vertical: padding),
         child: this,
       );
 
@@ -288,68 +282,78 @@ extension WidgetX on Widget {
       );
 }
 
-extension ResponsiveBoxConstrains on BoxConstraints {
-  BoxConstraints get r => copyWith(
-        minWidth: minWidth.r,
-        maxWidth: maxWidth.r,
-        minHeight: minHeight.r,
-        maxHeight: maxHeight.r,
+extension WidgetListX on List<Widget> {
+  /// wraps widgets with column
+  Widget column({
+    MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
+    MainAxisSize mainAxisSize = MainAxisSize.max,
+    CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
+    TextDirection? textDirection,
+    VerticalDirection verticalDirection = VerticalDirection.down,
+    TextBaseline? textBaseline,
+    Key? key,
+  }) =>
+      Column(
+        key: key,
+        mainAxisAlignment: mainAxisAlignment,
+        mainAxisSize: mainAxisSize,
+        crossAxisAlignment: crossAxisAlignment,
+        textDirection: textDirection,
+        verticalDirection: verticalDirection,
+        textBaseline: textBaseline,
+        children: this,
       );
 
-  BoxConstraints get hw => copyWith(
-        minWidth: minWidth.w,
-        maxWidth: maxWidth.w,
-        minHeight: minHeight.h,
-        maxHeight: maxHeight.h,
+  /// wraps widgets with row
+  Widget row({
+    MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
+    MainAxisSize mainAxisSize = MainAxisSize.max,
+    CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
+    TextDirection? textDirection,
+    VerticalDirection verticalDirection = VerticalDirection.down,
+    TextBaseline? textBaseline,
+    Key? key,
+  }) =>
+      Row(
+        key: key,
+        mainAxisAlignment: mainAxisAlignment,
+        mainAxisSize: mainAxisSize,
+        crossAxisAlignment: crossAxisAlignment,
+        textDirection: textDirection,
+        verticalDirection: verticalDirection,
+        textBaseline: textBaseline,
+        children: this,
       );
 
-  BoxConstraints get w => copyWith(
-        minWidth: minWidth.w,
-        maxWidth: maxWidth.w,
-        minHeight: minHeight.w,
-        maxHeight: maxHeight.w,
+  /// wraps widgets with stack
+  Widget stack({
+    AlignmentGeometry alignment = AlignmentDirectional.topStart,
+    TextDirection? textDirection,
+    StackFit fit = StackFit.loose,
+    Clip clipBehavior = Clip.hardEdge,
+    Key? key,
+  }) =>
+      Stack(
+        key: key,
+        alignment: alignment,
+        textDirection: textDirection,
+        fit: fit,
+        clipBehavior: clipBehavior,
+        children: this,
       );
 
-  BoxConstraints get h => copyWith(
-        minWidth: minWidth.h,
-        maxWidth: maxWidth.h,
-        minHeight: minHeight.h,
-        maxHeight: maxHeight.h,
-      );
-}
-
-extension ResponsiveRadius on Radius {
-  Radius get r => Radius.elliptical(x.r, y.r);
-  Radius get w => Radius.elliptical(x.w, y.w);
-  Radius get h => Radius.elliptical(x.h, y.h);
-}
-
-extension ResponsiveBorderRadius on BorderRadius {
-  BorderRadius get r => copyWith(
-        topLeft: topLeft.r,
-        topRight: topRight.r,
-        bottomLeft: bottomLeft.r,
-        bottomRight: bottomRight.r,
-      );
-
-  BorderRadius get hw => copyWith(
-        topLeft: topLeft.w,
-        topRight: topRight.w,
-        bottomLeft: bottomLeft.h,
-        bottomRight: bottomRight.h,
-      );
-
-  BorderRadius get w => copyWith(
-        topLeft: topLeft.w,
-        topRight: topRight.w,
-        bottomLeft: bottomLeft.w,
-        bottomRight: bottomRight.w,
-      );
-
-  BorderRadius get h => copyWith(
-        topLeft: topLeft.h,
-        topRight: topRight.h,
-        bottomLeft: bottomLeft.h,
-        bottomRight: bottomRight.h,
-      );
+  /// generates list of widgets with separator
+  List<Widget> separated({Widget separator = const Gap(10)}) {
+    return List.generate(
+      length * 2 - 1,
+      (index) {
+        final itemIndex = index ~/ 2;
+        if (index.isEven) {
+          return this[itemIndex];
+        } else {
+          return separator;
+        }
+      },
+    );
+  }
 }

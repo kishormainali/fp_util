@@ -28,8 +28,7 @@ class DefaultPickerData extends Equatable {
     this.useTextButton = false,
     this.buttonStyle,
     this.buttonPadding = EdgeInsets.zero,
-    this.actionsPadding =
-        const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+    this.actionsPadding = const EdgeInsets.only(left: 20, right: 20, bottom: 10),
     this.insetPadding = const EdgeInsets.all(16),
     this.contentPadding = EdgeInsets.zero,
     this.shape,
@@ -76,7 +75,7 @@ class DefaultPickerDialog extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
       actions: [
-        PlatformDialogAction(
+        DialogAction(
           onPressed: () => Navigator.pop(context, SourceType.camera),
           material: MaterialActionData(
             style: ButtonStyle(
@@ -92,7 +91,7 @@ class DefaultPickerDialog extends StatelessWidget {
           ),
           child: Text(data.cameraText),
         ),
-        PlatformDialogAction(
+        DialogAction(
           onPressed: () => Navigator.pop(context, SourceType.gallery),
           material: MaterialActionData(
             style: data.buttonStyle ??

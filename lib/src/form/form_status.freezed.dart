@@ -19,6 +19,7 @@ mixin _$FormStatus<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() invalid,
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(String? message, T? data) success,
@@ -27,6 +28,7 @@ mixin _$FormStatus<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? invalid,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(String? message, T? data)? success,
@@ -35,6 +37,7 @@ mixin _$FormStatus<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? invalid,
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(String? message, T? data)? success,
@@ -88,7 +91,7 @@ class _$InitialImpl<T> extends _Initial<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$InitialImpl<T>);
   }
@@ -100,6 +103,7 @@ class _$InitialImpl<T> extends _Initial<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() invalid,
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(String? message, T? data) success,
@@ -111,6 +115,7 @@ class _$InitialImpl<T> extends _Initial<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? invalid,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(String? message, T? data)? success,
@@ -122,6 +127,7 @@ class _$InitialImpl<T> extends _Initial<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? invalid,
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(String? message, T? data)? success,
@@ -137,6 +143,87 @@ class _$InitialImpl<T> extends _Initial<T> {
 abstract class _Initial<T> extends FormStatus<T> {
   const factory _Initial() = _$InitialImpl<T>;
   const _Initial._() : super._();
+}
+
+/// @nodoc
+abstract class _$$InvalidImplCopyWith<T, $Res> {
+  factory _$$InvalidImplCopyWith(
+          _$InvalidImpl<T> value, $Res Function(_$InvalidImpl<T>) then) =
+      __$$InvalidImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$InvalidImplCopyWithImpl<T, $Res>
+    extends _$FormStatusCopyWithImpl<T, $Res, _$InvalidImpl<T>>
+    implements _$$InvalidImplCopyWith<T, $Res> {
+  __$$InvalidImplCopyWithImpl(
+      _$InvalidImpl<T> _value, $Res Function(_$InvalidImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$InvalidImpl<T> extends _Invalid<T> {
+  const _$InvalidImpl() : super._();
+
+  @override
+  String toString() {
+    return 'FormStatus<$T>.invalid()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$InvalidImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() invalid,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
+    required TResult Function(String? message, T? data) success,
+  }) {
+    return invalid();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? invalid,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
+    TResult? Function(String? message, T? data)? success,
+  }) {
+    return invalid?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? invalid,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
+    TResult Function(String? message, T? data)? success,
+    required TResult orElse(),
+  }) {
+    if (invalid != null) {
+      return invalid();
+    }
+    return orElse();
+  }
+}
+
+abstract class _Invalid<T> extends FormStatus<T> {
+  const factory _Invalid() = _$InvalidImpl<T>;
+  const _Invalid._() : super._();
 }
 
 /// @nodoc
@@ -166,7 +253,7 @@ class _$LoadingImpl<T> extends _Loading<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$LoadingImpl<T>);
   }
@@ -178,6 +265,7 @@ class _$LoadingImpl<T> extends _Loading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() invalid,
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(String? message, T? data) success,
@@ -189,6 +277,7 @@ class _$LoadingImpl<T> extends _Loading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? invalid,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(String? message, T? data)? success,
@@ -200,6 +289,7 @@ class _$LoadingImpl<T> extends _Loading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? invalid,
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(String? message, T? data)? success,
@@ -262,7 +352,7 @@ class _$ErrorImpl<T> extends _Error<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ErrorImpl<T> &&
@@ -282,6 +372,7 @@ class _$ErrorImpl<T> extends _Error<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() invalid,
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(String? message, T? data) success,
@@ -293,6 +384,7 @@ class _$ErrorImpl<T> extends _Error<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? invalid,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(String? message, T? data)? success,
@@ -304,6 +396,7 @@ class _$ErrorImpl<T> extends _Error<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? invalid,
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(String? message, T? data)? success,
@@ -378,7 +471,7 @@ class _$SuccessImpl<T> extends _Success<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessImpl<T> &&
@@ -400,6 +493,7 @@ class _$SuccessImpl<T> extends _Success<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() invalid,
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(String? message, T? data) success,
@@ -411,6 +505,7 @@ class _$SuccessImpl<T> extends _Success<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? invalid,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(String? message, T? data)? success,
@@ -422,6 +517,7 @@ class _$SuccessImpl<T> extends _Success<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? invalid,
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(String? message, T? data)? success,
