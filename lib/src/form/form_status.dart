@@ -15,6 +15,9 @@ sealed class FormStatus<T> with _$FormStatus<T> {
   /// initial state
   const factory FormStatus.initial() = _Initial<T>;
 
+  /// validation error state
+  const factory FormStatus.invalid() = _Invalid<T>;
+
   /// loading state
   const factory FormStatus.loading() = _Loading<T>;
 
@@ -33,4 +36,7 @@ sealed class FormStatus<T> with _$FormStatus<T> {
 
   /// check is success
   bool get isSuccess => this is _Success;
+
+  /// check is invalid
+  bool get isInvalid => this is _Invalid;
 }

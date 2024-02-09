@@ -72,8 +72,7 @@ class TagsInputField extends StatefulWidget {
   TagsInputFieldState createState() => TagsInputFieldState();
 }
 
-class TagsInputFieldState extends State<TagsInputField>
-    with SingleTickerProviderStateMixin {
+class TagsInputFieldState extends State<TagsInputField> with SingleTickerProviderStateMixin {
   late final TextEditingController _controller;
 
   late final FocusNode _focusNode;
@@ -138,8 +137,7 @@ class TagsInputFieldState extends State<TagsInputField>
 
   /// Removes a tag from the [TagsInputField].
   void removeTag(Tag tag) {
-    _tags.value =
-        _tags.value.where((element) => element._id != tag._id).toList();
+    _tags.value = _tags.value.where((element) => element._id != tag._id).toList();
     widget.onChanged?.call(_tags.value);
     if (_tags.value.isEmpty) {
       _focusField();
@@ -268,8 +266,7 @@ class TagWidget extends StatefulWidget {
   State<TagWidget> createState() => _TagWidgetState();
 }
 
-class _TagWidgetState extends State<TagWidget>
-    with SingleTickerProviderStateMixin {
+class _TagWidgetState extends State<TagWidget> with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
   late final Animation<double> _animation;
 
@@ -293,14 +290,11 @@ class _TagWidgetState extends State<TagWidget>
 
   @override
   Widget build(BuildContext context) {
-    final effectiveLabelColor =
-        widget.decoration.labelColor ?? context.onSurfaceColor;
-    final effectiveLabelStyle =
-        (widget.decoration.labelStyle ?? context.labelLarge)?.copyWith(
+    final effectiveLabelColor = widget.decoration.labelColor ?? context.onSurfaceColor;
+    final effectiveLabelStyle = (widget.decoration.labelStyle ?? context.labelLarge)?.copyWith(
       color: effectiveLabelColor,
     );
-    final effectiveBackgroundColor = widget.decoration.backgroundColor ??
-        context.theme.chipTheme.backgroundColor;
+    final effectiveBackgroundColor = widget.decoration.backgroundColor ?? context.theme.chipTheme.backgroundColor;
     final effectiveShape = widget.decoration.shape;
     return AnimatedBuilder(
       animation: _animation,
@@ -333,10 +327,9 @@ class _TagWidgetState extends State<TagWidget>
                   ),
                 ),
                 if (widget.onDeleted != null) ...[
-                  4.gap(),
+                  Sizes.gap4,
                   _ChipIconButton(
-                    icon:
-                        widget.decoration.deleteIcon ?? const Icon(Icons.close),
+                    icon: widget.decoration.deleteIcon ?? const Icon(Icons.close),
                     onPressed: () => widget.onDeleted?.call(widget.tag),
                     iconColor: effectiveLabelColor,
                     padding: widget.decoration.padding,
@@ -380,8 +373,7 @@ class _ChipIconButton extends StatelessWidget {
         // Radius should be slightly less than the full size of the chip.
         radius: (32 + (padding?.vertical ?? 0)) * .45,
         // Keeps the splash from being constrained to the icon alone.
-        splashFactory:
-            _UnconstrainedInkSplashFactory(Theme.of(context).splashFactory),
+        splashFactory: _UnconstrainedInkSplashFactory(Theme.of(context).splashFactory),
         onTap: onPressed,
         child: IconTheme(
           data: context.theme.iconTheme.copyWith(

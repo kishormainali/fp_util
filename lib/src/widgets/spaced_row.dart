@@ -19,15 +19,13 @@ class SpacedRow extends Row {
     super.textDirection,
     super.verticalDirection,
     List<Widget> children = const [],
-    bool responsive = false,
   }) : super(children: [
-          if (hasLeadingSpace) spacing.gap(responsive),
+          if (hasLeadingSpace) spacing.gap,
           ...children.expandIndexed(
             (index, child) {
               return [
                 child,
-                if (index < children.length || hasTrailingSpace)
-                  spacing.gap(responsive),
+                if (index < children.length || hasTrailingSpace) spacing.gap,
               ];
             },
           ),
