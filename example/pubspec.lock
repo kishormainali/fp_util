@@ -201,6 +201,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.4"
+  dio:
+    dependency: transitive
+    description:
+      name: dio
+      sha256: "797e1e341c3dd2f69f2dad42564a6feff3bfb87187d05abb93b9609e6f1645c3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.4.0"
   equatable:
     dependency: transitive
     description:
@@ -290,10 +298,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_animate
-      sha256: cabe33af6201144be052352d53572a1b8a4f5782b46080be7520d95abe763715
+      sha256: "7c8a6594a9252dad30cc2ef16e33270b6248c4dedc3b3d06c86c4f3f4dc05ae5"
       url: "https://pub.dev"
     source: hosted
-    version: "4.4.1"
+    version: "4.5.0"
   flutter_bloc:
     dependency: "direct main"
     description:
@@ -318,6 +326,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.17"
+  flutter_shaders:
+    dependency: transitive
+    description:
+      name: flutter_shaders
+      sha256: "02750b545c01ff4d8e9bbe8f27a7731aa3778402506c67daa1de7f5fc3f4befe"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.2"
   flutter_svg:
     dependency: transitive
     description:
@@ -342,7 +358,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "2.2.0"
+    version: "3.0.0"
   fpdart:
     dependency: "direct main"
     description:
@@ -535,14 +551,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
-  logger:
-    dependency: transitive
-    description:
-      name: logger
-      sha256: "6bbb9d6f7056729537a4309bda2e74e18e5d9f14302489cc1e93f33b3fe32cac"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.2+1"
   logging:
     dependency: transitive
     description:
@@ -869,5 +877,5 @@ packages:
     source: hosted
     version: "3.1.2"
 sdks:
-  dart: ">=3.2.0 <4.0.0"
+  dart: ">=3.2.6 <4.0.0"
   flutter: ">=3.10.0"
