@@ -86,6 +86,10 @@ dart_style
 3.0
 file:///Users/kishor/.pub-cache/hosted/pub.dev/dart_style-2.3.4/
 file:///Users/kishor/.pub-cache/hosted/pub.dev/dart_style-2.3.4/lib/
+dio
+2.15
+file:///Users/kishor/.pub-cache/hosted/pub.dev/dio-5.4.0/
+file:///Users/kishor/.pub-cache/hosted/pub.dev/dio-5.4.0/lib/
 equatable
 2.12
 file:///Users/kishor/.pub-cache/hosted/pub.dev/equatable-2.0.5/
@@ -234,10 +238,6 @@ lints
 3.0
 file:///Users/kishor/.pub-cache/hosted/pub.dev/lints-3.0.0/
 file:///Users/kishor/.pub-cache/hosted/pub.dev/lints-3.0.0/lib/
-logger
-2.17
-file:///Users/kishor/.pub-cache/hosted/pub.dev/logger-2.0.2+1/
-file:///Users/kishor/.pub-cache/hosted/pub.dev/logger-2.0.2+1/lib/
 logging
 2.19
 file:///Users/kishor/.pub-cache/hosted/pub.dev/logging-1.2.0/

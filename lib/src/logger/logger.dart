@@ -122,9 +122,13 @@ abstract class Logger {
       _printDivider(),
     ];
     if (message is Map || message is List) {
-      final indentedString = const JsonEncoder.withIndent(' ').convert(message);
-      final lines = indentedString.split('\n');
-      messages.addAll(lines.map(_printLine));
+      try {
+        final indentedString = const JsonEncoder.withIndent(' ').convert(message);
+        final lines = indentedString.split('\n');
+        messages.addAll(lines.map(_printLine));
+      } catch (_) {
+        messages.add(_printLine(message.toString()));
+      }
     } else {
       messages.add(_printLine(message.toString()));
     }
@@ -231,7 +235,7 @@ abstract class Logger {
 
   /// Logs an error message.
   static void e(
-    String message, {
+    dynamic message, {
     Object? error,
     StackTrace? stackTrace,
   }) {

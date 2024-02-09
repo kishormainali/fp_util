@@ -6,7 +6,7 @@ repository: https://github.com/kishormainali/fp_util
 issue_tracker: https://github.com/kishormainali/fp_util/issues
 topics:
   - extensions
-  - tags-inputfield
+  - tags-input-field
   - utilities
   - spacing
   - widgets
@@ -36,7 +36,6 @@ dependencies:
   path: any
   intl: any
 
-  logger: ^2.0.2+1
   equatable: ^2.0.5
 
   mask_text_input_formatter: ^2.8.0
@@ -50,6 +49,8 @@ dependencies:
   collection: any
 
   io: ^1.0.4
+
+  dio: ^5.4.0
 
 
 dev_dependencies:
