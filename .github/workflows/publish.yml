@@ -11,6 +11,14 @@ on:
         description: if specified, the workflow is required to be run in this environment (with additional approvals)
         required: false
         type: string
+      project_id:
+        description: The project ID
+        required: true
+        type: string
+      workload_identity_provider:
+        description: The workload identity provider
+        required: true
+        type: string
 
   push:
     tags:
@@ -37,8 +45,8 @@ jobs:
         uses: 'google-github-actions/auth@v2'
         with:
           create_credentials_file: true
-          project_id: ${{ environment.PROJECT_ID }}
-          workload_identity_provider: ${{ environment.WORKLOAD_IDENTITY_POOL_ID }}
+          project_id: ${{ inputs.project_id }}
+          workload_identity_provider: ${{ inputs.workload_identity_provider }}
       # Setup flutter
       - uses: subosito/flutter-action@v2
         with:
