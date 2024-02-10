@@ -42,8 +42,5 @@ jobs:
       - name: 📝 Analyze Code
         run: dart analyze .
 
-      - name: 🚀 Prepare Publish package
-        run: dart pub publish --dry-run
-
       - name: 🚀 Publish package
         run: dart pub publish -f
