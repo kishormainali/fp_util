@@ -9,7 +9,6 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    environment: pub.dev
     permissions:
       id-token: write # Required for authentication using OIDC
 
@@ -21,8 +20,8 @@ jobs:
       # setup auth
       - uses: 'google-github-actions/auth@v2'
         with:
-          environment: pub.dev
-
+          project_id: ${{ secrets.PROJECT_ID }}
+          workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_POOL_ID }}
       # Setup flutter
       - uses: subosito/flutter-action@v2
         with:
