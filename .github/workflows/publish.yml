@@ -7,38 +7,36 @@ on:
 
 jobs:
   publish:
-    name: Publish Plugin
     runs-on: ubuntu-latest
-    container:
-      image:  google/dart:latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Flutter
-      uses: subosito/flutter-action@v2
-      with:
-        channel: "stable"
 
-    - name: Cache packages
-      uses: actions/cache@v3
-      with:
-        path: ${{ env.PUB_CACHE }}
-        key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.lock') }}
-        restore-keys: ${{ runner.os }}-pub-
-    - name: Get dependencies
-      run: flutter pub get
+      - name: 📚 Git Checkout
+        uses: actions/checkout@v4
 
-    - name: 🔐 Setup Pub Credentials
-      run: |
-        mkdir -p $XDG_CONFIG_HOME/dart
-        echo  "$XDG_CONFIG_HOME/dart/pub-credentials.json"
-        cat <<EOF > "$XDG_CONFIG_HOME/dart/pub-credentials.json"
-        {
-          "accessToken":"${{ secrets.OAUTH_ACCESS_TOKEN }}",
-          "refreshToken":"${{ secrets.OAUTH_REFRESH_TOKEN }}",
-          "tokenEndpoint":"https://accounts.google.com/o/oauth2/token",
-          "scopes": [ "openid", "https://www.googleapis.com/auth/userinfo.email" ],
-          "expiration": 1570721159347
-        }
-        EOF
-    - name: Publish package
-      run: pub publish -f
+      - name: 🐦 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: 📦 Install Dependencies
+        run: flutter pub get
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: 🔐 Setup Pub Credentials
+        run: |
+          mkdir -p $XDG_CONFIG_HOME/dart
+          echo  "$XDG_CONFIG_HOME/dart/pub-credentials.json"
+          cat <<EOF > "$XDG_CONFIG_HOME/dart/pub-credentials.json"
+          {
+            "accessToken":"${{ secrets.OAUTH_ACCESS_TOKEN }}",
+            "refreshToken":"${{ secrets.OAUTH_REFRESH_TOKEN }}",
+            "tokenEndpoint":"https://accounts.google.com/o/oauth2/token",
+            "scopes": [ "openid", "https://www.googleapis.com/auth/userinfo.email" ],
+            "expiration": 1570721159347
+          }
+          EOF
+      - name: Publish package
+        run: pub publish -f
