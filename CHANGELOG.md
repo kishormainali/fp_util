@@ -1,4 +1,10 @@
+# 3.3.1
+- updated logger
+
 # 3.3.0
+> This release contains BREAKING CHANGES
+- added logger class
+- remove responsive from all the extension functions
 
 
 # 2.2.0

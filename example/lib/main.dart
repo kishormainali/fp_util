@@ -4,15 +4,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:fp_util/fp_util.dart';
 
-class SimpleBlocObserver extends BlocObserver with LoggerMixin {
+class SimpleBlocObserver extends BlocObserver {
   @override
   void onChange(BlocBase bloc, Change change) {
     super.onChange(bloc, change);
-    i(change.currentState);
+    Logger.i(change.currentState, tag: bloc.runtimeType.toString());
   }
 }
 
-GlobalKey<ScaffoldMessengerState> scaffoldMessageKey = GlobalKey<ScaffoldMessengerState>();
+GlobalKey<ScaffoldMessengerState> scaffoldMessageKey =
+    GlobalKey<ScaffoldMessengerState>();
 
 void main() {
   Bloc.observer = SimpleBlocObserver();

@@ -28,7 +28,8 @@ class DefaultPickerData extends Equatable {
     this.useTextButton = false,
     this.buttonStyle,
     this.buttonPadding = EdgeInsets.zero,
-    this.actionsPadding = const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+    this.actionsPadding =
+        const EdgeInsets.only(left: 20, right: 20, bottom: 10),
     this.insetPadding = const EdgeInsets.all(16),
     this.contentPadding = EdgeInsets.zero,
     this.shape,

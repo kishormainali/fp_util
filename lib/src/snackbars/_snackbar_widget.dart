@@ -67,7 +67,9 @@ class SnackbarWidget extends StatelessWidget {
                   message,
                   style: textStyle,
                   maxLines: contentMaxLines,
-                  overflow: contentMaxLines != null ? TextOverflow.ellipsis : TextOverflow.visible,
+                  overflow: contentMaxLines != null
+                      ? TextOverflow.ellipsis
+                      : TextOverflow.visible,
                   textAlign: textAlign,
                 ),
               ),

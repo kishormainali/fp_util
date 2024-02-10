@@ -5,7 +5,7 @@ library logger;
 import 'dart:convert';
 import 'dart:math';
 
-import 'package:io/ansi.dart';
+import 'package:ansicolor/ansicolor.dart';
 
 ///{@template log_level}
 /// The log level of a log message.
@@ -32,13 +32,14 @@ enum _LogLevel {
   String get label => toString();
 
   /// Returns the ansi color associated with the log level.
-  AnsiCode get color {
+  AnsiPen get color {
+    final pen = AnsiPen();
     return switch (this) {
-      _LogLevel.debug => magenta,
-      _LogLevel.info => blue,
-      _LogLevel.warning => yellow,
-      _LogLevel.error => red,
-      _LogLevel.success => green,
+      _LogLevel.debug => pen..xterm(4),
+      _LogLevel.info => pen..blue(),
+      _LogLevel.warning => pen..yellow(),
+      _LogLevel.error => pen..red(),
+      _LogLevel.success => pen..green(),
     };
   }
 
@@ -73,16 +74,17 @@ abstract class Logger {
   ///
   /// For example:
   /// * dart:sdk_internal
-  static final _browserStackTraceRegex = RegExp(r'^(?:package:)?(dart:\S+|\S+)');
+  static final _browserStackTraceRegex =
+      RegExp(r'^(?:package:)?(dart:\S+|\S+)');
 
   /// line width of the logger
-  static int get _lineWidth => 120;
+  static int get _lineWidth => 80;
 
   /// top border of the logger
-  static String get _topBorder => '╔${'═' * _lineWidth}╗';
+  static String get _topBorder => '╔${'═' * _lineWidth}';
 
   /// bottom border of the logger
-  static String get _bottomBorder => '╚${'═' * _lineWidth}╝';
+  static String get _bottomBorder => '╚${'═' * _lineWidth}';
 
   /// side border of the logger
   static String get _sideBorder => '║';
@@ -93,19 +95,19 @@ abstract class Logger {
     for (var i = 0; i < lines.length; i++) {
       final content = lines[i];
       final remainingSpace = ' ' * (_lineWidth - (content.length + 1));
-      buffer.writeln(level.color.wrap('$content$remainingSpace'));
+      buffer.writeln(level.color('$content$remainingSpace'));
     }
     return buffer.toString();
   }
 
   /// prints a line with the given message
   static String _printLine(String line) {
-    return '$_sideBorder $line${' ' * (_lineWidth - line.length - 1)}$_sideBorder';
+    return '$_sideBorder $line${' ' * (_lineWidth - line.length - 1)}';
   }
 
   /// prints a divider
   static String _printDivider() {
-    return '╠${'═' * _lineWidth}╣';
+    return '╠${'═' * _lineWidth}';
   }
 
   /// Logs a message
@@ -114,16 +116,20 @@ abstract class Logger {
     dynamic message, {
     Object? error,
     StackTrace? stackTrace,
+    String tag = "",
   }) {
-    bool isError = level == _LogLevel.error && (error != null || stackTrace != null);
+    bool isError =
+        level == _LogLevel.error && (error != null || stackTrace != null);
     final messages = <String>[
       _topBorder,
-      _printLine('${level.icon} | ${level.label} | ${_getTime(DateTime.now())}'),
+      _printLine(
+          '${level.icon} | ${level.label} | ${_getTime(DateTime.now())} | $tag'),
       _printDivider(),
     ];
     if (message is Map || message is List) {
       try {
-        final indentedString = const JsonEncoder.withIndent(' ').convert(message);
+        final indentedString =
+            const JsonEncoder.withIndent(' ').convert(message);
         final lines = indentedString.split('\n');
         messages.addAll(lines.map(_printLine));
       } catch (_) {
@@ -151,7 +157,10 @@ abstract class Logger {
   static List<String> _formatStackTrace(StackTrace stackTrace) {
     final lines = stackTrace.toString().split('\n').where(
       (element) {
-        return !_discardDeviceStacktraceLine(element) && !_discardWebStacktraceLine(element) && !_discardBrowserStacktraceLine(element) && element.isNotEmpty;
+        return !_discardDeviceStacktraceLine(element) &&
+            !_discardWebStacktraceLine(element) &&
+            !_discardBrowserStacktraceLine(element) &&
+            element.isNotEmpty;
       },
     ).toList();
 
@@ -184,7 +193,8 @@ abstract class Logger {
       return false;
     }
     final segment = match.group(1)!;
-    return segment.startsWith('packages/fp_util') || segment.startsWith('dart-sdk/lib');
+    return segment.startsWith('packages/fp_util') ||
+        segment.startsWith('dart-sdk/lib');
   }
 
   /// Discards stacktrace lines that are not useful.
@@ -219,18 +229,39 @@ abstract class Logger {
   }
 
   /// Logs a debug message.
-  static void d(dynamic message) {
-    _log(_LogLevel.debug, message);
+  static void d(
+    dynamic message, {
+    String tag = "",
+  }) {
+    _log(
+      _LogLevel.debug,
+      message,
+      tag: tag,
+    );
   }
 
   /// Logs an info message.
-  static void i(dynamic message) {
-    _log(_LogLevel.info, message);
+  static void i(
+    dynamic message, {
+    String tag = "",
+  }) {
+    _log(
+      _LogLevel.info,
+      message,
+      tag: tag,
+    );
   }
 
   /// Logs a warning message.
-  static void w(dynamic message) {
-    _log(_LogLevel.warning, message);
+  static void w(
+    dynamic message, {
+    String tag = "",
+  }) {
+    _log(
+      _LogLevel.warning,
+      message,
+      tag: tag,
+    );
   }
 
   /// Logs an error message.
@@ -238,17 +269,22 @@ abstract class Logger {
     dynamic message, {
     Object? error,
     StackTrace? stackTrace,
+    String tag = "",
   }) {
     _log(
       _LogLevel.error,
       message,
       error: error,
       stackTrace: stackTrace,
+      tag: tag,
     );
   }
 
   /// Logs a success message.
-  static void s(dynamic message) {
-    _log(_LogLevel.success, message);
+  static void s(
+    dynamic message, {
+    String tag = "",
+  }) {
+    _log(_LogLevel.success, message, tag: tag);
   }
 }

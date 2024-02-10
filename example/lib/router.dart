@@ -13,7 +13,8 @@ final router = GoRouter(
   navigatorKey: _rootNavigationKey,
   routes: [
     StatefulShellRoute.indexedStack(
-      builder: (context, state, navigationShell) => HomePageNavbar(shell: navigationShell),
+      builder: (context, state, navigationShell) =>
+          HomePageNavbar(shell: navigationShell),
       branches: [
         StatefulShellBranch(routes: [
           GoRoute(

@@ -35,5 +35,15 @@ jobs:
             "expiration": 1570721159347
           }
           EOF
-      - name: Publish package
+
+      - name: 📝 Format Code
+        run: dart format .
+
+      - name: 📝 Analyze Code
+        run: dart analyze .
+
+      - name: 🚀 Prepare Publish package
+        run: dart pub publish --dry-run
+
+      - name: 🚀 Publish package
         run: dart pub publish -f

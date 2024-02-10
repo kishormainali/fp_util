@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-abstract class PlatformWidget<A extends Widget, I extends Widget> extends StatelessWidget {
+abstract class PlatformWidget<A extends Widget, I extends Widget>
+    extends StatelessWidget {
   const PlatformWidget({super.key});
 
   @override
@@ -11,7 +12,9 @@ abstract class PlatformWidget<A extends Widget, I extends Widget> extends Statel
     }
     final platform = Theme.of(context).platform;
     return switch (platform) {
-      TargetPlatform.macOS || TargetPlatform.iOS => buildCupertinoWidget(context),
+      TargetPlatform.macOS ||
+      TargetPlatform.iOS =>
+        buildCupertinoWidget(context),
       _ => buildMaterialWidget(context),
     };
   }

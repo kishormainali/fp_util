@@ -47,7 +47,8 @@ class RawSnackbarState extends State<RawSnackbar> {
         SlideEffect(
           begin: widget.snackbarPosition.beginOffset,
           end: Offset.zero,
-          duration: Duration(milliseconds: 2 * widget.animationDuration.inMilliseconds),
+          duration: Duration(
+              milliseconds: 2 * widget.animationDuration.inMilliseconds),
           curve: widget.animationCurve ?? Curves.elasticOut,
         ),
         FadeEffect(

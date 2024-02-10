@@ -14,6 +14,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "ansicolor",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/ansicolor-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "args",
       "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/args-2.4.2",
       "packageUri": "lib/",
@@ -620,7 +626,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-02-09T14:47:34.073991Z",
+  "generated": "2024-02-10T15:39:31.605877Z",
   "generator": "pub",
   "generatorVersion": "3.2.6"
 }
