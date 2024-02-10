@@ -1,43 +1,44 @@
 # .github/workflows/publish.yml
 name: Publish to pub.dev
-
-
-
 on:
-
   push:
     tags:
     - 'v[0-9]+.[0-9]+.[0-9]+*' # for tags like: 'v1.2.3'
 
-
-
 jobs:
   publish:
+    name: Publish Plugin
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write # Required for authentication using OIDC
-      contents: read
+    container:
+      image:  google/dart:latest
     steps:
+    - uses: actions/checkout@v3
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        channel: "stable"
 
-      # Checkout repository
-      - uses: actions/checkout@v4
-      # setup auth
-      - name: Setup Auth
-        id: auth
-        uses: 'google-github-actions/auth@v2'
-        with:
-          create_credentials_file: true
-          project_id: 'pub-dev-413813'
-          workload_identity_provider: 'projects/992940971615/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-provider'
-          service_account_email: 'github-actions@pub-dev-413813.iam.gserviceaccount.com'
-      # Setup flutter
-      - uses: subosito/flutter-action@v2
-        with:
-          channel: "stable"
+    - name: Cache packages
+      uses: actions/cache@v3
+      with:
+        path: ${{ env.PUB_CACHE }}
+        key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.lock') }}
+        restore-keys: ${{ runner.os }}-pub-
+    - name: Get dependencies
+      run: flutter pub get
 
-      - name: Install dependencies
-        run: flutter pub get
-
-      # Publishing...
-      - name: Publish to pub.dev
-        run: dart pub publish -f
+    - name: 🔐 Setup Pub Credentials
+      run: |
+        mkdir -p $XDG_CONFIG_HOME/dart
+        echo  "$XDG_CONFIG_HOME/dart/pub-credentials.json"
+        cat <<EOF > "$XDG_CONFIG_HOME/dart/pub-credentials.json"
+        {
+          "accessToken":"${{ secrets.OAUTH_ACCESS_TOKEN }}",
+          "refreshToken":"${{ secrets.OAUTH_REFRESH_TOKEN }}",
+          "tokenEndpoint":"https://accounts.google.com/o/oauth2/token",
+          "scopes": [ "openid", "https://www.googleapis.com/auth/userinfo.email" ],
+          "expiration": 1570721159347
+        }
+        EOF
+    - name: Publish package
+      run: pub publish -f
