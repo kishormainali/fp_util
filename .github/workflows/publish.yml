@@ -22,9 +22,6 @@ jobs:
       - name: 📦 Install Dependencies
         run: flutter pub get
 
-      - name: Get dependencies
-        run: flutter pub get
-
       - name: 🔐 Setup Pub Credentials
         run: |
           mkdir -p $XDG_CONFIG_HOME/dart
@@ -39,4 +36,4 @@ jobs:
           }
           EOF
       - name: Publish package
-        run: pub publish -f
+        run: dart pub publish -f
