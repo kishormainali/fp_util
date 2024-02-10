@@ -1,27 +1,44 @@
 # .github/workflows/publish.yml
 name: Publish to pub.dev
 
+
+
 on:
+
+  workflow_call:
+    inputs:
+      environment:
+        description: if specified, the workflow is required to be run in this environment (with additional approvals)
+        required: false
+        type: string
+
   push:
     tags:
     - 'v[0-9]+.[0-9]+.[0-9]+*' # for tags like: 'v1.2.3'
+
+
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
       id-token: write # Required for authentication using OIDC
+      contents: read
+
+    environment: ${{ inputs.environment }}
 
     steps:
 
       # Checkout repository
       - uses: actions/checkout@v4
-
       # setup auth
-      - uses: 'google-github-actions/auth@v2'
+      - name: Setup Auth
+        id: auth
+        uses: 'google-github-actions/auth@v2'
         with:
-          project_id: ${{ secrets.PROJECT_ID }}
-          workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_POOL_ID }}
+          create_credentials_file: true
+          project_id: ${{ environment.PROJECT_ID }}
+          workload_identity_provider: ${{ environment.WORKLOAD_IDENTITY_POOL_ID }}
       # Setup flutter
       - uses: subosito/flutter-action@v2
         with:
