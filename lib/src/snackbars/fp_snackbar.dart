@@ -46,10 +46,13 @@ class FpSnackbar {
 
   /// Remove individual snackbar on dismiss
   void _remove() {
-    Future.delayed(snackbarDuration).then((value) {
-      info.entry.remove();
-      _snackBars.removeWhere((element) => element == this);
-    });
+    info.entry.remove();
+    _snackBars.removeWhere((element) => element == this);
+  }
+
+  void _removeIndex(int index) {
+    _snackBars[index].info.entry.remove();
+    _snackBars.removeAt(index);
   }
 
   /// show the snackbar in current context
@@ -239,10 +242,7 @@ class SnackbarInfo {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is SnackbarInfo &&
-        other.key == key &&
-        other.createdAt == createdAt &&
-        other.entry == entry;
+    return other is SnackbarInfo && other.key == key && other.createdAt == createdAt && other.entry == entry;
   }
 
   @override
