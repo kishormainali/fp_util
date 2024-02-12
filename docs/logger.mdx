@@ -1,0 +1,49 @@
+---
+title: Logger
+description: A simple logger that logs messages to the console.
+---
+
+# Logger
+A simple logger that logs messages to the console.
+
+### Methods
+- [Debug](#debug)
+- [Info](#info)
+- [Warning](#warning)
+- [Error](#error)
+- [Success](#success)
+
+### Usage
+
+- ### Debug
+```dart title="Log Debug Message"
+  Logger.d("Hello this is debug message");
+  Logger.d({"name":"John Doe","age":25});
+  Logger.d([{"name":"John Doe","age":25},{"name":"Jane Doe","age":23}]);
+```
+- ### Info
+```dart title="Log Info Message"
+  Logger.i("Hello this is info message");
+```
+
+- ### Warning
+```dart title="Log Warning Message"
+  Logger.w("Hello this is warning message");
+```
+
+- ### Error
+```dart title="Log Error Message"
+    void main(){
+      try{
+        throw Exception("This is an error");
+      }catch(error,stackTrace){
+        Logger.e("Error message",error:error,stackTrace:stackTrace);
+      }
+    }
+```
+
+- ### Success
+```dart title="Log Success Message"
+  Logger.s("Hello this is success message");
+```
+
