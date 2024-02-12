@@ -2,6 +2,13 @@
     "name": "FP Utils",
     "description": "Utilities and Extensions for num,BuildContext,EdgeInsets,File,String. constants for horizontal and vertical spacing.",
     "theme": "#36B9B9",
+    "anchors":[
+      {
+        "title":"Home",
+        "icon":"house",
+        "link":"utils.kishormainali.com"
+      }
+    ],
     "sidebar": [
       ["Home", "/"],
       ["Extensions", [
@@ -18,6 +25,7 @@
 
       ]],
       ["Forms","/forms"],
-      ["Logger","/logger"]
+      ["Logger","/logger"],
+      ["Input Formatters","/input-formatters"]
     ]
   }

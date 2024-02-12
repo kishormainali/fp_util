@@ -15,23 +15,30 @@ A simple logger that logs messages to the console.
 
 ### Usage
 
-- ### Debug
+### Debug
 ```dart title="Log Debug Message"
   Logger.d("Hello this is debug message");
   Logger.d({"name":"John Doe","age":25});
   Logger.d([{"name":"John Doe","age":25},{"name":"Jane Doe","age":23}]);
 ```
-- ### Info
+Output:
+<Image src="/assets/debug.png"/>
+
+### Info
 ```dart title="Log Info Message"
   Logger.i("Hello this is info message");
 ```
+Output:
+<Image src="/assets/info.png"/>
 
-- ### Warning
+### Warning
 ```dart title="Log Warning Message"
   Logger.w("Hello this is warning message");
 ```
+Output:
+<Image src="/assets/warning.png"/>
 
-- ### Error
+### Error
 ```dart title="Log Error Message"
     void main(){
       try{
@@ -41,9 +48,12 @@ A simple logger that logs messages to the console.
       }
     }
 ```
+Output:
+<Image src="/assets/error.png"/>
 
-- ### Success
+### Success
 ```dart title="Log Success Message"
   Logger.s("Hello this is success message");
 ```
-
+Output:
+<Image src="/assets/success.png"/>
