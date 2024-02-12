@@ -3,14 +3,9 @@
     "description": "Utilities and Extensions for num,BuildContext,EdgeInsets,File,String. constants for horizontal and vertical spacing.",
     "theme": "#36B9B9",
     "logo":"assets/logo.png",
-    "anchors":[
-      {
-        "title":"Home",
-        "icon":"house",
-        "link":"https://utils.kishormainali.com"
-      }
-    ],
     "sidebar": [
+      ["Home","/"],
+      ["Getting Started","/getting-started"],
       ["Extensions", [
         ["Context","/extensions/context"],
         ["Num","/extensions/num"],
