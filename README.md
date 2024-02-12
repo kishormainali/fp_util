@@ -1,5 +1,11 @@
 # FPUtil
 
+![Image](assets/full_logo.png)
+
+[![pub package](https://img.shields.io/pub/v/fp_util.svg)](https://pub.dev/packages/fp_util)
+
+> View full [documentation](utils.kishormainali.com)
+
 - Utilities and Extensions for num, BuildContext, EdgeInsets, File, String. Constants for horizontal and vertical spacing.
 - Social Buttons - Facebook, Google, Apple
 - Gradient Button
