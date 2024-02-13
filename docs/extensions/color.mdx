@@ -1,1 +1,34 @@
 # Color Extensions
+
+### HexColor
+```dart title="HexColor"
+final colorFromHex = HexColor('#FF00FF');
+```
+
+### fromHex
+```dart title="Convert Hex to Color"
+/// without opacity
+final colorFromHex = ColorHex.fromHex('#FF00FF');
+
+/// with opacity
+final colorFromHex = ColorHex.fromHex('#FF00FF', 1);
+```
+
+### hex
+```dart title="Get Hex Code from Color"
+final color  = Color(0xFFFF00FF);
+
+/// without opacity
+final hex = color.hex;
+
+/// with opacity
+final hex = color.hexWithOpacity;
+```
+
+### percent
+```dart title="Color with opacity percent"
+final color  = Color(0xFFFF00FF);
+
+/// 50% opacity
+final colorWithOpacity = color.percent(50);
+```
