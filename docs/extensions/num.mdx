@@ -1,1 +1,237 @@
 # Num Extensions
+
+### Usage
+Add the following import to your Dart file:
+```dart
+import 'package:fp_util/fp_util.dart';
+```
+
+### gap
+```dart title="gap widget"
+import 'package:flutter/material.dart';
+import 'package:fp_util/fp_util.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('Hello World'),
+              gap(10),
+              Text('Hello World'),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+### sliverGap
+```dart title="sliverGap widget"
+import 'package:flutter/material.dart';
+import 'package:fp_util/fp_util.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: CustomScrollView(
+          slivers: <Widget>[
+            SliverList(
+              delegate: SliverChildListDelegate(
+                [
+                  Text('Hello World'),
+                  10.sliverGap,
+                  Text('Hello World'),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+### microseconds
+```dart title="get duration on microseconds"
+  final duration = 1.microseconds;
+  print(duration); // 0:00:00.001000
+```
+
+### milliseconds
+```dart title="get duration on milliseconds"
+  final duration = 1.milliseconds;
+  print(duration); // 0:00:00.001000
+```
+
+### seconds
+```dart title="get duration on seconds"
+  final duration = 1.seconds;
+  print(duration); // 0:00:01.000000
+```
+
+### minutes
+```dart title="get duration on minutes"
+  final duration = 1.minutes;
+  print(duration); // 0:01:00.000000
+```
+
+### hours
+```dart title="get duration on hours"
+  final duration = 1.hours;
+  print(duration); // 1:00:00.000000
+```
+
+### days
+```dart title="get duration on days"
+  final duration = 1.days;
+  print(duration); // 1 day, 0:00:00.000000
+```
+
+### delayedMicroseconds
+```dart title="delay with microseconds"
+  void main() async {
+    print('start');
+    await 1.delayedMicroseconds;
+    print('end');
+  }
+```
+
+### delayedMilliseconds
+```dart title="delay with milliseconds"
+  void main() async {
+    print('start');
+    await 1.delayedMilliseconds;
+    print('end');
+  }
+```
+
+### delayedSeconds
+```dart title="delay with seconds"
+  void main() async {
+    print('start');
+    await 1.delayedSeconds;
+    print('end');
+  }
+```
+
+### delayedMinutes
+```dart title="delay with minutes"
+  void main() async {
+    print('start');
+    await 1.delayedMinutes;
+    print('end');
+  }
+```
+
+### delayedHours
+```dart title="delay with hours"
+  void main() async {
+    print('start');
+    await 1.delayedHours;
+    print('end');
+  }
+```
+
+### circularRadius
+```dart title="get circular radius"
+  Container(
+    decoration: BoxDecoration(
+      borderRadius: 10.circularRadius,
+      color: Colors.red,
+    ),
+  );
+```
+
+### circular
+```dart title="get circular radius geometry"
+  Container(
+    decoration: BoxDecoration(
+      borderRadius: 10.circular,
+      color: Colors.red,
+    ),
+  );
+```
+
+### circularBorderRadius
+```dart title="get circular border radius"
+  Container(
+    decoration: BoxDecoration(
+      borderRadius: 10.circularBorderRadius,
+      color: Colors.red,
+    ),
+  );
+```
+
+### all
+```dart title="get padding for all sides"
+  Padding(
+    padding: 10.all,
+    child: Text('Hello World'),
+  );
+```
+
+### padLeft
+```dart title="get padding for left side"
+  Padding(
+    padding: 10.padLeft,
+    child: Text('Hello World'),
+  );
+```
+
+### padTop
+```dart title="get padding for top side"
+  Padding(
+    padding: 10.padTop,
+    child: Text('Hello World'),
+  );
+```
+
+### padRight
+```dart title="get padding for right side"
+  Padding(
+    padding: 10.padRight,
+    child: Text('Hello World'),
+  );
+```
+
+### padBottom
+```dart title="get padding for bottom side"
+  Padding(
+    padding: 10.padBottom,
+    child: Text('Hello World'),
+  );
+```
+
+### padX
+```dart title="get padding for horizontal sides"
+  Padding(
+    padding: 10.padX,
+    child: Text('Hello World'),
+  );
+```
+
+### padY
+```dart title="get padding for vertical sides"
+  Padding(
+    padding: 10.padY,
+    child: Text('Hello World'),
+  );
+```

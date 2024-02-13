@@ -4,3 +4,128 @@ description: "some basic constants"
 ---
 
 # Constants
+
+### Usage
+Add the following import to your Dart file:
+```dart
+import 'package:fp_util/fp_util.dart';
+```
+
+### Boolean
+```dart title="boolean constants"
+const bool kTrue = BooleanConst.TRUE;
+const bool kFalse = BooleanConst.FALSE;
+```
+
+### Sizes
+```dart title="size constants"
+const double kSize4 = Sizes.p4;
+const double kSize8 = Sizes.p8;
+const double kSize12 = Sizes.p12;
+const double kSize16 = Sizes.p16;
+const double kSize20 = Sizes.p20;
+const double kSize24 = Sizes.p24;
+const double kSize32 = Sizes.p32;
+const double kSize48 = Sizes.p48;
+const double kSize54 = Sizes.p54;
+const double kSize64 = Sizes.p64;
+```
+
+```dart title="gap constants"
+const double kGap4 = Sizes.gap4;
+const double kGap8 = Sizes.gap8;
+const double kGap12 = Sizes.gap12;
+const double kGap16 = Sizes.gap16;
+const double kGap20 = Sizes.gap20;
+const double kGap24 = Sizes.gap24;
+const double kGap32 = Sizes.gap32;
+const double kGap48 = Sizes.gap48;
+const double kGap54 = Sizes.gap54;
+const double kGap64 = Sizes.gap64;
+```
+
+``` dart title="sliver gap constants"
+const double kSliverGap4 = Sizes.sliverGap4;
+const double kSliverGap8 = Sizes.sliverGap8;
+const double kSliverGap12 = Sizes.sliverGap12;
+const double kSliverGap16 = Sizes.sliverGap16;
+const double kSliverGap20 = Sizes.sliverGap20;
+const double kSliverGap24 = Sizes.sliverGap24;
+const double kSliverGap32 = Sizes.sliverGap32;
+const double kSliverGap48 = Sizes.sliverGap48;
+const double kSliverGap54 = Sizes.sliverGap54;
+const double kSliverGap64 = Sizes.sliverGap64;
+```
+
+```dart title="Spacing Example"
+  /// vertical space
+  Column(
+    children:[
+      Text('Hello',),
+      Sizes.gap4,
+      Text('World',),
+    ]
+  );
+
+  /// horizontal space
+  Row(
+    children:[
+      Text('Hello',),
+      Sizes.p4,
+      Text('World',),
+    ]
+  );
+```
+
+```dart title="Sliver Spacing Example"
+
+  /// vertical space
+  CustomScrollView(
+    slivers: [
+      SliverList(
+        delegate: SliverChildListDelegate(
+          [
+            Text('Hello',),
+            Sizes.sliverGap4,
+            Text('World',),
+          ]
+        ),
+      ),
+      Sizes.sliverGap4,
+      SliverList(
+        delegate: SliverChildListDelegate(
+          [
+            Text('Hello',),
+            Sizes.sliverGap4,
+            Text('World',),
+          ]
+        ),
+    ],
+  );
+
+  /// horizontal space
+  CustomScrollView(
+    scrollDirection: Axis.horizontal,
+    slivers: [
+      SliverList(
+        delegate: SliverChildListDelegate(
+          [
+            Text('Hello',),
+            Sizes.sliverGap4,
+            Text('World',),
+          ]
+        ),
+      ),
+      Sizes.sliverGap12,
+      SliverList(
+        delegate: SliverChildListDelegate(
+          [
+            Text('Hello',),
+            Sizes.sliverGap4,
+            Text('World',),
+          ]
+        ),
+      ),
+    ],
+  );
+```

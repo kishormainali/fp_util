@@ -23,6 +23,13 @@
       ["Forms","/forms"],
       ["Logger","/logger"],
       ["Input Formatters","/input-formatters"],
-      ["Widgets","/widgets"]
+      ["Widgets",[
+        ["Column","/widgets/column"],
+        ["Conditional Widget","/widgets/conditional-widget"],
+        ["Containers","/widgets/containers"],
+        ["Gradient Widgets","/widgets/gradient-widgets"],
+        ["Row","/widgets/row"],
+        ["Scaffold","/widgets/scaffold"]
+      ]]
     ]
   }

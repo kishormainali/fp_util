@@ -9,20 +9,16 @@ extension DateTimeUtils on DateTime {
   String get jms => DateFormat.jms().format(this);
 
   /// year month day format
-  String yyMMdd({Locale? locale}) =>
-      DateFormat('yy/MM/dd', locale?.languageCode).format(this);
+  String yyMMdd({Locale? locale}) => DateFormat('yy/MM/dd', locale?.languageCode).format(this);
 
   /// EEE, M/d/y format
-  String yMEd([Locale? locale]) =>
-      DateFormat.yMEd(locale?.languageCode).format(this);
+  String yMEd([Locale? locale]) => DateFormat.yMEd(locale?.languageCode).format(this);
 
   /// hour minute format
-  String jm([Locale? locale]) =>
-      DateFormat.jm(locale?.languageCode).format(this);
+  String jm([Locale? locale]) => DateFormat.jm(locale?.languageCode).format(this);
 
   /// format with custom pattern
-  String format(String pattern, [Locale? locale]) =>
-      DateFormat(pattern, locale?.languageCode).format(this);
+  String format(String pattern, [Locale? locale]) => DateFormat(pattern, locale?.languageCode).format(this);
 
   /// add days to current date
 
@@ -50,13 +46,18 @@ extension DateTimeUtils on DateTime {
   DateTime subtractSeconds(int seconds) => subtract(Duration(seconds: seconds));
 
   /// parse string to DateTime
-  DateTime formatParse(String inputString,
-      [String pattern = DateFormat.YEAR_NUM_MONTH_DAY]) {
+  static DateTime formatParse(String inputString, [String pattern = DateFormat.YEAR_NUM_MONTH_DAY]) {
     return DateFormat(pattern).parseLoose(inputString);
   }
 
+  /// return true if date is today
+  static bool isToday(DateTime date) {
+    final now = DateTime.now();
+    return date.year == now.year && date.month == now.month && date.day == now.day;
+  }
+
   /// return time stamp string
-  String get timeStamp {
+  String get timestamp {
     return DateFormat('hh:mm:ss.SSS').format(this);
   }
 
@@ -119,13 +120,10 @@ extension DateTimeUtils on DateTime {
     bool usePrefix = false,
   }) {
     final date = DateTime.now();
-    if (date.month > startMonth ||
-        (date.month == startMonth && date.day >= startDay)) {
-      return format.format(
-          date.year.toString(), (date.year + 1).toString(), usePrefix);
+    if (date.month > startMonth || (date.month == startMonth && date.day >= startDay)) {
+      return format.format(date.year.toString(), (date.year + 1).toString(), usePrefix);
     } else {
-      return format.format(
-          (date.year - 1).toString(), date.year.toString(), usePrefix);
+      return format.format((date.year - 1).toString(), date.year.toString(), usePrefix);
     }
   }
 }
@@ -154,10 +152,8 @@ enum FiscalYearFormat {
     String text = switch (this) {
       FiscalYearFormat.hyphen => '$startYear-$endYear',
       FiscalYearFormat.slash => '$startYear/$endYear',
-      FiscalYearFormat.hyphenShort =>
-        '${startYear.substring(2, startYear.length)}-${endYear.substring(2, endYear.length)}',
-      FiscalYearFormat.slashShort =>
-        '${startYear.substring(2, startYear.length)}/${endYear.substring(2, endYear.length)}',
+      FiscalYearFormat.hyphenShort => '${startYear.substring(2, startYear.length)}-${endYear.substring(2, endYear.length)}',
+      FiscalYearFormat.slashShort => '${startYear.substring(2, startYear.length)}/${endYear.substring(2, endYear.length)}',
       FiscalYearFormat.singleShort => startYear.substring(2, startYear.length),
       FiscalYearFormat.single => startYear,
     };
