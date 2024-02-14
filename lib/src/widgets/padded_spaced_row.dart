@@ -9,6 +9,8 @@ import 'package:fp_util/fp_util.dart';
 ///
 /// This widget is equivalent to [Padding] with Row as its child.
 /// {@endtemplate}
+///
+@Deprecated('use PaddedRow.spaced() instead')
 class PaddedSpacedRow extends StatelessWidget {
   /// {@macro padded_spaced_row}
   const PaddedSpacedRow({

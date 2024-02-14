@@ -6,6 +6,7 @@ abstract class Sizes {
   static const double p8 = 8.0;
   static const double p12 = 12.0;
   static const double p16 = 16.0;
+  static const double p20 = 20.0;
   static const double p24 = 24.0;
   static const double p32 = 32.0;
   static const double p48 = 48.0;
@@ -18,6 +19,7 @@ abstract class Sizes {
   static Gap get gap8 => const Gap(p8);
   static Gap get gap12 => const Gap(p12);
   static Gap get gap16 => const Gap(p16);
+  static Gap get gap20 => const Gap(p20);
   static Gap get gap24 => const Gap(p24);
   static Gap get gap32 => const Gap(p32);
   static Gap get gap48 => const Gap(p48);
@@ -29,6 +31,7 @@ abstract class Sizes {
   static SliverGap get sliverGap8 => const SliverGap(p8);
   static SliverGap get sliverGap12 => const SliverGap(p12);
   static SliverGap get sliverGap16 => const SliverGap(p16);
+  static SliverGap get sliverGap20 => const SliverGap(p20);
   static SliverGap get sliverGap24 => const SliverGap(p24);
   static SliverGap get sliverGap32 => const SliverGap(p32);
   static SliverGap get sliverGap48 => const SliverGap(p48);

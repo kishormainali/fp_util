@@ -1,0 +1,134 @@
+# File Extensions
+Extensions for file
+
+### Usage
+Add the following import to your Dart file:
+```dart
+import 'package:fp_util/fp_util.dart';
+```
+
+### fileName
+```dart title="get file name"
+final file = File('path/to/file.txt');
+final name = file.fileName;
+print(name); // file.txt
+```
+
+### extension
+```dart title="get file extension"
+final file = File('path/to/file.txt');
+final ext = file.extension;
+print(ext); // txt
+```
+
+### mimeType
+```dart title="get file mime type"
+final file = File('path/to/file.txt');
+final mime = file.mimeType;
+print(mime); // text/plain
+```
+
+### isImage
+```dart title="check if file is image"
+final file = File('path/to/file.jpg');
+final isImage = file.isImage;
+print(isImage); // true
+```
+
+### isVideo
+```dart title="check if file is video"
+final file = File('path/to/file.mp4');
+final isVideo = file.isVideo;
+print(isVideo); // true
+```
+
+### isAudio
+```dart title="check if file is audio"
+final file = File('path/to/file.mp3');
+final isAudio = file.isAudio;
+print(isAudio); // true
+```
+
+### isTxt
+```dart title="check if file is text"
+final file = File('path/to/file.txt');
+final isText = file.isTxt;
+print(isText); // true
+```
+
+### isPdf
+```dart title="check if file is pdf"
+final file = File('path/to/file.pdf');
+final isPdf = file.isPdf;
+print(isPdf); // true
+```
+
+### isDocx
+```dart title="check if file is doc"
+final file = File('path/to/file.docx');
+final isDocx = file.isDocx;
+print(isDocx); // true
+```
+
+### isXls
+```dart title="check if file is excel"
+final file = File('path/to/file.xlsx');
+final isXlsx = file.isXls;
+print(isXlsx); // true
+```
+
+### isPpt
+```dart title="check if file is powerpoint"
+final file = File('path/to/file.pptx');
+final isPptx = file.isPpt;
+print(isPptx); // true
+```
+
+### isXml
+```dart title="check if file is xml document"
+final file = File('path/to/file.xml');
+final isXml = file.isXml;
+print(isXml); // true
+```
+
+### isSvg
+```dart title="check if file is svg"
+final file = File('path/to/file.svg');
+final isSvg = file.isSvg;
+print(isSvg); // true
+```
+
+### isCsv
+```dart title="check if file is csv"
+final file = File('path/to/file.csv');
+final isCsv = file.isCsv;
+print(isCsv); // true
+```
+
+### isArchive
+```dart title="check if file is archive"
+final file = File('path/to/file.zip');
+final isArchive = file.isArchive;
+print(isArchive); // true
+```
+
+### isJson
+```dart title="check if file is json"
+final file = File('path/to/file.json');
+final isJson = file.isJson;
+print(isJson); // true
+```
+
+### isFile
+```dart title="check if file is either docs, pdf, txt,csv or xml file type"
+final file = File('path/to/file.txt');
+final isFile = file.isFile;
+print(isFile); // true
+```
+
+### sizeInMb
+```dart title="get file size in mb"
+final file = File('path/to/file.txt');
+final size = file.sizeInMb;
+print(size); // 0.5
+```

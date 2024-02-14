@@ -98,14 +98,15 @@ class CircleContainer extends Container {
     super.margin,
     super.transform,
     super.transformAlignment,
-    super.width,
-    super.height,
+    required double size,
     super.clipBehavior = Clip.none,
     DecorationImage? image,
     Gradient? gradient,
     List<BoxShadow>? shadows,
     BorderSide border = BorderSide.none,
   }) : super(
+          width: size,
+          height: size,
           decoration: ShapeDecoration(
             color: color,
             shadows: shadows,
@@ -130,8 +131,7 @@ class CircleContainer extends Container {
     super.margin,
     super.transform,
     super.transformAlignment,
-    super.width,
-    super.height,
+    required double size,
     super.clipBehavior = Clip.none,
     DecorationImage? image,
     Gradient? gradient,
@@ -141,6 +141,8 @@ class CircleContainer extends Container {
     VoidCallback? onDoubleTap,
     VoidCallback? onLongPress,
   }) : super(
+          width: size,
+          height: size,
           decoration: ShapeDecoration(
             color: color,
             shadows: shadows,

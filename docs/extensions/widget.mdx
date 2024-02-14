@@ -1,0 +1,148 @@
+# Widget Extensions
+
+### Usage
+Add the following import to your Dart file:
+```dart
+import 'package:fp_util/fp_util.dart';
+```
+
+
+### scrollable
+```dart title="Wraps a widget with a SingleChildScrollView"
+  Column(
+    children: [
+      Text('Scrollable 1'),
+      Text('Scrollable 2'),
+    ],
+  ).scrollable(),
+```
+
+
+### clickable
+```dart title="Wraps a widget with a GestureDetector"
+  Text('Clickable').clickable(() {
+    print('clicked');
+  }),
+```
+
+### alignTopLeft
+```dart title="Aligns a widget to the top left"
+  Text('Align Top Left').alignTopLeft(),
+```
+
+### alignTopCenter
+```dart title="Aligns a widget to the top center"
+  Text('Align Top Center').alignTopCenter(),
+```
+
+### alignTopRight
+```dart title="Aligns a widget to the top right"
+  Text('Align Top Right').alignTopRight(),
+```
+
+### alignCenterLeft
+```dart title="Aligns a widget to the center left"
+  Text('Align Center Left').alignCenterLeft(),
+```
+
+### center
+```dart title="Centers a widget"
+  Text('Center').center(),
+```
+
+### alignCenterRight
+```dart title="Aligns a widget to the center right"
+  Text('Align Center Right').alignCenterRight(),
+```
+
+### alignBottomLeft
+```dart title="Aligns a widget to the bottom left"
+  Text('Align Bottom Left').alignBottomLeft(),
+```
+
+### alignBottomCenter
+```dart title="Aligns a widget to the bottom center"
+  Text('Align Bottom Center').alignBottomCenter(),
+```
+
+### alignBottomRight
+```dart title="Aligns a widget to the bottom right"
+  Text('Align Bottom Right').alignBottomRight(),
+```
+
+### pad
+```dart title="Wraps with padding widget with the given padding value from all sides"
+  Text('Pad').pad(10),
+```
+
+### padLTRB
+```dart title="Wraps with padding widget with the given padding value from left top right and bottom side"
+  Text('Pad LTRB').padLTRB(10, 20, 30, 40),
+```
+
+### padTop
+```dart title="Wraps with padding widget with the given padding value from top side"
+  Text('Pad Top').padTop(10),
+```
+
+### padRight
+```dart title="Wraps with padding widget with the given padding value from right side"
+  Text('Pad Right').padRight(10),
+```
+
+### padBottom
+```dart title="Wraps with padding widget with the given padding value from bottom side"
+  Text('Pad Bottom').padBottom(10),
+```
+
+### padLeft
+```dart title="Wraps with padding widget with the given padding value from left side"
+  Text('Pad Left').padLeft(10),
+```
+
+### padX
+```dart title="Wraps with padding widget with the given padding value from left and right side"
+  Text('Pad X').padX(10),
+```
+
+### padY
+```dart title="Wraps with padding widget with the given padding value from top and bottom side"
+  Text('Pad Y').padY(10),
+```
+
+### hideKeyboard
+```dart title="Hides the keyboard on tap"
+  Text('Hide Keyboard').hideKeyboard(),
+```
+
+### column
+```dart title="Wraps with a column widget"
+  [
+    Text('Column 1'),
+    Text('Column 2'),
+  ].column(),
+```
+
+### row
+```dart title="Wraps with a row widget"
+  [
+    Text('Row 1'),
+    Text('Row 2'),
+  ].row(),
+```
+
+### stack
+```dart title="Wraps with a stack widget"
+  [
+    Text('Stack 1'),
+    Text('Stack 2')
+  ].stack(),
+```
+
+### separated
+```dart title="Wraps with a separated widget"
+  [
+    Text('Separated 1'),
+    Text('Separated 2')
+  ].separated().column(),
+```

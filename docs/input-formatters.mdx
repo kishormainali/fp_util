@@ -1,0 +1,284 @@
+---
+title: "Input Formatters"
+description: "input formatters"
+---
+
+# Input Formatters
+
+### Usage
+Add the following import to your Dart file:
+```dart
+import 'package:fp_util/fp_util.dart';
+```
+
+### UpperCaseTextFormatter
+```dart title="formats text to upper case"
+TextField(
+  inputFormatters: [
+    UpperCaseTextFormatter(),
+  ],
+)
+```
+
+### LowerCaseTextFormatter
+```dart title="formats text to lower case"
+TextField(
+  inputFormatters: [
+    LowerCaseTextFormatter(),
+  ],
+)
+```
+
+### SentenceCaseTextFormatter
+```dart title="formats text to sentence case"
+TextField(
+  inputFormatters: [
+    SentenceCaseTextFormatter(),
+  ],
+)
+```
+
+### TitleCaseTextFormatter
+```dart title="formats text to title case"
+TextField(
+  inputFormatters: [
+    TitleCaseTextFormatter(),
+  ],
+)
+```
+
+### DecimalTextFormatter
+```dart title="formats decimal with 2 decimal places"
+TextField(
+  inputFormatters: [
+    DecimalTextFormatter(2),
+  ],
+)
+```
+
+### EmojiTextFormatter
+```dart title="formats text to remove emojis"
+TextField(
+  inputFormatters: [
+    EmojiTextFormatter.deny(),
+  ],
+)
+```
+
+```dart title="formats text to allow emojis"
+TextField(
+  inputFormatters: [
+    EmojiTextFormatter.allow(),
+  ],
+)
+```
+
+
+## Masked Input Formatters
+
+### custom
+```dart title="formats text to custom mask"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.custom(
+      mask: '0000-0000-0000-0000',
+      filter: {"0": RegExp(r'[0-9]')},
+    ),
+  ],
+)
+```
+
+```dart title="format phone number"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.phone(),
+  ],
+)
+```
+
+```dart title="format cpf"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.cpf(),
+  ],
+)
+```
+
+```dart title="format date"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.date(),
+  ],
+)
+```
+
+```dart title="format time"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.time(),
+  ],
+)
+```
+
+```dart title="format date time"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.dateTime(),
+  ],
+)
+```
+
+```dart title="format card"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.card(),
+  ],
+)
+```
+
+```dart title="format card expiration date"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.cardExpirationDate(),
+  ],
+)
+```
+
+```dart title="format card cvv"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.cardCvv(),
+  ],
+)
+```
+
+```dart title="format money"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.money(),
+  ],
+)
+```
+
+```dart title="format abn"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.abn(),
+  ],
+)
+```
+
+```dart title="format acn"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.acn(),
+  ],
+)
+```
+
+```dart title="format ssn"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.ssn(),
+  ],
+)
+```
+
+```dart title="format sin"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.sin(),
+  ],
+)
+```
+
+```dart title="format bsb"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.bsb(),
+  ],
+)
+```
+
+```dart title="format sort code"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.sortCode(),
+  ],
+)
+```
+
+```dart title="format swift code"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.swiftCode(),
+  ],
+)
+```
+
+```dart title="format imei"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.imei(),
+  ],
+)
+```
+
+```dart title="format isbn"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.isbn(),
+  ],
+)
+```
+
+```dart title="format mac address"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.macAddress(),
+  ],
+)
+```
+
+```dart title="format ipv4"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.ipv4(),
+  ],
+)
+```
+
+```dart title="format ipv6"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.ipv6(),
+  ],
+)
+```
+
+```dart title="format color hex"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.colorHex(),
+  ],
+)
+```
+
+```dart title="format hex"
+TextField(
+  inputFormatters: [
+    MaskedTextFormatter.hex(),
+  ],
+)
+```
+
+### NoSpaceTextFormatter
+```dart title="formats text to remove spaces"
+TextField(
+  inputFormatters: [
+    NoSpaceTextFormatter(),
+  ],
+)
+```
+
+

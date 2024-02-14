@@ -2,8 +2,10 @@
     "name": "FP Utils",
     "description": "Utilities and Extensions for num,BuildContext,EdgeInsets,File,String. constants for horizontal and vertical spacing.",
     "theme": "#36B9B9",
+    "logo":"assets/logo.png",
     "sidebar": [
-      ["Home", "/"],
+      ["Home","/"],
+      ["Getting Started","/getting-started"],
       ["Extensions", [
         ["Context","/extensions/context"],
         ["Num","/extensions/num"],
@@ -15,9 +17,17 @@
         ["EdgeInsets","/extensions/edgeinsets"],
         ["Widget","/extensions/widget"],
         ["Object","/extensions/object"]
-
       ]],
+      ["Constants","/constants"],
       ["Forms","/forms"],
-      ["Logger","/logger"]
+      ["Logger","/logger"],
+      ["Input Formatters","/input-formatters"],
+      ["Widgets",[
+        ["Column","/widgets/column"],
+        ["Common Widget","/widgets/common-widgets"],
+        ["Containers","/widgets/containers"],
+        ["Gradient Widgets","/widgets/gradient-widgets"],
+        ["Row","/widgets/row"]
+      ]]
     ]
   }

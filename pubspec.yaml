@@ -64,3 +64,4 @@ flutter:
 
   assets:
     - assets/icons/
+    - assets/full_logo.png

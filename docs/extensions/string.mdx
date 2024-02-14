@@ -1,0 +1,309 @@
+# String Extensions
+
+### Usage
+Add the following import to your Dart file:
+```dart
+import 'package:fp_util/fp_util.dart';
+```
+
+### isNullOrEmpty
+```dart title="check if a string is null or empty"
+final String? str = null;
+print(str.isNullOrEmpty); // true
+```
+
+### isNotNullNotEmpty
+```dart title="check if a string is not null or not empty"
+final String? str = 'hello';
+print(str.isNotNullNotEmpty); // true
+```
+
+### isEmail
+```dart title="check if a string is a valid email"
+final String email = 'test@gmail.com';
+print(email.isEmail); // true
+```
+
+### getOrDefault
+```dart title="get a default value if the string is null or empty"
+final String? str = null;
+print(str.getOrDefault('default')); // default
+```
+
+### getOrNull
+```dart title="get a null if the string is null or empty"
+final String? str = null;
+print(str.getOrNull()); // null
+```
+
+### fileNameFromUri
+```dart title="get the file name from a uri"
+final String uri = 'https://example.com/file.txt';
+print(uri.fileNameFromUri); // file.txt
+```
+
+### flag
+```dart title="get the flag emoji from a country code"
+final String countryCode = 'us';
+print(countryCode.flag); // 🇺🇸
+```
+
+### isBlank
+```dart title="check if a string is blank"
+final String str = '  ';
+print(str.isBlank); // true
+```
+
+### isNotBlank
+```dart title="check if a string is not blank"
+final String str = 'hello';
+print(str.isNotBlank); // true
+```
+
+### capitalize
+```dart title="capitalize the first letter of a string"
+final String str = 'hello';
+print(str.capitalize); // Hello
+```
+
+### camelCase
+```dart title="convert a string to camel case"
+final String str = 'hello world';
+print(str.camelCase); // helloWorld
+```
+
+### constantCase
+```dart title="convert a string to constant case"
+final String str = 'hello world';
+print(str.constantCase); // HELLO_WORLD
+```
+
+### snakeCase
+```dart title="convert a string to snake case"
+final String str = 'hello world';
+print(str.snakeCase); // hello_world
+```
+
+### dotCase
+```dart title="convert a string to dot case"
+final String str = 'hello world';
+print(str.dotCase); // hello.world
+```
+
+### paramCase
+```dart title="convert a string to param case"
+final String str = 'hello world';
+print(str.paramCase); // hello-world
+```
+
+### pathCase
+```dart title="convert a string to path case"
+final String str = 'hello world';
+print(str.pathCase); // hello/world
+```
+
+### pascalCase
+```dart title="convert a string to pascal case"
+final String str = 'hello world';
+print(str.pascalCase); // HelloWorld
+```
+
+### headerCase
+```dart title="convert a string to header case"
+final String str = 'hello world';
+print(str.headerCase); // Hello-World
+```
+
+### titleCase
+```dart title="convert a string to title case"
+final String str = 'hello world';
+print(str.titleCase); // Hello World
+```
+
+### sentenceCase
+```dart title="convert a string to sentence case"
+final String str = 'hello world';
+print(str.sentenceCase); // Hello world
+```
+
+### lowercase
+```dart title="convert a string to lowercase"
+final String str = 'HELLO WORLD';
+print(str.lowercase); // hello world
+```
+
+### uppercase
+```dart title="convert a string to uppercase"
+final String str = 'hello world';
+print(str.uppercase); // HELLO WORLD
+```
+
+### initials
+```dart title="get the initials of a string"
+final String str = 'hello world';
+print(str.initials); // HW
+```
+
+### equalsIgnoreCase
+```dart title="check if two strings are equal ignoring case"
+final String str1 = 'hello';
+final String str2 = 'HELLO';
+print(str1.equalsIgnoreCase(str2)); // true
+```
+
+### compareIgnoreCase
+```dart title="compare two strings ignoring case"
+final String str1 = 'hello';
+final String str2 = 'HELLO';
+print(str1.compareIgnoreCase(str2)); // 0
+```
+
+### isValidPhoneNumber
+```dart title="check if a string is a valid phone number"
+final String phoneNumber = '123456789
+print(phoneNumber.isValidPhoneNumber); // false
+```
+
+### isNumeric
+```dart title="check if a string is numeric"
+final String str = '123';
+print(str.isNumeric); // true
+```
+
+### removeWhiteSpace
+```dart title="remove white space from a string"
+final String str = 'hello world';
+print(str.removeWhiteSpace); // helloworld
+```
+
+### removeExtraSpace
+```dart title="remove extra space from a string"
+final String str = 'hello   world';
+print(str.removeExtraSpace); // hello world
+```
+
+### replaceEscaped
+```dart title="replace escaped characters in a string"
+final String str = 'hello\\nworld';
+print(str.replaceEscaped()); // hello world
+```
+
+### toBool
+```dart title="convert a string to a boolean"
+final String str = 'true';
+print(str.toBool); // true
+```
+
+### toInt
+```dart title="convert a string to an integer"
+final String str = '123';
+print(str.toInt); // 123
+```
+
+### toDouble
+```dart title="convert a string to a double"
+final String str = '123.45';
+print(str.toDouble); // 123.45
+```
+
+### parseAndFormat
+```dart title="parse a date from string and format it"
+final String str = '2022-01-01';
+print(str.parseAndFormat('yyyy-MM-dd', 'dd/MM/yyyy')); // 01/01/2022
+```
+
+### parseDateTIme
+```dart title="parse a date from string"
+final String str = '2022-01-01';
+print(str.parseDateTime()); // 2022-01-01 00:00:00.000
+```
+
+### isUrl
+```dart title="check if a string is a valid url"
+final String url = 'https://example.com';
+print(url.isUrl); // true
+```
+
+### isImage
+```dart title="check if a string is a valid image url"
+final String url = 'https://example.com/image.jpg';
+print(url.isImage); // true
+```
+
+### isVideo
+```dart title="check if a string is a valid video url"
+final String url = 'https://example.com/video.mp4';
+print(url.isVideo); // true
+```
+
+### isAudio
+```dart title="check if a string is a valid audio url"
+final String url = 'https://example.com/audio.mp3';
+print(url.isAudio); // true
+```
+
+### isPdf
+```dart title="check if a string is a valid pdf url"
+final String url = 'https://example.com/file.pdf';
+print(url.isPdf); // true
+```
+
+### isTxt
+```dart title="check if a string is a valid txt url"
+final String url = 'https://example.com/file.txt';
+print(url.isTxt); // true
+```
+
+### isDocx
+```dart title="check if a string is a valid docx url"
+final String url = 'https://example.com/file.docx';
+print(url.isDocx); // true
+```
+
+### isXls
+```dart title="check if a string is a valid xlsx url"
+final String url = 'https://example.com/file.xlsx';
+print(url.isXls); // true
+```
+
+### isPpt
+```dart title="check if a string is a valid pptx url"
+final String url = 'https://example.com/file.pptx';
+print(url.isPpt); // true
+```
+
+### isSvg
+```dart title="check if a string is a valid svg url"
+final String url = 'https://example.com/file.svg';
+print(url.isSvg); // true
+```
+
+### isXml
+```dart title="check if a string is a valid xml url"
+final String url = 'https://example.com/file.xml';
+print(url.isXml); // true
+```
+
+### isCsv
+```dart title="check if a string is a valid csv url"
+final String url = 'https://example.com/file.csv';
+print(url.isCsv); // true
+```
+
+### isArchive
+```dart title="check if a string is a valid archive url"
+final String url = 'https://example.com/file.zip';
+print(url.isArchive); // true
+```
+
+### isJson
+```dart title="check if a string is a valid json url"
+final String url = 'https://example.com/file.json';
+print(url.isJson); // true
+```
+
+### isFile
+```dart title="check if a string is a valid file url"
+final String url = 'https://example.com/file.txt';
+print(url.isFile); // true
+```

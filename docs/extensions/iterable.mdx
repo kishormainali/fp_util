@@ -1,0 +1,188 @@
+# Iterable Extensions
+Extensions for the Iterable and List classes.
+
+### Usage
+Add the following import to your Dart file:
+```dart
+import 'package:fp_util/fp_util.dart';
+```
+
+### forEachIndexed
+```dart title="forEachIndexed"
+  void main(){
+    final list = [1, 2, 3, 4, 5];
+    list.forEachIndexed((index, value) {
+      print('index: $index, value: $value');
+    });
+  }
+```
+
+### mapIndexed
+```dart title="mapIndexed"
+  void main(){
+    final list = [1, 2, 3, 4, 5];
+    final result = list.mapIndexed((index, value) => value * index);
+    print(result); // [0, 2, 6, 12, 20]
+  }
+```
+
+### whereIndexed
+```dart title="whereIndexed"
+  void main(){
+    final list = [1, 2, 3, 4, 5];
+    final result = list.whereIndexed((index, value) => index % 2 == 0);
+    print(result); // [1, 3, 5]
+  }
+```
+
+### whereNotIndexed
+```dart title="whereNotIndexed"
+  void main(){
+    final list = [1, 2, 3, 4, 5];
+    final result = list.whereNotIndexed((index, value) => index % 2 == 0);
+    print(result); // [2, 4]
+  }
+```
+
+### expandIndexed
+```dart title="expandIndexed"
+  void main(){
+    final list = [1, 2, 3, 4, 5];
+    final result = list.expandIndexed((index, value) => [value, index]);
+    print(result); // [1, 0, 2, 1, 3, 2, 4, 3, 5, 4]
+  }
+```
+
+### getOrDefault
+```dart title="getOrDefault"
+  void main(){
+    final list = [];
+    final result = list.getOrDefault([0,1]);
+    print(result); // [0,1]
+  }
+```
+
+### firstWhereIndexedOrNull
+```dart title="firstWhereIndexedOrNull"
+  void main(){
+    final list = [1, 2, 3, 4, 5];
+    final result = list.firstWhereIndexedOrNull((index, value) => value % 2 == 0);
+    print(result); // 2
+  }
+```
+
+### lastWhereOrNull
+```dart title="lastWhereOrNull"
+  void main(){
+    final list = [1, 2, 3, 4, 5];
+    final result = list.lastWhereOrNull((value) => value % 2 == 0);
+    print(result); // 4
+  }
+```
+
+### lastWhereIndexedOrNull
+```dart title="lastWhereIndexedOrNull"
+  void main(){
+    final list = [1, 2, 3, 4, 5];
+    final result = list.lastWhereIndexedOrNull((index, value) => value % 2 == 0);
+    print(result); // 4
+  }
+```
+
+### singleWhereOrNull
+```dart title="singleWhereOrNull"
+  void main(){
+    final list = [1, 2, 3, 4, 5];
+    final result = list.singleWhereOrNull((value) => value == 3);
+    print(result); // 3
+  }
+```
+
+### singleWhereIndexedOrNull
+```dart title="singleWhereIndexedOrNull"
+  void main(){
+    final list = [1, 2, 3, 4, 5];
+    final result = list.singleWhereIndexedOrNull((index, value) => value == 3);
+    print(result); // 3
+  }
+```
+
+### isNotNullNotEmpty
+```dart title="isNotNullNotEmpty"
+  void main(){
+    final list = [1, 2, 3, 4, 5];
+    final result = list.isNotNullNotEmpty;
+    print(result); // true
+  }
+```
+
+### isNullOrEmpty
+```dart title="isNullOrEmpty"
+  void main(){
+    final list = [1, 2, 3, 4, 5];
+    final result = list.isNullOrEmpty;
+    print(result); // false
+  }
+```
+
+## Map Extensions
+
+### getOrNull
+```dart title="getOrNull"
+  void main(){
+    final list = {
+      "1": "one",
+      "2": "two",
+    }
+    final result = list.getOrNull("2");
+    print(result); // two
+  }
+```
+
+### getOrDefault
+```dart title="getOrDefault"
+  void main(){
+    final list = {
+      "1": "one",
+      "2": "two",
+    }
+    final result = list.getOrDefault("3", "three");
+    print(result); // three
+  }
+```
+
+### valuesList
+```dart title="valuesList"
+  void main(){
+    final list = {
+      "1": "one",
+      "2": "two",
+    }
+    final result = list.valuesList;
+    print(result); // [one, two]
+  }
+```
+
+### keysList
+```dart title="keysList"
+  void main(){
+    final list = {
+      "1": "one",
+      "2": "two",
+    }
+    final result = list.keysList;
+    print(result); // [1, 2]
+  }
+```
+
+### entriesList
+```dart title="entriesList"
+  void main(){
+    final list = {
+      "1": "one",
+      "2": "two",
+    }
+    final result = list.entriesList;
+    print(result); // [{1: one}, {2: two}]
+  }
+```

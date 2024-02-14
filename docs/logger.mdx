@@ -1,0 +1,63 @@
+---
+title: Logger
+description: A simple logger that logs messages to the console.
+---
+
+# Logger
+A simple logger that logs messages to the console.
+
+### Methods
+- [Debug](/logger#debug)
+- [Info](/logger#info)
+- [Warning](/logger#warning)
+- [Error](/logger#error)
+- [Success](/logger#success)
+
+### Usage
+Add the following import to your Dart file:
+```dart
+import 'package:fp_util/fp_util.dart';
+```
+
+### Debug
+```dart title="Log Debug Message"
+  Logger.d("Hello this is debug message");
+  Logger.d({"name":"John Doe","age":25});
+  Logger.d([{"name":"John Doe","age":25},{"name":"Jane Doe","age":23}]);
+```
+Output:
+<Image src="/assets/debug.png"/>
+
+### Info
+```dart title="Log Info Message"
+  Logger.i("Hello this is info message");
+```
+Output:
+<Image src="/assets/info.png"/>
+
+### Warning
+```dart title="Log Warning Message"
+  Logger.w("Hello this is warning message");
+```
+Output:
+<Image src="/assets/warning.png"/>
+
+### Error
+```dart title="Log Error Message"
+    void main(){
+      try{
+        throw Exception("This is an error");
+      }catch(error,stackTrace){
+        Logger.e("Error message",error:error,stackTrace:stackTrace);
+      }
+    }
+```
+Output:
+<Image src="/assets/error.png"/>
+
+### Success
+```dart title="Log Success Message"
+  Logger.s("Hello this is success message");
+```
+Output:
+<Image src="/assets/success.png"/>
