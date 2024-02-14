@@ -9,6 +9,7 @@ import 'package:fp_util/fp_util.dart';
 ///
 /// This widget is equivalent to [Padding] with Column as its child.
 /// {@endtemplate}
+@Deprecated("use PaddedColumn.spaced() instead")
 class PaddedSpacedColumn extends StatelessWidget {
   /// {@macro padded_spaced_row}
   const PaddedSpacedColumn({

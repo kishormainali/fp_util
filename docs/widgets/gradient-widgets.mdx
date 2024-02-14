@@ -1,1 +1,84 @@
 # Gradient Widgets
+
+- ### [Gradient Text](/widgets/gradient-widgets#gradient-text)
+- ### [Gradient Button](/widgets/gradient-widgets#gradient-button)
+- ### [Gradient Borders](/widgets/gradient-widgets#gradient-borders)
+
+### Gradient Text
+
+```dart title="Gradient Text"
+GradientText(
+  'Gradient Text',
+  gradient: LinearGradient(
+    colors: [Colors.purple, Colors.red],
+  ),
+  style: TextStyle(fontSize: 30),
+)
+```
+
+### Gradient Button
+
+```dart title="Gradient Button"
+GradientButton(
+  label: 'Gradient Button',
+  onPressed: () {},
+  gradient: LinearGradient(
+    colors: [Colors.purple, Colors.red],
+  ),
+)
+```
+
+```dart title="Outlined Gradient Button"
+GradientButton.outline(
+  label: 'Outlined Gradient Button',
+  onPressed: () {},
+  gradient: LinearGradient(
+    colors: [Colors.purple, Colors.red],
+  ),
+)
+```
+
+### Gradient Borders
+
+```dart title="GradientOutlinedBorder"
+OutlinedButton(
+  onPressed: () {},
+  style: OutlinedButton.styleFrom(
+    shape: GradientOutlineBorder(
+      width: 2,
+      gradient: const LinearGradient(colors: [Colors.red, Colors.blue]),
+      borderRadius: BorderRadius.circular(8),
+    ),
+  ),
+  child: const Text('Gradient Border'),
+),
+```
+
+```dart title="GradientInputBorder"
+TextField(
+  decoration: InputDecoration(
+    border: GradientOutlineInputBorder(
+      width: 2,
+      borderRadius: BorderRadius.circular(8),
+      gradient: const LinearGradient(
+        colors: [Colors.red, Colors.blue],
+      ),
+    ),
+  ),
+),
+```
+
+```dart title="GradientBoxBorder"
+Container(
+  decoration: const BoxDecoration(
+    border: GradientBoxBorder(
+      gradient: LinearGradient(
+        colors: [
+          Colors.red,
+          Colors.blue,
+        ],
+      ),
+    ),
+  ),
+),
+```

@@ -29,11 +29,12 @@ class SpacedColumn extends Column {
           }),
         ]);
 
+  /// A [SpacedColumn] with space between each child and a separator.
   SpacedColumn.separated({
     super.key,
     Widget separator = const SizedBox(height: 10),
-    bool hasLeadingSpace = false,
-    bool hasTrailingSpace = false,
+    bool hasLeadingSeparator = false,
+    bool hasTrailingSeparator = false,
     super.mainAxisAlignment,
     super.mainAxisSize,
     super.crossAxisAlignment,
@@ -42,11 +43,11 @@ class SpacedColumn extends Column {
     super.verticalDirection,
     List<Widget> children = const [],
   }) : super(children: [
-          if (hasLeadingSpace) separator,
+          if (hasLeadingSeparator) separator,
           ...children.expandIndexed((index, widget) {
             return [
               widget,
-              if (index < children.length || hasTrailingSpace) separator,
+              if (index < children.length || hasTrailingSeparator) separator,
             ];
           }),
         ]);

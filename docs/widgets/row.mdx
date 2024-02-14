@@ -1,1 +1,208 @@
 # Row
+A collection of row widgets.
+
+### Usage
+Add the following import to your Dart code:
+```dart
+  import 'package:fp_util/fp_util.dart';
+```
+
+## Widgets
+- ### [SizedScrollableRow](/widgets/row/#sizedscrollablerow)
+- ### [PaddedRow](/widgets/row/#paddedrow)
+- ### [ScrollableRow](/widgets/row/#scrollablerow)
+- ### [SpacedRow](/widgets/row/#spacedrow)
+
+
+### SizedScrollableRow
+A row that is scrollable and has a fixed height.
+```dart title="SizedScrollableRow Example"
+SizedScrollableRow(
+  height: 100,
+  children: [
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.red,
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.green,
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.blue,
+    ),
+  ],
+)
+```
+
+### PaddedRow
+A row that has padding.
+```dart title="PaddedRow Example"
+PaddedRow(
+  padding: EdgeInsets.all(8),
+  children: [
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.red,
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.green,
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.blue,
+    ),
+  ],
+)
+```
+
+```dart title="PaddedRow with spacing example"
+PaddedRow.spaced(
+  padding: EdgeInsets.all(8),
+  spacing: 8,
+  children: [
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.red,
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.green,
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.blue,
+    ),
+  ],
+)
+```
+
+### ScrollableRow
+A row that is scrollable.
+<Info>ScrollableRow needs fixed height parent to work properly</Info>
+
+```dart title="ScrollableRow Example"
+ScrollableRow(
+  children: [
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.red,
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.green,
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.blue,
+    ),
+  ],
+)
+```
+
+```dart title="ScrollableRow with spacing example"
+ScrollableRow.spaced(
+  spacing: 8,
+  children: [
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.red,
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.green,
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.blue,
+    ),
+  ],
+)
+```
+```dart title="ScrollableRow with custom separator example"
+ScrollableRow.separated(
+  separator: SizedBox(width: 8),
+  children: [
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.red,
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.green,
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.blue,
+    ),
+  ],
+)
+```
+
+### SpacedRow
+A row that has spacing between children.
+```dart title="SpacedRow Example"
+SpacedRow(
+  spacing: 8,
+  children: [
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.red,
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.green,
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.blue,
+    ),
+  ],
+)
+```
+
+```dart title="SpacedRow with custom separator example"
+SpacedRow.separated(
+  separator: SizedBox(width: 8),
+  children: [
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.red,
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.green,
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.blue,
+    ),
+  ],
+)
+```

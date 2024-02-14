@@ -1,1 +1,83 @@
 # Column
+A collection of Column widgets.
+
+### Usage
+Add the following import to your Dart code:
+```dart
+  import 'package:fp_util/fp_util.dart';
+```
+
+## Widgets
+- ### [ConstrainedScrollableColumn](/widgets/column/#constrainedscrollablecolumn)
+- ### [PaddedColumn](/widgets/column/#paddedcolumn)
+- ### [ScrollableColumn](/widgets/column/#scrollablecolumn)
+- ### [SpacedColumn](/widgets/column/#spacedcolumn)
+
+
+### ConstrainedScrollableColumn
+A Column that is scrollable and constrained to a min height of max height of screen.
+All the properties of a Column and SingleChildScrollView can be used here.
+```dart
+ConstrainedScrollableColumn(
+  children: [
+    Text('Hello'),
+    Text('World'),
+  ],
+)
+```
+
+### PaddedColumn
+A Column that is padded with the given padding.
+``` dart title="PaddedColumn Example"
+PaddedColumn(
+  padding: EdgeInsets.all(16),
+  children: [
+    Text('Hello'),
+    Text('World'),
+  ],
+)
+```
+```dart title="PaddedColumn with Spacing Example"
+PaddedColumn.spaced(
+  padding: EdgeInsets.all(16),
+  spacing: 16,
+  children: [
+    Text('Hello'),
+    Text('World'),
+  ],
+)
+```
+
+### ScrollableColumn
+A Column that is scrollable.
+All the properties of a Column and SingleChildScrollView can be used here.
+```dart title="ScrollableColumn Example"
+ScrollableColumn(
+  children: [
+    Text('Hello'),
+    Text('World'),
+  ],
+)
+```
+
+### SpacedColumn
+A Column that has spacing between its children.
+```dart title="SpacedColumn Example"
+SpacedColumn(
+  spacing: 16,
+  children: [
+    Text('Hello'),
+    Text('World'),
+  ],
+)
+```
+
+```dart title="SpacedColumn with custom separator example"
+SpacedColumn.separated(
+  separator: Divider(),
+  children: [
+    Text('Hello'),
+    Text('World'),
+  ],
+)
+```

@@ -3,9 +3,17 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+/// {@template gradient_outline_border}
+/// A border that draws a gradient around the button's border.
+/// {@endtemplate}
 class GradientOutlineBorder extends OutlinedBorder {
+  /// stroke width
   final double width;
+
+  /// gradient
   final Gradient gradient;
+
+  /// border radius
   final BorderRadius borderRadius;
 
   const GradientOutlineBorder({
@@ -28,8 +36,7 @@ class GradientOutlineBorder extends OutlinedBorder {
   @override
   Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
     return Path()
-      ..addRRect(
-          borderRadius.resolve(textDirection).toRRect(rect).deflate(side.width))
+      ..addRRect(borderRadius.resolve(textDirection).toRRect(rect).deflate(side.width))
       ..fillType = PathFillType.evenOdd;
   }
 
@@ -60,11 +67,20 @@ class GradientOutlineBorder extends OutlinedBorder {
   }
 }
 
+/// {@template gradient_box_border}
+/// A border that draws a gradient border around the container.
+/// {@endtemplate}
 class GradientBoxBorder extends BoxBorder {
-  const GradientBoxBorder({required this.gradient, this.width = 1.0});
+  /// {@macro gradient_box_border}
+  const GradientBoxBorder({
+    required this.gradient,
+    this.width = 1.0,
+  });
 
+  /// gradient
   final Gradient gradient;
 
+  /// stroke width
   final double width;
 
   @override
@@ -133,7 +149,11 @@ class GradientBoxBorder extends BoxBorder {
   }
 }
 
+/// {@template gradient_input_border}
+/// A border that draws a gradient border around the input field.
+/// {@endtemplate}
 class GradientOutlineInputBorder extends InputBorder {
+  /// {@macro gradient_input_border}
   const GradientOutlineInputBorder({
     required this.gradient,
     this.width = 1.0,
@@ -141,12 +161,16 @@ class GradientOutlineInputBorder extends InputBorder {
     this.borderRadius = const BorderRadius.all(Radius.circular(4)),
   });
 
+  /// border thickness
   final double width;
 
+  /// border radius
   final BorderRadius borderRadius;
 
+  /// gradient
   final Gradient gradient;
 
+  /// gap padding
   final double gapPadding;
 
   @override
@@ -164,10 +188,7 @@ class GradientOutlineInputBorder extends InputBorder {
   Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
     return Path()
       ..addRRect(
-        borderRadius
-            .resolve(textDirection)
-            .toRRect(rect)
-            .deflate(borderSide.width),
+        borderRadius.resolve(textDirection).toRRect(rect).deflate(borderSide.width),
       );
   }
 
@@ -191,8 +212,7 @@ class GradientOutlineInputBorder extends InputBorder {
     if (gapStart == null || gapExtent <= 0.0 || gapPercentage == 0.0) {
       canvas.drawRRect(center, paint);
     } else {
-      final extent =
-          lerpDouble(0.0, gapExtent + gapPadding * 2.0, gapPercentage)!;
+      final extent = lerpDouble(0.0, gapExtent + gapPadding * 2.0, gapPercentage)!;
       switch (textDirection!) {
         case TextDirection.rtl:
           final path = _gapBorderPath(
@@ -270,9 +290,7 @@ class GradientOutlineInputBorder extends InputBorder {
     );
 
     const cornerArcSweep = math.pi / 2.0;
-    final tlCornerArcSweep = start < scaledRRect.tlRadiusX
-        ? math.asin((start / scaledRRect.tlRadiusX).clamp(-1.0, 1.0))
-        : math.pi / 2.0;
+    final tlCornerArcSweep = start < scaledRRect.tlRadiusX ? math.asin((start / scaledRRect.tlRadiusX).clamp(-1.0, 1.0)) : math.pi / 2.0;
 
     final path = Path()
       ..addArc(tlCorner, math.pi, tlCornerArcSweep)

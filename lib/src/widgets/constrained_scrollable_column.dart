@@ -77,6 +77,7 @@ class ConstrainedScrollableColumn extends StatelessWidget {
   /// keyboardDismissBehavior: Configures how the Scrollable widgets that wrap the content of Scaffold and
   final ScrollViewKeyboardDismissBehavior keyboardDismissBehavior;
 
+  /// centerScrollable: Whether to center the scrollable in the available space.
   final bool centerScrollable;
 
   @override
@@ -88,8 +89,7 @@ class ConstrainedScrollableColumn extends StatelessWidget {
             minHeight: constraints.maxHeight,
           ),
           child: Align(
-            alignment:
-                centerScrollable ? Alignment.center : Alignment.topCenter,
+            alignment: centerScrollable ? Alignment.center : Alignment.topCenter,
             child: SingleChildScrollView(
               key: key,
               scrollDirection: Axis.vertical,

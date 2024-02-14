@@ -1,0 +1,140 @@
+# Common Widgets
+common widgets
+
+- ### [Conditional Widget](/widgets/common-widgets#conditional-widget)
+- ### [HideKeyboard](/widgets/common-widgets#hidekeyboard)
+- ### [PlatformWidget](/widgets/common-widgets#platformwidget)
+- ### [ImagePickerButton](/widgets/common-widgets#imagepickerbutton)
+- ### [ScaffoldWrapper](/widgets/common-widgets#scaffoldwrapper)
+- ### [SocialButton](/widgets/common-widgets#socialbutton)
+- ### [TagsInputField](/widgets/common-widgets#tagsinputfield)
+
+### Conditional Widget
+Widget used to display a child based on a condition
+```dart
+import 'package:fp_util/fp_util.dart';
+ConditionalWidget(
+  condition: true,
+  trueChild: Text('This is displayed'),
+  falseChild: Text('This is not displayed'),
+)
+```
+
+### HideKeyboard
+Widget used to hide the keyboard when tapped on screen
+```dart
+import 'package:fp_util/fp_util.dart';
+HideKeyboard(
+  child: TextField(),
+)
+```
+
+### PlatformWidget
+Widget used to display different widgets based on the platform
+```dart
+import 'package:fp_util/fp_util.dart';
+class MyWidget extends PlatformWidget<Text,Text> {
+  @override
+  Text buildMaterialWidget(BuildContext context) {
+    return Text('Android');
+  }
+  @override
+  Text buildCupertinoWidget(BuildContext context) {
+    return Text('iOS');
+  }
+}
+```
+
+### ImagePickerButton
+Widget used to pick an image from the gallery or camera
+```dart title="Pick image from camera"
+ImagePickerButton.camera(
+  onImagePicked: (image) {
+    // Do something with the image
+  },
+)
+```
+```dart title="Pick image from gallery"
+ImagePickerButton.gallery(
+  onImagePicked: (image) {
+    // Do something with the image
+  },
+)
+```
+```dart title="Pick image from gallery or camera"
+ImagePickerButton.choose(
+  onImagePicked: (image) {
+    // Do something with the image
+  },
+)
+```
+
+### ScaffoldWrapper
+Widget used to wrap a scaffold with a hide keyboard and safe area
+```dart title="ScaffoldWrapper"
+ScaffoldWrapper(
+  appBar: AppBar(
+    title: Text('Title'),
+  ),
+  body: Center(
+      child: Text('Body'),
+    ),
+)
+```
+
+### SocialButton
+Social button widget
+```dart title="Facebook"
+SocialButton.facebook(
+  onPressed: () {
+    // Do something
+  },
+)
+```
+```dart title="Facebook icon only"
+SocialButton.facebookIcon(
+  onPressed: () {
+    // Do something
+  },
+)
+```
+```dart title="Google"
+SocialButton.google(
+  onPressed: () {
+    // Do something
+  },
+)
+```
+```dart title="Google icon only"
+SocialButton.googleIcon(
+  onPressed: () {
+    // Do something
+  },
+)
+```
+
+```dart title="Apple"
+SocialButton.apple(
+  onPressed: () {
+    // Do something
+  },
+)
+```
+```dart title="Apple icon only"
+SocialButton.appleIcon(
+  onPressed: () {
+    // Do something
+  },
+)
+```
+
+### TagsInputField
+Tags input field widget
+```dart title="TagsInputField"
+TagsInputField(
+  initialTags: [Tag(value: 'Tag 1'), Tag(value: 'Tag 2')],
+  onChanged: (tags) {
+    // Do something with the tags
+  },
+)
+```

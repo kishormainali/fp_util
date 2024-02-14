@@ -17,7 +17,6 @@
         ["EdgeInsets","/extensions/edgeinsets"],
         ["Widget","/extensions/widget"],
         ["Object","/extensions/object"]
-
       ]],
       ["Constants","/constants"],
       ["Forms","/forms"],
@@ -25,11 +24,10 @@
       ["Input Formatters","/input-formatters"],
       ["Widgets",[
         ["Column","/widgets/column"],
-        ["Conditional Widget","/widgets/conditional-widget"],
+        ["Common Widget","/widgets/common-widgets"],
         ["Containers","/widgets/containers"],
         ["Gradient Widgets","/widgets/gradient-widgets"],
-        ["Row","/widgets/row"],
-        ["Scaffold","/widgets/scaffold"]
+        ["Row","/widgets/row"]
       ]]
     ]
   }

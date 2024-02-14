@@ -1,1 +1,64 @@
 # Containers
+Common container widgets
+
+## Usage
+Add the following import to your Dart file:
+```dart
+import 'package:fp_util/fp_util.dart';
+```
+
+## Widgets
+- ### [RoundedContainer](/widgets/containers#roundedcontainer)
+- ### [CircleContainer](/widgets/containers#circlecontainer)
+
+### RoundedContainer
+A container with rounded corners
+```dart title="RoundedContainer"
+RoundedContainer(
+  child: Text('Hello World'),
+  borderRadius: 20,
+  color: Colors.blue,
+  padding: EdgeInsets.all(10),
+  margin: EdgeInsets.all(10),
+  width: 100,
+  height: 100,
+)
+```
+```dart title="RoundedContainer with clickable"
+RoundedContainer.clickable(
+  child: Text('Hello World'),
+  borderRadius: 20,
+  color: Colors.blue,
+  padding: EdgeInsets.all(10),
+  margin: EdgeInsets.all(10),
+  width: 100,
+  height: 100,
+  onTap:(){},
+  onLongPress:(){},
+  onDoubleTap:(){},
+)
+```
+
+### CircleContainer
+A circle container
+```dart title="CircleContainer"
+CircleContainer(
+  child: Text('Hello World'),
+  color: Colors.blue,
+  padding: EdgeInsets.all(10),
+  margin: EdgeInsets.all(10),
+  size: 100,
+)
+```
+```dart title="CircleContainer with clickable"
+CircleContainer.clickable(
+  child: Text('Hello World'),
+  color: Colors.blue,
+  padding: EdgeInsets.all(10),
+  margin: EdgeInsets.all(10),
+  size: 100,
+  onTap:(){},
+  onLongPress:(){},
+  onDoubleTap:(){},
+)
+```
