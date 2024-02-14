@@ -237,10 +237,7 @@ class SnackbarInfo {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is SnackbarInfo &&
-        other.key == key &&
-        other.createdAt == createdAt &&
-        other.entry == entry;
+    return other is SnackbarInfo && other.key == key && other.createdAt == createdAt && other.entry == entry;
   }
 
   @override

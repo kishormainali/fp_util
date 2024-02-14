@@ -1,3 +1,6 @@
+# 3.1.0
+- added docs
+
 # 3.0.1
 - updated logger
 
