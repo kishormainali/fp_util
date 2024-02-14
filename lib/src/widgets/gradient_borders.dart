@@ -36,7 +36,8 @@ class GradientOutlineBorder extends OutlinedBorder {
   @override
   Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
     return Path()
-      ..addRRect(borderRadius.resolve(textDirection).toRRect(rect).deflate(side.width))
+      ..addRRect(
+          borderRadius.resolve(textDirection).toRRect(rect).deflate(side.width))
       ..fillType = PathFillType.evenOdd;
   }
 
@@ -188,7 +189,10 @@ class GradientOutlineInputBorder extends InputBorder {
   Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
     return Path()
       ..addRRect(
-        borderRadius.resolve(textDirection).toRRect(rect).deflate(borderSide.width),
+        borderRadius
+            .resolve(textDirection)
+            .toRRect(rect)
+            .deflate(borderSide.width),
       );
   }
 
@@ -212,7 +216,8 @@ class GradientOutlineInputBorder extends InputBorder {
     if (gapStart == null || gapExtent <= 0.0 || gapPercentage == 0.0) {
       canvas.drawRRect(center, paint);
     } else {
-      final extent = lerpDouble(0.0, gapExtent + gapPadding * 2.0, gapPercentage)!;
+      final extent =
+          lerpDouble(0.0, gapExtent + gapPadding * 2.0, gapPercentage)!;
       switch (textDirection!) {
         case TextDirection.rtl:
           final path = _gapBorderPath(
@@ -290,7 +295,9 @@ class GradientOutlineInputBorder extends InputBorder {
     );
 
     const cornerArcSweep = math.pi / 2.0;
-    final tlCornerArcSweep = start < scaledRRect.tlRadiusX ? math.asin((start / scaledRRect.tlRadiusX).clamp(-1.0, 1.0)) : math.pi / 2.0;
+    final tlCornerArcSweep = start < scaledRRect.tlRadiusX
+        ? math.asin((start / scaledRRect.tlRadiusX).clamp(-1.0, 1.0))
+        : math.pi / 2.0;
 
     final path = Path()
       ..addArc(tlCorner, math.pi, tlCornerArcSweep)

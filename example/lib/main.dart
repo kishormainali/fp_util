@@ -12,7 +12,8 @@ class SimpleBlocObserver extends BlocObserver {
   }
 }
 
-GlobalKey<ScaffoldMessengerState> scaffoldMessageKey = GlobalKey<ScaffoldMessengerState>();
+GlobalKey<ScaffoldMessengerState> scaffoldMessageKey =
+    GlobalKey<ScaffoldMessengerState>();
 
 void main() {
   Bloc.observer = SimpleBlocObserver();

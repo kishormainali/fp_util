@@ -89,7 +89,8 @@ class ConstrainedScrollableColumn extends StatelessWidget {
             minHeight: constraints.maxHeight,
           ),
           child: Align(
-            alignment: centerScrollable ? Alignment.center : Alignment.topCenter,
+            alignment:
+                centerScrollable ? Alignment.center : Alignment.topCenter,
             child: SingleChildScrollView(
               key: key,
               scrollDirection: Axis.vertical,

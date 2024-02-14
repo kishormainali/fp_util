@@ -65,7 +65,9 @@ class FormPage extends StatelessWidget {
                 BlocBuilder<FormCubit, FormState>(
                   builder: (context, state) {
                     return FilledButton(
-                      onPressed: state.isValid ? context.read<FormCubit>().submit : null,
+                      onPressed: state.isValid
+                          ? context.read<FormCubit>().submit
+                          : null,
                       child: state.isLoading
                           ? const Center(
                               child: CircularProgressIndicator(),

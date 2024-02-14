@@ -274,7 +274,8 @@ class SocialButton extends StatelessWidget {
   );
 
   /// default padding for button
-  static const _defaultPadding = EdgeInsets.symmetric(vertical: 4, horizontal: 16);
+  static const _defaultPadding =
+      EdgeInsets.symmetric(vertical: 4, horizontal: 16);
 
   /// default padding for icon button
   static const _defaultIconPadding = EdgeInsets.all(4);

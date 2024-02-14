@@ -36,27 +36,40 @@ extension FileExtensionX on File {
 
   /// check weather file is ms doc
   bool get isDocx {
-    return mimeType?.startsWith('application/msword') ?? mimeType?.startsWith('application/vnd.openxmlformats-officedocument.wordprocessingml.document') ?? extension.isDocx;
+    return mimeType?.startsWith('application/msword') ??
+        mimeType?.startsWith(
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document') ??
+        extension.isDocx;
   }
 
   /// check whether file is presentation document
   bool get isPpt {
-    return mimeType?.startsWith('application/vnd.ms-powerpoint') ?? mimeType?.startsWith('application/vnd.openxmlformats-officedocument.presentationml.presentation') ?? extension.isPpt;
+    return mimeType?.startsWith('application/vnd.ms-powerpoint') ??
+        mimeType?.startsWith(
+            'application/vnd.openxmlformats-officedocument.presentationml.presentation') ??
+        extension.isPpt;
   }
 
   /// check whether file is excel sheet
   bool get isXls {
-    return mimeType?.startsWith('application/vnd.ms-excel') ?? mimeType?.startsWith('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') ?? extension.isXls;
+    return mimeType?.startsWith('application/vnd.ms-excel') ??
+        mimeType?.startsWith(
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') ??
+        extension.isXls;
   }
 
   /// check whether file is excel sheet
   bool get isTxt {
-    return mimeType?.startsWith('application/rtf') ?? mimeType?.startsWith('text/plain') ?? extension.isTxt;
+    return mimeType?.startsWith('application/rtf') ??
+        mimeType?.startsWith('text/plain') ??
+        extension.isTxt;
   }
 
   /// check whether file is excel sheet
   bool get isXml {
-    return mimeType?.startsWith('application/xml') ?? mimeType?.startsWith('text/xml') ?? extension.isXml;
+    return mimeType?.startsWith('application/xml') ??
+        mimeType?.startsWith('text/xml') ??
+        extension.isXml;
   }
 
   /// check whether file is svg
@@ -66,7 +79,9 @@ extension FileExtensionX on File {
 
   /// check whether file is csv
   bool get isCsv {
-    return mimeType?.startsWith('text/csv') ?? mimeType?.startsWith('text/comma-separated-values') ?? extension.isCsv;
+    return mimeType?.startsWith('text/csv') ??
+        mimeType?.startsWith('text/comma-separated-values') ??
+        extension.isCsv;
   }
 
   /// check whether file is archive
@@ -84,7 +99,16 @@ extension FileExtensionX on File {
   }
 
   /// checks whether given file is docx,pdf,xls,ppt or txt
-  bool get isFile => isDocx || isPdf || isXls || isPpt || isTxt || isCsv || isXml || isJson || isArchive;
+  bool get isFile =>
+      isDocx ||
+      isPdf ||
+      isXls ||
+      isPpt ||
+      isTxt ||
+      isCsv ||
+      isXml ||
+      isJson ||
+      isArchive;
 
   /// get file size in mb
   double get sizeInMb {
