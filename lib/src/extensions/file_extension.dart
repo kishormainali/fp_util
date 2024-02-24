@@ -15,100 +15,85 @@ extension FileExtensionX on File {
   String? get mimeType => lookupMimeType(path);
 
   /// check weather file is image
-  bool get isImage {
-    return mimeType?.startsWith('image') ?? extension.isImage;
-  }
+  bool get isImage => RegexMatcher.matchFile(
+        mimeType ?? extension,
+        RegexFileType.image,
+      );
 
   /// check whether file is pdf
-  bool get isPdf {
-    return mimeType?.startsWith('application/pdf') ?? extension.isPdf;
-  }
+  bool get isPdf => RegexMatcher.matchFile(
+        mimeType ?? extension,
+        RegexFileType.pdf,
+      );
 
   /// check whether file is audio
-  bool get isAudio {
-    return mimeType?.startsWith('audio') ?? extension.isAudio;
-  }
+  bool get isAudio => RegexMatcher.matchFile(
+        mimeType ?? extension,
+        RegexFileType.audio,
+      );
 
   /// check weather file is video
-  bool get isVideo {
-    return mimeType?.startsWith('video') ?? extension.isVideo;
-  }
+  bool get isVideo => RegexMatcher.matchFile(
+        mimeType ?? extension,
+        RegexFileType.video,
+      );
 
   /// check weather file is ms doc
-  bool get isDocx {
-    return mimeType?.startsWith('application/msword') ??
-        mimeType?.startsWith(
-            'application/vnd.openxmlformats-officedocument.wordprocessingml.document') ??
-        extension.isDocx;
-  }
+  bool get isDocx => RegexMatcher.matchFile(
+        mimeType ?? extension,
+        RegexFileType.doc,
+      );
 
   /// check whether file is presentation document
-  bool get isPpt {
-    return mimeType?.startsWith('application/vnd.ms-powerpoint') ??
-        mimeType?.startsWith(
-            'application/vnd.openxmlformats-officedocument.presentationml.presentation') ??
-        extension.isPpt;
-  }
+  bool get isPpt => RegexMatcher.matchFile(
+        mimeType ?? extension,
+        RegexFileType.ppt,
+      );
 
   /// check whether file is excel sheet
-  bool get isXls {
-    return mimeType?.startsWith('application/vnd.ms-excel') ??
-        mimeType?.startsWith(
-            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') ??
-        extension.isXls;
-  }
+  bool get isXls => RegexMatcher.matchFile(
+        mimeType ?? extension,
+        RegexFileType.xls,
+      );
 
   /// check whether file is excel sheet
-  bool get isTxt {
-    return mimeType?.startsWith('application/rtf') ??
-        mimeType?.startsWith('text/plain') ??
-        extension.isTxt;
-  }
+  bool get isTxt => RegexMatcher.matchFile(
+        mimeType ?? extension,
+        RegexFileType.txt,
+      );
 
   /// check whether file is excel sheet
-  bool get isXml {
-    return mimeType?.startsWith('application/xml') ??
-        mimeType?.startsWith('text/xml') ??
-        extension.isXml;
-  }
+  bool get isXml => RegexMatcher.matchFile(
+        mimeType ?? extension,
+        RegexFileType.xml,
+      );
 
   /// check whether file is svg
-  bool get isSvg {
-    return mimeType?.startsWith('image/svg+xml') ?? extension.isSvg;
-  }
+  bool get isSvg => RegexMatcher.matchFile(
+        mimeType ?? extension,
+        RegexFileType.svg,
+      );
 
   /// check whether file is csv
-  bool get isCsv {
-    return mimeType?.startsWith('text/csv') ??
-        mimeType?.startsWith('text/comma-separated-values') ??
-        extension.isCsv;
-  }
+  bool get isCsv => RegexMatcher.matchFile(
+        mimeType ?? extension,
+        RegexFileType.csv,
+      );
 
   /// check whether file is archive
-  bool get isArchive {
-    return mimeType?.startsWith('application/zip') ??
-        mimeType?.startsWith('application/x-tar') ??
-        mimeType?.startsWith('application/x-gzip') ??
-        mimeType?.startsWith('application/x-bzip2') ??
-        extension.isArchive;
-  }
+  bool get isArchive => RegexMatcher.matchFile(
+        mimeType ?? extension,
+        RegexFileType.archive,
+      );
 
   /// check whether file is json
-  bool get isJson {
-    return mimeType?.startsWith('application/json') ?? extension.isJson;
-  }
+  bool get isJson => RegexMatcher.matchFile(
+        mimeType ?? extension,
+        RegexFileType.json,
+      );
 
   /// checks whether given file is docx,pdf,xls,ppt or txt
-  bool get isFile =>
-      isDocx ||
-      isPdf ||
-      isXls ||
-      isPpt ||
-      isTxt ||
-      isCsv ||
-      isXml ||
-      isJson ||
-      isArchive;
+  bool get isFile => isDocx || isPdf || isXls || isPpt || isTxt || isCsv || isXml || isJson || isArchive;
 
   /// get file size in mb
   double get sizeInMb {

@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PaddedSpacedColumn(
+    return PaddedColumn.spaced(
       padding: const EdgeInsets.all(30),
       children: [
         const Text(
@@ -18,6 +18,7 @@ class HomePage extends StatelessWidget {
         ),
         FilledButton(
           onPressed: () {
+            Logger.d("Hello");
             FpSnackbar.success(context, message: 'Hello');
           },
           child: const Text('Show Success Snackbar'),

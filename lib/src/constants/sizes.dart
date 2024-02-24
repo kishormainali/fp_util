@@ -13,8 +13,7 @@ abstract class Sizes {
   static const double p54 = 54.0;
   static const double p64 = 64.0;
 
-  // sized boxes
-  /// vertical spaces
+  /// spaces
   static Gap get gap4 => const Gap(p4);
   static Gap get gap8 => const Gap(p8);
   static Gap get gap12 => const Gap(p12);
@@ -26,7 +25,7 @@ abstract class Sizes {
   static Gap get gap54 => const Gap(p54);
   static Gap get gap64 => const Gap(p64);
 
-  /// horizontal spaces
+  /// sliver spaces
   static SliverGap get sliverGap4 => const SliverGap(p4);
   static SliverGap get sliverGap8 => const SliverGap(p8);
   static SliverGap get sliverGap12 => const SliverGap(p12);

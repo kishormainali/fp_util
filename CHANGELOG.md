@@ -1,3 +1,6 @@
+# 3.1.1
+- minor improvements
+
 # 3.1.0
 - added docs
 

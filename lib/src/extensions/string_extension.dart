@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:path/path.dart';
 
+import '../constants/regex_pattern.dart';
+
 extension StringNX on String? {
   bool get isNullOrEmpty => this == null || this!.isEmpty;
 
@@ -10,9 +12,7 @@ extension StringNX on String? {
 
 extension StringX on String {
   /// checks whether string is email or not
-  bool get isEmail => RegExp(
-          r"^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$")
-      .hasMatch(this);
+  bool get isEmail => RegExp(RegexPattern.email).hasMatch(this);
 
   /// getOrDefault
   /// returns default value if blank
@@ -91,7 +91,7 @@ extension StringX on String {
   /// if the string is empty, returns an empty string
   /// if the string has one word, returns the first two characters
   /// if the string has two or more words, returns the first character of the first two words
-  String get initials => _ReCase(this).getInitial();
+  String get initials => _ReCase(this).initials;
 
   /// equalsIgnoreCase
   /// equals two strings ignoring case
@@ -107,17 +107,12 @@ extension StringX on String {
 
   /// check given string is valid phone number or not
   bool get isValidPhoneNumber {
-    if (isBlank) return false;
     if (length > 16 || length < 9) return false;
-    return RegExp(r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$')
-        .hasMatch(this);
+    return RegexMatcher.match(this, RegexPattern.phone);
   }
 
   /// check given string is numeric or not
-  bool get isNumeric {
-    if (isBlank) return false;
-    return RegExp(r'^(([1-9]*)|(([0-9]*)\.([0-9]*)))$').hasMatch(this);
-  }
+  bool get isNumeric => RegexMatcher.match(this, RegexPattern.number);
 
   /// remove whitespace from string
   String get removeWhiteSpace {
@@ -134,10 +129,7 @@ extension StringX on String {
   /// remove all \n \r \t from string
   String replaceEscaped([String replacement = ' ']) {
     if (isBlank) return this;
-    return trim()
-        .replaceAll(RegExp(r'[\t\n\r\v\f]'), replacement)
-        .trim()
-        .removeExtraSpace;
+    return trim().replaceAll(RegExp(RegexPattern.escapedChar), replacement).trim().removeExtraSpace;
   }
 
   /// tries to parse as bool
@@ -188,186 +180,53 @@ extension StringX on String {
   }
 
   /// checks whether string is url
-  bool get isUrl {
-    if (isBlank) {
-      return false;
-    }
-    var regex = RegExp(
-        r'[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)');
-    return regex.hasMatch(this);
-  }
+  bool get isUrl => RegexMatcher.match(this, RegexPattern.url);
+
+  /// checks whether string is uri
+  bool get isUri => RegexMatcher.match(this, RegexPattern.uri);
 
   /// checks whether string is image
-  bool get isImage {
-    final ext = extension(this);
-    if (ext.isBlank) {
-      return false;
-    }
-    return _imageTypes.any((type) => type == ext);
-  }
+  bool get isImage => RegexMatcher.match(this, RegexPattern.image);
 
   /// checks whether string is video
-  bool get isVideo {
-    final ext = extension(this);
-    if (ext.isBlank) {
-      return false;
-    }
-    return _videoTypes.any((type) => type == ext);
-  }
+  bool get isVideo => RegexMatcher.match(this, RegexPattern.video);
 
   /// checks whether string is audio
-  bool get isAudio {
-    final ext = extension(this);
-    if (ext.isBlank) {
-      return false;
-    }
-    return _audioTypes.any((type) => type == ext);
-  }
+  bool get isAudio => RegexMatcher.match(this, RegexPattern.audio);
 
   /// checks whether string is pdf
-  bool get isPdf {
-    final ext = extension(this);
-    if (ext.isBlank) {
-      return false;
-    }
-    return ext == '.pdf';
-  }
+  bool get isPdf => RegexMatcher.match(this, RegexPattern.pdf);
 
   /// checks whether string is text
-  bool get isTxt {
-    final ext = extension(this);
-    if (ext.isBlank) {
-      return false;
-    }
-    return _txtTypes.any((type) => type == ext);
-  }
+  bool get isTxt => RegexMatcher.match(this, RegexPattern.txt);
 
   /// checks whether string is docx
-  bool get isDocx {
-    final ext = extension(this);
-    if (ext.isBlank) {
-      return false;
-    }
-    return _docxTypes.any((type) => type == ext);
-  }
+  bool get isDocx => RegexMatcher.match(this, RegexPattern.doc);
 
   /// checks whether string is xls
-  bool get isXls {
-    final ext = extension(this);
-    if (ext.isBlank) {
-      return false;
-    }
-    return _xlsTypes.any((type) => type == ext);
-  }
+  bool get isXls => RegexMatcher.match(this, RegexPattern.xls);
 
   /// checks whether string is ppt
-  bool get isPpt {
-    final ext = extension(this);
-    if (ext.isBlank) {
-      return false;
-    }
-    return _pptTypes.any((type) => type == ext);
-  }
+  bool get isPpt => RegexMatcher.match(this, RegexPattern.ppt);
 
   /// checks whether string is svg
-  bool get isSvg {
-    final ext = extension(this);
-    if (ext.isBlank) {
-      return false;
-    }
-    return ext == '.svg';
-  }
+  bool get isSvg => RegexMatcher.match(this, RegexPattern.svg);
 
   /// checks whether string is csv
-  bool get isCsv {
-    final ext = extension(this);
-    if (ext.isBlank) {
-      return false;
-    }
-    return ext == '.csv';
-  }
+  bool get isCsv => RegexMatcher.match(this, RegexPattern.csv);
 
   /// checks whether string is xml
-  bool get isXml {
-    final ext = extension(this);
-    if (ext.isBlank) {
-      return false;
-    }
-    return ext == '.xml';
-  }
+  bool get isXml => RegexMatcher.match(this, RegexPattern.xml);
 
   /// checks whether string is archive
-  bool get isArchive {
-    final ext = extension(this);
-    if (ext.isBlank) {
-      return false;
-    }
-    return _archiveTypes.any((type) => type == ext);
-  }
+  bool get isArchive => RegexMatcher.match(this, RegexPattern.archive);
 
   /// checks whether string is json
-  bool get isJson {
-    final ext = extension(this);
-    if (ext.isBlank) {
-      return false;
-    }
-    return ext == '.json';
-  }
+  bool get isJson => RegexMatcher.match(this, RegexPattern.json);
 
   /// checks whether string is docx,pdf,xls,ppt, txt.csv,xml,archive or json
-  bool get isFile =>
-      isPdf ||
-      isDocx ||
-      isPpt ||
-      isXls ||
-      isTxt ||
-      isXml ||
-      isCsv ||
-      isArchive ||
-      isJson;
+  bool get isFile => isPdf || isDocx || isPpt || isXls || isTxt || isXml || isCsv || isArchive || isJson;
 }
-
-/// image extensions
-final _imageTypes = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.tif'];
-
-/// audio extensions
-final _audioTypes = [
-  '.mp3',
-  '.weba',
-  '.3gp',
-  '.3g2',
-  '.aac',
-  '.mid',
-  '.midi',
-  '.wav'
-];
-
-/// video extensions
-final _videoTypes = ['.mp4', '.avi', '.3gp', '.mpeg', '.ogv', '.3g2'];
-
-/// doc extensions
-final _docxTypes = ['.doc', '.docx'];
-
-/// ppt extensions
-final _pptTypes = ['.ppt', '.pptx'];
-
-/// excel extensions
-final _xlsTypes = ['.xls', '.xlsx'];
-
-/// text types
-final _txtTypes = ['.txt', '.rtf'];
-
-/// archive types
-final _archiveTypes = [
-  '.zip',
-  '.tar',
-  '.gz',
-  '.bzip2',
-  '.7z',
-  '.rar',
-  '.tgz',
-  '.xz'
-];
 
 /// use to convert string into different cases
 ///
@@ -422,18 +281,13 @@ class _ReCase {
   /// if the string is empty, returns an empty string
   /// if the string has one word, returns the first two characters
   /// if the string has two or more words, returns the first character of the first two words
-  String getInitial() {
+  String get initials {
     if (_words.isEmpty) return '';
     if (_words.length == 1) {
-      return '${_words.first[0].toUpperCase()}${_words.first[1].toUpperCase()}'
-          .trim();
+      return '${_words.first[0].toUpperCase()}${_words.first[1].toUpperCase()}'.trim();
     }
     if (_words.length > 2) {
-      return _words
-          .getRange(0, 2)
-          .map((word) => word[0].toUpperCase())
-          .join()
-          .trim();
+      return _words.getRange(0, 2).map((word) => word[0].toUpperCase()).join().trim();
     }
     return _words.map((word) => word[0].toUpperCase()).join().trim();
   }
@@ -492,9 +346,7 @@ class _ReCase {
 
       sb.write(char);
 
-      bool isEndOfWord = nextChar == null ||
-          (_upperAlphaRegex.hasMatch(nextChar) && !isAllCaps) ||
-          symbolSet.contains(nextChar);
+      bool isEndOfWord = nextChar == null || (_upperAlphaRegex.hasMatch(nextChar) && !isAllCaps) || symbolSet.contains(nextChar);
 
       if (isEndOfWord) {
         words.add(sb.toString());
