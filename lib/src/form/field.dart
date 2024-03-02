@@ -105,8 +105,7 @@ class Field<T> with _$Field<T> {
       value: updatedValue,
       validators: updatedValidators,
       isPure: !autoValidate,
-      errorMessage:
-          autoValidate ? _validate(updatedValue, updatedValidators) : null,
+      errorMessage: autoValidate ? _validate(updatedValue, updatedValidators) : null,
     );
   }
 
@@ -121,8 +120,7 @@ class Field<T> with _$Field<T> {
     updatedValidators.removeWhere(
       (validator) {
         if (validator is MatchValidator<T>) {
-          return matchHolders
-              .any((matchHolder) => matchHolder.key == validator.key);
+          return matchHolders.any((matchHolder) => matchHolder.key == validator.key);
         }
         return false;
       },
@@ -144,8 +142,7 @@ class Field<T> with _$Field<T> {
       value: updatedValue,
       validators: updatedValidators,
       isPure: !autoValidate,
-      errorMessage:
-          autoValidate ? _validate(updatedValue, updatedValidators) : null,
+      errorMessage: autoValidate ? _validate(updatedValue, updatedValidators) : null,
     );
   }
 

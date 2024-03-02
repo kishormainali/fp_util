@@ -35,16 +35,14 @@ extension IterationWithIndex<T> on Iterable<T> {
   }
 
   /// Expands each element and index to a number of elements in a new iterable.
-  Iterable<R> expandIndexed<R>(
-      Iterable<R> Function(int index, T element) expand) sync* {
+  Iterable<R> expandIndexed<R>(Iterable<R> Function(int index, T element) expand) sync* {
     var index = 0;
     for (var element in this) {
       yield* expand(index++, element);
     }
   }
 
-  Iterable<T> getOrDefault(Iterable<T> defaultValue) =>
-      isEmpty ? defaultValue : this;
+  Iterable<T> getOrDefault(Iterable<T> defaultValue) => isEmpty ? defaultValue : this;
 
   /// The first element whose value and index satisfies [test].
   ///
@@ -134,27 +132,4 @@ extension IterableX<T> on Iterable<T>? {
   bool get isNullOrEmpty {
     return this == null || this!.isEmpty;
   }
-}
-
-extension MapX<K, V> on Map<K, V> {
-  /// get value if null or null
-  V? getOrNull(K key) => containsKey(key) ? this[key] : null;
-
-  /// get value if null or null
-  V getOrDefault(K key, V defaultValue) {
-    if (containsKey(key)) {
-      return this[key]!;
-    } else {
-      return defaultValue;
-    }
-  }
-
-  /// get values list
-  List<V> get valuesList => values.toList();
-
-  /// get keys list
-  List<K> get keysList => keys.toList();
-
-  /// get entries list
-  List<MapEntry<K, V>> get entriesList => entries.toList();
 }

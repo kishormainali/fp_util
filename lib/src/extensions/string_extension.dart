@@ -5,8 +5,10 @@ import 'package:path/path.dart';
 import '../constants/regex_pattern.dart';
 
 extension StringNX on String? {
+  /// isNullOrEmpty
   bool get isNullOrEmpty => this == null || this!.isEmpty;
 
+  /// isNotNullNotEmpty
   bool get isNotNullNotEmpty => this != null && this!.isNotEmpty;
 }
 

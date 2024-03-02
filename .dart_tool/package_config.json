@@ -135,7 +135,7 @@
     },
     {
       "name": "dart_style",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/dart_style-2.3.4",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/dart_style-2.3.6",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -626,7 +626,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-02-24T06:51:06.412409Z",
+  "generated": "2024-03-02T04:40:53.302740Z",
   "generator": "pub",
   "generatorVersion": "3.3.0"
 }

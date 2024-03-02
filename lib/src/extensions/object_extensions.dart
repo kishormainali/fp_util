@@ -16,8 +16,8 @@ extension ObjectUtils<T> on T? {
     return this;
   }
 
-  /// safe cast
-  R? safeCast<R>() {
+  /// cast the object to the specified type [R]
+  R? cast<R>() {
     if (this is R) {
       return this as R;
     }
