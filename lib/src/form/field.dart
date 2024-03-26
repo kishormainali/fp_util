@@ -1,7 +1,4 @@
-import 'package:fp_util/fp_util.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-part 'field.freezed.dart';
+part of 'form.dart';
 
 /// {@template field}
 ///

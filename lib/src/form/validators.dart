@@ -1,6 +1,4 @@
-import 'package:equatable/equatable.dart';
-
-import '../extensions/extensions.dart';
+part of 'form.dart';
 
 /// {@template validator}
 ///

@@ -1,6 +1,4 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-part 'form_status.freezed.dart';
+part of 'form.dart';
 
 /// {@template form_status}
 ///

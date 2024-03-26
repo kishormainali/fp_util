@@ -1,4 +1,4 @@
-import 'field.dart';
+part of 'form.dart';
 
 /// {@template form_mixin}
 ///

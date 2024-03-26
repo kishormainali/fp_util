@@ -141,7 +141,7 @@
     },
     {
       "name": "dio",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/dio-5.4.1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/dio-5.4.2",
       "packageUri": "lib/",
       "languageVersion": "2.15"
     },
@@ -165,7 +165,7 @@
     },
     {
       "name": "file_picker",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/file_picker-6.1.1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/file_picker-8.0.0+1",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
@@ -238,6 +238,12 @@
     {
       "name": "flutter_web_plugins",
       "rootUri": "file:///Users/kishor/development/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "fp_logger",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/fp_logger-1.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -315,9 +321,9 @@
     },
     {
       "name": "image_picker_ios",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/image_picker_ios-0.8.9+1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/image_picker_ios-0.8.9+2",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "image_picker_linux",
@@ -626,7 +632,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-03-02T04:40:53.302740Z",
+  "generated": "2024-03-26T13:02:02.541307Z",
   "generator": "pub",
-  "generatorVersion": "3.3.0"
+  "generatorVersion": "3.3.2"
 }

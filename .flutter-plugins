@@ -1,5 +1,5 @@
 # This is a generated file; do not edit or check into version control.
-file_picker=/Users/kishor/.pub-cache/hosted/pub.dev/file_picker-6.1.1/
+file_picker=/Users/kishor/.pub-cache/hosted/pub.dev/file_picker-8.0.0+1/
 file_selector_linux=/Users/kishor/.pub-cache/hosted/pub.dev/file_selector_linux-0.9.2+1/
 file_selector_macos=/Users/kishor/.pub-cache/hosted/pub.dev/file_selector_macos-0.9.3+3/
 file_selector_windows=/Users/kishor/.pub-cache/hosted/pub.dev/file_selector_windows-0.9.3+1/
@@ -7,7 +7,7 @@ flutter_plugin_android_lifecycle=/Users/kishor/.pub-cache/hosted/pub.dev/flutter
 image_picker=/Users/kishor/.pub-cache/hosted/pub.dev/image_picker-1.0.7/
 image_picker_android=/Users/kishor/.pub-cache/hosted/pub.dev/image_picker_android-0.8.9+3/
 image_picker_for_web=/Users/kishor/.pub-cache/hosted/pub.dev/image_picker_for_web-3.0.2/
-image_picker_ios=/Users/kishor/.pub-cache/hosted/pub.dev/image_picker_ios-0.8.9+1/
+image_picker_ios=/Users/kishor/.pub-cache/hosted/pub.dev/image_picker_ios-0.8.9+2/
 image_picker_linux=/Users/kishor/.pub-cache/hosted/pub.dev/image_picker_linux-0.2.1+1/
 image_picker_macos=/Users/kishor/.pub-cache/hosted/pub.dev/image_picker_macos-0.2.1+1/
 image_picker_windows=/Users/kishor/.pub-cache/hosted/pub.dev/image_picker_windows-0.2.1+1/

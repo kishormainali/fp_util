@@ -1,3 +1,7 @@
+# 3.1.3
+
+- updated dependencies
+
 # 3.1.2
 
 - updated docs site url
