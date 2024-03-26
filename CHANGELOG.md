@@ -1,6 +1,7 @@
 # 3.1.3
 
-- updated dependencies
+- update dependencies
+- deprecate logger use [fp_logger](https://pub.dev/packages/fp_logger) package instead
 
 # 3.1.2
 
