@@ -79,6 +79,12 @@ class FpSnackbar {
     bool autoDismiss = true,
     Duration animationDuration = _defaultAnimationDuration,
     Curve? animationCurve,
+    String? title,
+    TextStyle? textStyle,
+    TextStyle? titleTextStyle,
+    Widget? action,
+    int? contentMaxLines,
+    bool centerText = false,
   }) {
     FpSnackbar._(
       snackbarDuration: snackbarDuration,
@@ -87,7 +93,12 @@ class FpSnackbar {
       builder: (context) => SnackbarWidget(
         message: message,
         backgroundColor: Colors.green,
-        centerText: false,
+        centerText: centerText,
+        title: title,
+        textStyle: textStyle,
+        titleTextStyle: titleTextStyle,
+        action: action,
+        contentMaxLines: contentMaxLines,
       ),
       animationDuration: animationDuration,
       animationCurve: animationCurve,
@@ -103,6 +114,12 @@ class FpSnackbar {
     bool autoDismiss = true,
     Duration animationDuration = _defaultAnimationDuration,
     Curve? animationCurve,
+    String? title,
+    TextStyle? textStyle,
+    TextStyle? titleTextStyle,
+    Widget? action,
+    int? contentMaxLines,
+    bool centerText = false,
   }) {
     FpSnackbar._(
       snackbarDuration: snackbarDuration,
@@ -111,7 +128,12 @@ class FpSnackbar {
       builder: (context) => SnackbarWidget(
         message: message,
         backgroundColor: Colors.red,
-        centerText: false,
+        centerText: centerText,
+        title: title,
+        textStyle: textStyle,
+        titleTextStyle: titleTextStyle,
+        action: action,
+        contentMaxLines: contentMaxLines,
       ),
       animationDuration: animationDuration,
       animationCurve: animationCurve,
@@ -127,6 +149,12 @@ class FpSnackbar {
     bool autoDismiss = true,
     Duration animationDuration = _defaultAnimationDuration,
     Curve? animationCurve,
+    String? title,
+    TextStyle? textStyle,
+    TextStyle? titleTextStyle,
+    Widget? action,
+    int? contentMaxLines,
+    bool centerText = false,
   }) {
     FpSnackbar._(
       snackbarDuration: snackbarDuration,
@@ -135,7 +163,12 @@ class FpSnackbar {
       builder: (context) => SnackbarWidget(
         message: message,
         backgroundColor: Colors.orange,
-        centerText: false,
+        centerText: centerText,
+        title: title,
+        textStyle: textStyle,
+        titleTextStyle: titleTextStyle,
+        action: action,
+        contentMaxLines: contentMaxLines,
       ),
       animationDuration: animationDuration,
       animationCurve: animationCurve,
@@ -237,7 +270,10 @@ class SnackbarInfo {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is SnackbarInfo && other.key == key && other.createdAt == createdAt && other.entry == entry;
+    return other is SnackbarInfo &&
+        other.key == key &&
+        other.createdAt == createdAt &&
+        other.entry == entry;
   }
 
   @override
