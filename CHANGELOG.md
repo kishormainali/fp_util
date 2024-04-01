@@ -1,3 +1,7 @@
+# 3.1.4
+
+-  Utilize unused parameter in FPSnackBar
+
 # 3.1.3
 
 - update dependencies
