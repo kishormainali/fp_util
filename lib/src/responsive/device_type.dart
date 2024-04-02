@@ -31,7 +31,7 @@ enum DeviceType {
     }
     return switch (deviceWidth) {
       >= 840 => DeviceType.desktop,
-      >= 600 || < 840 => DeviceType.tablet,
+      >= 600 && < 840 => DeviceType.tablet,
       _ => DeviceType.mobile,
     };
   }
