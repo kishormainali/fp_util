@@ -1,7 +1,6 @@
 # 3.1.5
 
 - Fix Device Size Calculation
-- Changed bottom margin
 
 # 3.1.4
 
