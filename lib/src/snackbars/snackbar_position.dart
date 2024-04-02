@@ -28,7 +28,7 @@ enum SnackbarPosition {
   double? bottomMargin(BuildContext context, double position) {
     return switch (this) {
       top => null,
-      bottom => position + 20 + context.bottomBarHeight,
+      bottom => position + 40 + context.bottomBarHeight,
     };
   }
 }
