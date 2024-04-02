@@ -22,14 +22,20 @@ mixin _$FormState {
   FormStatus<String> get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $FormStateCopyWith<FormState> get copyWith => throw _privateConstructorUsedError;
+  $FormStateCopyWith<FormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $FormStateCopyWith<$Res> {
-  factory $FormStateCopyWith(FormState value, $Res Function(FormState) then) = _$FormStateCopyWithImpl<$Res, FormState>;
+  factory $FormStateCopyWith(FormState value, $Res Function(FormState) then) =
+      _$FormStateCopyWithImpl<$Res, FormState>;
   @useResult
-  $Res call({Field<String> name, Field<String> email, Field<String> password, FormStatus<String> status});
+  $Res call(
+      {Field<String> name,
+      Field<String> email,
+      Field<String> password,
+      FormStatus<String> status});
 
   $FieldCopyWith<String, $Res> get name;
   $FieldCopyWith<String, $Res> get email;
@@ -38,7 +44,8 @@ abstract class $FormStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FormStateCopyWithImpl<$Res, $Val extends FormState> implements $FormStateCopyWith<$Res> {
+class _$FormStateCopyWithImpl<$Res, $Val extends FormState>
+    implements $FormStateCopyWith<$Res> {
   _$FormStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -108,11 +115,18 @@ class _$FormStateCopyWithImpl<$Res, $Val extends FormState> implements $FormStat
 }
 
 /// @nodoc
-abstract class _$$FormStateImplCopyWith<$Res> implements $FormStateCopyWith<$Res> {
-  factory _$$FormStateImplCopyWith(_$FormStateImpl value, $Res Function(_$FormStateImpl) then) = __$$FormStateImplCopyWithImpl<$Res>;
+abstract class _$$FormStateImplCopyWith<$Res>
+    implements $FormStateCopyWith<$Res> {
+  factory _$$FormStateImplCopyWith(
+          _$FormStateImpl value, $Res Function(_$FormStateImpl) then) =
+      __$$FormStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Field<String> name, Field<String> email, Field<String> password, FormStatus<String> status});
+  $Res call(
+      {Field<String> name,
+      Field<String> email,
+      Field<String> password,
+      FormStatus<String> status});
 
   @override
   $FieldCopyWith<String, $Res> get name;
@@ -125,8 +139,12 @@ abstract class _$$FormStateImplCopyWith<$Res> implements $FormStateCopyWith<$Res
 }
 
 /// @nodoc
-class __$$FormStateImplCopyWithImpl<$Res> extends _$FormStateCopyWithImpl<$Res, _$FormStateImpl> implements _$$FormStateImplCopyWith<$Res> {
-  __$$FormStateImplCopyWithImpl(_$FormStateImpl _value, $Res Function(_$FormStateImpl) _then) : super(_value, _then);
+class __$$FormStateImplCopyWithImpl<$Res>
+    extends _$FormStateCopyWithImpl<$Res, _$FormStateImpl>
+    implements _$$FormStateImplCopyWith<$Res> {
+  __$$FormStateImplCopyWithImpl(
+      _$FormStateImpl _value, $Res Function(_$FormStateImpl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -160,7 +178,12 @@ class __$$FormStateImplCopyWithImpl<$Res> extends _$FormStateCopyWithImpl<$Res, 
 /// @nodoc
 
 class _$FormStateImpl extends _FormState {
-  const _$FormStateImpl({required this.name, required this.email, required this.password, required this.status}) : super._();
+  const _$FormStateImpl(
+      {required this.name,
+      required this.email,
+      required this.password,
+      required this.status})
+      : super._();
 
   @override
   final Field<String> name;
@@ -183,7 +206,8 @@ class _$FormStateImpl extends _FormState {
             other is _$FormStateImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) || other.password == password) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
             (identical(other.status, status) || other.status == status));
   }
 
@@ -193,11 +217,16 @@ class _$FormStateImpl extends _FormState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FormStateImplCopyWith<_$FormStateImpl> get copyWith => __$$FormStateImplCopyWithImpl<_$FormStateImpl>(this, _$identity);
+  _$$FormStateImplCopyWith<_$FormStateImpl> get copyWith =>
+      __$$FormStateImplCopyWithImpl<_$FormStateImpl>(this, _$identity);
 }
 
 abstract class _FormState extends FormState {
-  const factory _FormState({required final Field<String> name, required final Field<String> email, required final Field<String> password, required final FormStatus<String> status}) = _$FormStateImpl;
+  const factory _FormState(
+      {required final Field<String> name,
+      required final Field<String> email,
+      required final Field<String> password,
+      required final FormStatus<String> status}) = _$FormStateImpl;
   const _FormState._() : super._();
 
   @override
@@ -210,5 +239,6 @@ abstract class _FormState extends FormState {
   FormStatus<String> get status;
   @override
   @JsonKey(ignore: true)
-  _$$FormStateImplCopyWith<_$FormStateImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$FormStateImplCopyWith<_$FormStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

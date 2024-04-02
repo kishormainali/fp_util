@@ -35,19 +35,22 @@ abstract class RegexPattern {
   /// Example: https://www.google.com
   /// Example: http://www.google.com
   /// Example: www.google.com
-  static const String url = r"^((((H|h)(T|t)|(F|f))(T|t)(P|p)((S|s)?))\://)?(www.|[a-zA-Z0-9].)[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,6}(\:[0-9]{1,5})*(/($|[a-zA-Z0-9\.\,\;\?\'\\\+&amp;%\$#\=~_\-@]+))*$";
+  static const String url =
+      r"^((((H|h)(T|t)|(F|f))(T|t)(P|p)((S|s)?))\://)?(www.|[a-zA-Z0-9].)[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,6}(\:[0-9]{1,5})*(/($|[a-zA-Z0-9\.\,\;\?\'\\\+&amp;%\$#\=~_\-@]+))*$";
 
   /// URI RegExp
   ///
   /// Example: https://www.google.com
   /// Example: http://www.google.com
   /// Example: www.google.com
-  static const String uri = r"^(?!.*[?@!&`()*+,;=_\-~\]\[#$]{2})(?!.*[?@!&`()*+,;=_.\-~:?\[\]]$)(?!.*(\/\.|\.\/))(\w+:(\/\/)?)\S*$";
+  static const String uri =
+      r"^(?!.*[?@!&`()*+,;=_\-~\]\[#$]{2})(?!.*[?@!&`()*+,;=_.\-~:?\[\]]$)(?!.*(\/\.|\.\/))(\w+:(\/\/)?)\S*$";
 
   /// UUID RegExp
   ///
   /// Example: 123e4567-e89b-12d3-a456-426614174000
-  static const String uuid = r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$';
+  static const String uuid =
+      r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$';
 
   /// Password RegExp
   ///
@@ -62,7 +65,8 @@ abstract class RegexPattern {
   /// IPv4 Address RegExp
   ///
   /// Example: 192.168.0.0
-  static const String ipv4 = r'^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$';
+  static const String ipv4 =
+      r'^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$';
 
   /// IPv6 Address RegExp
   ///
@@ -87,22 +91,26 @@ abstract class RegexPattern {
   /// Date and Time RegExp
   ///
   /// Example: 2021-12-31 12:00:00
-  static const String dateTime = r'^([a-zA-Z]{3,},? ?)?([0-9]{1,4}|[a-zA-Z]{3,})[ -\/\.,:]([0-9]{1,4}|[a-zA-Z]{3,})([ -\/\.,:] ?\w+)?([ T]\d{2}:\d{2}(:\d{2})?(\.\d{3,})?[zZ]?)?([aApP]\.?[mM])?$';
+  static const String dateTime =
+      r'^([a-zA-Z]{3,},? ?)?([0-9]{1,4}|[a-zA-Z]{3,})[ -\/\.,:]([0-9]{1,4}|[a-zA-Z]{3,})([ -\/\.,:] ?\w+)?([ T]\d{2}:\d{2}(:\d{2})?(\.\d{3,})?[zZ]?)?([aApP]\.?[mM])?$';
 
   /// Date and Time RegExp in UTC
   ///
   /// Example: 2021-12-31 T 12:00:00Z
-  static const String dateTimeUTC = r'^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}:\d{2}(.\d{3,})?[zZ]?$';
+  static const String dateTimeUTC =
+      r'^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}:\d{2}(.\d{3,})?[zZ]?$';
 
   /// SHA1 regex
   ///
   /// Example: 2fd4e1c67a2d28fced849ee1bb76e7391b93eb12
-  static String sha1 = r'^(([A-Fa-f0-9]{2}\:){19}[A-Fa-f0-9]{2}|[A-Fa-f0-9]{40})$';
+  static String sha1 =
+      r'^(([A-Fa-f0-9]{2}\:){19}[A-Fa-f0-9]{2}|[A-Fa-f0-9]{40})$';
 
   /// SHA256 regex
   ///
   /// Example: 2fd4e1c67a2d28fced849ee1bb76e7391b93eb12
-  static String sha256 = r'^([A-Fa-f0-9]{2}\:){31}[A-Fa-f0-9]{2}|[A-Fa-f0-9]{64}$';
+  static String sha256 =
+      r'^([A-Fa-f0-9]{2}\:){31}[A-Fa-f0-9]{2}|[A-Fa-f0-9]{64}$';
 
   /// HTML Tag RegExp
   ///
@@ -311,19 +319,22 @@ abstract class RegexPattern {
   ///
   /// Example: application/msword
   /// Example: application/vnd.openxmlformats-officedocument.wordprocessingml.document
-  static const String mimeTypeDoc = r'^application\/(msword|application/vnd.openxmlformats-officedocument.wordprocessingml.document)$';
+  static const String mimeTypeDoc =
+      r'^application\/(msword|application/vnd.openxmlformats-officedocument.wordprocessingml.document)$';
 
   /// MIME Type RegExp for Presentation
   ///
   /// Example: application/vnd.ms-powerpoint
   /// Example: application/vnd.openxmlformats-officedocument.presentationml.presentation
-  static const String mimeTypePpt = r'^application\/(vnd.ms-powerpoint|vnd.openxmlformats-officedocument.presentationml.presentation)$';
+  static const String mimeTypePpt =
+      r'^application\/(vnd.ms-powerpoint|vnd.openxmlformats-officedocument.presentationml.presentation)$';
 
   /// MIME Type RegExp for Excel
   ///
   /// Example: application/vnd.ms-excel
   /// Example: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-  static const String mimeTypeXls = r'^application\/(vnd.ms-excel|vnd.openxmlformats-officedocument.spreadsheetml.sheet)$';
+  static const String mimeTypeXls =
+      r'^application\/(vnd.ms-excel|vnd.openxmlformats-officedocument.spreadsheetml.sheet)$';
 
   /// MIME Type RegExp for Text
   ///
@@ -356,7 +367,8 @@ abstract class RegexPattern {
   /// MIME Type RegExp for APK
   ///
   /// Example: application/vnd.android.package-archive
-  static const String mimeTypeApk = r'^application\/vnd.android.package-archive$';
+  static const String mimeTypeApk =
+      r'^application\/vnd.android.package-archive$';
 
   /// MIME Type RegExp for IPA
   ///
@@ -367,7 +379,8 @@ abstract class RegexPattern {
   ///
   /// Example: application/zip
   /// Example: application/x-tar
-  static const String mimeTypeArchive = r'^application\/(zip|x-tar|x-gzip|x-bzip2)$';
+  static const String mimeTypeArchive =
+      r'^application\/(zip|x-tar|x-gzip|x-bzip2)$';
 }
 
 /// {@template regex_matcher}
@@ -395,22 +408,38 @@ abstract class RegexMatcher {
   /// Matches the input with the given pattern for the given file type
   static bool matchFile(String input, RegexFileType type) {
     return switch (type) {
-      RegexFileType.image => matchMultiple(input, [RegexPattern.image, RegexPattern.mimeTypeImage]),
-      RegexFileType.video => matchMultiple(input, [RegexPattern.video, RegexPattern.mimeTypeVideo]),
-      RegexFileType.audio => matchMultiple(input, [RegexPattern.audio, RegexPattern.mimeTypeAudio]),
-      RegexFileType.pdf => matchMultiple(input, [RegexPattern.pdf, RegexPattern.mimeTypePdf]),
-      RegexFileType.doc => matchMultiple(input, [RegexPattern.doc, RegexPattern.mimeTypeDoc]),
-      RegexFileType.ppt => matchMultiple(input, [RegexPattern.ppt, RegexPattern.mimeTypePpt]),
-      RegexFileType.xls => matchMultiple(input, [RegexPattern.xls, RegexPattern.mimeTypeXls]),
-      RegexFileType.txt => matchMultiple(input, [RegexPattern.txt, RegexPattern.mimeTypeTxt]),
-      RegexFileType.xml => matchMultiple(input, [RegexPattern.xml, RegexPattern.mimeTypeXml]),
-      RegexFileType.svg => matchMultiple(input, [RegexPattern.svg, RegexPattern.mimeTypeSvg]),
-      RegexFileType.csv => matchMultiple(input, [RegexPattern.csv, RegexPattern.mimeTypeCsv]),
-      RegexFileType.archive => matchMultiple(input, [RegexPattern.archive, RegexPattern.mimeTypeArchive]),
-      RegexFileType.json => matchMultiple(input, [RegexPattern.json, RegexPattern.mimeTypeJson]),
-      RegexFileType.apk => matchMultiple(input, [RegexPattern.apk, RegexPattern.mimeTypeApk]),
-      RegexFileType.ipa => matchMultiple(input, [RegexPattern.ipa, RegexPattern.mimeTypeIpa]),
-      RegexFileType.appBundle => matchMultiple(input, [RegexPattern.appBundle, RegexPattern.mimeTypeApk]),
+      RegexFileType.image =>
+        matchMultiple(input, [RegexPattern.image, RegexPattern.mimeTypeImage]),
+      RegexFileType.video =>
+        matchMultiple(input, [RegexPattern.video, RegexPattern.mimeTypeVideo]),
+      RegexFileType.audio =>
+        matchMultiple(input, [RegexPattern.audio, RegexPattern.mimeTypeAudio]),
+      RegexFileType.pdf =>
+        matchMultiple(input, [RegexPattern.pdf, RegexPattern.mimeTypePdf]),
+      RegexFileType.doc =>
+        matchMultiple(input, [RegexPattern.doc, RegexPattern.mimeTypeDoc]),
+      RegexFileType.ppt =>
+        matchMultiple(input, [RegexPattern.ppt, RegexPattern.mimeTypePpt]),
+      RegexFileType.xls =>
+        matchMultiple(input, [RegexPattern.xls, RegexPattern.mimeTypeXls]),
+      RegexFileType.txt =>
+        matchMultiple(input, [RegexPattern.txt, RegexPattern.mimeTypeTxt]),
+      RegexFileType.xml =>
+        matchMultiple(input, [RegexPattern.xml, RegexPattern.mimeTypeXml]),
+      RegexFileType.svg =>
+        matchMultiple(input, [RegexPattern.svg, RegexPattern.mimeTypeSvg]),
+      RegexFileType.csv =>
+        matchMultiple(input, [RegexPattern.csv, RegexPattern.mimeTypeCsv]),
+      RegexFileType.archive => matchMultiple(
+          input, [RegexPattern.archive, RegexPattern.mimeTypeArchive]),
+      RegexFileType.json =>
+        matchMultiple(input, [RegexPattern.json, RegexPattern.mimeTypeJson]),
+      RegexFileType.apk =>
+        matchMultiple(input, [RegexPattern.apk, RegexPattern.mimeTypeApk]),
+      RegexFileType.ipa =>
+        matchMultiple(input, [RegexPattern.ipa, RegexPattern.mimeTypeIpa]),
+      RegexFileType.appBundle => matchMultiple(
+          input, [RegexPattern.appBundle, RegexPattern.mimeTypeApk]),
     };
   }
 }
