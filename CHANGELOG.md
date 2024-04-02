@@ -1,3 +1,7 @@
+# 3.1.5
+
+- Fix Device Size Calculation
+
 # 3.1.4
 
 -  Utilize unused parameter in FPSnackBar
