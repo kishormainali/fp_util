@@ -76,7 +76,8 @@ abstract class Logger {
   ///
   /// For example:
   /// * dart:sdk_internal
-  static final _browserStackTraceRegex = RegExp(r'^(?:package:)?(dart:\S+|\S+)');
+  static final _browserStackTraceRegex =
+      RegExp(r'^(?:package:)?(dart:\S+|\S+)');
 
   /// line width of the logger
   static int get _lineWidth => 80;
@@ -119,15 +120,18 @@ abstract class Logger {
     StackTrace? stackTrace,
     String tag = "",
   }) {
-    bool isError = level == _LogLevel.error && (error != null || stackTrace != null);
+    bool isError =
+        level == _LogLevel.error && (error != null || stackTrace != null);
     final messages = <String>[
       _topBorder,
-      _printLine('${level.icon} | ${level.label} | ${_getTime(DateTime.now())} | $tag'),
+      _printLine(
+          '${level.icon} | ${level.label} | ${_getTime(DateTime.now())} | $tag'),
       _printDivider(),
     ];
     if (message is Map || message is List) {
       try {
-        final indentedString = const JsonEncoder.withIndent(' ').convert(message);
+        final indentedString =
+            const JsonEncoder.withIndent(' ').convert(message);
         final lines = indentedString.split('\n');
         messages.addAll(lines.map(_printLine));
       } catch (_) {
@@ -158,7 +162,10 @@ abstract class Logger {
   static List<String> _formatStackTrace(StackTrace stackTrace) {
     final lines = stackTrace.toString().split('\n').where(
       (element) {
-        return !_discardDeviceStacktraceLine(element) && !_discardWebStacktraceLine(element) && !_discardBrowserStacktraceLine(element) && element.isNotEmpty;
+        return !_discardDeviceStacktraceLine(element) &&
+            !_discardWebStacktraceLine(element) &&
+            !_discardBrowserStacktraceLine(element) &&
+            element.isNotEmpty;
       },
     ).toList();
 
@@ -191,7 +198,8 @@ abstract class Logger {
       return false;
     }
     final segment = match.group(1)!;
-    return segment.startsWith('packages/fp_util') || segment.startsWith('dart-sdk/lib');
+    return segment.startsWith('packages/fp_util') ||
+        segment.startsWith('dart-sdk/lib');
   }
 
   /// Discards stacktrace lines that are not useful.

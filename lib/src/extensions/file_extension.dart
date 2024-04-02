@@ -93,7 +93,16 @@ extension FileExtensionX on File {
       );
 
   /// checks whether given file is docx,pdf,xls,ppt or txt
-  bool get isFile => isDocx || isPdf || isXls || isPpt || isTxt || isCsv || isXml || isJson || isArchive;
+  bool get isFile =>
+      isDocx ||
+      isPdf ||
+      isXls ||
+      isPpt ||
+      isTxt ||
+      isCsv ||
+      isXml ||
+      isJson ||
+      isArchive;
 
   /// get file size in mb
   double get sizeInMb {
