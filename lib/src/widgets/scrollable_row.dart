@@ -79,7 +79,7 @@ class ScrollableRow extends SingleChildScrollView {
 
   /// @{macro scrollable_column}
   ///
-  /// [separator] is the widget that separates each child. default is [SizedBox(width: 10)]
+  /// [separator] is the widget that separates each child. default is [Gap(10)]
   ///
   ScrollableRow.separated({
     super.key,
@@ -90,7 +90,7 @@ class ScrollableRow extends SingleChildScrollView {
     TextDirection? textDirection,
     VerticalDirection verticalDirection = VerticalDirection.down,
     TextBaseline? textBaseline,
-    Widget separator = const SizedBox(width: 10),
+    Widget separator = const Gap(10),
     bool hasLeadingSpace = false,
     bool hasTrailingSpace = false,
     super.reverse,

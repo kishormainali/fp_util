@@ -58,8 +58,6 @@ enum _LogLevel {
 /// {@template logger}
 /// A simple logger that logs messages to the console.
 /// {@endtemplate}
-@Deprecated('use logger from fp_logger instead'
-    'https://pub.dev/packages/fp_logger')
 abstract class Logger {
   /// {@macro logger}
   Logger._();
@@ -292,8 +290,4 @@ abstract class Logger {
   }) {
     _log(_LogLevel.success, message, tag: tag);
   }
-}
-
-void main() {
-  Logger.s("Hello this is success message");
 }

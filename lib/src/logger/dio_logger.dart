@@ -7,8 +7,6 @@ import 'logger.dart';
 /// {@template dio_logger}
 /// A [Interceptor] which logs the request and response.
 /// {@endtemplate}
-@Deprecated('use logger from fp_logger instead'
-    'https://pub.dev/packages/fp_logger')
 class DioLogger extends Interceptor {
   /// {@macro dio_logger}
   const DioLogger({

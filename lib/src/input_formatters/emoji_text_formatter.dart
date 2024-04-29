@@ -28,7 +28,9 @@ class EmojiTextFormatter extends TextInputFormatter {
       TextEditingValue oldValue, TextEditingValue newValue) {
     if (_allow) {
       return TextEditingValue(
-          text: newValue.text, selection: newValue.selection);
+        text: newValue.text,
+        selection: newValue.selection,
+      );
     }
     var text = newValue.text.replaceAll(emojiRegExp, '');
     var selection = newValue.selection;
