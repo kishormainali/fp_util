@@ -7,8 +7,6 @@ import 'logger.dart';
 /// {@template dio_logger}
 /// A [Interceptor] which logs the request and response.
 /// {@endtemplate}
-@Deprecated('use logger from fp_logger instead'
-    'https://pub.dev/packages/fp_logger')
 class DioLogger extends Interceptor {
   /// {@macro dio_logger}
   const DioLogger({
@@ -88,8 +86,7 @@ class DioLogger extends Interceptor {
   }
 
   void _printResponseHeader(Response response) {
-    final message =
-        'Method:: ${response.requestOptions.method} URI:: ${response.requestOptions.uri} Status:: ${response.statusCode}';
+    final message = 'Method:: ${response.requestOptions.method} URI:: ${response.requestOptions.uri} Status:: ${response.statusCode}';
     Logger.i(message);
   }
 
@@ -100,8 +97,7 @@ class DioLogger extends Interceptor {
     } else if (responseBody is Uint8List) {
       var chunks = [];
       for (var i = 0; i < responseBody.length; i += 20) {
-        chunks.add(responseBody.sublist(
-            i, i + 20 > responseBody.length ? responseBody.length : i + 20));
+        chunks.add(responseBody.sublist(i, i + 20 > responseBody.length ? responseBody.length : i + 20));
       }
       Logger.i(chunks);
     } else {

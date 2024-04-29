@@ -58,8 +58,6 @@ enum _LogLevel {
 /// {@template logger}
 /// A simple logger that logs messages to the console.
 /// {@endtemplate}
-@Deprecated('use logger from fp_logger instead'
-    'https://pub.dev/packages/fp_logger')
 abstract class Logger {
   /// {@macro logger}
   Logger._();
@@ -76,8 +74,7 @@ abstract class Logger {
   ///
   /// For example:
   /// * dart:sdk_internal
-  static final _browserStackTraceRegex =
-      RegExp(r'^(?:package:)?(dart:\S+|\S+)');
+  static final _browserStackTraceRegex = RegExp(r'^(?:package:)?(dart:\S+|\S+)');
 
   /// line width of the logger
   static int get _lineWidth => 80;
@@ -120,18 +117,15 @@ abstract class Logger {
     StackTrace? stackTrace,
     String tag = "",
   }) {
-    bool isError =
-        level == _LogLevel.error && (error != null || stackTrace != null);
+    bool isError = level == _LogLevel.error && (error != null || stackTrace != null);
     final messages = <String>[
       _topBorder,
-      _printLine(
-          '${level.icon} | ${level.label} | ${_getTime(DateTime.now())} | $tag'),
+      _printLine('${level.icon} | ${level.label} | ${_getTime(DateTime.now())} | $tag'),
       _printDivider(),
     ];
     if (message is Map || message is List) {
       try {
-        final indentedString =
-            const JsonEncoder.withIndent(' ').convert(message);
+        final indentedString = const JsonEncoder.withIndent(' ').convert(message);
         final lines = indentedString.split('\n');
         messages.addAll(lines.map(_printLine));
       } catch (_) {
@@ -162,10 +156,7 @@ abstract class Logger {
   static List<String> _formatStackTrace(StackTrace stackTrace) {
     final lines = stackTrace.toString().split('\n').where(
       (element) {
-        return !_discardDeviceStacktraceLine(element) &&
-            !_discardWebStacktraceLine(element) &&
-            !_discardBrowserStacktraceLine(element) &&
-            element.isNotEmpty;
+        return !_discardDeviceStacktraceLine(element) && !_discardWebStacktraceLine(element) && !_discardBrowserStacktraceLine(element) && element.isNotEmpty;
       },
     ).toList();
 
@@ -198,8 +189,7 @@ abstract class Logger {
       return false;
     }
     final segment = match.group(1)!;
-    return segment.startsWith('packages/fp_util') ||
-        segment.startsWith('dart-sdk/lib');
+    return segment.startsWith('packages/fp_util') || segment.startsWith('dart-sdk/lib');
   }
 
   /// Discards stacktrace lines that are not useful.
@@ -292,8 +282,4 @@ abstract class Logger {
   }) {
     _log(_LogLevel.success, message, tag: tag);
   }
-}
-
-void main() {
-  Logger.s("Hello this is success message");
 }
