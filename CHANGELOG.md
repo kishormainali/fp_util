@@ -1,10 +1,16 @@
+# 3.1.6
+
+- Re-land logger
+- Deps update
+- Minor improvements
+
 # 3.1.5
 
 - Fix Device Size Calculation
 
 # 3.1.4
 
--  Utilize unused parameter in FPSnackBar
+- Utilize unused parameter in FPSnackBar
 
 # 3.1.3
 

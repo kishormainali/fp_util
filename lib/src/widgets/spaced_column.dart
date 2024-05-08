@@ -42,13 +42,15 @@ class SpacedColumn extends Column {
     super.textDirection,
     super.verticalDirection,
     List<Widget> children = const [],
-  }) : super(children: [
-          if (hasLeadingSeparator) separator,
-          ...children.expandIndexed((index, widget) {
-            return [
-              widget,
-              if (index < children.length || hasTrailingSeparator) separator,
-            ];
-          }),
-        ]);
+  }) : super(
+          children: [
+            if (hasLeadingSeparator) separator,
+            ...children.expandIndexed((index, widget) {
+              return [
+                widget,
+                if (index < children.length || hasTrailingSeparator) separator,
+              ];
+            }),
+          ],
+        );
 }

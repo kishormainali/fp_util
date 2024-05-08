@@ -18,8 +18,11 @@ class HomePage extends StatelessWidget {
         ),
         FilledButton(
           onPressed: () {
-            Logger.d("Hello");
-            FpSnackbar.success(context, message: 'Hello');
+            FpSnackbar.success(
+              context,
+              title: 'Success',
+              message: 'Hello',
+            );
           },
           child: const Text('Show Success Snackbar'),
         ),
