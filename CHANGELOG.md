@@ -1,3 +1,6 @@
+# 3.1.7
+- Equality added for validator  
+
 # 3.1.6
 
 - Re-land logger
