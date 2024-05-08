@@ -5,7 +5,7 @@ part of 'form.dart';
 /// A [Validator] is base class for handling form validation.
 ///
 /// {@endtemplate}
-abstract class Validator<T> {
+abstract class Validator<T> extends Equatable {
   /// {@macro validator}
   const Validator(this.message);
   final String? message;
@@ -15,6 +15,9 @@ abstract class Validator<T> {
   String? call(T value) {
     return isValid(value) ? null : message;
   }
+
+  @override
+  List<Object?> get props => [message];
 }
 
 /// {@template emailValidator}
