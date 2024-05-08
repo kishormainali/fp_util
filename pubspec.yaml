@@ -1,6 +1,6 @@
 name: fp_util
 description: Utilities and Extensions for num,BuildContext,EdgeInsets,File,String. constants for horizontal and vertical spacing.
-version: 3.1.6
+version: 3.1.7
 homepage: https://docs.kishormainali.com/
 repository: https://github.com/kishormainali/fp_util
 issue_tracker: https://github.com/kishormainali/fp_util/issues

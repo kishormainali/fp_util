@@ -1,4 +1,7 @@
 # 3.1.6
+- Equality added for validator  
+
+# 3.1.6
 
 - Re-land logger
 - Deps update
