@@ -13,8 +13,9 @@ abstract class UUID {
   static final Uuid _secureUuid = Uuid(goptions: GlobalOptions(CryptoRNG()));
 
   /// Generates a v4 UUID.
-  static String v4({String separator = '-'}) =>
-      _uuid.v4().replaceAll('-', separator);
+  static String v4({String separator = '-'}) {
+    return _uuid.v4().replaceAll('-', separator);
+  }
 
   /// Generates a secure v4 UUID.
   static String secureV4({

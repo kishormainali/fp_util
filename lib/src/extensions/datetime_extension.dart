@@ -50,8 +50,10 @@ extension DateTimeUtils on DateTime {
   DateTime subtractSeconds(int seconds) => subtract(Duration(seconds: seconds));
 
   /// parse string to DateTime
-  static DateTime formatParse(String inputString,
-      [String pattern = DateFormat.YEAR_NUM_MONTH_DAY]) {
+  static DateTime formatParse(
+    String inputString, [
+    String pattern = DateFormat.YEAR_NUM_MONTH_DAY,
+  ]) {
     return DateFormat(pattern).parseLoose(inputString);
   }
 
@@ -113,9 +115,17 @@ extension DateTimeUtils on DateTime {
     bool usePrefix = false,
   }) {
     if (month > startMonth || (month == startMonth && day >= startDay)) {
-      return format.format(year.toString(), (year + 1).toString(), usePrefix);
+      return format.format(
+        year.toString(),
+        (year + 1).toString(),
+        usePrefix: usePrefix,
+      );
     } else {
-      return format.format((year - 1).toString(), year.toString(), usePrefix);
+      return format.format(
+        (year - 1).toString(),
+        year.toString(),
+        usePrefix: usePrefix,
+      );
     }
   }
 
@@ -130,10 +140,16 @@ extension DateTimeUtils on DateTime {
     if (date.month > startMonth ||
         (date.month == startMonth && date.day >= startDay)) {
       return format.format(
-          date.year.toString(), (date.year + 1).toString(), usePrefix);
+        date.year.toString(),
+        (date.year + 1).toString(),
+        usePrefix: usePrefix,
+      );
     } else {
       return format.format(
-          (date.year - 1).toString(), date.year.toString(), usePrefix);
+        (date.year - 1).toString(),
+        date.year.toString(),
+        usePrefix: usePrefix,
+      );
     }
   }
 }
@@ -158,15 +174,23 @@ enum FiscalYearFormat {
   single;
 
   /// format fiscal year
-  String format(String startYear, String endYear, [bool usePrefix = false]) {
+  String format(
+    String startYear,
+    String endYear, {
+    bool usePrefix = false,
+  }) {
+    String substring(String year) {
+      return year.substring(2, year.length);
+    }
+
     String text = switch (this) {
       FiscalYearFormat.hyphen => '$startYear-$endYear',
       FiscalYearFormat.slash => '$startYear/$endYear',
       FiscalYearFormat.hyphenShort =>
-        '${startYear.substring(2, startYear.length)}-${endYear.substring(2, endYear.length)}',
+        '${substring(startYear)}-${substring(endYear)}',
       FiscalYearFormat.slashShort =>
-        '${startYear.substring(2, startYear.length)}/${endYear.substring(2, endYear.length)}',
-      FiscalYearFormat.singleShort => startYear.substring(2, startYear.length),
+        '${substring(startYear)}/${substring(endYear)}',
+      FiscalYearFormat.singleShort => substring(startYear),
       FiscalYearFormat.single => startYear,
     };
     if (usePrefix) {

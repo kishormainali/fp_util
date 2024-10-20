@@ -88,7 +88,7 @@ extension BuildContextX on BuildContext {
   Color get onSurfaceColor => colorScheme.onSurface;
 
   /// surface variant color
-  Color get surfaceVariantColor => colorScheme.surfaceVariant;
+  Color get surfaceVariantColor => colorScheme.surfaceContainerHighest;
   Color get onSurfaceVariantColor => colorScheme.onSurfaceVariant;
 
   /// inverse colors
@@ -96,8 +96,8 @@ extension BuildContextX on BuildContext {
   Color get onInverseSurfaceColor => colorScheme.onInverseSurface;
 
   /// background color
-  Color get backgroundColor => colorScheme.background;
-  Color get onBackgroundContainerColor => colorScheme.onBackground;
+  Color get backgroundColor => colorScheme.surface;
+  Color get onBackgroundContainerColor => colorScheme.onSurface;
 
   /// outline color
   Color get outlineColor => colorScheme.outline;

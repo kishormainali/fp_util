@@ -60,14 +60,15 @@ abstract class ImagePickerHelper {
     BuildContext context, {
     WidgetBuilder? builder,
     int sizeInMb = -1,
-    int count = 1,
+    int? count,
   }) async {
-    List<XFile>? files = [];
+    List<XFile>? files;
     final res = await chooseImageSource(
       context,
       builder: builder,
     );
     if (res != null) {
+      files = [];
       if (res == SourceType.camera) {
         final image = await _picker.pickImage(source: ImageSource.camera);
         if (image != null) {
@@ -118,17 +119,11 @@ abstract class ImagePickerHelper {
   /// pick multiple image from gallery
   ///
   static Future<List<XFile>?> pickMultiImage({
-    int count = -1,
+    int? count,
     int sizeInMb = -1,
   }) async {
     try {
-      final files = await _picker.pickMultiImage();
-      if (count > 0) {
-        return await _handleMultipleFile(
-          files.take(count).toList(),
-          sizeInMb,
-        );
-      }
+      final files = await _picker.pickMultiImage(limit: count);
       return await _handleMultipleFile(
         files,
         sizeInMb,
@@ -160,16 +155,12 @@ abstract class ImagePickerHelper {
   /// The images and videos come from the gallery.
   ///
   static Future<List<XFile>?> pickMultipleMedia({
-    int count = -1,
+    int? count,
     int sizeInMb = -1,
   }) async {
     try {
-      final files = await _picker.pickMultipleMedia();
-      if (count > 0) {
-        return await _handleMultipleFile(files.take(count).toList(), sizeInMb);
-      } else {
-        return await _handleMultipleFile(files, sizeInMb);
-      }
+      final files = await _picker.pickMultipleMedia(limit: count);
+      return await _handleMultipleFile(files, sizeInMb);
     } catch (error, stack) {
       Logger.e('Error', error: error, stackTrace: stack);
       return null;

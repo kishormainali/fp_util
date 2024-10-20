@@ -3,33 +3,39 @@
   "packages": [
     {
       "name": "_fe_analyzer_shared",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-67.0.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-72.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "_macros",
+      "rootUri": "file:///Users/kishor/development/flutter/bin/cache/dart-sdk/pkg/_macros",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
     },
     {
       "name": "analyzer",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/analyzer-6.4.1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/analyzer-6.7.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.3"
     },
     {
       "name": "ansicolor",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/ansicolor-2.0.2",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/ansicolor-2.0.3",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "args",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/args-2.4.2",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/args-2.6.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.3"
     },
     {
       "name": "async",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/async-2.11.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/async-2.12.0",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.4"
     },
     {
       "name": "boolean_selector",
@@ -51,9 +57,9 @@
     },
     {
       "name": "build_daemon",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/build_daemon-4.0.1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/build_daemon-4.0.2",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.4"
     },
     {
       "name": "build_resolvers",
@@ -63,15 +69,15 @@
     },
     {
       "name": "build_runner",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/build_runner-2.4.9",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/build_runner-2.4.13",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.5"
     },
     {
       "name": "build_runner_core",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/build_runner_core-7.3.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/build_runner_core-7.3.2",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.5"
     },
     {
       "name": "built_collection",
@@ -81,7 +87,7 @@
     },
     {
       "name": "built_value",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/built_value-8.9.1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/built_value-8.9.2",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -96,6 +102,12 @@
       "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/checked_yaml-2.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.19"
+    },
+    {
+      "name": "clean_analysis",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/clean_analysis-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
     },
     {
       "name": "clock",
@@ -117,33 +129,39 @@
     },
     {
       "name": "convert",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/convert-3.1.1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/convert-3.1.2",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.4"
     },
     {
       "name": "cross_file",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/cross_file-0.3.4+1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/cross_file-0.3.4+2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "crypto",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/crypto-3.0.3",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/crypto-3.0.6",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.4"
     },
     {
       "name": "dart_style",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/dart_style-2.3.6",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/dart_style-2.3.7",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "dio",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/dio-5.4.3+1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/dio-5.7.0",
       "packageUri": "lib/",
-      "languageVersion": "2.15"
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "dio_web_adapter",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/dio_web_adapter-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
     },
     {
       "name": "equatable",
@@ -153,33 +171,33 @@
     },
     {
       "name": "ffi",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/ffi-2.1.2",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/ffi-2.1.3",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "file",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/file-7.0.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/file-7.0.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "file_picker",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/file_picker-8.0.3",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/file_picker-8.1.3",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.4"
     },
     {
       "name": "file_selector_linux",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/file_selector_linux-0.9.2+1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/file_selector_linux-0.9.3",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.3"
     },
     {
       "name": "file_selector_macos",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/file_selector_macos-0.9.3+3",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/file_selector_macos-0.9.4+2",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.3"
     },
     {
       "name": "file_selector_platform_interface",
@@ -189,21 +207,21 @@
     },
     {
       "name": "file_selector_windows",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/file_selector_windows-0.9.3+1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/file_selector_windows-0.9.3+3",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.3"
     },
     {
       "name": "fixnum",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/fixnum-1.1.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/fixnum-1.1.1",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.1"
     },
     {
       "name": "flutter",
       "rootUri": "file:///Users/kishor/development/flutter/packages/flutter",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.3"
     },
     {
       "name": "flutter_animate",
@@ -213,19 +231,19 @@
     },
     {
       "name": "flutter_lints",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/flutter_lints-3.0.2",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/flutter_lints-5.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.5"
     },
     {
       "name": "flutter_plugin_android_lifecycle",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.17",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.23",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.5"
     },
     {
       "name": "flutter_shaders",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/flutter_shaders-0.1.2",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/flutter_shaders-0.1.3",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
@@ -243,27 +261,27 @@
     },
     {
       "name": "fp_logger",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/fp_logger-1.0.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/fp_logger-1.0.10",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.4"
     },
     {
       "name": "freezed",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/freezed-2.5.2",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/freezed-2.5.7",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.0"
     },
     {
       "name": "freezed_annotation",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/freezed_annotation-2.4.1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/freezed_annotation-2.4.4",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.0"
     },
     {
       "name": "frontend_server_client",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/frontend_server_client-3.2.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/frontend_server_client-4.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.0"
     },
     {
       "name": "gap",
@@ -278,14 +296,32 @@
       "languageVersion": "2.19"
     },
     {
-      "name": "graphs",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/graphs-2.3.1",
+      "name": "gql",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/gql-1.0.0+1",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "gql_exec",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/gql_exec-1.0.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "gql_link",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/gql_link-1.0.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "graphs",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/graphs-2.3.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
     },
     {
       "name": "http",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/http-1.2.1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/http-1.2.2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -303,27 +339,27 @@
     },
     {
       "name": "image_picker",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/image_picker-1.1.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/image_picker-1.1.2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "image_picker_android",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/image_picker_android-0.8.9+3",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+16",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.5"
     },
     {
       "name": "image_picker_for_web",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/image_picker_for_web-3.0.2",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/image_picker_for_web-3.0.6",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.4"
     },
     {
       "name": "image_picker_ios",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/image_picker_ios-0.8.9+2",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/image_picker_ios-0.8.12+1",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.3"
     },
     {
       "name": "image_picker_linux",
@@ -381,15 +417,21 @@
     },
     {
       "name": "lints",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/lints-3.0.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/lints-5.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.5"
     },
     {
       "name": "logging",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/logging-1.2.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/logging-1.3.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "macros",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/macros-0.1.2-main.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
     },
     {
       "name": "mask_text_input_formatter",
@@ -399,25 +441,25 @@
     },
     {
       "name": "matcher",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/matcher-0.12.16+1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/matcher-0.12.17",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.4"
     },
     {
       "name": "material_color_utilities",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/material_color_utilities-0.8.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/material_color_utilities-0.11.1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "meta",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/meta-1.11.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/meta-1.15.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "mime",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/mime-1.0.5",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/mime-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -429,9 +471,9 @@
     },
     {
       "name": "path",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/path-1.9.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/path-1.9.1",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.4"
     },
     {
       "name": "path_parsing",
@@ -465,9 +507,9 @@
     },
     {
       "name": "pubspec_parse",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/pubspec_parse-1.2.3",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/pubspec_parse-1.3.0",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "shelf",
@@ -477,9 +519,9 @@
     },
     {
       "name": "shelf_web_socket",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/shelf_web_socket-1.0.4",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/shelf_web_socket-2.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.0"
     },
     {
       "name": "sky_engine",
@@ -513,9 +555,9 @@
     },
     {
       "name": "stack_trace",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/stack_trace-1.11.1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/stack_trace-1.12.0",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.4"
     },
     {
       "name": "stream_channel",
@@ -531,9 +573,9 @@
     },
     {
       "name": "string_scanner",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/string_scanner-1.2.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/string_scanner-1.4.0",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.1"
     },
     {
       "name": "term_glyph",
@@ -543,9 +585,9 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/test_api-0.7.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/test_api-0.7.3",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.4"
     },
     {
       "name": "timing",
@@ -555,13 +597,13 @@
     },
     {
       "name": "typed_data",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/typed_data-1.3.2",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/typed_data-1.4.0",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.5"
     },
     {
       "name": "uuid",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/uuid-4.4.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/uuid-4.5.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -597,21 +639,27 @@
     },
     {
       "name": "web",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/web-0.5.1",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/web-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "web_socket",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/web_socket-0.1.6",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "web_socket_channel",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/web_socket_channel-2.4.4",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/web_socket_channel-3.0.1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "win32",
-      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/win32-5.2.0",
+      "rootUri": "file:///Users/kishor/.pub-cache/hosted/pub.dev/win32-5.7.0",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.5"
     },
     {
       "name": "xml",
@@ -629,10 +677,13 @@
       "name": "fp_util",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-04-29T06:13:57.166600Z",
+  "generated": "2024-10-20T07:29:26.898861Z",
   "generator": "pub",
-  "generatorVersion": "3.3.4"
+  "generatorVersion": "3.5.3",
+  "flutterRoot": "file:///Users/kishor/development/flutter",
+  "flutterVersion": "3.24.3",
+  "pubCache": "file:///Users/kishor/.pub-cache"
 }

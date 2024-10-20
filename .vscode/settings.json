@@ -2,5 +2,6 @@
     "cSpell.words": [
         "autofocus",
         "writeln"
-    ]
+    ],
+    "dart.lineLength": 80,
 }

@@ -80,13 +80,13 @@ class DefaultPickerDialog extends StatelessWidget {
           onPressed: () => Navigator.pop(context, SourceType.camera),
           material: MaterialActionData(
             style: ButtonStyle(
-              minimumSize: const MaterialStatePropertyAll(
+              minimumSize: const WidgetStatePropertyAll(
                 Size(double.infinity, 44),
               ),
-              shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+              shape: WidgetStatePropertyAll(RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
               )),
-              padding: const MaterialStatePropertyAll(EdgeInsets.zero),
+              padding: const WidgetStatePropertyAll(EdgeInsets.zero),
             ),
             useTextButton: data.useTextButton,
           ),
@@ -97,13 +97,13 @@ class DefaultPickerDialog extends StatelessWidget {
           material: MaterialActionData(
             style: data.buttonStyle ??
                 ButtonStyle(
-                  minimumSize: const MaterialStatePropertyAll(
+                  minimumSize: const WidgetStatePropertyAll(
                     Size(double.infinity, 44),
                   ),
-                  shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                  shape: WidgetStatePropertyAll(RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   )),
-                  padding: const MaterialStatePropertyAll(EdgeInsets.zero),
+                  padding: const WidgetStatePropertyAll(EdgeInsets.zero),
                 ),
             useTextButton: data.useTextButton,
           ),

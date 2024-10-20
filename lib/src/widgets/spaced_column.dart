@@ -7,6 +7,7 @@ import 'package:fp_util/fp_util.dart';
 ///
 /// {@endtemplate}
 class SpacedColumn extends Column {
+  /// {@macro column_with_space}
   SpacedColumn({
     super.key,
     double spacing = 10,
@@ -29,6 +30,7 @@ class SpacedColumn extends Column {
           }),
         ]);
 
+  /// {@macro column_with_space}
   /// A [SpacedColumn] with space between each child and a separator.
   SpacedColumn.separated({
     super.key,
@@ -49,6 +51,33 @@ class SpacedColumn extends Column {
               return [
                 widget,
                 if (index < children.length || hasTrailingSeparator) separator,
+              ];
+            }),
+          ],
+        );
+
+  /// {@macro column_with_space}
+  /// A [SpacedColumn] with space between each child and a divider.
+  /// each child is expanded to fill the available space.
+  SpacedColumn.expanded({
+    super.key,
+    Divider divider = const Divider(),
+    bool hasLeadingDivider = false,
+    bool hasTrailingDivider = false,
+    super.mainAxisAlignment,
+    super.mainAxisSize,
+    super.crossAxisAlignment,
+    super.textBaseline,
+    super.textDirection,
+    super.verticalDirection,
+    List<Widget> children = const [],
+  }) : super(
+          children: [
+            if (hasLeadingDivider) divider,
+            ...children.expandIndexed((index, widget) {
+              return [
+                Expanded(child: widget),
+                if (index < children.length || hasTrailingDivider) divider,
               ];
             }),
           ],

@@ -1,5 +1,10 @@
+# 3.2.0
+
+- deps update
+
 # 3.1.7
-- Equality added for validator  
+
+- Equality added for validator
 
 # 3.1.6
 

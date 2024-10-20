@@ -13,6 +13,9 @@ extension StringNX on String? {
 }
 
 extension StringX on String {
+  /// checks whether string match the given regex
+  bool isMatch(String regex) => RegExp(regex).hasMatch(this);
+
   /// checks whether string is email or not
   bool get isEmail => RegExp(RegexPattern.email).hasMatch(this);
 

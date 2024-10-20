@@ -24,7 +24,7 @@ class MaterialActionData {
   final FocusNode? focusNode;
   final bool autofocus;
   final Clip clipBehavior = Clip.none;
-  final MaterialStatesController? statesController;
+  final WidgetStatesController? statesController;
   final Widget? icon;
   final bool useTextButton;
 }

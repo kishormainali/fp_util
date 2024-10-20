@@ -26,6 +26,14 @@ class HomePage extends StatelessWidget {
           },
           child: const Text('Show Success Snackbar'),
         ),
+        SocialButton.apple(label: 'Sign in with Apple', onPressed: () {}),
+        SocialButton.google(label: 'Sign in with Google', onPressed: () {}),
+        SocialButton.facebook(label: 'Sign in with Facebook', onPressed: () {}),
+
+        /// icons
+        SocialButton.appleIcon(onPressed: () {}),
+        SocialButton.googleIcon(onPressed: () {}),
+        SocialButton.facebookIcon(onPressed: () {}),
       ],
     );
   }

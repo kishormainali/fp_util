@@ -31,8 +31,10 @@ class MaskedTextFormatter extends MaskTextInputFormatter {
       );
 
   /// Creates a formatter that formats phone numbers.
-  factory MaskedTextFormatter.phone(
-          {String mask = '+# (###) ### ####', String? initialText}) =>
+  factory MaskedTextFormatter.phone({
+    String mask = '+# (###) ### ####',
+    String? initialText,
+  }) =>
       MaskedTextFormatter._(
         mask,
         filter: {'#': RegExp(r'[0-9]')},

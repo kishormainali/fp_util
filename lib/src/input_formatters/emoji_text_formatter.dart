@@ -25,7 +25,9 @@ class EmojiTextFormatter extends TextInputFormatter {
 
   @override
   TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue, TextEditingValue newValue) {
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
     if (_allow) {
       return TextEditingValue(
         text: newValue.text,

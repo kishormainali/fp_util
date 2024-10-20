@@ -344,18 +344,18 @@ class SocialButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final buttonStyle = ButtonStyle(
-      backgroundColor: MaterialStatePropertyAll(buttonColor),
-      foregroundColor: MaterialStatePropertyAll(foregroundColor),
-      shape: MaterialStatePropertyAll(shape),
-      iconSize: MaterialStatePropertyAll(iconSize),
-      surfaceTintColor: const MaterialStatePropertyAll(Colors.white),
-      textStyle: MaterialStatePropertyAll(textStyle),
-      minimumSize: MaterialStatePropertyAll(minimumSize),
-      maximumSize: MaterialStatePropertyAll(maximumSize),
-      padding: MaterialStatePropertyAll(padding),
+      backgroundColor: WidgetStatePropertyAll(buttonColor),
+      foregroundColor: WidgetStatePropertyAll(foregroundColor),
+      shape: WidgetStatePropertyAll(shape),
+      iconSize: WidgetStatePropertyAll(iconSize),
+      surfaceTintColor: const WidgetStatePropertyAll(Colors.white),
+      textStyle: WidgetStatePropertyAll(textStyle),
+      minimumSize: WidgetStatePropertyAll(minimumSize),
+      maximumSize: WidgetStatePropertyAll(maximumSize),
+      padding: WidgetStatePropertyAll(padding),
       splashFactory: InkSplash.splashFactory,
-      overlayColor: MaterialStatePropertyAll(foregroundColor.withOpacity(0.2)),
-      side: MaterialStatePropertyAll(side),
+      overlayColor: WidgetStatePropertyAll(foregroundColor.withOpacity(0.2)),
+      side: WidgetStatePropertyAll(side),
     );
 
     if (iconOnly) {
