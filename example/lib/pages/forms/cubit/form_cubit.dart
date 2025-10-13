@@ -1,4 +1,5 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fp_logger/fp_logger.dart';
 import 'package:fp_util/fp_util.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

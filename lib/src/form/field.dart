@@ -25,7 +25,7 @@ part of 'form.dart';
   map: FreezedMapOptions.none,
   when: FreezedWhenOptions.none,
 )
-class Field<T> with _$Field<T> {
+abstract class Field<T> with _$Field<T> {
   const Field._();
 
   /// {@macro field}

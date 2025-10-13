@@ -7,6 +7,16 @@ import 'package:image_picker/image_picker.dart';
 
 import '../dialogs/enums.dart';
 
+import 'dart:developer' as developer;
+
+void log(dynamic message, {Object? error, StackTrace? stackTrace}) =>
+    developer.log(
+      message,
+      name: 'ImagePickerHelper',
+      error: error,
+      stackTrace: stackTrace,
+    );
+
 /// {@template image_picker_helper}
 ///
 /// Helper Class to pick image and file
@@ -98,7 +108,7 @@ abstract class ImagePickerHelper {
       if (sizeInMb > 0 && file != null) return await _checkSize(sizeInMb, file);
       return file;
     } catch (e, stack) {
-      Logger.e('Error', error: e, stackTrace: stack);
+      log('Error', error: e, stackTrace: stack);
       return null;
     }
   }
@@ -111,7 +121,7 @@ abstract class ImagePickerHelper {
       if (sizeInMb > 0 && file != null) return await _checkSize(sizeInMb, file);
       return file;
     } catch (e, stack) {
-      Logger.e('Error', error: e, stackTrace: stack);
+      log('Error', error: e, stackTrace: stack);
       return null;
     }
   }
@@ -129,7 +139,7 @@ abstract class ImagePickerHelper {
         sizeInMb,
       );
     } catch (e, stack) {
-      Logger.e('Error', error: e, stackTrace: stack);
+      log('Error', error: e, stackTrace: stack);
       return null;
     }
   }
@@ -145,7 +155,7 @@ abstract class ImagePickerHelper {
       if (sizeInMb > 0 && file != null) return await _checkSize(sizeInMb, file);
       return file;
     } catch (error, stack) {
-      Logger.e('Error', error: error, stackTrace: stack);
+      log('Error', error: error, stackTrace: stack);
       return null;
     }
   }
@@ -162,7 +172,7 @@ abstract class ImagePickerHelper {
       final files = await _picker.pickMultipleMedia(limit: count);
       return await _handleMultipleFile(files, sizeInMb);
     } catch (error, stack) {
-      Logger.e('Error', error: error, stackTrace: stack);
+      log('Error', error: error, stackTrace: stack);
       return null;
     }
   }
@@ -194,7 +204,7 @@ abstract class ImagePickerHelper {
         return await _handleMultipleFile(files, sizeInMb);
       }
     } catch (e, stack) {
-      Logger.e('Error', error: e, stackTrace: stack);
+      log('Error', error: e, stackTrace: stack);
       return null;
     }
   }
@@ -222,7 +232,7 @@ abstract class ImagePickerHelper {
       if (sizeInMb > 0 && file != null) return await _checkSize(sizeInMb, file);
       return file;
     } catch (e, stack) {
-      Logger.e('Error', error: e, stackTrace: stack);
+      log('Error', error: e, stackTrace: stack);
       return null;
     }
   }
