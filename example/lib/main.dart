@@ -2,7 +2,7 @@ import 'package:example/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
-import 'package:fp_util/fp_util.dart';
+import 'package:fp_logger/fp_logger.dart';
 
 class SimpleBlocObserver extends BlocObserver {
   @override
@@ -12,7 +12,8 @@ class SimpleBlocObserver extends BlocObserver {
   }
 }
 
-GlobalKey<ScaffoldMessengerState> scaffoldMessageKey = GlobalKey<ScaffoldMessengerState>();
+GlobalKey<ScaffoldMessengerState> scaffoldMessageKey =
+    GlobalKey<ScaffoldMessengerState>();
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

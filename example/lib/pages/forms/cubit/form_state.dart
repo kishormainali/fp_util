@@ -1,7 +1,7 @@
 part of 'form_cubit.dart';
 
 @freezed
-class FormState with _$FormState, FormMixin {
+abstract class FormState with _$FormState, FormMixin {
   const FormState._();
   const factory FormState({
     required Field<String> name,

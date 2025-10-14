@@ -42,7 +42,7 @@ extension ColorHex on Color {
     final buffer = StringBuffer();
     buffer.write(_fromOpacity(percent));
     final hex =
-        (value & 0xFFFFFF).toRadixString(16).padLeft(6, '0').toUpperCase();
+        (toARGB32() & 0xFFFFFF).toRadixString(16).padLeft(6, '0').toUpperCase();
     buffer.write(hex);
     return Color(int.parse(buffer.toString(), radix: 16));
   }
@@ -53,7 +53,7 @@ extension ColorHex on Color {
   /// ```
   String get hex {
     final color =
-        (value & 0xFFFFFF).toRadixString(16).padLeft(6, '0').toUpperCase();
+        (toARGB32() & 0xFFFFFF).toRadixString(16).padLeft(6, '0').toUpperCase();
     return '#$color';
   }
 
@@ -63,9 +63,9 @@ extension ColorHex on Color {
   /// ```
   String get hexWithOpacity {
     final hex =
-        (value & 0xFFFFFF).toRadixString(16).padLeft(6, '0').toUpperCase();
+        (toARGB32() & 0xFFFFFF).toRadixString(16).padLeft(6, '0').toUpperCase();
     final opacity =
-        (value >> 24).toRadixString(16).padLeft(2, '0').toUpperCase();
+        (toARGB32() >> 24).toRadixString(16).padLeft(2, '0').toUpperCase();
     return '#$opacity$hex';
   }
 }

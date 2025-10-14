@@ -175,7 +175,7 @@ class FpSnackbar {
     )._show(context);
   }
 
-  static showLoading(
+  static void showLoading(
     BuildContext context, {
     Widget? loadingWidget,
   }) {
