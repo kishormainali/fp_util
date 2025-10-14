@@ -40,7 +40,7 @@ class SnackbarWidget extends StatelessWidget {
         borderRadius: 10.circularBorderRadius,
         boxShadow: [
           BoxShadow(
-            color: backgroundColor.withOpacity(0.2),
+            color: backgroundColor.withValues(alpha: 0.2),
             blurRadius: 1,
             spreadRadius: 1,
           ),

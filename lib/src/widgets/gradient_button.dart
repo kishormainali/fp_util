@@ -125,7 +125,7 @@ class GradientButton extends StatelessWidget {
     );
   }
 
-  _buildChild() {
+  Widget _buildChild() {
     if (icon != null) {
       return _FilledButtonWithIconChild(
         label: Text(label),
@@ -193,7 +193,7 @@ class _OutlineGradientButton extends GradientButton {
     );
   }
 
-  _buildOutlineChild() {
+  Widget _buildOutlineChild() {
     if (icon != null) {
       final iconChild = (applyGradientOnIcon ?? false)
           ? ShaderMask(

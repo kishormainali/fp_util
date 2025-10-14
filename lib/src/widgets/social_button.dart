@@ -354,7 +354,8 @@ class SocialButton extends StatelessWidget {
       maximumSize: WidgetStatePropertyAll(maximumSize),
       padding: WidgetStatePropertyAll(padding),
       splashFactory: InkSplash.splashFactory,
-      overlayColor: WidgetStatePropertyAll(foregroundColor.withOpacity(0.2)),
+      overlayColor:
+          WidgetStatePropertyAll(foregroundColor.withValues(alpha: 0.2)),
       side: WidgetStatePropertyAll(side),
     );
 

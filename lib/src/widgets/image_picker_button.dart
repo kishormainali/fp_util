@@ -184,7 +184,7 @@ class ImagePickerButton extends StatelessWidget {
 }
 
 /// pick image from gallery
-_onGalleryPressed(
+void _onGalleryPressed(
   int sizeInMb,
   int count,
   bool isMultiple,

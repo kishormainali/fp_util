@@ -1,13 +1,15 @@
-# 3.2.0
+# 4.0.0
+> BREAKING CHANGES
+- upgraded freezed to version 3.0.1, use 3.2.0 if you are using freezed < 3.0.0
+- upgraded dependencies to support latest stable release
 
+# 3.2.0
 - deps update
 
 # 3.1.7
-
 - Equality added for validator
 
 # 3.1.6
-
 - Re-land logger
 - Deps update
 - Minor improvements
