@@ -19,42 +19,42 @@ dependencies:
   flutter:
     sdk: flutter
 
-  mime: ^2.0.0
+  mime: ">=2.0.0 <3.0.0"
 
   # image picker
-  image_picker: ^1.2.0
+  image_picker: ^1.2.1
 
   # file picker
-  file_picker: ^10.3.3
+  file_picker: ^10.3.10
 
   # svg
-  flutter_svg: ^2.2.1
+  flutter_svg: ^2.2.3
 
   freezed_annotation: ^3.1.0
-  json_annotation: ^4.9.0
+  json_annotation: ^4.11.0
 
   path: any # use version compatible with flutter
   intl: any # use version compatible with flutter
 
-  equatable: ^2.0.7
+  equatable: ^2.0.8
 
   mask_text_input_formatter: ^2.9.0
 
   gap: ^3.0.1
 
-  uuid: ^4.5.1
+  uuid: ^4.5.3
 
   flutter_animate: ^4.5.2
 
   collection: any # use version compatible with flutter
 
-  fp_logger: ^2.0.0
+  fp_logger: ^3.1.1
 
 dev_dependencies:
   flutter_lints: ^6.0.0
-  freezed: ^3.2.3
-  json_serializable: ^6.11.1
-  build_runner: ^2.9.0
+  freezed: ^3.2.5
+  json_serializable: ^6.13.0
+  build_runner: ^2.11.1
 
 flutter:
   uses-material-design: true

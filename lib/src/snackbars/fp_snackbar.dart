@@ -5,7 +5,7 @@ import 'package:fp_util/src/snackbars/_snackbar_widget.dart';
 import '_snackbar_utils.dart';
 import 'raw_snackbar.dart';
 
-List<FpSnackbar> _snackBars = [];
+final List<FpSnackbar> _snackBars = [];
 
 const _defaultSnackBarDuration = Duration(seconds: 3);
 
@@ -33,7 +33,6 @@ class FpSnackbar {
   /// Info on each snackbar
   late SnackbarInfo info;
 
-  static OverlayEntry? _loadingOverlay;
 
   FpSnackbar._({
     this.snackbarDuration = _defaultSnackBarDuration,
@@ -44,10 +43,14 @@ class FpSnackbar {
     this.animationCurve,
   });
 
-  /// Remove individual snackbar on dismiss
+  /// Remove individual snackbar on dismiss (LIFO: last in, first out)
   void _remove() {
-    info.entry.remove();
-    _snackBars.removeWhere((element) => element == this);
+    if (_snackBars.contains(this)) {
+      _snackBars.remove(this);
+      if (info.entry.mounted) {
+        info.entry.remove();
+      }
+    }
   }
 
   /// show the snackbar in current context
@@ -175,51 +178,8 @@ class FpSnackbar {
     )._show(context);
   }
 
-  static void showLoading(
-    BuildContext context, {
-    Widget? loadingWidget,
-  }) {
-    final overlayState = Navigator.of(context).overlay!;
-    _loadingOverlay?.remove();
-    _loadingOverlay = OverlayEntry(
-      builder: (context) {
-        return Stack(
-          children: [
-            DecoratedBox(
-              decoration: const BoxDecoration(
-                color: Colors.black54,
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  loadingWidget ??
-                      const Center(
-                        child: CircularProgressIndicator(),
-                      ),
-                ],
-              ),
-            ),
-            const ModalBarrier(),
-          ],
-        );
-      },
-    );
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      assert(_loadingOverlay != null);
-      overlayState.insert(_loadingOverlay!);
-    });
-  }
 
-  /// Hide the loading overlay
-  static void hideLoading() {
-    if (_loadingOverlay != null) {
-      _loadingOverlay!.remove();
-    }
-  }
-
-  /// Push the snackbar in current context
+  /// Push the snackbar in current context (multiple stack, newest on top)
   void _show(BuildContext context) {
     OverlayState overlayState = Navigator.of(context).overlay!;
     info = SnackbarInfo(
@@ -242,29 +202,49 @@ class FpSnackbar {
     );
 
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      _snackBars.add(this);
+      _snackBars.add(this); // Add to end (top of stack)
       overlayState.insert(info.entry);
+      // Auto-dismiss in LIFO order: always remove the last (topmost) snackbar after its duration
+      if (autoDismiss) {
+        Future.delayed(snackbarDuration, () {
+          // Only remove if still the last (topmost) snackbar
+          if (_snackBars.isNotEmpty && identical(_snackBars.last, this)) {
+            _remove();
+          }
+        });
+      }
     });
   }
 
-  /// Remove all the snackbar in the context
+  /// Remove all the snackbars in the context
   static void removeAll() {
-    for (final snackbar in _snackBars) {
-      snackbar.info.entry.remove();
+    while (_snackBars.isNotEmpty) {
+      final snackbar = _snackBars.removeLast();
+      if (snackbar.info.entry.mounted) {
+        snackbar.info.entry.remove();
+      }
     }
-    _snackBars.clear();
   }
 }
 
+/// Info class to hold snackbar details for management
 class SnackbarInfo {
-  late OverlayEntry entry;
-  final GlobalKey<RawSnackbarState> key;
-  final DateTime createdAt;
 
-  SnackbarInfo({
+ const  SnackbarInfo({
     required this.key,
     required this.createdAt,
   });
+
+  /// Overlay entry for the snackbar
+  late OverlayEntry entry;
+
+  /// Unique key for the snackbar widget
+  final GlobalKey<RawSnackbarState> key;
+
+  /// Creation time for the snackbar (can be used for ordering or debugging)
+  final DateTime createdAt;
+
+
 
   @override
   bool operator ==(Object other) {
